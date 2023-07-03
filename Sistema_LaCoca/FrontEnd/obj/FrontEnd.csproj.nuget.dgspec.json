@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj": {}
+    "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj": {
+    "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj",
+        "projectUniqueName": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj",
         "projectName": "FrontEnd",
-        "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj",
-        "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\obj\\",
+        "projectPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\FrontEnd.csproj",
+        "packagesPath": "C:\\Users\\tinch\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tinch\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {
-                "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj"
+              "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {
+                "projectPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj"
               }
             }
           }
@@ -62,21 +62,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {
+    "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
+        "projectUniqueName": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
         "projectName": "LogicaClases",
-        "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
-        "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\obj\\",
+        "projectPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
+        "packagesPath": "C:\\Users\\tinch\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tinch\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

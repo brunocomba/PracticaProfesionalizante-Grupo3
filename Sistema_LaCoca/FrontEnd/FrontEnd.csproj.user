@@ -4,6 +4,12 @@
     <Compile Update="AltaAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AltaTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GestionTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>

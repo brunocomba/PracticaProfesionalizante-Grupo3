@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace FrontEnd
 {
-    public partial class MenuInicio : Form
+    public partial class GestionTurnos : Form
     {
-        public MenuInicio()
+        public GestionTurnos()
         {
             InitializeComponent();
         }
 
-        private void MenuInicio_Load(object sender, EventArgs e)
+        private void GestionTurnos_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            GestionTurnos gestionTurnosForm = new GestionTurnos();  
-            gestionTurnosForm.Show();
+            AltaTurnos altaTurnos = new AltaTurnos();
+            altaTurnos.Show();
             this.Hide();
         }
     }

@@ -8,7 +8,7 @@ namespace LogicaClases.Clases
 {
     public class Turno
     {
-        public DateOnly fecha { get; set; }
+        public DateTime fecha { get; set; }
         public TimeOnly horario { get; set; }
         public int precio { get; set; }
         public bool condicionReservado { get; set; }
