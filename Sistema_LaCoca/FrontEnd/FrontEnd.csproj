@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>LaCoca.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="LaCoca.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LogicaClases\LogicaClases.csproj" />

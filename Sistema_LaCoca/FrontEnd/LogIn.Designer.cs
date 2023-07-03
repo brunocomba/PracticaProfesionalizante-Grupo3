@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             groupBox1 = new GroupBox();
             checkBox1 = new CheckBox();
             label5 = new Label();
@@ -55,7 +56,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(247, 52);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(307, 340);
+            groupBox1.Size = new Size(307, 357);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
@@ -163,9 +164,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(804, 461);
             Controls.Add(groupBox1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "LogIn";
             Text = "LogIn";
             Load += LogIn_Load;

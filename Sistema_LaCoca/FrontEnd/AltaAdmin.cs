@@ -72,7 +72,7 @@ namespace FrontEnd
             string password = txtContra.Text;
             string confirPassword = txtConfirPass.Text;
 
-            if (password == confirPassword) 
+            if (password == confirPassword)
             {
                 lblErrorPass.Text = "";
                 btnCrear.Enabled = true;
@@ -82,6 +82,6 @@ namespace FrontEnd
                 lblErrorPass.Text = "Las contraseñas no coinciden";
                 btnCrear.Enabled = false;
             }
-         }
+        }
     }
 }

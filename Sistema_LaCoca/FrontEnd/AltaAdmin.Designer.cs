@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaAdmin));
             groupBox1 = new GroupBox();
             label8 = new Label();
             txtApellido = new TextBox();
@@ -46,10 +47,10 @@
             label3 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            lblErrorPass = new Label();
             txtConfirPass = new TextBox();
             label10 = new Label();
             label9 = new Label();
-            lblErrorPass = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -225,6 +226,16 @@
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
             // 
+            // lblErrorPass
+            // 
+            lblErrorPass.AutoSize = true;
+            lblErrorPass.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblErrorPass.ForeColor = Color.Red;
+            lblErrorPass.Location = new Point(105, 193);
+            lblErrorPass.Name = "lblErrorPass";
+            lblErrorPass.Size = new Size(0, 14);
+            lblErrorPass.TabIndex = 21;
+            // 
             // txtConfirPass
             // 
             txtConfirPass.Location = new Point(105, 155);
@@ -252,27 +263,19 @@
             label9.TabIndex = 18;
             label9.Text = "DATOS USUARIO";
             // 
-            // lblErrorPass
-            // 
-            lblErrorPass.AutoSize = true;
-            lblErrorPass.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblErrorPass.ForeColor = Color.Red;
-            lblErrorPass.Location = new Point(105, 193);
-            lblErrorPass.Name = "lblErrorPass";
-            lblErrorPass.Size = new Size(0, 14);
-            lblErrorPass.TabIndex = 21;
-            // 
             // AltaAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(804, 461);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(btnCancelar);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "AltaAdmin";
-            Text = "AltaAdmin";
+            Text = "Alta administrador";
             Load += AltaAdmin_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
