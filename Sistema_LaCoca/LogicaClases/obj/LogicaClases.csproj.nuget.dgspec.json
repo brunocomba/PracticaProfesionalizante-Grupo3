@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tinch\\source\\repos\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {}
+    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tinch\\source\\repos\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {
+    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tinch\\source\\repos\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
+        "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
         "projectName": "LogicaClases",
-        "projectPath": "C:\\Users\\tinch\\source\\repos\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
-        "packagesPath": "C:\\Users\\tinch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tinch\\source\\repos\\Sistema_LaCoca\\LogicaClases\\obj\\",
+        "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\LogicaClases.csproj",
+        "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\Sistema_LaCoca\\LogicaClases\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tinch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
