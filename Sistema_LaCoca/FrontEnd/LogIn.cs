@@ -47,7 +47,7 @@ namespace FrontEnd
 
 
 
-            foreach (Administrador admi in Principal.ObtenerClientes())
+            foreach (Administrador admi in Principal.ObtenerAdministradores())
             {
                 userRegistrado = admi.usuario;
                 passRegistrada = admi.contrasenia;

@@ -9,9 +9,10 @@ namespace LogicaClases.Clases
     public class Principal
     {
         public static List<Administrador> listaAdministradores;
+        public static List<Cancha> listaCanchas;
 
 
-        public static List<Administrador> ObtenerClientes()
+        public static List<Administrador> ObtenerAdministradores()
         {
             if (listaAdministradores == null)
             {
@@ -38,8 +39,6 @@ namespace LogicaClases.Clases
         {
             Administrador newAdmin = new Administrador();
 
-
-            
             newAdmin.nombre = Nombre;
             newAdmin.apellido = Apellido;
             newAdmin.dni = Dni;
@@ -47,7 +46,18 @@ namespace LogicaClases.Clases
             newAdmin.usuario = User;
             newAdmin.contrasenia = Pass;
 
-            listaAdministradores.Add(newAdmin);
+            agregarAdmin(newAdmin);
+        }
+
+        public void altaCancha(int Id, string Tipo, int CantJugadores)
+        {
+            Cancha newCancha = new Cancha();
+
+            newCancha.id = Id;
+            newCancha.tipo = Tipo;
+            newCancha.cantJugadores = CantJugadores;
+
+            listaCanchas.Add(newCancha);
         }
 
     }

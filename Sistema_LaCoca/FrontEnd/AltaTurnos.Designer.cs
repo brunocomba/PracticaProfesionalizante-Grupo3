@@ -28,33 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dateTimePicker1 = new DateTimePicker();
+            label1 = new Label();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
             // 
-            // dateTimePicker1
+            // label1
             // 
-            dateTimePicker1.CustomFormat = "";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(172, 89);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(262, 23);
-            dateTimePicker1.TabIndex = 0;
-            dateTimePicker1.Value = new DateTime(2023, 7, 3, 0, 0, 0, 0);
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(69, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 24);
+            label1.TabIndex = 0;
+            label1.Text = "Registo nuevo turno";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(46, 180);
+            button1.Name = "button1";
+            button1.Size = new Size(65, 36);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(158, 158);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(43, 23);
+            textBox1.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(279, 222);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(175, 23);
+            comboBox1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(73, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 16);
+            label2.TabIndex = 4;
+            label2.Text = "Cancha";
             // 
             // AltaTurnos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(804, 461);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(label2);
+            Controls.Add(comboBox1);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
+            Controls.Add(label1);
             Name = "AltaTurnos";
             Text = "AltaTurnos";
             Load += AltaTurnos_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DateTimePicker dateTimePicker1;
+        private Label label1;
+        private Button button1;
+        private TextBox textBox1;
+        private ComboBox comboBox1;
+        private Label label2;
     }
 }
