@@ -9,7 +9,7 @@ namespace LogicaClases.Clases
     public class Principal
     {
         public static List<Administrador> listaAdministradores;
-        public static List<Cancha> listaCanchas;
+        public static List<Cancha> listaCanchas = new List<Cancha>();
 
 
         public static List<Administrador> ObtenerAdministradores()
@@ -49,11 +49,11 @@ namespace LogicaClases.Clases
             agregarAdmin(newAdmin);
         }
 
-        public void altaCancha(int Id, string Tipo, int CantJugadores)
+        public void altaCancha(string Nombre, string Tipo, int CantJugadores)
         {
             Cancha newCancha = new Cancha();
 
-            newCancha.id = Id;
+            newCancha.nombre = Nombre;
             newCancha.tipo = Tipo;
             newCancha.cantJugadores = CantJugadores;
 

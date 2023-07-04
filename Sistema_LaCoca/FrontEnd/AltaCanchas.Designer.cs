@@ -32,7 +32,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            txtID = new TextBox();
+            txtNombre = new TextBox();
             cmboxTipo = new ComboBox();
             groupBox1 = new GroupBox();
             cmboxCantJugadores = new ComboBox();
@@ -47,7 +47,7 @@
             btnAgregarCancha.Location = new Point(168, 230);
             btnAgregarCancha.Name = "btnAgregarCancha";
             btnAgregarCancha.Size = new Size(98, 35);
-            btnAgregarCancha.TabIndex = 1;
+            btnAgregarCancha.TabIndex = 4;
             btnAgregarCancha.Text = "AGREGAR";
             btnAgregarCancha.UseVisualStyleBackColor = true;
             btnAgregarCancha.Click += btnAgregarCancha_Click;
@@ -78,30 +78,33 @@
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(27, 54);
             label3.Name = "label3";
-            label3.Size = new Size(19, 16);
+            label3.Size = new Size(52, 16);
             label3.TabIndex = 4;
-            label3.Text = "ID";
+            label3.Text = "Nombre";
             // 
-            // txtID
+            // txtNombre
             // 
-            txtID.Location = new Point(103, 47);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(214, 23);
-            txtID.TabIndex = 5;
+            txtNombre.Location = new Point(103, 47);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(214, 23);
+            txtNombre.TabIndex = 1;
             // 
             // cmboxTipo
             // 
+            cmboxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxTipo.FlatStyle = FlatStyle.Flat;
             cmboxTipo.FormattingEnabled = true;
             cmboxTipo.Location = new Point(105, 103);
             cmboxTipo.Name = "cmboxTipo";
             cmboxTipo.Size = new Size(214, 23);
-            cmboxTipo.TabIndex = 6;
+            cmboxTipo.TabIndex = 2;
+            cmboxTipo.SelectedIndexChanged += cmboxTipo_SelectedIndexChanged;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(cmboxCantJugadores);
             groupBox1.Controls.Add(cmboxTipo);
-            groupBox1.Controls.Add(txtID);
+            groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -114,11 +117,14 @@
             // 
             // cmboxCantJugadores
             // 
+            cmboxCantJugadores.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxCantJugadores.FlatStyle = FlatStyle.Flat;
             cmboxCantJugadores.FormattingEnabled = true;
             cmboxCantJugadores.Location = new Point(103, 167);
             cmboxCantJugadores.Name = "cmboxCantJugadores";
             cmboxCantJugadores.Size = new Size(214, 23);
-            cmboxCantJugadores.TabIndex = 7;
+            cmboxCantJugadores.TabIndex = 3;
+            cmboxCantJugadores.SelectedIndexChanged += cmboxCantJugadores_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -127,7 +133,7 @@
             button1.Location = new Point(357, 399);
             button1.Name = "button1";
             button1.Size = new Size(98, 35);
-            button1.TabIndex = 7;
+            button1.TabIndex = 5;
             button1.Text = "CANCELAR";
             button1.UseVisualStyleBackColor = false;
             // 
@@ -163,7 +169,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox txtID;
+        private TextBox txtNombre;
         private ComboBox cmboxTipo;
         private GroupBox groupBox1;
         private Button button1;

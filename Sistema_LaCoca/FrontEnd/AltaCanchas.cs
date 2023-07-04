@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FrontEnd
 {
     public partial class AltaCanchas : Form
     {
+        string Tipo;
+        string CantJugadores;
         public AltaCanchas()
         {
             InitializeComponent();
@@ -42,7 +45,22 @@ namespace FrontEnd
         {
             Principal principal = new Principal();
 
-           
+            principal.altaCancha(txtNombre.Text, Tipo, int.Parse(CantJugadores));
+
+            MessageBox.Show($"Segurom que desea agregar una cancha con los siguientes datos?\n" +
+                $" Nombre: {txtNombre.Text}\n Tipo: {Tipo}\n Cantidad de Jugadores: {int.Parse(CantJugadores)}");
+
+        }
+
+        private void cmboxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Tipo = cmboxTipo.SelectedItem.ToString();
+        }
+
+        private void cmboxCantJugadores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CantJugadores = cmboxCantJugadores.SelectedItem.ToString();
+
         }
     }
 }
