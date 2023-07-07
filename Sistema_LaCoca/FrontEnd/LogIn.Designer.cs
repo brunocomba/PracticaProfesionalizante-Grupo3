@@ -40,7 +40,9 @@
             txtUsuario = new TextBox();
             label3 = new Label();
             label1 = new Label();
+            dataGridView1 = new DataGridView();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -160,11 +162,21 @@
             label1.TabIndex = 6;
             label1.Text = "Gestion de Turnos La Coca";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(16, 91);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(221, 340);
+            dataGridView1.TabIndex = 8;
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(804, 461);
+            Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -174,6 +186,7 @@
             Load += LogIn_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +204,6 @@
         private Label label3;
         private Label label1;
         private CheckBox checkBox1;
+        private DataGridView dataGridView1;
     }
 }

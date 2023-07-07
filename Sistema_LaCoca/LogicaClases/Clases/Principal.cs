@@ -8,10 +8,25 @@ namespace LogicaClases.Clases
 {
     public class Principal
     {
+        public void addAdmi(Administrador administrador)
+        {
+            listaAdministradores.Add(administrador);
+        }
+
+        public void altaAdmin(string Nombre, string Apellido, int Dni, uint Tel, string User, string Pass)
+        {
+            Administrador newAdmin = new Administrador();
+
+            newAdmin.nombre = Nombre;
+            newAdmin.apellido = Apellido;
+            newAdmin.dni = Dni;
+            newAdmin.telefono = Tel;
+            newAdmin.usuario = User;
+            newAdmin.contrasenia = Pass;
+
+            ObtenerAdministradores().Add(newAdmin); 
+        }
         public static List<Administrador> listaAdministradores;
-        public static List<Cancha> listaCanchas = new List<Cancha>();
-
-
         public static List<Administrador> ObtenerAdministradores()
         {
             if (listaAdministradores == null)
@@ -23,32 +38,21 @@ namespace LogicaClases.Clases
                 adminBase.nombre = "Bruno";
                 adminBase.apellido = "Comba";
                 adminBase.dni = 45414815;
-                adminBase.telefono = 15662312;
-                adminBase.usuario = "brunocomba";
-                adminBase.contrasenia = "contrasenia123";
+                adminBase.telefono = 3493662312;
+                adminBase.usuario = "boot";
+                adminBase.contrasenia = "123";
 
                 listaAdministradores.Add(adminBase);    
             }
             return listaAdministradores;
         }
-        public void agregarAdmin(Administrador admin)
-        {
-            listaAdministradores.Add(admin);
-        }
-        public void altaAdmin(string Nombre, string Apellido, int Dni, int Tel, string User, string Pass)
-        {
-            Administrador newAdmin = new Administrador();
 
-            newAdmin.nombre = Nombre;
-            newAdmin.apellido = Apellido;
-            newAdmin.dni = Dni;
-            newAdmin.telefono = Tel;
-            newAdmin.usuario = User;
-            newAdmin.contrasenia = Pass;
+        // PROBAR HACER LO MISMO PERO SIN LISTAS ESTATICAS
 
-            agregarAdmin(newAdmin);
-        }
 
+
+
+        public static List<Cancha> listaCanchas;
         public void altaCancha(string Nombre, string Tipo, int CantJugadores)
         {
             Cancha newCancha = new Cancha();
@@ -60,6 +64,7 @@ namespace LogicaClases.Clases
             listaCanchas.Add(newCancha);
         }
 
+        
     }
 
 }

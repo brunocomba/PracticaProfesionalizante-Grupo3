@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaAdmin));
-            groupBox1 = new GroupBox();
+            DatosPers = new GroupBox();
             label8 = new Label();
             txtApellido = new TextBox();
             txtDni = new TextBox();
@@ -51,26 +52,28 @@
             txtConfirPass = new TextBox();
             label10 = new Label();
             label9 = new Label();
-            groupBox1.SuspendLayout();
+            errorProviderPass = new ErrorProvider(components);
+            DatosPers.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderPass).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // DatosPers
             // 
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(txtApellido);
-            groupBox1.Controls.Add(txtDni);
-            groupBox1.Controls.Add(txtTel);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(txtNombre);
-            groupBox1.Location = new Point(24, 48);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(396, 332);
-            groupBox1.TabIndex = 5;
-            groupBox1.TabStop = false;
+            DatosPers.Controls.Add(label8);
+            DatosPers.Controls.Add(txtApellido);
+            DatosPers.Controls.Add(txtDni);
+            DatosPers.Controls.Add(txtTel);
+            DatosPers.Controls.Add(label7);
+            DatosPers.Controls.Add(label6);
+            DatosPers.Controls.Add(label5);
+            DatosPers.Controls.Add(label2);
+            DatosPers.Controls.Add(txtNombre);
+            DatosPers.Location = new Point(24, 48);
+            DatosPers.Name = "DatosPers";
+            DatosPers.Size = new Size(396, 332);
+            DatosPers.TabIndex = 5;
+            DatosPers.TabStop = false;
             // 
             // label8
             // 
@@ -84,25 +87,34 @@
             // 
             // txtApellido
             // 
+            txtApellido.ForeColor = Color.Silver;
             txtApellido.Location = new Point(127, 111);
+            txtApellido.MaxLength = 40;
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(195, 23);
             txtApellido.TabIndex = 2;
-            txtApellido.TextChanged += txtApellido_TextChanged;
+            txtApellido.Text = "Intoduzca su apellido";
+            txtApellido.Enter += txtApellido_Enter;
+            txtApellido.KeyPress += txtApellido_KeyPress;
+            txtApellido.Leave += txtApellido_Leave;
             // 
             // txtDni
             // 
             txtDni.Location = new Point(128, 150);
+            txtDni.MaxLength = 8;
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(195, 23);
             txtDni.TabIndex = 3;
+            txtDni.KeyPress += txtDni_KeyPress;
             // 
             // txtTel
             // 
             txtTel.Location = new Point(127, 193);
+            txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(195, 23);
             txtTel.TabIndex = 4;
+            txtTel.KeyPress += txtTel_KeyPress;
             // 
             // label7
             // 
@@ -142,10 +154,16 @@
             // 
             // txtNombre
             // 
+            txtNombre.ForeColor = Color.Silver;
             txtNombre.Location = new Point(127, 72);
+            txtNombre.MaxLength = 35;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(195, 23);
             txtNombre.TabIndex = 1;
+            txtNombre.Text = "Intoduzca su nombre";
+            txtNombre.Enter += txtNombre_Enter;
+            txtNombre.KeyPress += txtNombre_KeyPress;
+            txtNombre.Leave += txtNombre_Leave;
             // 
             // btnCancelar
             // 
@@ -163,6 +181,7 @@
             txtContra.Name = "txtContra";
             txtContra.Size = new Size(195, 23);
             txtContra.TabIndex = 15;
+            txtContra.Validating += txtContra_Validating;
             // 
             // btnCrear
             // 
@@ -263,13 +282,18 @@
             label9.TabIndex = 18;
             label9.Text = "DATOS USUARIO";
             // 
+            // errorProviderPass
+            // 
+            errorProviderPass.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
+            errorProviderPass.ContainerControl = this;
+            // 
             // AltaAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(804, 461);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(DatosPers);
             Controls.Add(btnCancelar);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -277,17 +301,18 @@
             Name = "AltaAdmin";
             Text = "Alta administrador";
             Load += AltaAdmin_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            DatosPers.ResumeLayout(false);
+            DatosPers.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderPass).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox DatosPers;
         private Button btnCancelar;
         private TextBox txtContra;
         private Button btnCrear;
@@ -309,5 +334,10 @@
         private Label label10;
         private Label label9;
         private Label lblErrorPass;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
+        private ErrorProvider errorProvider4;
+        private ErrorProvider errorProviderPass;
     }
 }
