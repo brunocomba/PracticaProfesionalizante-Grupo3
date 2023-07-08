@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FrontEnd
 {
@@ -150,11 +151,9 @@ namespace FrontEnd
         }
 
 
-
-
         private void txtNombre_Enter(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "Intoduzca su nombre")
+            if (txtNombre.Text == "ej: Jose")
             {
                 txtNombre.Text = "";
                 txtNombre.ForeColor = Color.Black;
@@ -165,27 +164,117 @@ namespace FrontEnd
         {
             if (txtNombre.Text == "")
             {
-                txtNombre.Text = "Intoduzca su nombre";
+                txtNombre.Text = "ej: Jose";
                 txtNombre.ForeColor = Color.Silver;
             }
         }
 
         private void txtApellido_Enter(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "Intoduzca su apellido")
+            if (txtApellido.Text == "ej: Perez")
             {
-                txtNombre.Text = "";
-                txtNombre.ForeColor = Color.Black;
+                txtApellido.Text = "";
+                txtApellido.ForeColor = Color.Black;
             }
         }
 
         private void txtApellido_Leave(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "")
+            if (txtApellido.Text == "")
             {
-                txtNombre.Text = "Intoduzca su apellido";
-                txtNombre.ForeColor = Color.Silver;
+                txtApellido.Text = "ej: Perez";
+                txtApellido.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtDni_Enter(object sender, EventArgs e)
+        {
+            if (txtDni.Text == "ej: 45333456")
+            {
+                txtDni.Text = "";
+                txtDni.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void txtDni_Leave(object sender, EventArgs e)
+        {
+            if (txtDni.Text == "")
+            {
+                txtDni.Text = "ej: 45333456";
+                txtDni.ForeColor = Color.Silver;
+            }
+
+        }
+
+        private void txtTel_Enter(object sender, EventArgs e)
+        {
+            if (txtTel.Text == "cod area + numero sin el 15")
+            {
+                txtTel.Text = "";
+                txtTel.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTel_Leave(object sender, EventArgs e)
+        {
+            if (txtTel.Text == "")
+            {
+                txtTel.Text = "cod area + numero sin el 15";
+                txtTel.ForeColor = Color.Silver;
+            }
+        }
+        private void txtUser_Enter(object sender, EventArgs e)
+        {
+            if (txtUser.Text == "joseperezz23")
+            {
+                txtUser.Text = "";
+                txtUser.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUser_Leave(object sender, EventArgs e)
+        {
+            if (txtUser.Text == "")
+            {
+                txtUser.Text = "joseperezz23";
+                txtUser.ForeColor = Color.Silver;
+            }
+        }
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+            int minLength = 10; // Número mínimo de caracteres permitidos
+
+            if (txtTel.Text.Length < minLength)
+            {
+                lblErrorTel.Text = "Numero telefonico incompleto";
+
+                // El texto tiene menos caracteres que el mínimo requerido
+                // Aquí puedes mostrar un mensaje de error o tomar alguna acción
+            }
+            else
+            {
+                lblErrorTel.Text = "";
+
+            }
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            int minLength = 8; // Número mínimo de caracteres permitidos
+
+            if (txtDni.Text.Length < minLength)
+            {
+                lblErrorDni.Text = "DNI incompleto";
+                btnCrear.Enabled = false;
+
+            }
+            else
+            {
+                lblErrorDni.Text = "";
+                btnCrear.Enabled = true;
             }
         }
     }
+
 }

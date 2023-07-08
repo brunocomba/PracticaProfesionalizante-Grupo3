@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaAdmin));
             DatosPers = new GroupBox();
+            lblErrorDni = new Label();
+            lblErrorTel = new Label();
             label8 = new Label();
             txtApellido = new TextBox();
             txtDni = new TextBox();
@@ -60,6 +62,8 @@
             // 
             // DatosPers
             // 
+            DatosPers.Controls.Add(lblErrorDni);
+            DatosPers.Controls.Add(lblErrorTel);
             DatosPers.Controls.Add(label8);
             DatosPers.Controls.Add(txtApellido);
             DatosPers.Controls.Add(txtDni);
@@ -74,6 +78,26 @@
             DatosPers.Size = new Size(396, 332);
             DatosPers.TabIndex = 5;
             DatosPers.TabStop = false;
+            // 
+            // lblErrorDni
+            // 
+            lblErrorDni.AutoSize = true;
+            lblErrorDni.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblErrorDni.ForeColor = Color.Red;
+            lblErrorDni.Location = new Point(128, 175);
+            lblErrorDni.Name = "lblErrorDni";
+            lblErrorDni.Size = new Size(0, 13);
+            lblErrorDni.TabIndex = 19;
+            // 
+            // lblErrorTel
+            // 
+            lblErrorTel.AutoSize = true;
+            lblErrorTel.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblErrorTel.ForeColor = Color.Red;
+            lblErrorTel.Location = new Point(128, 219);
+            lblErrorTel.Name = "lblErrorTel";
+            lblErrorTel.Size = new Size(0, 13);
+            lblErrorTel.TabIndex = 18;
             // 
             // label8
             // 
@@ -93,28 +117,38 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(195, 23);
             txtApellido.TabIndex = 2;
-            txtApellido.Text = "Intoduzca su apellido";
+            txtApellido.Text = "ej: Perez";
             txtApellido.Enter += txtApellido_Enter;
             txtApellido.KeyPress += txtApellido_KeyPress;
             txtApellido.Leave += txtApellido_Leave;
             // 
             // txtDni
             // 
+            txtDni.ForeColor = Color.Silver;
             txtDni.Location = new Point(128, 150);
             txtDni.MaxLength = 8;
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(195, 23);
             txtDni.TabIndex = 3;
+            txtDni.Text = "ej: 45333456";
+            txtDni.TextChanged += txtDni_TextChanged;
+            txtDni.Enter += txtDni_Enter;
             txtDni.KeyPress += txtDni_KeyPress;
+            txtDni.Leave += txtDni_Leave;
             // 
             // txtTel
             // 
+            txtTel.ForeColor = Color.Silver;
             txtTel.Location = new Point(127, 193);
             txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(195, 23);
             txtTel.TabIndex = 4;
+            txtTel.Text = "cod area + numero sin el 15";
+            txtTel.TextChanged += txtTel_TextChanged;
+            txtTel.Enter += txtTel_Enter;
             txtTel.KeyPress += txtTel_KeyPress;
+            txtTel.Leave += txtTel_Leave;
             // 
             // label7
             // 
@@ -160,7 +194,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(195, 23);
             txtNombre.TabIndex = 1;
-            txtNombre.Text = "Intoduzca su nombre";
+            txtNombre.Text = "ej: Jose";
             txtNombre.Enter += txtNombre_Enter;
             txtNombre.KeyPress += txtNombre_KeyPress;
             txtNombre.Leave += txtNombre_Leave;
@@ -185,6 +219,7 @@
             // 
             // btnCrear
             // 
+            btnCrear.Enabled = false;
             btnCrear.Location = new Point(139, 232);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(90, 38);
@@ -195,10 +230,14 @@
             // 
             // txtUser
             // 
+            txtUser.ForeColor = Color.Silver;
             txtUser.Location = new Point(105, 77);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(195, 23);
             txtUser.TabIndex = 14;
+            txtUser.Text = "joseperezz23";
+            txtUser.Enter += txtUser_Enter;
+            txtUser.Leave += txtUser_Leave;
             // 
             // label4
             // 
@@ -339,5 +378,7 @@
         private ErrorProvider errorProvider3;
         private ErrorProvider errorProvider4;
         private ErrorProvider errorProviderPass;
+        private Label lblErrorTel;
+        private Label lblErrorDni;
     }
 }
