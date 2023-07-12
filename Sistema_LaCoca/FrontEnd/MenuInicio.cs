@@ -24,8 +24,20 @@ namespace FrontEnd
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GestionTurnos gestionTurnosForm = new GestionTurnos();  
+            GestionTurnos gestionTurnosForm = new GestionTurnos();
             gestionTurnosForm.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ListaAdmi listaAdmi = new ListaAdmi();
+            listaAdmi.Show();
             this.Hide();
         }
     }

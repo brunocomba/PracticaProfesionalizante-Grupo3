@@ -26,10 +26,6 @@ namespace FrontEnd
             InitializeComponent();
         }
 
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -96,6 +92,16 @@ namespace FrontEnd
             {
                 txtContrasenia.PasswordChar = '*';
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

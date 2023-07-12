@@ -55,9 +55,11 @@
             label10 = new Label();
             label9 = new Label();
             errorProviderPass = new ErrorProvider(components);
+            groupBox1 = new GroupBox();
             DatosPers.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderPass).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // DatosPers
@@ -73,9 +75,9 @@
             DatosPers.Controls.Add(label5);
             DatosPers.Controls.Add(label2);
             DatosPers.Controls.Add(txtNombre);
-            DatosPers.Location = new Point(24, 48);
+            DatosPers.Location = new Point(24, 82);
             DatosPers.Name = "DatosPers";
-            DatosPers.Size = new Size(396, 332);
+            DatosPers.Size = new Size(381, 332);
             DatosPers.TabIndex = 5;
             DatosPers.TabStop = false;
             // 
@@ -153,6 +155,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(51, 119);
             label7.Name = "label7";
             label7.Size = new Size(51, 15);
@@ -162,27 +165,30 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(66, 158);
             label6.Name = "label6";
-            label6.Size = new Size(27, 15);
+            label6.Size = new Size(28, 15);
             label6.TabIndex = 8;
             label6.Text = "DNI";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(51, 201);
             label5.Name = "label5";
-            label5.Size = new Size(52, 15);
+            label5.Size = new Size(54, 15);
             label5.TabIndex = 7;
             label5.Text = "Telefono";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(51, 80);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(52, 15);
             label2.TabIndex = 4;
             label2.Text = "Nombre";
             // 
@@ -201,11 +207,12 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(660, 399);
+            btnCancelar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(652, 420);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(91, 39);
+            btnCancelar.Size = new Size(107, 39);
             btnCancelar.TabIndex = 16;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -219,13 +226,15 @@
             // 
             // btnCrear
             // 
+            btnCrear.BackColor = Color.White;
             btnCrear.Enabled = false;
-            btnCrear.Location = new Point(139, 232);
+            btnCrear.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrear.Location = new Point(111, 205);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(90, 38);
+            btnCrear.Size = new Size(132, 40);
             btnCrear.TabIndex = 2;
-            btnCrear.Text = "Crear nuevo\r\nusuario";
-            btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Text = "Crear nuevo usuario";
+            btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
             // txtUser
@@ -242,30 +251,33 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(18, 119);
             label4.Name = "label4";
-            label4.Size = new Size(67, 15);
+            label4.Size = new Size(72, 15);
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(18, 85);
             label3.Name = "label3";
-            label3.Size = new Size(47, 15);
+            label3.Size = new Size(51, 15);
             label3.TabIndex = 5;
             label3.Text = "Usuario";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(233, 11);
+            label1.Font = new Font("Arial", 18.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(140, 34);
             label1.Name = "label1";
-            label1.Size = new Size(333, 24);
+            label1.Size = new Size(529, 28);
             label1.TabIndex = 4;
-            label1.Text = "Crear nuevo usuario administrador";
+            label1.Text = "CREAR NUEVO USUARIO ADMINISTRADOR";
             // 
             // groupBox2
             // 
@@ -278,9 +290,9 @@
             groupBox2.Controls.Add(txtUser);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label3);
-            groupBox2.Location = new Point(426, 48);
+            groupBox2.Location = new Point(411, 82);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(349, 332);
+            groupBox2.Size = new Size(365, 332);
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
             // 
@@ -305,9 +317,10 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(18, 150);
             label10.Name = "label10";
-            label10.Size = new Size(65, 30);
+            label10.Size = new Size(69, 30);
             label10.TabIndex = 19;
             label10.Text = "Confirmar \r\ncontraseña";
             // 
@@ -315,7 +328,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(105, 34);
+            label9.Location = new Point(111, 34);
             label9.Name = "label9";
             label9.Size = new Size(121, 20);
             label9.TabIndex = 18;
@@ -326,27 +339,37 @@
             errorProviderPass.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
             errorProviderPass.ContainerControl = this;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(0, -10);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(813, 86);
+            groupBox1.TabIndex = 18;
+            groupBox1.TabStop = false;
+            // 
             // AltaAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(804, 461);
+            Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(DatosPers);
             Controls.Add(btnCancelar);
-            Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "AltaAdmin";
-            Text = "Alta administrador";
             Load += AltaAdmin_Load;
             DatosPers.ResumeLayout(false);
             DatosPers.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderPass).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -380,5 +403,6 @@
         private ErrorProvider errorProviderPass;
         private Label lblErrorTel;
         private Label lblErrorDni;
+        private GroupBox groupBox1;
     }
 }

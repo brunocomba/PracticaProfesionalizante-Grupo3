@@ -47,3 +47,4 @@ C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Sistema_LaCoca\FrontEnd\obj\Debug\net7.0-windows\FrontEnd.AltaTurnos.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Sistema_LaCoca\FrontEnd\obj\Debug\net7.0-windows\FrontEnd.GestionTurnos.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Sistema_LaCoca\FrontEnd\obj\Debug\net7.0-windows\FrontEnd.AltaCanchas.resources
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Sistema_LaCoca\FrontEnd\obj\Debug\net7.0-windows\FrontEnd.ListaAdmi.resources

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCanchas));
             btnAgregarCancha = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -38,7 +39,9 @@
             cmboxCantJugadores = new ComboBox();
             button1 = new Button();
             label4 = new Label();
+            groupBox2 = new GroupBox();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // btnAgregarCancha
@@ -109,9 +112,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnAgregarCancha);
-            groupBox1.Location = new Point(35, 63);
+            groupBox1.Location = new Point(186, 89);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(420, 317);
+            groupBox1.Size = new Size(420, 320);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
@@ -128,9 +131,9 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.IndianRed;
+            button1.BackColor = Color.White;
             button1.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(357, 399);
+            button1.Location = new Point(655, 414);
             button1.Name = "button1";
             button1.Size = new Size(98, 35);
             button1.TabIndex = 5;
@@ -140,28 +143,41 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(127, 36);
+            label4.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(230, 40);
             label4.Name = "label4";
-            label4.Size = new Size(239, 24);
+            label4.Size = new Size(346, 33);
             label4.TabIndex = 8;
             label4.Text = "DATOS NUEVA CANCHA";
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = Color.DarkSlateBlue;
+            groupBox2.Controls.Add(label4);
+            groupBox2.Location = new Point(0, -13);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(812, 96);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
             // 
             // AltaCanchas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(491, 446);
-            Controls.Add(label4);
+            ClientSize = new Size(804, 461);
+            Controls.Add(groupBox2);
             Controls.Add(button1);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "AltaCanchas";
-            Text = "AltaCanchas";
             Load += AltaCanchas_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -175,5 +191,6 @@
         private Button button1;
         private Label label4;
         private ComboBox cmboxCantJugadores;
+        private GroupBox groupBox2;
     }
 }

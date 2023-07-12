@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             groupBox1 = new GroupBox();
             checkBox1 = new CheckBox();
@@ -40,9 +41,11 @@
             txtUsuario = new TextBox();
             label3 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            administradorBindingSource = new BindingSource(components);
+            groupBox2 = new GroupBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)administradorBindingSource).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -56,9 +59,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(txtUsuario);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(247, 52);
+            groupBox1.Location = new Point(238, 90);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(307, 357);
+            groupBox1.Size = new Size(307, 349);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
@@ -78,7 +81,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(62, 270);
+            label5.Location = new Point(62, 268);
             label5.Name = "label5";
             label5.Size = new Size(197, 15);
             label5.TabIndex = 7;
@@ -87,7 +90,7 @@
             // button1
             // 
             button1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(103, 299);
+            button1.Location = new Point(103, 295);
             button1.Name = "button1";
             button1.Size = new Size(110, 26);
             button1.TabIndex = 6;
@@ -127,11 +130,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(93, 19);
             label2.Name = "label2";
-            label2.Size = new Size(111, 15);
+            label2.Size = new Size(105, 15);
             label2.TabIndex = 1;
             label2.Text = "INICIO DE SESION";
             // 
@@ -155,30 +158,36 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(191, 9);
+            label1.Font = new Font("Arial", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(164, 38);
             label1.Name = "label1";
-            label1.Size = new Size(432, 40);
+            label1.Size = new Size(500, 36);
             label1.TabIndex = 6;
-            label1.Text = "Gestion de Turnos La Coca";
+            label1.Text = "GESTION DE TURNOS LA COCA";
+            label1.Click += label1_Click;
             // 
-            // dataGridView1
+            // administradorBindingSource
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 91);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(221, 340);
-            dataGridView1.TabIndex = 8;
+            administradorBindingSource.DataSource = typeof(LogicaClases.Clases.Administrador);
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = Color.DarkSlateBlue;
+            groupBox2.Controls.Add(label1);
+            groupBox2.Location = new Point(-1, -12);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(812, 96);
+            groupBox2.TabIndex = 8;
+            groupBox2.TabStop = false;
             // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(804, 461);
-            Controls.Add(dataGridView1);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "LogIn";
@@ -186,9 +195,10 @@
             Load += LogIn_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)administradorBindingSource).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -204,6 +214,7 @@
         private Label label3;
         private Label label1;
         private CheckBox checkBox1;
-        private DataGridView dataGridView1;
+        private BindingSource administradorBindingSource;
+        private GroupBox groupBox2;
     }
 }
