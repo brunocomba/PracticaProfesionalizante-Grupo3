@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             groupBox1 = new GroupBox();
             checkBox1 = new CheckBox();
@@ -41,10 +40,8 @@
             txtUsuario = new TextBox();
             label3 = new Label();
             label1 = new Label();
-            administradorBindingSource = new BindingSource(components);
             groupBox2 = new GroupBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -151,9 +148,9 @@
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(17, 64);
             label3.Name = "label3";
-            label3.Size = new Size(51, 15);
+            label3.Size = new Size(79, 15);
             label3.TabIndex = 2;
-            label3.Text = "Usuario";
+            label3.Text = "Usuariooooo";
             // 
             // label1
             // 
@@ -165,10 +162,6 @@
             label1.Size = new Size(500, 36);
             label1.TabIndex = 6;
             label1.Text = "GESTION DE TURNOS LA COCA";
-            // 
-            // administradorBindingSource
-            // 
-            administradorBindingSource.DataSource = typeof(LogicaClases.Clases.Administrador);
             // 
             // groupBox2
             // 
@@ -192,7 +185,6 @@
             Name = "LogIn";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -211,7 +203,6 @@
         private Label label3;
         private Label label1;
         private CheckBox checkBox1;
-        private BindingSource administradorBindingSource;
         private GroupBox groupBox2;
     }
 }
