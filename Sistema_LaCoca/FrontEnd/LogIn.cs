@@ -78,10 +78,8 @@ namespace FrontEnd
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-        }
 
+        // MOSTRAR CONTRASENIA
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
@@ -94,15 +92,6 @@ namespace FrontEnd
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

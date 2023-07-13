@@ -165,7 +165,6 @@
             label1.Size = new Size(500, 36);
             label1.TabIndex = 6;
             label1.Text = "GESTION DE TURNOS LA COCA";
-            label1.Click += label1_Click;
             // 
             // administradorBindingSource
             // 
@@ -191,8 +190,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "LogIn";
-            Text = "LogIn";
-            Load += LogIn_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)administradorBindingSource).EndInit();
