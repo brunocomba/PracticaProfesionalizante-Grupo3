@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\Logica.csproj": {}
+    "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\Logica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\Logica.csproj": {
+    "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\Logica.csproj",
+        "projectPath": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\Logica.csproj",
         "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\obj\\",
+        "outputPath": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
