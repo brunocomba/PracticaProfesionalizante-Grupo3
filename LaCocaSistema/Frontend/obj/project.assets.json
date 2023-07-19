@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Frontend\\Frontend.csproj",
+      "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Frontend\\Frontend.csproj",
       "projectName": "Frontend",
-      "projectPath": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Frontend\\Frontend.csproj",
+      "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Frontend\\Frontend.csproj",
       "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Frontend\\obj\\",
+      "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Frontend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\Logica.csproj": {
-              "projectPath": "C:\\Users\\brcom\\source\\repos\\LaCocaSistema\\Logica\\Logica.csproj"
+            "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\Logica.csproj": {
+              "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\LaCocaSistema\\Logica\\Logica.csproj"
             }
           }
         }
