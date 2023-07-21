@@ -86,6 +86,7 @@
             dgvAdministradores.DataSource = administradorBindingSource1;
             dgvAdministradores.Location = new Point(214, 125);
             dgvAdministradores.Name = "dgvAdministradores";
+            dgvAdministradores.ReadOnly = true;
             dgvAdministradores.RowTemplate.Height = 25;
             dgvAdministradores.Size = new Size(643, 439);
             dgvAdministradores.TabIndex = 1;
@@ -95,30 +96,35 @@
             dniDataGridViewTextBoxColumn.DataPropertyName = "dni";
             dniDataGridViewTextBoxColumn.HeaderText = "DNI";
             dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
+            dniDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apellidoDataGridViewTextBoxColumn
             // 
             apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
             apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            apellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
             nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
             telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
             telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
             usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
             usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            usuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // administradorBindingSource1
             // 

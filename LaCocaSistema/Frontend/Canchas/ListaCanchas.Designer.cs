@@ -169,6 +169,7 @@
             dataGridView1.DataSource = canchaBindingSource;
             dataGridView1.Location = new Point(275, 125);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(594, 461);
             dataGridView1.TabIndex = 13;
@@ -179,6 +180,7 @@
             idDataGridViewTextBoxColumn.FillWeight = 72.33274F;
             idDataGridViewTextBoxColumn.HeaderText = "ID";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -186,6 +188,7 @@
             nombreDataGridViewTextBoxColumn.FillWeight = 102.898338F;
             nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            nombreDataGridViewTextBoxColumn.ReadOnly = true;
             nombreDataGridViewTextBoxColumn.Width = 142;
             // 
             // tipoDataGridViewTextBoxColumn
@@ -194,6 +197,7 @@
             tipoDataGridViewTextBoxColumn.FillWeight = 111.283768F;
             tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            tipoDataGridViewTextBoxColumn.ReadOnly = true;
             tipoDataGridViewTextBoxColumn.Width = 154;
             // 
             // cantJugadoresDataGridViewTextBoxColumn
@@ -202,6 +206,7 @@
             cantJugadoresDataGridViewTextBoxColumn.FillWeight = 113.485191F;
             cantJugadoresDataGridViewTextBoxColumn.HeaderText = "Cantidad de jugadores";
             cantJugadoresDataGridViewTextBoxColumn.Name = "cantJugadoresDataGridViewTextBoxColumn";
+            cantJugadoresDataGridViewTextBoxColumn.ReadOnly = true;
             cantJugadoresDataGridViewTextBoxColumn.Width = 157;
             // 
             // ListaCanchas

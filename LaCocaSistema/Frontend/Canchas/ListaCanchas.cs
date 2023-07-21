@@ -40,7 +40,7 @@ namespace Frontend
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            MenuInicio menuInicio = new MenuInicio();   
+            MenuInicio menuInicio = new MenuInicio();
             menuInicio.Show();
             this.Hide();
         }
