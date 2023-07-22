@@ -51,7 +51,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.BackColor = Color.MidnightBlue;
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-1, -10);
             groupBox1.Name = "groupBox1";
@@ -63,11 +63,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 18.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(261, 33);
+            label1.Location = new Point(267, 35);
             label1.Name = "label1";
-            label1.Size = new Size(261, 28);
+            label1.Size = new Size(291, 32);
             label1.TabIndex = 4;
             label1.Text = "MODIFICAR CLIENTE";
             // 
@@ -114,7 +114,10 @@
             // btnModificar
             // 
             btnModificar.Enabled = false;
-            btnModificar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.FlatAppearance.BorderSize = 2;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
             btnModificar.Location = new Point(129, 255);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(102, 34);
@@ -155,6 +158,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(32, 208);
             label6.Name = "label6";
             label6.Size = new Size(54, 15);
@@ -165,6 +169,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(32, 133);
             label5.Name = "label5";
             label5.Size = new Size(51, 15);
@@ -175,6 +180,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(32, 171);
             label4.Name = "label4";
             label4.Size = new Size(28, 15);
@@ -185,6 +191,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(32, 90);
             label3.Name = "label3";
             label3.Size = new Size(52, 15);
@@ -203,6 +210,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(92, 29);
             label2.Name = "label2";
             label2.Size = new Size(174, 34);
@@ -212,7 +220,10 @@
             // button1
             // 
             button1.Enabled = false;
-            button1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.AppWorkspace;
             button1.Location = new Point(643, 415);
             button1.Name = "button1";
             button1.Size = new Size(102, 34);
@@ -225,7 +236,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(804, 461);
             Controls.Add(button1);
             Controls.Add(groupBox2);

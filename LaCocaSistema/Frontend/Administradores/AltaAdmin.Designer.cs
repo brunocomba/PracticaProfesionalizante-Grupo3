@@ -105,6 +105,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
             label8.Location = new Point(128, 34);
             label8.Name = "label8";
             label8.Size = new Size(147, 20);
@@ -156,6 +157,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(51, 119);
             label7.Name = "label7";
             label7.Size = new Size(51, 15);
@@ -166,6 +168,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(66, 158);
             label6.Name = "label6";
             label6.Size = new Size(28, 15);
@@ -176,6 +179,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(51, 201);
             label5.Name = "label5";
             label5.Size = new Size(54, 15);
@@ -186,6 +190,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(51, 80);
             label2.Name = "label2";
             label2.Size = new Size(52, 15);
@@ -207,8 +212,11 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(654, 420);
+            btnCancelar.FlatAppearance.BorderSize = 2;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.ForeColor = SystemColors.AppWorkspace;
+            btnCancelar.Location = new Point(675, 423);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(101, 29);
             btnCancelar.TabIndex = 16;
@@ -218,7 +226,8 @@
             // 
             // txtContra
             // 
-            txtContra.Location = new Point(105, 111);
+            txtContra.BackColor = SystemColors.InactiveBorder;
+            txtContra.Location = new Point(105, 112);
             txtContra.Name = "txtContra";
             txtContra.Size = new Size(195, 23);
             txtContra.TabIndex = 15;
@@ -226,12 +235,15 @@
             // 
             // btnCrear
             // 
-            btnCrear.BackColor = Color.White;
+            btnCrear.BackColor = Color.FromArgb(26, 32, 40);
             btnCrear.Enabled = false;
-            btnCrear.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrear.FlatAppearance.BorderSize = 2;
+            btnCrear.FlatStyle = FlatStyle.Flat;
+            btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCrear.ForeColor = Color.White;
             btnCrear.Location = new Point(111, 205);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(132, 40);
+            btnCrear.Size = new Size(132, 50);
             btnCrear.TabIndex = 2;
             btnCrear.Text = "Crear nuevo usuario";
             btnCrear.UseVisualStyleBackColor = false;
@@ -252,6 +264,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(18, 119);
             label4.Name = "label4";
             label4.Size = new Size(72, 15);
@@ -262,6 +275,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(18, 85);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
@@ -271,11 +285,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 18.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(140, 34);
+            label1.Location = new Point(122, 37);
             label1.Name = "label1";
-            label1.Size = new Size(529, 28);
+            label1.Size = new Size(579, 32);
             label1.TabIndex = 4;
             label1.Text = "CREAR NUEVO USUARIO ADMINISTRADOR";
             // 
@@ -318,6 +332,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
             label10.Location = new Point(18, 150);
             label10.Name = "label10";
             label10.Size = new Size(69, 30);
@@ -328,6 +343,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
             label9.Location = new Point(111, 34);
             label9.Name = "label9";
             label9.Size = new Size(121, 20);
@@ -341,7 +357,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.BackColor = Color.SlateGray;
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(0, -10);
             groupBox1.Name = "groupBox1";
@@ -354,8 +370,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(804, 461);
+            BackColor = Color.FromArgb(26, 32, 40);
+            ClientSize = new Size(804, 464);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(DatosPers);

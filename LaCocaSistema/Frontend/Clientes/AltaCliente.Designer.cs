@@ -51,7 +51,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.BackColor = Color.SlateGray;
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-5, -11);
             groupBox1.Name = "groupBox1";
@@ -63,11 +63,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 18.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(278, 34);
+            label1.Location = new Point(286, 36);
             label1.Name = "label1";
-            label1.Size = new Size(212, 28);
+            label1.Size = new Size(230, 32);
             label1.TabIndex = 4;
             label1.Text = "NUEVO CLIENTE";
             // 
@@ -114,7 +114,10 @@
             // btnAgregar
             // 
             btnAgregar.Enabled = false;
-            btnAgregar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.FlatAppearance.BorderSize = 2;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
             btnAgregar.Location = new Point(129, 255);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(87, 31);
@@ -156,6 +159,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(32, 208);
             label6.Name = "label6";
             label6.Size = new Size(54, 15);
@@ -166,6 +170,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(32, 133);
             label5.Name = "label5";
             label5.Size = new Size(51, 15);
@@ -176,6 +181,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(32, 171);
             label4.Name = "label4";
             label4.Size = new Size(28, 15);
@@ -186,6 +192,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(32, 90);
             label3.Name = "label3";
             label3.Size = new Size(52, 15);
@@ -205,6 +212,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(92, 29);
             label2.Name = "label2";
             label2.Size = new Size(162, 17);
@@ -213,19 +221,23 @@
             // 
             // btnVolver
             // 
-            btnVolver.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVolver.FlatAppearance.BorderSize = 2;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.ForeColor = SystemColors.AppWorkspace;
             btnVolver.Location = new Point(628, 414);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(97, 35);
             btnVolver.TabIndex = 31;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // AltaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(804, 461);
             Controls.Add(btnVolver);
             Controls.Add(groupBox2);

@@ -22,16 +22,26 @@ namespace Frontend
         {
             Principal principal = new Principal();
 
-            var respuesta = MessageBox.Show($"El cliente {txtNombre.Text} {txtApellido.Text} fue agregado con exito!\n Presione OK para terminar.", "Atencion", MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Information);
-            if (respuesta == DialogResult.OK)
+            var respuesta = MessageBox.Show($"El cliente {txtNombre.Text} {txtApellido.Text} fue agregado con EXITO!\n\nPresione SI para seguir agregando clientes\nSi desea terminar presione NO."
+                , "Atencion", MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question);
+            if (respuesta == DialogResult.No)
             {
                 principal.ataCliente(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), uint.Parse(txtTel.Text));
                 ListaClientes listaClientes = new ListaClientes();
                 listaClientes.Show();
                 this.Hide();
             }
-            else
+            if (respuesta == DialogResult.Yes)
+            {
+                principal.ataCliente(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), uint.Parse(txtTel.Text));
+                ListaClientes listaClientes = new ListaClientes();
+                txtNombre.Text = "";
+                txtApellido.Text = "";
+                txtDNI.Text = "";
+                txtTel.Text = "";
+            }
+            if (respuesta == DialogResult.Cancel)
             {
                 var confirmarCancel = MessageBox.Show("¿Seguro desea cancelar la creacion?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (confirmarCancel == DialogResult.Yes)
@@ -43,6 +53,8 @@ namespace Frontend
 
                 }
             }
+           
+
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -119,6 +131,13 @@ namespace Frontend
                 lblErrorTel.Text = "";
 
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            ListaClientes listClientes = new ListaClientes();
+            listClientes.Show();
+            this.Hide();    
         }
     }
 }

@@ -65,7 +65,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.BackColor = Color.SlateGray;
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-2, -9);
             groupBox1.Name = "groupBox1";
@@ -76,11 +76,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 18.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(223, 34);
+            label1.Location = new Point(210, 39);
             label1.Name = "label1";
-            label1.Size = new Size(363, 28);
+            label1.Size = new Size(405, 32);
             label1.TabIndex = 4;
             label1.Text = "MODIFICAR ADMINISTRADOR";
             // 
@@ -127,6 +127,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
             label8.Location = new Point(128, 34);
             label8.Name = "label8";
             label8.Size = new Size(147, 20);
@@ -169,6 +170,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(51, 119);
             label7.Name = "label7";
             label7.Size = new Size(51, 15);
@@ -179,6 +181,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(66, 158);
             label6.Name = "label6";
             label6.Size = new Size(28, 15);
@@ -189,6 +192,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(51, 201);
             label5.Name = "label5";
             label5.Size = new Size(54, 15);
@@ -199,6 +203,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(51, 80);
             label2.Name = "label2";
             label2.Size = new Size(52, 15);
@@ -265,6 +270,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
             label10.Location = new Point(18, 150);
             label10.Name = "label10";
             label10.Size = new Size(69, 30);
@@ -273,9 +279,12 @@
             // 
             // btnModificar
             // 
-            btnModificar.BackColor = Color.White;
+            btnModificar.BackColor = Color.FromArgb(26, 32, 40);
             btnModificar.Enabled = false;
-            btnModificar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.FlatAppearance.BorderSize = 2;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
             btnModificar.Location = new Point(117, 214);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(132, 40);
@@ -288,6 +297,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
             label9.Location = new Point(111, 34);
             label9.Name = "label9";
             label9.Size = new Size(121, 20);
@@ -314,6 +324,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(18, 119);
             label4.Name = "label4";
             label4.Size = new Size(72, 15);
@@ -324,6 +335,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(18, 85);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
@@ -332,7 +344,10 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.AppWorkspace;
             button1.Location = new Point(675, 423);
             button1.Name = "button1";
             button1.Size = new Size(101, 33);
@@ -349,8 +364,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(804, 461);
+            BackColor = Color.FromArgb(26, 32, 40);
+            ClientSize = new Size(804, 466);
             Controls.Add(button1);
             Controls.Add(groupBox2);
             Controls.Add(DatosPers);

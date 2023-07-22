@@ -46,7 +46,10 @@
             // 
             // btnAgregarCancha
             // 
-            btnAgregarCancha.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregarCancha.FlatAppearance.BorderSize = 2;
+            btnAgregarCancha.FlatStyle = FlatStyle.Flat;
+            btnAgregarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregarCancha.ForeColor = Color.White;
             btnAgregarCancha.Location = new Point(168, 230);
             btnAgregarCancha.Name = "btnAgregarCancha";
             btnAgregarCancha.Size = new Size(98, 35);
@@ -59,6 +62,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(27, 110);
             label1.Name = "label1";
             label1.Size = new Size(31, 16);
@@ -69,6 +73,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(27, 158);
             label2.Name = "label2";
             label2.Size = new Size(63, 32);
@@ -79,6 +84,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(27, 54);
             label3.Name = "label3";
             label3.Size = new Size(52, 16);
@@ -131,8 +137,11 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.White;
-            button1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.BackColor = Color.FromArgb(26, 32, 40);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.AppWorkspace;
             button1.Location = new Point(655, 414);
             button1.Name = "button1";
             button1.Size = new Size(98, 35);
@@ -144,17 +153,17 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(230, 40);
+            label4.Location = new Point(247, 43);
             label4.Name = "label4";
-            label4.Size = new Size(346, 33);
+            label4.Size = new Size(323, 32);
             label4.TabIndex = 8;
             label4.Text = "DATOS NUEVA CANCHA";
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = Color.DarkSlateBlue;
+            groupBox2.BackColor = Color.SlateGray;
             groupBox2.Controls.Add(label4);
             groupBox2.Location = new Point(0, -13);
             groupBox2.Name = "groupBox2";
@@ -166,7 +175,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(804, 461);
             Controls.Add(groupBox2);
             Controls.Add(button1);

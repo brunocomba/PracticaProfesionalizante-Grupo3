@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaCanchas));
             groupBox1 = new GroupBox();
             label1 = new Label();
@@ -61,28 +64,29 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.BackColor = Color.SlateGray;
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(0, -9);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1095, 79);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter_1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 23.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(275, 31);
+            label1.Location = new Point(334, 33);
             label1.Name = "label1";
-            label1.Size = new Size(490, 35);
+            label1.Size = new Size(429, 32);
             label1.TabIndex = 0;
             label1.Text = "LISTA CANCHAS REGISTRADAS";
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DarkSlateBlue;
+            panel2.BackColor = Color.SlateGray;
             panel2.Controls.Add(btnAgregar);
             panel2.Controls.Add(btnModificar);
             panel2.Controls.Add(btnEliminar);
@@ -93,7 +97,10 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.FlatAppearance.BorderSize = 2;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
             btnAgregar.Location = new Point(17, 85);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(116, 44);
@@ -104,7 +111,10 @@
             // 
             // btnModificar
             // 
-            btnModificar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.FlatAppearance.BorderSize = 2;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
             btnModificar.Location = new Point(17, 194);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(116, 44);
@@ -114,7 +124,10 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.FlatAppearance.BorderSize = 2;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.White;
             btnEliminar.Location = new Point(17, 307);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(116, 44);
@@ -128,8 +141,11 @@
             // 
             // btnVolver
             // 
-            btnVolver.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnVolver.Location = new Point(855, 605);
+            btnVolver.FlatAppearance.BorderSize = 2;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.ForeColor = SystemColors.AppWorkspace;
+            btnVolver.Location = new Point(890, 605);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(116, 44);
             btnVolver.TabIndex = 9;
@@ -159,25 +175,58 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.FromArgb(26, 32, 40);
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, cantJugadoresDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = canchaBindingSource;
-            dataGridView1.Location = new Point(275, 125);
+            dataGridView1.DataSource = canchaBindingSource5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.MidnightBlue;
+            dataGridView1.Location = new Point(261, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(49, 66, 82);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(594, 461);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(563, 474);
             dataGridView1.TabIndex = 13;
             // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.FillWeight = 72.33274F;
             idDataGridViewTextBoxColumn.HeaderText = "ID";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             idDataGridViewTextBoxColumn.ReadOnly = true;
@@ -185,35 +234,29 @@
             // nombreDataGridViewTextBoxColumn
             // 
             nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            nombreDataGridViewTextBoxColumn.FillWeight = 102.898338F;
             nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            nombreDataGridViewTextBoxColumn.Width = 142;
             // 
             // tipoDataGridViewTextBoxColumn
             // 
             tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
-            tipoDataGridViewTextBoxColumn.FillWeight = 111.283768F;
             tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
             tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            tipoDataGridViewTextBoxColumn.Width = 154;
             // 
             // cantJugadoresDataGridViewTextBoxColumn
             // 
             cantJugadoresDataGridViewTextBoxColumn.DataPropertyName = "cantJugadores";
-            cantJugadoresDataGridViewTextBoxColumn.FillWeight = 113.485191F;
-            cantJugadoresDataGridViewTextBoxColumn.HeaderText = "Cantidad de jugadores";
+            cantJugadoresDataGridViewTextBoxColumn.HeaderText = "Cantidad jugadores";
             cantJugadoresDataGridViewTextBoxColumn.Name = "cantJugadoresDataGridViewTextBoxColumn";
             cantJugadoresDataGridViewTextBoxColumn.ReadOnly = true;
-            cantJugadoresDataGridViewTextBoxColumn.Width = 157;
             // 
             // ListaCanchas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1034, 661);
             Controls.Add(dataGridView1);
             Controls.Add(btnVolver);

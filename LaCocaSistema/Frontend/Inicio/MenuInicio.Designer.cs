@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
             label1 = new Label();
             groupBox1 = new GroupBox();
+            label2 = new Label();
             button1 = new Button();
-            pictureBox1 = new PictureBox();
             btnAdministradores = new Button();
             btnClientes = new Button();
             btnTurnos = new Button();
+            pictureBox1 = new PictureBox();
             groupBox2 = new GroupBox();
             dateTimePicker1 = new DateTimePicker();
-            label2 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
@@ -47,18 +47,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.DarkSlateBlue;
-            label1.Font = new Font("Microsoft Sans Serif", 18.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.BackColor = Color.SlateGray;
+            label1.Font = new Font("Arial", 18.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(16, 126);
+            label1.Location = new Point(16, 124);
             label1.Name = "label1";
-            label1.Size = new Size(152, 58);
+            label1.Size = new Size(145, 60);
             label1.TabIndex = 0;
             label1.Text = "MENU DE\r\nOPCIONES";
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.DarkSlateBlue;
+            groupBox1.BackColor = Color.SlateGray;
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
@@ -71,9 +71,22 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(-7, 184);
+            label2.Name = "label2";
+            label2.Size = new Size(182, 15);
+            label2.TabIndex = 9;
+            label2.Text = "-----------------------------------";
+            // 
             // button1
             // 
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(27, 309);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.Yes;
@@ -83,20 +96,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Frontend.Properties.Resources.LaCoca;
-            pictureBox1.Location = new Point(0, -7);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(176, 113);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
             // btnAdministradores
             // 
-            btnAdministradores.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdministradores.FlatAppearance.BorderSize = 2;
+            btnAdministradores.FlatStyle = FlatStyle.Flat;
+            btnAdministradores.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdministradores.ForeColor = Color.White;
             btnAdministradores.Location = new Point(16, 484);
             btnAdministradores.Name = "btnAdministradores";
             btnAdministradores.RightToLeft = RightToLeft.Yes;
@@ -108,7 +113,10 @@
             // 
             // btnClientes
             // 
-            btnClientes.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.FlatAppearance.BorderSize = 2;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.White;
             btnClientes.Location = new Point(27, 394);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(118, 34);
@@ -119,7 +127,10 @@
             // 
             // btnTurnos
             // 
-            btnTurnos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTurnos.FlatAppearance.BorderSize = 2;
+            btnTurnos.FlatStyle = FlatStyle.Flat;
+            btnTurnos.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTurnos.ForeColor = Color.White;
             btnTurnos.Location = new Point(27, 228);
             btnTurnos.Name = "btnTurnos";
             btnTurnos.Size = new Size(118, 32);
@@ -128,39 +139,44 @@
             btnTurnos.UseVisualStyleBackColor = true;
             btnTurnos.Click += btnTurnos_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Frontend.Properties.Resources.LaCoca;
+            pictureBox1.Location = new Point(0, -13);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(176, 149);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // groupBox2
             // 
-            groupBox2.BackColor = Color.DarkSlateBlue;
+            groupBox2.BackColor = Color.SlateGray;
             groupBox2.Controls.Add(dateTimePicker1);
             groupBox2.Controls.Add(pictureBox1);
             groupBox2.Location = new Point(-4, -8);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1041, 106);
+            groupBox2.Size = new Size(1041, 102);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.CalendarFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.CalendarForeColor = SystemColors.WindowText;
+            dateTimePicker1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.Location = new Point(779, 65);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(234, 23);
+            dateTimePicker1.Size = new Size(247, 22);
             dateTimePicker1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(-7, 184);
-            label2.Name = "label2";
-            label2.Size = new Size(182, 15);
-            label2.TabIndex = 9;
-            label2.Text = "-----------------------------------";
+            dateTimePicker1.Value = new DateTime(2023, 7, 21, 22, 23, 0, 0);
             // 
             // MenuInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1034, 661);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);

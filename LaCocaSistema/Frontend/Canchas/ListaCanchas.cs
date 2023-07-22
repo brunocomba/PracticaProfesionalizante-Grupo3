@@ -44,5 +44,15 @@ namespace Frontend
             menuInicio.Show();
             this.Hide();
         }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
