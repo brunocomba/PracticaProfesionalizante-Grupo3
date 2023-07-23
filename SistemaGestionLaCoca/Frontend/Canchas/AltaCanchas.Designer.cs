@@ -40,6 +40,8 @@
             button1 = new Button();
             label4 = new Label();
             groupBox2 = new GroupBox();
+            label5 = new Label();
+            txtPrecio = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -50,7 +52,7 @@
             btnAgregarCancha.FlatStyle = FlatStyle.Flat;
             btnAgregarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarCancha.ForeColor = Color.White;
-            btnAgregarCancha.Location = new Point(168, 230);
+            btnAgregarCancha.Location = new Point(161, 288);
             btnAgregarCancha.Name = "btnAgregarCancha";
             btnAgregarCancha.Size = new Size(98, 35);
             btnAgregarCancha.TabIndex = 4;
@@ -63,7 +65,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(27, 110);
+            label1.Location = new Point(16, 110);
             label1.Name = "label1";
             label1.Size = new Size(31, 16);
             label1.TabIndex = 2;
@@ -74,7 +76,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(27, 158);
+            label2.Location = new Point(16, 147);
             label2.Name = "label2";
             label2.Size = new Size(63, 32);
             label2.TabIndex = 3;
@@ -85,7 +87,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(27, 54);
+            label3.Location = new Point(16, 54);
             label3.Name = "label3";
             label3.Size = new Size(52, 16);
             label3.TabIndex = 4;
@@ -93,7 +95,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(103, 47);
+            txtNombre.Location = new Point(105, 47);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(214, 23);
             txtNombre.TabIndex = 1;
@@ -111,6 +113,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtPrecio);
+            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(cmboxCantJugadores);
             groupBox1.Controls.Add(cmboxTipo);
             groupBox1.Controls.Add(txtNombre);
@@ -120,7 +124,7 @@
             groupBox1.Controls.Add(btnAgregarCancha);
             groupBox1.Location = new Point(186, 89);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(420, 320);
+            groupBox1.Size = new Size(420, 345);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
@@ -129,7 +133,7 @@
             cmboxCantJugadores.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboxCantJugadores.FlatStyle = FlatStyle.Flat;
             cmboxCantJugadores.FormattingEnabled = true;
-            cmboxCantJugadores.Location = new Point(103, 167);
+            cmboxCantJugadores.Location = new Point(105, 156);
             cmboxCantJugadores.Name = "cmboxCantJugadores";
             cmboxCantJugadores.Size = new Size(214, 23);
             cmboxCantJugadores.TabIndex = 3;
@@ -171,6 +175,24 @@
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(16, 215);
+            label5.Name = "label5";
+            label5.Size = new Size(44, 16);
+            label5.TabIndex = 5;
+            label5.Text = "Precio";
+            // 
+            // txtPrecio
+            // 
+            txtPrecio.Location = new Point(105, 208);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(214, 23);
+            txtPrecio.TabIndex = 6;
+            // 
             // AltaCanchas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -205,5 +227,7 @@
         private Label label4;
         private ComboBox cmboxCantJugadores;
         private GroupBox groupBox2;
+        private TextBox txtPrecio;
+        private Label label5;
     }
 }

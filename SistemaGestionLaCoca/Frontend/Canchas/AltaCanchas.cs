@@ -51,7 +51,7 @@ namespace FrontEnd
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (confirmacion == DialogResult.OK)
             {
-                principal.altaCancha(txtNombre.Text, Tipo, int.Parse(CantJugadores));
+                principal.altaCancha(txtNombre.Text, Tipo, int.Parse(CantJugadores), int.Parse(txtPrecio.Text));
                 ListaCanchas listaCanchas = new ListaCanchas();
                 listaCanchas.Show();
                 this.Hide();
@@ -65,6 +65,7 @@ namespace FrontEnd
                     txtNombre.Text = "";
                     cmboxCantJugadores.Text = "";
                     cmboxTipo.Text = "";
+                    txtPrecio.Text = "";
                 }
             }
         }

@@ -95,7 +95,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(17, 232);
+            btnModificar.Location = new Point(17, 132);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(116, 41);
             btnModificar.TabIndex = 3;
@@ -109,7 +109,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(17, 336);
+            btnEliminar.Location = new Point(17, 224);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(116, 44);
             btnEliminar.TabIndex = 4;
@@ -126,7 +126,7 @@
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(17, 121);
+            btnCrear.Location = new Point(15, 41);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(116, 44);
             btnCrear.TabIndex = 5;
@@ -179,7 +179,7 @@
             dgvAdministradores.DefaultCellStyle = dataGridViewCellStyle2;
             dgvAdministradores.EnableHeadersVisualStyles = false;
             dgvAdministradores.GridColor = Color.MidnightBlue;
-            dgvAdministradores.Location = new Point(255, 138);
+            dgvAdministradores.Location = new Point(258, 126);
             dgvAdministradores.Name = "dgvAdministradores";
             dgvAdministradores.ReadOnly = true;
             dgvAdministradores.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;

@@ -126,7 +126,9 @@ namespace LogicaClases.Clases
                 canchaBase.nombre = "Norte";
                 canchaBase.tipo = "BASQUET";
                 canchaBase.cantJugadores = 8;
-               
+                canchaBase.precio = 4000;
+
+
                 listaCanchas.Add(canchaBase);
 
                 Cancha canchaBase2 = new Cancha();
@@ -135,12 +137,14 @@ namespace LogicaClases.Clases
                 canchaBase2.nombre = "Sur";
                 canchaBase2.tipo = "FUTBOL";
                 canchaBase2.cantJugadores = 10;
+                canchaBase2.precio = 4000;
+
 
                 listaCanchas.Add(canchaBase2);
             }
             return listaCanchas;
         }
-        public void altaCancha(string Nombre, string Tipo, int CantJugadores)
+        public void altaCancha(string Nombre, string Tipo, int CantJugadores, int Precio)
         {
             Cancha newCancha = new Cancha();
             var contador = listaCanchas.Count() + 1; //Nos genera un id iterando
@@ -149,6 +153,7 @@ namespace LogicaClases.Clases
             newCancha.nombre = Nombre;
             newCancha.tipo = Tipo;
             newCancha.cantJugadores = CantJugadores;
+            newCancha.precio = Precio;
 
             ObtenerCanchas().Add(newCancha);
         }

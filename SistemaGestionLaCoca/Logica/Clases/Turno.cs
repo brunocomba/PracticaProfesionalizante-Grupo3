@@ -10,7 +10,7 @@ namespace LogicaClases.Clases
     {
         public DateTime fecha { get; set; }
         public TimeOnly horario { get; set; }
-        public int precio { get; set; }
+        public int precio { get; set; } //  Precio de la cancha dividido por la cant de jugadores de la misma
         public bool condicionReservado { get; set; }
     }
 }

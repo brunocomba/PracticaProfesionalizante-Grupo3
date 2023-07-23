@@ -54,5 +54,10 @@ namespace Frontend
         {
 
         }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -109,7 +109,7 @@
             dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
             dgvClientes.EnableHeadersVisualStyles = false;
             dgvClientes.GridColor = Color.MidnightBlue;
-            dgvClientes.Location = new Point(268, 138);
+            dgvClientes.Location = new Point(268, 123);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -165,7 +165,7 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(17, 97);
+            btnAgregar.Location = new Point(17, 43);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(116, 44);
             btnAgregar.TabIndex = 6;
@@ -180,7 +180,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(17, 306);
+            btnEliminar.Location = new Point(17, 244);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(116, 44);
             btnEliminar.TabIndex = 7;
@@ -195,7 +195,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(17, 199);
+            btnModificar.Location = new Point(17, 143);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(116, 44);
             btnModificar.TabIndex = 8;
