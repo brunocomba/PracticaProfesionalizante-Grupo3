@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -122,7 +123,7 @@ namespace LogicaClases.Clases
 
                 Cancha canchaBase = new Cancha();
 
-                canchaBase.id = 1;
+                canchaBase.id = GeneradorID.GenerateID();
                 canchaBase.nombre = "Norte";
                 canchaBase.tipo = "BASQUET";
                 canchaBase.cantJugadores = 8;
@@ -133,7 +134,7 @@ namespace LogicaClases.Clases
 
                 Cancha canchaBase2 = new Cancha();
                 
-                canchaBase2.id = 2;
+                canchaBase2.id = GeneradorID.GenerateID();
                 canchaBase2.nombre = "Sur";
                 canchaBase2.tipo = "FUTBOL";
                 canchaBase2.cantJugadores = 10;
@@ -149,7 +150,7 @@ namespace LogicaClases.Clases
             Cancha newCancha = new Cancha();
             var contador = listaCanchas.Count() + 1; //Nos genera un id iterando
 
-            newCancha.id = contador;
+            newCancha.id = GeneradorID.GenerateID();
             newCancha.nombre = Nombre;
             newCancha.tipo = Tipo;
             newCancha.cantJugadores = CantJugadores;
@@ -157,11 +158,14 @@ namespace LogicaClases.Clases
 
             ObtenerCanchas().Add(newCancha);
         }
-        public void modificarCancha(Cancha canchaMod, string Nombre, string Tipo, int CantJug)
+        
+           
+        public void modificarCancha(Cancha canchaMod, string Nombre, string Tipo, int CantJug, int Precio)
         {
             canchaMod.nombre = Nombre;
             canchaMod.tipo = Tipo;
             canchaMod.cantJugadores = CantJug;
+            canchaMod.precio = Precio;
         }
 
         public void removeCancha(Cancha CanchaABorrar)

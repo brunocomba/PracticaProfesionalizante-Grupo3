@@ -43,9 +43,9 @@ namespace Frontend
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificacionCliente modCliente = new ModificacionCliente();
+            ModificarCliente modCliente = new ModificarCliente();
             Cliente cliente_Elegido = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-            modCliente.ModificarCliente(cliente_Elegido);
+            modCliente.ModificaCliente(cliente_Elegido);
             modCliente.Show();
             this.Hide();
 
@@ -81,5 +81,6 @@ namespace Frontend
 
             dgvClientes.DataSource = Principal.ObtenerClientes();
         }
+
     }
 }

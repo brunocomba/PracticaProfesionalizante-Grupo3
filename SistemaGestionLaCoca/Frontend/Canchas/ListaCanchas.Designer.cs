@@ -56,7 +56,7 @@
             canchaBindingSource10 = new BindingSource(components);
             canchaBindingSource11 = new BindingSource(components);
             canchaBindingSource12 = new BindingSource(components);
-            dgvClientes = new DataGridView();
+            dgvCanchas = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -80,7 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCanchas).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -92,7 +92,6 @@
             groupBox1.Size = new Size(1095, 79);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter_1;
             // 
             // label1
             // 
@@ -142,6 +141,7 @@
             btnModificar.TabIndex = 8;
             btnModificar.Text = "MODIFICAR";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -155,6 +155,7 @@
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "ELIMINAR";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // canchaBindingSource
             // 
@@ -234,19 +235,19 @@
             // 
             canchaBindingSource12.DataSource = typeof(LogicaClases.Clases.Cancha);
             // 
-            // dgvClientes
+            // dgvCanchas
             // 
-            dgvClientes.AllowUserToAddRows = false;
-            dgvClientes.AllowUserToDeleteRows = false;
-            dgvClientes.AllowUserToResizeColumns = false;
-            dgvClientes.AllowUserToResizeRows = false;
-            dgvClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvClientes.AutoGenerateColumns = false;
-            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvClientes.BackgroundColor = Color.FromArgb(26, 32, 40);
-            dgvClientes.BorderStyle = BorderStyle.None;
-            dgvClientes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCanchas.AllowUserToAddRows = false;
+            dgvCanchas.AllowUserToDeleteRows = false;
+            dgvCanchas.AllowUserToResizeColumns = false;
+            dgvCanchas.AllowUserToResizeRows = false;
+            dgvCanchas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvCanchas.AutoGenerateColumns = false;
+            dgvCanchas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCanchas.BackgroundColor = Color.FromArgb(26, 32, 40);
+            dgvCanchas.BorderStyle = BorderStyle.None;
+            dgvCanchas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCanchas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -254,10 +255,10 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, cantJugadoresDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
-            dgvClientes.DataSource = canchaBindingSource12;
+            dgvCanchas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCanchas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvCanchas.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, cantJugadoresDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
+            dgvCanchas.DataSource = canchaBindingSource12;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -265,26 +266,25 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvClientes.EnableHeadersVisualStyles = false;
-            dgvClientes.GridColor = Color.MidnightBlue;
-            dgvClientes.Location = new Point(260, 121);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.ReadOnly = true;
-            dgvClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvClientes.RowHeadersVisible = false;
-            dgvClientes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvCanchas.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCanchas.EnableHeadersVisualStyles = false;
+            dgvCanchas.GridColor = Color.MidnightBlue;
+            dgvCanchas.Location = new Point(260, 121);
+            dgvCanchas.Name = "dgvCanchas";
+            dgvCanchas.ReadOnly = true;
+            dgvCanchas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCanchas.RowHeadersVisible = false;
+            dgvCanchas.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = Color.White;
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(49, 66, 82);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(563, 474);
-            dgvClientes.TabIndex = 13;
-            dgvClientes.CellContentClick += dgvClientes_CellContentClick;
+            dgvCanchas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvCanchas.RowTemplate.Height = 25;
+            dgvCanchas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCanchas.Size = new Size(563, 474);
+            dgvCanchas.TabIndex = 13;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -327,7 +327,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1034, 661);
-            Controls.Add(dgvClientes);
+            Controls.Add(dgvCanchas);
             Controls.Add(btnVolver);
             Controls.Add(panel2);
             Controls.Add(groupBox1);
@@ -356,7 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource10).EndInit();
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource11).EndInit();
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCanchas).EndInit();
             ResumeLayout(false);
         }
 
@@ -385,7 +385,7 @@
         private BindingSource administradorBindingSource2;
         private BindingSource canchaBindingSource11;
         private BindingSource canchaBindingSource12;
-        private DataGridView dgvClientes;
+        private DataGridView dgvCanchas;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Frontend
 {
-    public partial class ModificacionCliente : Form
+    public partial class ModificarCliente : Form
     {
-        public ModificacionCliente()
+        public ModificarCliente()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace Frontend
         ListaClientes ListaClientes = new ListaClientes();
 
         private Cliente clienteQueEdito;
-        public void ModificarCliente(Cliente cliente)
+        public void ModificaCliente(Cliente cliente)
         {
             clienteQueEdito = cliente;
             txtNombre.Text = clienteQueEdito.nombre;
@@ -42,7 +42,7 @@ namespace Frontend
                 principal.modificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text),
                 uint.Parse(txtTel.Text));
 
-                MessageBox.Show("Administrador modificado con exito!");
+                MessageBox.Show("Cliente modificado con exito!");
                 ListaClientes.Show();
                 this.Hide();
             }

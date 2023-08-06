@@ -1,6 +1,6 @@
 ﻿namespace Frontend
 {
-    partial class ModificacionCliente
+    partial class ModificarCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificacionCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarCliente));
             groupBox1 = new GroupBox();
             label1 = new Label();
             groupBox2 = new GroupBox();

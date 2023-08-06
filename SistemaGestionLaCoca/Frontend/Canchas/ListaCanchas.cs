@@ -1,4 +1,5 @@
 ﻿using FrontEnd;
+using Logica.Clases;
 using LogicaClases.Clases;
 using System;
 using System.Collections.Generic;
@@ -6,9 +7,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace Frontend
 {
@@ -19,15 +22,12 @@ namespace Frontend
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        Principal principal = new Principal();
 
         private void ListaCanchas_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Principal.ObtenerCanchas();
+            dgvCanchas.DataSource = null;
+            dgvCanchas.DataSource = Principal.ObtenerCanchas();
 
         }
 
@@ -45,19 +45,53 @@ namespace Frontend
             this.Hide();
         }
 
-        private void groupBox1_Enter_1(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
+            ModificarCancha modCancha = new ModificarCancha();
+            Cancha cancha_Elegida = (Cancha)dgvCanchas.CurrentRow.DataBoundItem;
 
+            modCancha.ModificacionCancha(cancha_Elegida);
+            modCancha.Show();
+            this.Hide();
+
+            dgvCanchas.DataSource = null; // Eliminar el origen de datos actual
+            dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            dgvCanchas.Refresh();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //MIRO EL ID SELECCIONADO EN LA GRILLA
+            object CanchaElegida = this.dgvCanchas.SelectedCells[0].Value;
+            int IdSeleccionado = (int)CanchaElegida;
 
-        }
+            Cancha valor_Elegido = (Cancha)dgvCanchas.CurrentRow.DataBoundItem;
 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            if (valor_Elegido != null)
+            {
+                var confirmacion = MessageBox.Show("Seguro que desea eliminar esta cancha con el ID" + IdSeleccionado, "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
+                if (confirmacion == DialogResult.OK)
+                {
+                    principal.removeCancha(valor_Elegido);
+                    MessageBox.Show("Cancha eliminada con exito.", "Sistema");
+                    GeneradorID.AdjustIDs(Principal.ObtenerCanchas());
+
+                }
+
+                if (confirmacion == DialogResult.Cancel) 
+                {
+                    MessageBox.Show("Se cancelo la eliminacion de la cancha con el ID " + IdSeleccionado);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No hay ningun cliente seleccionado");
+            }
+
+            dgvCanchas.DataSource = null;
+
+            dgvCanchas.DataSource = Principal.ObtenerCanchas();
         }
     }
 }

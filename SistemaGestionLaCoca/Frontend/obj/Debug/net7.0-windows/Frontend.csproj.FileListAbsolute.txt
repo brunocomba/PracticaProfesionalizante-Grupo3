@@ -43,7 +43,6 @@ C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ListaCanchas.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.AltaCliente.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ListaClientes.resources
-C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ModificacionCliente.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\FrontEnd.LogIn.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\FrontEnd.MenuInicio.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.Properties.Resources.resources
@@ -58,3 +57,5 @@ C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.pdb
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.genruntimeconfig.cache
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\ref\Frontend.dll
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ModificarCancha.resources
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ModificarCliente.resources
