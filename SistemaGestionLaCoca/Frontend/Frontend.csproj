@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Logica\Logica.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Turnos\" />
+  </ItemGroup>
+
 </Project>

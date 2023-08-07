@@ -158,7 +158,6 @@ namespace LogicaClases.Clases
 
             ObtenerCanchas().Add(newCancha);
         }
-        
            
         public void modificarCancha(Cancha canchaMod, string Nombre, string Tipo, int CantJug, int Precio)
         {

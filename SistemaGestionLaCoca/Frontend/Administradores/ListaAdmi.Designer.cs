@@ -142,7 +142,7 @@
             panel1.Controls.Add(btnEliminar);
             panel1.Location = new Point(-3, 85);
             panel1.Name = "panel1";
-            panel1.Size = new Size(155, 585);
+            panel1.Size = new Size(151, 586);
             panel1.TabIndex = 12;
             // 
             // dgvAdministradores
@@ -179,7 +179,7 @@
             dgvAdministradores.DefaultCellStyle = dataGridViewCellStyle2;
             dgvAdministradores.EnableHeadersVisualStyles = false;
             dgvAdministradores.GridColor = Color.MidnightBlue;
-            dgvAdministradores.Location = new Point(258, 126);
+            dgvAdministradores.Location = new Point(263, 121);
             dgvAdministradores.Name = "dgvAdministradores";
             dgvAdministradores.ReadOnly = true;
             dgvAdministradores.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;

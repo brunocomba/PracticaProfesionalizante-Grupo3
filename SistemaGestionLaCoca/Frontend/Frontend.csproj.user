@@ -25,6 +25,9 @@
     <Compile Update="Clientes\ModificarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="HistorialTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Inicio\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>

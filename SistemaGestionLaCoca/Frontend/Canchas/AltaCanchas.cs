@@ -38,7 +38,6 @@ namespace FrontEnd
             cmboxCantJugadores.Items.Add("8");
             cmboxCantJugadores.Items.Add("10");
         }
-
         private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
             Principal principal = new Principal();

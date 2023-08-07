@@ -74,11 +74,13 @@ namespace Frontend
                 {
                     principal.removeCancha(valor_Elegido);
                     MessageBox.Show("Cancha eliminada con exito.", "Sistema");
+
+                    //Ajustar los id 
                     GeneradorID.AdjustIDs(Principal.ObtenerCanchas());
 
                 }
 
-                if (confirmacion == DialogResult.Cancel) 
+                if (confirmacion == DialogResult.Cancel)
                 {
                     MessageBox.Show("Se cancelo la eliminacion de la cancha con el ID " + IdSeleccionado);
                 }
