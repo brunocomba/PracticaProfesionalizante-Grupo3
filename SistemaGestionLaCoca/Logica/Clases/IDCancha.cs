@@ -1,15 +1,13 @@
 ﻿using LogicaClases.Clases;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Logica.Clases
 {
-    public abstract class GeneradorID
+    public abstract class IDCancha
     {
         private static int lastID = 0;
 
@@ -18,7 +16,7 @@ namespace Logica.Clases
             lastID++;
             return lastID;
         }
-            
+
         //FUNCIONES PARA AJUSTAR LOS IDs AL ELIMINAR UN OBJETO DE LA LISTA, EN ESTE CASO, CANCHAS
         // LA FUNCION DE ABAJO, AL ELIMINAR UN ELEMENTO, LE CAMBIA LOS IDs PARA QUE QUEDE UNA LISTA CONSECUTIVA
 
@@ -44,7 +42,5 @@ namespace Logica.Clases
             // De esta manera, el próximo ID generado será consecutivo desde el último ID utilizado en la lista.
             lastID = IDmasAlto;
         }
-        
-        
     }
-}   
+}

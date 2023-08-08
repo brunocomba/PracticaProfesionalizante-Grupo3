@@ -30,7 +30,9 @@ namespace FrontEnd
 
         private void btnTurnos_Click(object sender, EventArgs e)
         {
-
+            HistorialTurnos historialTurnos = new HistorialTurnos();
+            historialTurnos.Show();
+            this.Hide();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

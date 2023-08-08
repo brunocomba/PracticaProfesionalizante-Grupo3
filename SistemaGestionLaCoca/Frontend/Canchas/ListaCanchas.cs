@@ -76,7 +76,7 @@ namespace Frontend
                     MessageBox.Show("Cancha eliminada con exito.", "Sistema");
 
                     //Ajustar los id 
-                    GeneradorID.AdjustIDs(Principal.ObtenerCanchas());
+                    IDCancha.AdjustIDs(Principal.ObtenerCanchas());
 
                 }
 

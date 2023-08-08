@@ -26,9 +26,14 @@ namespace FrontEnd
         {
 
         }
-
+        Principal principal = new Principal();
         private void AltaCanchas_Load(object sender, EventArgs e)
         {
+            /*
+            cmboxTipo.DisplayMember = "DNI"; // Establecer la propiedad a mostrar en el ComboBox
+            cmboxTipo.Items.AddRange(Principal.ObtenerClientes().ToArray());   
+            */
+            
             cmboxTipo.Items.Add("BASQUET");
             cmboxTipo.Items.Add("FUTBOL");
             cmboxTipo.Items.Add("PADEL");

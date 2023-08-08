@@ -4,9 +4,10 @@
     "\\Frontend",
     "\\Frontend\\Canchas",
     "\\Frontend\\Inicio",
+    "\\Frontend\\Turnos",
     "\\Logica",
     "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\SistemaGestionLaCoca.sln",
+  "SelectedNode": "\\Frontend\\Turnos\\HistorialTurnos.cs",
   "PreviewInSolutionExplorer": false
 }
