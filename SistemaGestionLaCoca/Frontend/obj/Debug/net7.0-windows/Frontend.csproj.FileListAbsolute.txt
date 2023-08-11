@@ -60,3 +60,4 @@ C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ModificarCancha.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.ModificarCliente.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.HistorialTurnos.resources
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.AltaTurno.resources

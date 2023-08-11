@@ -33,7 +33,7 @@ namespace FrontEnd
             cmboxTipo.DisplayMember = "DNI"; // Establecer la propiedad a mostrar en el ComboBox
             cmboxTipo.Items.AddRange(Principal.ObtenerClientes().ToArray());   
             */
-            
+
             cmboxTipo.Items.Add("BASQUET");
             cmboxTipo.Items.Add("FUTBOL");
             cmboxTipo.Items.Add("PADEL");

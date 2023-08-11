@@ -78,6 +78,7 @@ namespace LogicaClases.Clases
                 clienteBase.apellido = "Riquelme";
                 clienteBase.dni = 28167907;
                 clienteBase.telefono = 2299665477;
+                clienteBase.nombreYapellido = "Roman" + " Riquelme";
 
 
                 listaClientes.Add(clienteBase);
@@ -92,6 +93,7 @@ namespace LogicaClases.Clases
             newCliente.apellido = Apellido;
             newCliente.dni = Dni;
             newCliente.telefono = Tel;
+            newCliente.nombreYapellido = Nombre + " " +  Apellido;
 
 
             ObtenerClientes().Add(newCliente);
@@ -102,6 +104,7 @@ namespace LogicaClases.Clases
             clienteMod.apellido = Apellido;
             clienteMod.dni = DNI;
             clienteMod.telefono = Tel;
+            clienteMod.nombreYapellido = Nombre +" " +  Apellido;
         }
 
         public void removeCliente(Cliente ClienteABorrar)
@@ -128,6 +131,7 @@ namespace LogicaClases.Clases
                 canchaBase.tipo = "BASQUET";
                 canchaBase.cantJugadores = 8;
                 canchaBase.precio = 4000;
+                canchaBase.idYnombre = canchaBase.id + " Norte";
 
 
                 listaCanchas.Add(canchaBase);
@@ -139,6 +143,8 @@ namespace LogicaClases.Clases
                 canchaBase2.tipo = "FUTBOL";
                 canchaBase2.cantJugadores = 10;
                 canchaBase2.precio = 4000;
+                canchaBase2.idYnombre = canchaBase2.id + " Sur";
+
 
 
                 listaCanchas.Add(canchaBase2);
@@ -154,6 +160,8 @@ namespace LogicaClases.Clases
             newCancha.tipo = Tipo;
             newCancha.cantJugadores = CantJugadores;
             newCancha.precio = Precio;
+            newCancha.idYnombre = newCancha.id + " " + Nombre;
+           
 
             ObtenerCanchas().Add(newCancha);
         }
@@ -177,28 +185,47 @@ namespace LogicaClases.Clases
 
 
         public static List<Turno> listaTurnos;
+     
+        
         public static List<Turno> ObtenerTurnos()
+
         {
             if (listaTurnos == null)
             {
                 listaTurnos = new List<Turno>();
 
-                Turno turnoBase = new Turno();
+               
+                Cancha canchaa = new Cancha();
+                canchaa.id = 13;
+                canchaa.tipo = "BASQUET";
 
+                Cliente clientee = new Cliente();
+                clientee.nombre = "Roberto";
+                clientee.apellido = "Perez";
+                clientee.telefono = 3493662312;
+
+                Turno turnoBase = new Turno();
                 turnoBase.id = IDTurno.GenerateID();
                 turnoBase.fecha = new DateOnly(2023, 8, 8);
                 turnoBase.horario = new TimeOnly(15, 30);
                 turnoBase.precio = 8000;
-
+                turnoBase.tipoCancha = canchaa.tipo;
+                turnoBase.canchaID = canchaa.id;
+                turnoBase.nombreCliente = clientee.nombre;
+                turnoBase.apellidoCliente = clientee.apellido;
+                turnoBase.telCliente = clientee.telefono;
+               
 
                 listaTurnos.Add(turnoBase);
 
                 Turno turnoBase2 = new Turno();
+                
 
                 turnoBase2.id = IDTurno.GenerateID();
                 turnoBase2.fecha = new DateOnly(2023, 8, 10);
                 turnoBase2.horario = new TimeOnly(18, 30);
                 turnoBase2.precio = 7000;
+                
                 
 
 
@@ -215,7 +242,7 @@ namespace LogicaClases.Clases
                 newTurno.fecha = Fecha;
                 newTurno.horario = Hora;
                 newTurno.precio = Precio;
-                newTurno.cancha = CanchaTurno;
+                newTurno.cancha.id = CanchaTurno.id;
                 newTurno.cliente = cliente;
 
                 ObtenerTurnos().Add(newTurno);

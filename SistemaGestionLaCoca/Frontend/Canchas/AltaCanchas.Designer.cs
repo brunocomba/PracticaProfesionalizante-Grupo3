@@ -42,6 +42,7 @@
             button1 = new Button();
             label4 = new Label();
             groupBox2 = new GroupBox();
+            label6 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -113,6 +114,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(txtPrecio);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(cmboxCantJugadores);
@@ -193,6 +195,17 @@
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(83, 215);
+            label6.Name = "label6";
+            label6.Size = new Size(16, 17);
+            label6.TabIndex = 10;
+            label6.Text = "$";
+            // 
             // AltaCanchas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -229,5 +242,6 @@
         private GroupBox groupBox2;
         private TextBox txtPrecio;
         private Label label5;
+        private Label label6;
     }
 }

@@ -1,4 +1,5 @@
-﻿using LogicaClases.Clases;
+﻿using FrontEnd;
+using LogicaClases.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,9 @@ namespace Frontend
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.Show();
+            this.Hide();
         }
 
         private void txtFiltrarTurnos_TextChanged(object sender, EventArgs e)
@@ -40,6 +43,13 @@ namespace Frontend
         private void dgvCanchas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            AltaTurno altaTurno = new AltaTurno();
+            altaTurno.Show();
+            this.Hide();
         }
     }
 

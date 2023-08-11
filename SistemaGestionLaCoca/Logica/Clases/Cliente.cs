@@ -12,5 +12,6 @@ namespace LogicaClases.Clases
         public string nombre { get; set; }
         public string apellido { get; set; }
         public uint telefono { get; set; }
+        public string nombreYapellido { get; set; }
     }
 }
