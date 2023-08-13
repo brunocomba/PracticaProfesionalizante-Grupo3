@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,6 @@ namespace LogicaClases.Clases
 
         public Cancha cancha { get; set; }
         public  Cliente cliente { get; set; }
-     
 
 
         

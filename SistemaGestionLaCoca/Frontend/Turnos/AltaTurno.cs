@@ -17,8 +17,10 @@ namespace Frontend
         {
             InitializeComponent();
             cmboxDeporte.SelectedIndexChanged += cmboxDeporte_SelectedIndexChanged;
-            cmboxPrecio.DataSource = Principal.ObtenerCanchas();
-            cmboxPrecio.DisplayMember = "Precio";
+            //  MOSTRAR UN MENSAJE AL PASAR EL MOUSE POR ARRIBA DEL BOTON.
+            toolTip1.SetToolTip(btnAgregarClientes, "Agregar un nuevo cliente.");
+            toolTip1.SetToolTip(btnAddHorarios, "Agregar nuevos horarios para turnos.");
+
 
         }
 
@@ -50,12 +52,19 @@ namespace Frontend
             //cmboxDeporte.DisplayMember = "Tipo";
             //cmboxDeporte.Items.AddRange(Principal.ObtenerCanchas().ToArray()); 
 
+            dateTimePicker1.Value = DateTime.Now; // Establecer el dia de la fecha al ejecutarse.
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+
+            // Cargar horarios de turnos.
+            cmboxHorarios.DisplayMember = "hora";
+            cmboxHorarios.Items.AddRange(Principal.ObtenerHorarios().ToArray()); 
+
 
 
 
         }
 
-        
+
         public List<Cancha> canchasFiltradas = new List<Cancha>();
         private void button1_Click(object sender, EventArgs e)
         {
@@ -77,7 +86,7 @@ namespace Frontend
 
             cmboxPrecio.DataSource = canchasFiltradas;
             cmboxPrecio.DisplayMember = "precio";
-           
+
 
         }
 
@@ -89,12 +98,41 @@ namespace Frontend
 
         private void cmboxCancha_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AltaCliente altaCliente = new AltaCliente();
+            altaCliente.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddHorarios_Click(object sender, EventArgs e)
+        {
+            AltaNuevosHorarios altaNuevosHorarios = new AltaNuevosHorarios();   
+            altaNuevosHorarios.Show();
+            this.Hide();
         }
     }
 }

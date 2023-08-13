@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LogicaClases.Clases
 {
@@ -93,7 +94,7 @@ namespace LogicaClases.Clases
             newCliente.apellido = Apellido;
             newCliente.dni = Dni;
             newCliente.telefono = Tel;
-            newCliente.nombreYapellido = Nombre + " " +  Apellido;
+            newCliente.nombreYapellido = Nombre + " " + Apellido;
 
 
             ObtenerClientes().Add(newCliente);
@@ -104,7 +105,7 @@ namespace LogicaClases.Clases
             clienteMod.apellido = Apellido;
             clienteMod.dni = DNI;
             clienteMod.telefono = Tel;
-            clienteMod.nombreYapellido = Nombre +" " +  Apellido;
+            clienteMod.nombreYapellido = Nombre + " " + Apellido;
         }
 
         public void removeCliente(Cliente ClienteABorrar)
@@ -161,7 +162,7 @@ namespace LogicaClases.Clases
             newCancha.cantJugadores = CantJugadores;
             newCancha.precio = Precio;
             newCancha.idYnombre = newCancha.id + " " + Nombre;
-           
+
 
             ObtenerCanchas().Add(newCancha);
         }
@@ -185,8 +186,8 @@ namespace LogicaClases.Clases
 
 
         public static List<Turno> listaTurnos;
-     
-        
+
+
         public static List<Turno> ObtenerTurnos()
 
         {
@@ -194,7 +195,7 @@ namespace LogicaClases.Clases
             {
                 listaTurnos = new List<Turno>();
 
-               
+
                 Cancha canchaa = new Cancha();
                 canchaa.id = 13;
                 canchaa.tipo = "BASQUET";
@@ -214,20 +215,29 @@ namespace LogicaClases.Clases
                 turnoBase.nombreCliente = clientee.nombre;
                 turnoBase.apellidoCliente = clientee.apellido;
                 turnoBase.telCliente = clientee.telefono;
-               
+
 
                 listaTurnos.Add(turnoBase);
 
                 Turno turnoBase2 = new Turno();
-                
+                Cancha canchaBase = new Cancha();
+                canchaBase.id = 5;
+                canchaBase.tipo = "FUTBOL";
+
+                Cliente clienteBase = new Cliente();
+                clienteBase.nombre = "Juaquin";
+                clienteBase.apellido = "Lopez";
+                clienteBase.telefono = 3493666650;
 
                 turnoBase2.id = IDTurno.GenerateID();
                 turnoBase2.fecha = new DateOnly(2023, 8, 10);
-                turnoBase2.horario = new TimeOnly(18, 30);
+                turnoBase2.horario = new TimeOnly(15, 30);
                 turnoBase2.precio = 7000;
-                
-                
-
+                turnoBase2.tipoCancha = canchaBase.tipo;
+                turnoBase2.canchaID = canchaBase.id;
+                turnoBase2.nombreCliente = clienteBase.nombre;
+                turnoBase2.apellidoCliente = clienteBase.apellido;
+                turnoBase2.telCliente = clienteBase.telefono;
 
                 listaTurnos.Add(turnoBase2);
             }
@@ -249,4 +259,45 @@ namespace LogicaClases.Clases
             }
 
         }
-}   }
+
+
+
+
+
+        // ------------------------------------ HORARIOS.
+
+        public static List<Horario> listaHorarios;
+        public static List<Horario> ObtenerHorarios()
+        {
+            if (listaHorarios == null)
+            {
+                listaHorarios = new List<Horario>();
+
+                Horario horarioBase = new Horario();
+                
+                horarioBase.hora = new TimeOnly(18, 30);
+                
+               
+
+                listaHorarios.Add(horarioBase);
+
+            }
+            return listaHorarios;
+        }
+        public void altaHorario(TimeOnly Hora, string Canchaa)
+        {
+            {
+                Horario newHorario = new Horario();
+
+                newHorario.hora = Hora;
+               
+               
+
+                ObtenerHorarios().Add(newHorario);
+            }
+
+        }
+    }
+
+   
+}
