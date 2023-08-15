@@ -57,7 +57,7 @@ namespace Frontend
 
             // Cargar horarios de turnos.
             cmboxHorarios.DisplayMember = "hora";
-            cmboxHorarios.Items.AddRange(Principal.ObtenerHorarios().ToArray()); 
+            cmboxHorarios.Items.AddRange(Principal.ObtenerHorarios().ToArray());
 
 
 
@@ -130,9 +130,20 @@ namespace Frontend
 
         private void btnAddHorarios_Click(object sender, EventArgs e)
         {
-            AltaNuevosHorarios altaNuevosHorarios = new AltaNuevosHorarios();   
+            AltaNuevosHorarios altaNuevosHorarios = new AltaNuevosHorarios();
             altaNuevosHorarios.Show();
             this.Hide();
+        }
+
+        private void btnAgregarCancha_Click(object sender, EventArgs e)
+        {
+            Principal principal = new Principal();
+            principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem);
+            MessageBox.Show($"Turno creado con exito al cliente"); 
+
+            //PRUEBA, FUNCIONA EL ALTA. ARREGLAR CAMBIOS DE PANTALLA AL IR DESDE ESTE FORMULARIO.
+            // HACER VALIDACIONES
+            // VER TEMAS HORARIOS.
         }
     }
 }

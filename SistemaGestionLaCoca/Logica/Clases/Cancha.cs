@@ -15,5 +15,7 @@ namespace LogicaClases.Clases
         public int precio { get; set; }
         public string  idYnombre { get; set; }
 
+        public List<Turno> Turnos { get; set; }
+
     }
 }

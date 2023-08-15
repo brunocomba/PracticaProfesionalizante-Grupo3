@@ -207,6 +207,7 @@
             btnAgregarCancha.TabIndex = 4;
             btnAgregarCancha.Text = "AGREGAR";
             btnAgregarCancha.UseVisualStyleBackColor = true;
+            btnAgregarCancha.Click += btnAgregarCancha_Click;
             // 
             // cmboxCliente
             // 
