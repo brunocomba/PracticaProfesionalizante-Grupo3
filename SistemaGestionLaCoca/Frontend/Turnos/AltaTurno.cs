@@ -1,4 +1,5 @@
-﻿using LogicaClases.Clases;
+﻿using Logica.Clases;
+using LogicaClases.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,13 +60,12 @@ namespace Frontend
             cmboxHorarios.DisplayMember = "hora";
             cmboxHorarios.Items.AddRange(Principal.ObtenerHorarios().ToArray());
 
-
+            dataGridView1.DataSource = Principal.ObtenerHorarios(); // Prueba
 
 
         }
 
 
-        public List<Cancha> canchasFiltradas = new List<Cancha>();
         private void button1_Click(object sender, EventArgs e)
         {
             HistorialTurnos historialTurnos = new HistorialTurnos();
@@ -73,6 +73,7 @@ namespace Frontend
             this.Hide();
         }
 
+        public List<Cancha> canchasFiltradas = new List<Cancha>();
 
         // MOSTRAR EL ID DE LAS CANCHAS AL ELEGIR EL TIPO DE DEPORTE 
         private void cmboxDeporte_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,17 +88,29 @@ namespace Frontend
             cmboxPrecio.DataSource = canchasFiltradas;
             cmboxPrecio.DisplayMember = "precio";
 
+            cmboxHorarios.DataSource = canchasFiltradas;
+            cmboxHorarios.DisplayMember = "hora";
+
+
+            // hacer inspecciones y ver si funciona ver lo de horarios
 
         }
 
 
-
+        public List<Horario> horasFiltradas = new List<Horario>();
         private void cmboxPrecio_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
+
         }
 
         private void cmboxCancha_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string canchaElegida = cmboxCancha.SelectedItem.ToString();
+            List<Horario> horasFiltradas = Principal.ObtenerHorarios().Where(hora => hora.nombreCancha == canchaElegida).ToList();
+
+            cmboxHorarios.DataSource = horasFiltradas;
+            cmboxHorarios.DisplayMember = "horario";
 
         }
 
@@ -113,21 +126,7 @@ namespace Frontend
             this.Hide();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnAddHorarios_Click(object sender, EventArgs e)
         {
             AltaNuevosHorarios altaNuevosHorarios = new AltaNuevosHorarios();
@@ -139,11 +138,21 @@ namespace Frontend
         {
             Principal principal = new Principal();
             principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem);
-            MessageBox.Show($"Turno creado con exito al cliente"); 
+            MessageBox.Show($"Turno creado con exito al cliente");
 
             //PRUEBA, FUNCIONA EL ALTA. ARREGLAR CAMBIOS DE PANTALLA AL IR DESDE ESTE FORMULARIO.
             // HACER VALIDACIONES
             // VER TEMAS HORARIOS.
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("sksk");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

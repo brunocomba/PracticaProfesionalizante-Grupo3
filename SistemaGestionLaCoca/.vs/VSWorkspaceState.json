@@ -1,13 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Frontend",
-    "\\Frontend\\Canchas",
-    "\\Frontend\\Inicio",
-    "\\Frontend\\Turnos",
-    "\\Logica",
-    "\\Logica\\Clases"
+    ""
   ],
-  "SelectedNode": "\\Frontend\\AltaNuevosHorarios.cs",
   "PreviewInSolutionExplorer": false
 }

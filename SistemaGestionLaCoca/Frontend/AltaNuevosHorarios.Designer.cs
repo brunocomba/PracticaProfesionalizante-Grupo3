@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaNuevosHorarios));
             groupBox2 = new GroupBox();
             label4 = new Label();
             groupBox1 = new GroupBox();
             label1 = new Label();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker3 = new DateTimePicker();
             btnAgregarCancha = new Button();
             btnAddHorarios = new Button();
             cmboxCancha = new ComboBox();
             label2 = new Label();
             button1 = new Button();
+            horarioBindingSource = new BindingSource(components);
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -67,7 +70,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(dateTimePicker2);
+            groupBox1.Controls.Add(dateTimePicker3);
             groupBox1.Controls.Add(btnAgregarCancha);
             groupBox1.Controls.Add(btnAddHorarios);
             groupBox1.Controls.Add(cmboxCancha);
@@ -90,18 +93,18 @@
             label1.TabIndex = 21;
             label1.Text = "Horario";
             // 
-            // dateTimePicker2
+            // dateTimePicker3
             // 
-            dateTimePicker2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(105, 128);
-            dateTimePicker2.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
-            dateTimePicker2.MinDate = new DateTime(2023, 8, 13, 0, 0, 0, 0);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(214, 21);
-            dateTimePicker2.TabIndex = 20;
-            dateTimePicker2.Value = new DateTime(2023, 8, 13, 16, 0, 0, 0);
-            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            dateTimePicker3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
+            dateTimePicker3.Location = new Point(105, 128);
+            dateTimePicker3.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
+            dateTimePicker3.MinDate = new DateTime(2023, 8, 13, 0, 0, 0, 0);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(214, 21);
+            dateTimePicker3.TabIndex = 20;
+            dateTimePicker3.Value = new DateTime(2023, 8, 13, 16, 0, 0, 0);
+            dateTimePicker3.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // btnAgregarCancha
             // 
@@ -167,6 +170,10 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // horarioBindingSource
+            // 
+            horarioBindingSource.DataSource = typeof(Logica.Clases.Horario);
+            // 
             // AltaNuevosHorarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -185,6 +192,7 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -198,7 +206,8 @@
         private ComboBox cmboxCancha;
         private Label label2;
         private Label label1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker3;
         private Button button1;
+        private BindingSource horarioBindingSource;
     }
 }

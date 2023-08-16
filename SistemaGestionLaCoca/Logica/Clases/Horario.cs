@@ -10,7 +10,7 @@ namespace Logica.Clases
 {
     public class Horario
     {
-        public TimeOnly hora { get; set; }
+        public string hora { get; set; }
         public string nombreCancha { get; set; }
         public Cancha cancha { get; set; }
     }

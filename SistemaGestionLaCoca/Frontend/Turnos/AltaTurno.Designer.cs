@@ -50,9 +50,17 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new Button();
+            button2 = new Button();
             toolTip1 = new ToolTip(components);
+            dataGridView1 = new DataGridView();
+            horarioBindingSource = new BindingSource(components);
+            horaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreCanchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            canchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -156,7 +164,6 @@
             cmboxHorarios.Name = "cmboxHorarios";
             cmboxHorarios.Size = new Size(214, 23);
             cmboxHorarios.TabIndex = 15;
-            cmboxHorarios.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // btnAgregarClientes
             // 
@@ -263,7 +270,6 @@
             label3.Size = new Size(47, 16);
             label3.TabIndex = 4;
             label3.Text = "Cliente";
-            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -286,7 +292,6 @@
             label1.Size = new Size(52, 16);
             label1.TabIndex = 2;
             label1.Text = "Deporte";
-            label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -303,12 +308,63 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(26, 32, 40);
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.AppWorkspace;
+            button2.Location = new Point(529, 532);
+            button2.Name = "button2";
+            button2.Size = new Size(98, 35);
+            button2.TabIndex = 13;
+            button2.Text = "VOLVER";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { horaDataGridViewTextBoxColumn, nombreCanchaDataGridViewTextBoxColumn, canchaDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = horarioBindingSource;
+            dataGridView1.Location = new Point(524, 144);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(447, 300);
+            dataGridView1.TabIndex = 14;
+            // 
+            // horarioBindingSource
+            // 
+            horarioBindingSource.DataSource = typeof(Logica.Clases.Horario);
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
+            horaDataGridViewTextBoxColumn.HeaderText = "hora";
+            horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            // 
+            // nombreCanchaDataGridViewTextBoxColumn
+            // 
+            nombreCanchaDataGridViewTextBoxColumn.DataPropertyName = "nombreCancha";
+            nombreCanchaDataGridViewTextBoxColumn.HeaderText = "nombreCancha";
+            nombreCanchaDataGridViewTextBoxColumn.Name = "nombreCanchaDataGridViewTextBoxColumn";
+            // 
+            // canchaDataGridViewTextBoxColumn
+            // 
+            canchaDataGridViewTextBoxColumn.DataPropertyName = "cancha";
+            canchaDataGridViewTextBoxColumn.HeaderText = "cancha";
+            canchaDataGridViewTextBoxColumn.Name = "canchaDataGridViewTextBoxColumn";
+            // 
             // AltaTurno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1025, 610);
+            Controls.Add(dataGridView1);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -321,6 +377,8 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -341,11 +399,17 @@
         private Label label6;
         private ComboBox cmboxPrecio;
         private Button btnAgregarClientes;
-        private ToolTip toolTip1;
         private Label label8;
         private Label label7;
         private ComboBox cmboxHorarios;
         private DateTimePicker dateTimePicker1;
         private Button btnAddHorarios;
+        private Button button2;
+        private ToolTip toolTip1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreCanchaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn;
+        private BindingSource horarioBindingSource;
     }
 }

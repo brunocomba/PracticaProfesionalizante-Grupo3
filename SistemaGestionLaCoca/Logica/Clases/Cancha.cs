@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,7 @@ namespace LogicaClases.Clases
         public string nombre { get; set; }
         public int precio { get; set; }
         public string  idYnombre { get; set; }
-
         public List<Turno> Turnos { get; set; }
-
+        public List<Horario> Horarios { get; set; }
     }
 }
