@@ -10,23 +10,21 @@ namespace LogicaClases.Clases
 {
     public class Principal
     {
-        // ---------------------------------------------
-        // ADMINISTRADORES
+        // ------------------------------------ LISTAS.
 
-        public void altaAdmin(string Nombre, string Apellido, int Dni, uint Tel, string User, string Pass)
-        {
-            Administrador newAdmin = new Administrador();
-
-            newAdmin.nombre = Nombre;
-            newAdmin.apellido = Apellido;
-            newAdmin.dni = Dni;
-            newAdmin.telefono = Tel;
-            newAdmin.usuario = User;
-            newAdmin.contrasenia = Pass;
-
-            ObtenerAdministradores().Add(newAdmin);
-        }
         public static List<Administrador> listaAdministradores;
+
+        public static List<Cliente> listaClientes;
+
+        public static List<Cancha> listaCanchas;
+
+        public static List<Turno> listaTurnos;
+
+        public static List<Horario> listaHorarios;
+
+
+
+        // ------------------------------------ ADMINISTRADORES.
         public static List<Administrador> ObtenerAdministradores()
         {
             if (listaAdministradores == null)
@@ -48,6 +46,20 @@ namespace LogicaClases.Clases
             return listaAdministradores;
         }
 
+        public void altaAdmin(string Nombre, string Apellido, int Dni, uint Tel, string User, string Pass)
+        {
+            Administrador newAdmin = new Administrador();
+
+            newAdmin.nombre = Nombre;
+            newAdmin.apellido = Apellido;
+            newAdmin.dni = Dni;
+            newAdmin.telefono = Tel;
+            newAdmin.usuario = User;
+            newAdmin.contrasenia = Pass;
+
+            listaAdministradores.Add(newAdmin);
+        }
+
 
         public void modificarAdmin(Administrador admiMod, string Nombre, string Apellido, int DNI, uint Tel, string User, string Pass)
         {
@@ -61,13 +73,12 @@ namespace LogicaClases.Clases
 
         public void removeAdmin(Administrador adminABorrare)
         {
-            ObtenerAdministradores().Remove(adminABorrare);
+            listaAdministradores.Remove(adminABorrare);
         }
 
-        // --------------------------------------------------------- 
-        // CLIENTES
 
-        public static List<Cliente> listaClientes;
+
+        // ------------------------------------ CLIENTES. 
         public static List<Cliente> ObtenerClientes()
         {
             if (listaClientes == null)
@@ -96,7 +107,7 @@ namespace LogicaClases.Clases
             }
             return listaClientes;
         }
-        public void ataCliente(string Nombre, string Apellido, int Dni, uint Tel)
+        public void altaCliente(string Nombre, string Apellido, int Dni, uint Tel)
         {
             Cliente newCliente = new Cliente();
 
@@ -107,7 +118,7 @@ namespace LogicaClases.Clases
             newCliente.nombreYapellido = Nombre + " " + Apellido;
 
 
-            ObtenerClientes().Add(newCliente);
+            listaClientes.Add(newCliente);
         }
         public void modificarCliente(Cliente clienteMod, string Nombre, string Apellido, int DNI, uint Tel)
         {
@@ -120,15 +131,12 @@ namespace LogicaClases.Clases
 
         public void removeCliente(Cliente ClienteABorrar)
         {
-            ObtenerClientes().Remove(ClienteABorrar);
+            listaClientes.Remove(ClienteABorrar);
         }
 
 
-        // -------------------------------------------------------------------------------------
 
-        // CANCHAS
-
-        public static List<Cancha> listaCanchas;
+        // ------------------------------------ CANCHAS.
         public static List<Cancha> ObtenerCanchas()
         {
             if (listaCanchas == null)
@@ -137,7 +145,7 @@ namespace LogicaClases.Clases
 
                 Cancha canchaBase = new Cancha();
 
-                canchaBase.id = IDCancha.GenerateID();
+                canchaBase.id = Cancha.GenerateID();
                 canchaBase.nombre = "Norte";
                 canchaBase.tipo = "BASQUET";
                 canchaBase.cantJugadores = 8;
@@ -151,7 +159,7 @@ namespace LogicaClases.Clases
 
                 Cancha canchaBase2 = new Cancha();
 
-                canchaBase2.id = IDCancha.GenerateID();
+                canchaBase2.id = Cancha.GenerateID();
                 canchaBase2.nombre = "Sur";
                 canchaBase2.tipo = "FUTBOL";
                 canchaBase2.cantJugadores = 10;
@@ -170,7 +178,7 @@ namespace LogicaClases.Clases
         {
             Cancha newCancha = new Cancha();
 
-            newCancha.id = IDCancha.GenerateID();
+            newCancha.id = Cancha.GenerateID();
             newCancha.nombre = Nombre;
             newCancha.tipo = Tipo;
             newCancha.cantJugadores = CantJugadores;
@@ -178,7 +186,7 @@ namespace LogicaClases.Clases
             newCancha.idYnombre = newCancha.id + " " + Nombre;
 
 
-            ObtenerCanchas().Add(newCancha);
+            listaCanchas.Add(newCancha);
         }
 
         public void modificarCancha(Cancha canchaMod, string Nombre, string Tipo, int CantJug, int Precio)
@@ -191,17 +199,11 @@ namespace LogicaClases.Clases
 
         public void removeCancha(Cancha CanchaABorrar)
         {
-            ObtenerCanchas().Remove(CanchaABorrar);
+            listaCanchas.Remove(CanchaABorrar);
         }
 
-        // -------------------------------------------------------------------------------------
 
-        // TURNOS
-
-
-        public static List<Turno> listaTurnos;
-
-
+        // ------------------------------------ TURNOS.
         public static List<Turno> ObtenerTurnos()
 
         {
@@ -211,29 +213,33 @@ namespace LogicaClases.Clases
 
                 // PRIMER TURNO HARCODEADO.
                 Turno turnoBase = new Turno();
-                turnoBase.id = IDTurno.GenerateID();
+                turnoBase.id = Turno.GenerateID();
                 turnoBase.fecha = new DateOnly(2023, 8, 8);
                 turnoBase.horario = new TimeOnly(15, 30);
               
                 Cancha laCancha = Principal.ObtenerCanchas()[0];
+                
                 turnoBase.cancha = laCancha;
+                /*
                 turnoBase.canchaID = laCancha.id;
                 turnoBase.tipoCancha = laCancha.tipo;
                 turnoBase.precio = laCancha.precio;
-                
+                */
                 Cliente elCliente = Principal.ObtenerClientes()[0];
                 turnoBase.cliente = elCliente;
+                turnoBase.cliente.nombre = elCliente.nombre;
+                /*
                 turnoBase.nombreCliente = elCliente.nombre;
                 turnoBase.apellidoCliente = elCliente.apellido;
                 turnoBase.telCliente = elCliente.telefono;
-
+                */
                 laCancha.Turnos.Add(turnoBase);
                 elCliente.Turnos.Add(turnoBase);
                 listaTurnos.Add(turnoBase);
 
                 // SEGUNDO TURNO HARCODEADO.
                 Turno turnoBase2 = new Turno();
-                turnoBase2.id = IDTurno.GenerateID();
+                turnoBase2.id = Turno.GenerateID();
                 turnoBase2.fecha = new DateOnly(2023, 8, 10);
                 turnoBase2.horario = new TimeOnly(15, 30);
 
@@ -262,7 +268,7 @@ namespace LogicaClases.Clases
             {
                 Turno newTurno = new Turno();
 
-                newTurno.id = IDTurno.GenerateID();
+                newTurno.id = Turno.GenerateID();
 
                 newTurno.precio = cancha.precio;
                 newTurno.canchaID = cancha.id;
@@ -276,7 +282,7 @@ namespace LogicaClases.Clases
                 cancha.Turnos.Add(newTurno);
                 cliente.Turnos.Add(newTurno);
 
-                ObtenerTurnos().Add(newTurno);
+                listaTurnos.Add(newTurno);
             }
 
         }
@@ -284,10 +290,7 @@ namespace LogicaClases.Clases
 
 
 
-
         // ------------------------------------ HORARIOS.
-
-        public static List<Horario> listaHorarios;
         public static List<Horario> ObtenerHorarios()
         {
             if (listaHorarios == null)
@@ -336,7 +339,7 @@ namespace LogicaClases.Clases
                 cancha.Horarios.Add(newHorario);
                
 
-                ObtenerHorarios().Add(newHorario);
+                listaHorarios.Add(newHorario);
             }
 
         }

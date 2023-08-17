@@ -75,8 +75,8 @@ namespace Frontend
                     principal.removeCancha(valor_Elegido);
                     MessageBox.Show("Cancha eliminada con exito.", "Sistema");
 
-                    //Ajustar los id 
-                    IDCancha.AdjustIDs(Principal.ObtenerCanchas());
+                    //Ajustar los id para tener una secuencia de IDs.
+                    //IDCancha.AdjustIDs(Principal.ObtenerCanchas());
 
                 }
 

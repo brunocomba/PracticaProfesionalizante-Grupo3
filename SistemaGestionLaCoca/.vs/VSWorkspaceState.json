@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Frontend",
+    "\\Frontend\\Canchas",
+    "\\Logica",
+    "\\Logica\\Clases"
   ],
+  "SelectedNode": "\\Frontend\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

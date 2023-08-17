@@ -50,6 +50,9 @@
             turnoBindingSource2 = new BindingSource(components);
             turnoBindingSource4 = new BindingSource(components);
             dgvTurnos = new DataGridView();
+            turnoBindingSource5 = new BindingSource(components);
+            turnoBindingSource6 = new BindingSource(components);
+            turnoBindingSource7 = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             horarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -59,9 +62,6 @@
             canchaIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tipoCanchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            turnoBindingSource5 = new BindingSource(components);
-            turnoBindingSource6 = new BindingSource(components);
-            turnoBindingSource7 = new BindingSource(components);
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource8).BeginInit();
@@ -250,7 +250,7 @@
             dgvTurnos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTurnos.EnableHeadersVisualStyles = false;
             dgvTurnos.GridColor = Color.MidnightBlue;
-            dgvTurnos.Location = new Point(208, 170);
+            dgvTurnos.Location = new Point(219, 170);
             dgvTurnos.Name = "dgvTurnos";
             dgvTurnos.ReadOnly = true;
             dgvTurnos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -266,6 +266,18 @@
             dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTurnos.Size = new Size(692, 479);
             dgvTurnos.TabIndex = 20;
+            // 
+            // turnoBindingSource5
+            // 
+            turnoBindingSource5.DataSource = typeof(LogicaClases.Clases.Turno);
+            // 
+            // turnoBindingSource6
+            // 
+            turnoBindingSource6.DataSource = typeof(LogicaClases.Clases.Turno);
+            // 
+            // turnoBindingSource7
+            // 
+            turnoBindingSource7.DataSource = typeof(LogicaClases.Clases.Turno);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -330,18 +342,6 @@
             precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
             precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // turnoBindingSource5
-            // 
-            turnoBindingSource5.DataSource = typeof(LogicaClases.Clases.Turno);
-            // 
-            // turnoBindingSource6
-            // 
-            turnoBindingSource6.DataSource = typeof(LogicaClases.Clases.Turno);
-            // 
-            // turnoBindingSource7
-            // 
-            turnoBindingSource7.DataSource = typeof(LogicaClases.Clases.Turno);
-            // 
             // HistorialTurnos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -404,6 +404,7 @@
         private BindingSource turnoBindingSource5;
         private BindingSource turnoBindingSource7;
         private BindingSource turnoBindingSource6;
+        private DataGridViewButtonColumn cancha;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;

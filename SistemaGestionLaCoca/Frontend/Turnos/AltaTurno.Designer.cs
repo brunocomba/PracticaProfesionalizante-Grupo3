@@ -52,15 +52,12 @@
             button1 = new Button();
             button2 = new Button();
             toolTip1 = new ToolTip(components);
-            dataGridView1 = new DataGridView();
             horarioBindingSource = new BindingSource(components);
-            horaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreCanchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            canchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -323,39 +320,18 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click_1;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { horaDataGridViewTextBoxColumn, nombreCanchaDataGridViewTextBoxColumn, canchaDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = horarioBindingSource;
-            dataGridView1.Location = new Point(524, 144);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(447, 300);
-            dataGridView1.TabIndex = 14;
-            // 
             // horarioBindingSource
             // 
             horarioBindingSource.DataSource = typeof(Logica.Clases.Horario);
             // 
-            // horaDataGridViewTextBoxColumn
+            // dataGridView1
             // 
-            horaDataGridViewTextBoxColumn.DataPropertyName = "hora";
-            horaDataGridViewTextBoxColumn.HeaderText = "hora";
-            horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            // 
-            // nombreCanchaDataGridViewTextBoxColumn
-            // 
-            nombreCanchaDataGridViewTextBoxColumn.DataPropertyName = "nombreCancha";
-            nombreCanchaDataGridViewTextBoxColumn.HeaderText = "nombreCancha";
-            nombreCanchaDataGridViewTextBoxColumn.Name = "nombreCanchaDataGridViewTextBoxColumn";
-            // 
-            // canchaDataGridViewTextBoxColumn
-            // 
-            canchaDataGridViewTextBoxColumn.DataPropertyName = "cancha";
-            canchaDataGridViewTextBoxColumn.HeaderText = "cancha";
-            canchaDataGridViewTextBoxColumn.Name = "canchaDataGridViewTextBoxColumn";
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(468, 142);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(527, 354);
+            dataGridView1.TabIndex = 14;
             // 
             // AltaTurno
             // 
@@ -377,8 +353,8 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -406,10 +382,7 @@
         private Button btnAddHorarios;
         private Button button2;
         private ToolTip toolTip1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreCanchaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn;
         private BindingSource horarioBindingSource;
+        private DataGridView dataGridView1;
     }
 }

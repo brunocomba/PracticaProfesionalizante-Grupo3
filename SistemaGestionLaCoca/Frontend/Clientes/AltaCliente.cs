@@ -27,14 +27,14 @@ namespace Frontend
                 MessageBoxIcon.Question);
             if (respuesta == DialogResult.No)
             {
-                principal.ataCliente(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), uint.Parse(txtTel.Text));
+                principal.altaCliente(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), uint.Parse(txtTel.Text));
                 ListaClientes listaClientes = new ListaClientes();
                 listaClientes.Show();
                 this.Hide();
             }
             if (respuesta == DialogResult.Yes)
             {
-                principal.ataCliente(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), uint.Parse(txtTel.Text));
+                principal.altaCliente(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), uint.Parse(txtTel.Text));
                 ListaClientes listaClientes = new ListaClientes();
                 txtNombre.Text = "";
                 txtApellido.Text = "";
@@ -138,6 +138,11 @@ namespace Frontend
             ListaClientes listClientes = new ListaClientes();
             listClientes.Show();
             this.Hide();
+        }
+
+        private void AltaCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

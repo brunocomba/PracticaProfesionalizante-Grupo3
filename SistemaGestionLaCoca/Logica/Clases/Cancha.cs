@@ -9,6 +9,7 @@ namespace LogicaClases.Clases
 {
     public class Cancha
     {
+
         public int id { get; set; }
         public string tipo { get; set; }
         public int cantJugadores { get; set; }
@@ -17,5 +18,13 @@ namespace LogicaClases.Clases
         public string  idYnombre { get; set; }
         public List<Turno> Turnos { get; set; }
         public List<Horario> Horarios { get; set; }
+
+        private static int lastID = 0;
+
+        public static int GenerateID()
+        {
+            lastID++;
+            return lastID;
+        }
     }
 }

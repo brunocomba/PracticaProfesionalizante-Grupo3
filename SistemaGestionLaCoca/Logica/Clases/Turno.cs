@@ -25,7 +25,13 @@ namespace LogicaClases.Clases
         public  Cliente cliente { get; set; }
 
 
-        
+        private static int lastID = 0;
+        public static int GenerateID()
+        {
+            lastID++;
+            return lastID;
+        }
+
     }
 
 }
