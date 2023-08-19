@@ -1,4 +1,6 @@
-﻿namespace FrontEnd
+﻿using Logica.Clases;
+
+namespace FrontEnd
 {
     partial class ListaAdmi
     {
@@ -233,7 +235,7 @@
             // 
             // administradorBindingSource
             // 
-            administradorBindingSource.DataSource = typeof(LogicaClases.Clases.Administrador);
+            administradorBindingSource.DataSource = typeof(Administrador);
             // 
             // ListaAdmi
             // 

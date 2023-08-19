@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace LogicaClases.Clases
+namespace Logica.Clases
 {
     public class Principal
     {
@@ -216,23 +216,13 @@ namespace LogicaClases.Clases
                 turnoBase.id = Turno.GenerateID();
                 turnoBase.fecha = new DateOnly(2023, 8, 8);
                 turnoBase.horario = new TimeOnly(15, 30);
-              
+
                 Cancha laCancha = Principal.ObtenerCanchas()[0];
-                
                 turnoBase.cancha = laCancha;
-                /*
-                turnoBase.canchaID = laCancha.id;
-                turnoBase.tipoCancha = laCancha.tipo;
-                turnoBase.precio = laCancha.precio;
-                */
+
                 Cliente elCliente = Principal.ObtenerClientes()[0];
                 turnoBase.cliente = elCliente;
-                turnoBase.cliente.nombre = elCliente.nombre;
-                /*
-                turnoBase.nombreCliente = elCliente.nombre;
-                turnoBase.apellidoCliente = elCliente.apellido;
-                turnoBase.telCliente = elCliente.telefono;
-                */
+           
                 laCancha.Turnos.Add(turnoBase);
                 elCliente.Turnos.Add(turnoBase);
                 listaTurnos.Add(turnoBase);
@@ -245,15 +235,9 @@ namespace LogicaClases.Clases
 
                 Cancha canchaBase = Principal.ObtenerCanchas()[1];
                 turnoBase2.cancha = canchaBase;
-                turnoBase2.canchaID = canchaBase.id;
-                turnoBase2.tipoCancha = canchaBase.tipo;
-                turnoBase2.precio = canchaBase.precio;
 
                 Cliente clienteBase = Principal.ObtenerClientes()[1];
-                turnoBase.cliente = clienteBase;
-                turnoBase2.nombreCliente = clienteBase.nombre;
-                turnoBase2.apellidoCliente = clienteBase.apellido;
-                turnoBase2.telCliente = clienteBase.telefono;
+                turnoBase2.cliente = clienteBase;
 
                 canchaBase.Turnos.Add(turnoBase2);   
                 clienteBase.Turnos.Add(turnoBase2); 
@@ -266,6 +250,7 @@ namespace LogicaClases.Clases
         public void altaTurno(Cancha cancha, Cliente cliente)
         {
             {
+                /*
                 Turno newTurno = new Turno();
 
                 newTurno.id = Turno.GenerateID();
@@ -283,6 +268,7 @@ namespace LogicaClases.Clases
                 cliente.Turnos.Add(newTurno);
 
                 listaTurnos.Add(newTurno);
+                */
             }
 
         }

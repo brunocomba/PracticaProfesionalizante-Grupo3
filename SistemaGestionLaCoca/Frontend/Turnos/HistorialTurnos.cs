@@ -1,5 +1,5 @@
 ﻿using FrontEnd;
-using LogicaClases.Clases;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,15 +22,15 @@ namespace Frontend
         private void HistorialTurnos_Load(object sender, EventArgs e)
         {
             dgvTurnos.DataSource = Principal.ObtenerTurnos();
+            DataGridViewTextBoxColumn columnaNombre = new DataGridViewTextBoxColumn();
+            columnaNombre.HeaderText = "Tipo";
+            columnaNombre.DataPropertyName = "cancha.tipo"; // Propiedad del objeto 
+            dgvTurnos.Columns.Add(columnaNombre);
+
+
 
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            MenuInicio menuInicio = new MenuInicio();
-            menuInicio.Show();
-            this.Hide();
-        }
 
         private void txtFiltrarTurnos_TextChanged(object sender, EventArgs e)
         {
@@ -40,16 +40,21 @@ namespace Frontend
             dgvTurnos.DataSource = resultados;
         }
 
-        private void dgvCanchas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void btnCrear_Click_1(object sender, EventArgs e)
         {
             AltaTurno altaTurno = new AltaTurno();
             altaTurno.Show();
             this.Hide();
+        }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.Show();
+            this.Hide();
+            MessageBox.Show("Freno");
         }
     }
 

@@ -1,4 +1,6 @@
-﻿namespace Frontend
+﻿using Logica.Clases;
+
+namespace Frontend
 {
     partial class HistorialTurnos
     {
@@ -49,19 +51,16 @@
             turnoBindingSource1 = new BindingSource(components);
             turnoBindingSource2 = new BindingSource(components);
             turnoBindingSource4 = new BindingSource(components);
-            dgvTurnos = new DataGridView();
             turnoBindingSource5 = new BindingSource(components);
             turnoBindingSource6 = new BindingSource(components);
             turnoBindingSource7 = new BindingSource(components);
+            turnoBindingSource9 = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             horarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            apellidoClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            canchaIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tipoCanchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            canchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            clienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dgvTurnos = new DataGridView();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource8).BeginInit();
@@ -71,10 +70,11 @@
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -110,7 +110,7 @@
             btnVolver.TabIndex = 15;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += btnVolver_Click;
+            btnVolver.Click += btnVolver_Click_1;
             // 
             // panel1
             // 
@@ -138,7 +138,7 @@
             btnCrear.TabIndex = 5;
             btnCrear.Text = "CREAR";
             btnCrear.UseVisualStyleBackColor = false;
-            btnCrear.Click += btnCrear_Click;
+            btnCrear.Click += btnCrear_Click_1;
             // 
             // btnModificar
             // 
@@ -190,31 +190,82 @@
             // 
             // turnoBindingSource8
             // 
-            turnoBindingSource8.DataSource = typeof(LogicaClases.Clases.Turno);
+            turnoBindingSource8.DataSource = typeof(Turno);
             // 
             // turnoBindingSource3
             // 
-            turnoBindingSource3.DataSource = typeof(LogicaClases.Clases.Turno);
+            turnoBindingSource3.DataSource = typeof(Turno);
             // 
             // turnoBindingSource
             // 
-            turnoBindingSource.DataSource = typeof(LogicaClases.Clases.Turno);
+            turnoBindingSource.DataSource = typeof(Turno);
             // 
             // clienteBindingSource
             // 
-            clienteBindingSource.DataSource = typeof(LogicaClases.Clases.Cliente);
+            clienteBindingSource.DataSource = typeof(Cliente);
             // 
             // turnoBindingSource1
             // 
-            turnoBindingSource1.DataSource = typeof(LogicaClases.Clases.Turno);
+            turnoBindingSource1.DataSource = typeof(Turno);
             // 
             // turnoBindingSource2
             // 
-            turnoBindingSource2.DataSource = typeof(LogicaClases.Clases.Turno);
+            turnoBindingSource2.DataSource = typeof(Turno);
             // 
             // turnoBindingSource4
             // 
-            turnoBindingSource4.DataSource = typeof(LogicaClases.Clases.Turno);
+            turnoBindingSource4.DataSource = typeof(Turno);
+            // 
+            // turnoBindingSource5
+            // 
+            turnoBindingSource5.DataSource = typeof(Turno);
+            // 
+            // turnoBindingSource6
+            // 
+            turnoBindingSource6.DataSource = typeof(Turno);
+            // 
+            // turnoBindingSource7
+            // 
+            turnoBindingSource7.DataSource = typeof(Turno);
+            // 
+            // turnoBindingSource9
+            // 
+            turnoBindingSource9.DataSource = typeof(Turno);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            idDataGridViewTextBoxColumn.HeaderText = "ID";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            fechaDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // horarioDataGridViewTextBoxColumn
+            // 
+            horarioDataGridViewTextBoxColumn.DataPropertyName = "horario";
+            horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
+            horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
+            horarioDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // canchaDataGridViewTextBoxColumn
+            // 
+            canchaDataGridViewTextBoxColumn.DataPropertyName = "cancha";
+            canchaDataGridViewTextBoxColumn.HeaderText = "cancha";
+            canchaDataGridViewTextBoxColumn.Name = "canchaDataGridViewTextBoxColumn";
+            canchaDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // clienteDataGridViewTextBoxColumn
+            // 
+            clienteDataGridViewTextBoxColumn.DataPropertyName = "cliente";
+            clienteDataGridViewTextBoxColumn.HeaderText = "cliente";
+            clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
+            clienteDataGridViewTextBoxColumn.Width = 94;
             // 
             // dgvTurnos
             // 
@@ -223,7 +274,6 @@
             dgvTurnos.AllowUserToResizeColumns = false;
             dgvTurnos.AllowUserToResizeRows = false;
             dgvTurnos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvTurnos.AutoGenerateColumns = false;
             dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTurnos.BackgroundColor = Color.FromArgb(26, 32, 40);
             dgvTurnos.BorderStyle = BorderStyle.None;
@@ -238,8 +288,6 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvTurnos.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, fechaDataGridViewTextBoxColumn, horarioDataGridViewTextBoxColumn, nombreClienteDataGridViewTextBoxColumn, apellidoClienteDataGridViewTextBoxColumn, telClienteDataGridViewTextBoxColumn, canchaIDDataGridViewTextBoxColumn, tipoCanchaDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
-            dgvTurnos.DataSource = turnoBindingSource8;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -250,7 +298,7 @@
             dgvTurnos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTurnos.EnableHeadersVisualStyles = false;
             dgvTurnos.GridColor = Color.MidnightBlue;
-            dgvTurnos.Location = new Point(219, 170);
+            dgvTurnos.Location = new Point(266, 175);
             dgvTurnos.Name = "dgvTurnos";
             dgvTurnos.ReadOnly = true;
             dgvTurnos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -264,83 +312,8 @@
             dgvTurnos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvTurnos.RowTemplate.Height = 25;
             dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTurnos.Size = new Size(692, 479);
-            dgvTurnos.TabIndex = 20;
-            // 
-            // turnoBindingSource5
-            // 
-            turnoBindingSource5.DataSource = typeof(LogicaClases.Clases.Turno);
-            // 
-            // turnoBindingSource6
-            // 
-            turnoBindingSource6.DataSource = typeof(LogicaClases.Clases.Turno);
-            // 
-            // turnoBindingSource7
-            // 
-            turnoBindingSource7.DataSource = typeof(LogicaClases.Clases.Turno);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "ID";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // horarioDataGridViewTextBoxColumn
-            // 
-            horarioDataGridViewTextBoxColumn.DataPropertyName = "horario";
-            horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
-            horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
-            horarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreClienteDataGridViewTextBoxColumn
-            // 
-            nombreClienteDataGridViewTextBoxColumn.DataPropertyName = "nombreCliente";
-            nombreClienteDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreClienteDataGridViewTextBoxColumn.Name = "nombreClienteDataGridViewTextBoxColumn";
-            nombreClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoClienteDataGridViewTextBoxColumn
-            // 
-            apellidoClienteDataGridViewTextBoxColumn.DataPropertyName = "apellidoCliente";
-            apellidoClienteDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            apellidoClienteDataGridViewTextBoxColumn.Name = "apellidoClienteDataGridViewTextBoxColumn";
-            apellidoClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telClienteDataGridViewTextBoxColumn
-            // 
-            telClienteDataGridViewTextBoxColumn.DataPropertyName = "telCliente";
-            telClienteDataGridViewTextBoxColumn.HeaderText = "Tel";
-            telClienteDataGridViewTextBoxColumn.Name = "telClienteDataGridViewTextBoxColumn";
-            telClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // canchaIDDataGridViewTextBoxColumn
-            // 
-            canchaIDDataGridViewTextBoxColumn.DataPropertyName = "canchaID";
-            canchaIDDataGridViewTextBoxColumn.HeaderText = "Cancha";
-            canchaIDDataGridViewTextBoxColumn.Name = "canchaIDDataGridViewTextBoxColumn";
-            canchaIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoCanchaDataGridViewTextBoxColumn
-            // 
-            tipoCanchaDataGridViewTextBoxColumn.DataPropertyName = "tipoCancha";
-            tipoCanchaDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            tipoCanchaDataGridViewTextBoxColumn.Name = "tipoCanchaDataGridViewTextBoxColumn";
-            tipoCanchaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
-            precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            precioDataGridViewTextBoxColumn.ReadOnly = true;
+            dgvTurnos.Size = new Size(563, 474);
+            dgvTurnos.TabIndex = 19;
             // 
             // HistorialTurnos
             // 
@@ -369,10 +342,11 @@
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource5).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource6).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -393,26 +367,27 @@
         private BindingSource turnoBindingSource;
         private BindingSource clienteBindingSource;
         private BindingSource turnoBindingSource1;
-        private DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn canchaTurnoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn clienteTurnoDataGridViewTextBoxColumn;
         private BindingSource turnoBindingSource2;
         private BindingSource turnoBindingSource3;
         private BindingSource turnoBindingSource4;
-        private DataGridView dgvTurnos;
         private BindingSource turnoBindingSource5;
         private BindingSource turnoBindingSource7;
         private BindingSource turnoBindingSource6;
-        private DataGridViewButtonColumn cancha;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn canchaIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoCanchaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreClienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidoClienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn telClienteDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn canchaIDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoCanchaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private BindingSource turnoBindingSource9;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
+        private DataGridView dgvTurnos;
+        private DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn1;
     }
 }

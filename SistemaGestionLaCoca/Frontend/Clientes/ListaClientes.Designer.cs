@@ -1,4 +1,6 @@
-﻿namespace Frontend
+﻿using Logica.Clases;
+
+namespace Frontend
 {
     partial class ListaClientes
     {
@@ -156,7 +158,7 @@
             // 
             // clienteBindingSource
             // 
-            clienteBindingSource.DataSource = typeof(LogicaClases.Clases.Cliente);
+            clienteBindingSource.DataSource = typeof(Cliente);
             // 
             // btnVolver
             // 

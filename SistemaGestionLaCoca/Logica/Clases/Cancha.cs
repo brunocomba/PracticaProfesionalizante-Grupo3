@@ -1,11 +1,10 @@
-﻿using Logica.Clases;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicaClases.Clases
+namespace Logica.Clases
 {
     public class Cancha
     {
@@ -15,7 +14,7 @@ namespace LogicaClases.Clases
         public int cantJugadores { get; set; }
         public string nombre { get; set; }
         public int precio { get; set; }
-        public string  idYnombre { get; set; }
+        public string idYnombre { get; set; }
         public List<Turno> Turnos { get; set; }
         public List<Horario> Horarios { get; set; }
 
@@ -26,5 +25,8 @@ namespace LogicaClases.Clases
             lastID++;
             return lastID;
         }
+
+
+        
     }
 }

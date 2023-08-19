@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicaClases.Clases
+namespace Logica.Clases
 {
     public class Cliente
     {
@@ -14,7 +14,7 @@ namespace LogicaClases.Clases
         public uint telefono { get; set; }
         public string nombreYapellido { get; set; }
 
-        public List<Turno>  Turnos { get; set; }
+        public List<Turno> Turnos { get; set; }
 
     }
 }

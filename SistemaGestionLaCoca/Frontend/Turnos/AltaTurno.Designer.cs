@@ -50,7 +50,6 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
             toolTip1 = new ToolTip(components);
             horarioBindingSource = new BindingSource(components);
             dataGridView1 = new DataGridView();
@@ -305,21 +304,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(26, 32, 40);
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.AppWorkspace;
-            button2.Location = new Point(529, 532);
-            button2.Name = "button2";
-            button2.Size = new Size(98, 35);
-            button2.TabIndex = 13;
-            button2.Text = "VOLVER";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
-            // 
             // horarioBindingSource
             // 
             horarioBindingSource.DataSource = typeof(Logica.Clases.Horario);
@@ -340,7 +324,6 @@
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1025, 610);
             Controls.Add(dataGridView1);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);

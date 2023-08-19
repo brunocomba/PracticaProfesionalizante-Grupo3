@@ -3,9 +3,10 @@
     "",
     "\\Frontend",
     "\\Frontend\\Canchas",
+    "\\Frontend\\Turnos",
     "\\Logica",
     "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\Frontend\\Program.cs",
+  "SelectedNode": "\\Frontend\\Turnos\\HistorialTurnos.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,4 +1,6 @@
-﻿namespace Frontend
+﻿using Logica.Clases;
+
+namespace Frontend
 {
     partial class ListaCanchas
     {
@@ -106,7 +108,7 @@
             // 
             // canchaBindingSource
             // 
-            canchaBindingSource.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource.DataSource = typeof(Cancha);
             // 
             // btnVolver
             // 
@@ -124,63 +126,63 @@
             // 
             // canchaBindingSource1
             // 
-            canchaBindingSource1.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource1.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource2
             // 
-            canchaBindingSource2.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource2.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource3
             // 
-            canchaBindingSource3.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource3.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource4
             // 
-            canchaBindingSource4.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource4.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource5
             // 
-            canchaBindingSource5.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource5.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource7
             // 
-            canchaBindingSource7.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource7.DataSource = typeof(Cancha);
             // 
             // administradorBindingSource
             // 
-            administradorBindingSource.DataSource = typeof(LogicaClases.Clases.Administrador);
+            administradorBindingSource.DataSource = typeof(Administrador);
             // 
             // canchaBindingSource6
             // 
-            canchaBindingSource6.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource6.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource8
             // 
-            canchaBindingSource8.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource8.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource9
             // 
-            canchaBindingSource9.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource9.DataSource = typeof(Cancha);
             // 
             // administradorBindingSource1
             // 
-            administradorBindingSource1.DataSource = typeof(LogicaClases.Clases.Administrador);
+            administradorBindingSource1.DataSource = typeof(Administrador);
             // 
             // administradorBindingSource2
             // 
-            administradorBindingSource2.DataSource = typeof(LogicaClases.Clases.Administrador);
+            administradorBindingSource2.DataSource = typeof(Administrador);
             // 
             // canchaBindingSource10
             // 
-            canchaBindingSource10.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource10.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource11
             // 
-            canchaBindingSource11.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource11.DataSource = typeof(Cancha);
             // 
             // canchaBindingSource12
             // 
-            canchaBindingSource12.DataSource = typeof(LogicaClases.Clases.Cancha);
+            canchaBindingSource12.DataSource = typeof(Cancha);
             // 
             // dgvCanchas
             // 

@@ -1,6 +1,5 @@
 ﻿using FrontEnd;
 using Logica.Clases;
-using LogicaClases.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
