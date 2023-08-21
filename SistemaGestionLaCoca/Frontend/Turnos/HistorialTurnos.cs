@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,14 +19,17 @@ namespace Frontend
         {
             InitializeComponent();
         }
-
+        List<string> listaPropiedades = new List<string>();
         private void HistorialTurnos_Load(object sender, EventArgs e)
         {
-            dgvTurnos.DataSource = Principal.ObtenerTurnos();
-            DataGridViewTextBoxColumn columnaNombre = new DataGridViewTextBoxColumn();
-            columnaNombre.HeaderText = "Tipo";
-            columnaNombre.DataPropertyName = "cancha.tipo"; // Propiedad del objeto 
-            dgvTurnos.Columns.Add(columnaNombre);
+
+            foreach (var turno in Principal.ObtenerTurnos())
+            {
+                string propConcatenada = turno.MostrarInfo();
+                listaPropiedades.Add(propConcatenada);
+
+            }
+            listBox1.DataSource = listaPropiedades;
 
 
 
@@ -37,7 +41,7 @@ namespace Frontend
             string busqueda = txtFiltrarTurnos.Text.ToLower(); // Convierte el término de búsqueda a minúsculas
             var resultados = Principal.ObtenerTurnos().Where(turno => turno.id.ToString().Contains(busqueda) || turno.fecha.ToString().Contains(busqueda)).ToList();
 
-            dgvTurnos.DataSource = resultados;
+
         }
 
 
@@ -55,6 +59,16 @@ namespace Frontend
             menuInicio.Show();
             this.Hide();
             MessageBox.Show("Freno");
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

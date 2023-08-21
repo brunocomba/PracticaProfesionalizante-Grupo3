@@ -25,7 +25,10 @@ namespace Logica.Clases
             lastID++;
             return lastID;
         }
-
+        public string MostrarInfo()
+        {
+            return $"{id} ; {fecha} ; {horario} ; {cliente.nombre} ; {cliente.apellido} ; {cliente.telefono} ; {cancha.id} ; {cancha.tipo} ; {cancha.precio}";
+        }
     }
 
 }

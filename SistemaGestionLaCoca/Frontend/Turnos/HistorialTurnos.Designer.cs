@@ -31,9 +31,6 @@ namespace Frontend
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialTurnos));
             groupBox1 = new GroupBox();
             label1 = new Label();
@@ -60,7 +57,16 @@ namespace Frontend
             horarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             canchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dgvTurnos = new DataGridView();
+            listBox1 = new ListBox();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource8).BeginInit();
@@ -74,7 +80,6 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -267,53 +272,120 @@ namespace Frontend
             clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
             clienteDataGridViewTextBoxColumn.Width = 94;
             // 
-            // dgvTurnos
+            // listBox1
             // 
-            dgvTurnos.AllowUserToAddRows = false;
-            dgvTurnos.AllowUserToDeleteRows = false;
-            dgvTurnos.AllowUserToResizeColumns = false;
-            dgvTurnos.AllowUserToResizeRows = false;
-            dgvTurnos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvTurnos.BackgroundColor = Color.FromArgb(26, 32, 40);
-            dgvTurnos.BorderStyle = BorderStyle.None;
-            dgvTurnos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvTurnos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvTurnos.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvTurnos.EnableHeadersVisualStyles = false;
-            dgvTurnos.GridColor = Color.MidnightBlue;
-            dgvTurnos.Location = new Point(266, 175);
-            dgvTurnos.Name = "dgvTurnos";
-            dgvTurnos.ReadOnly = true;
-            dgvTurnos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvTurnos.RowHeadersVisible = false;
-            dgvTurnos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(49, 66, 82);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            dgvTurnos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvTurnos.RowTemplate.Height = 25;
-            dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTurnos.Size = new Size(563, 474);
-            dgvTurnos.TabIndex = 19;
+            listBox1.BackColor = Color.FromArgb(26, 32, 40);
+            listBox1.BorderStyle = BorderStyle.None;
+            listBox1.ColumnWidth = 23;
+            listBox1.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            listBox1.ForeColor = Color.White;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 17;
+            listBox1.Location = new Point(226, 217);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(674, 408);
+            listBox1.TabIndex = 19;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(224, 189);
+            label3.Name = "label3";
+            label3.Size = new Size(19, 16);
+            label3.TabIndex = 20;
+            label3.Text = "ID";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(518, 189);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 16);
+            label4.TabIndex = 21;
+            label4.Text = "Telefono";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(447, 189);
+            label5.Name = "label5";
+            label5.Size = new Size(53, 16);
+            label5.TabIndex = 22;
+            label5.Text = "Apellido";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(378, 189);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 16);
+            label6.TabIndex = 23;
+            label6.Text = "Nombre";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(320, 189);
+            label7.Name = "label7";
+            label7.Size = new Size(34, 16);
+            label7.TabIndex = 24;
+            label7.Text = "Hora";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(260, 189);
+            label8.Name = "label8";
+            label8.Size = new Size(43, 16);
+            label8.TabIndex = 25;
+            label8.Text = "Fecha";
+            label8.Click += label8_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(578, 173);
+            label9.Name = "label9";
+            label9.Size = new Size(51, 32);
+            label9.TabIndex = 26;
+            label9.Text = "Cancha\r\n    ID";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(635, 189);
+            label10.Name = "label10";
+            label10.Size = new Size(52, 16);
+            label10.TabIndex = 27;
+            label10.Text = "Deporte";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(693, 189);
+            label11.Name = "label11";
+            label11.Size = new Size(44, 16);
+            label11.TabIndex = 28;
+            label11.Text = "Precio";
             // 
             // HistorialTurnos
             // 
@@ -321,7 +393,16 @@ namespace Frontend
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1034, 661);
-            Controls.Add(dgvTurnos);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(listBox1);
             Controls.Add(txtFiltrarTurnos);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -346,7 +427,6 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource6).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -387,7 +467,16 @@ namespace Frontend
         private DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
-        private DataGridView dgvTurnos;
-        private DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn1;
+        private ListBox listBox1;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }
