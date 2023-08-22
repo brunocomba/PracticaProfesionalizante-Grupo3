@@ -14,7 +14,7 @@ namespace Logica.Clases
         public uint telefono { get; set; }
         public string nombreYapellido { get; set; }
 
-        public List<Turno> Turnos { get; set; }
+      
 
     }
 }

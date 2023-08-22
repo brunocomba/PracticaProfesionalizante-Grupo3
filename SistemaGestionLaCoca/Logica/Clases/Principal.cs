@@ -91,7 +91,6 @@ namespace Logica.Clases
                 clienteBase.dni = 28167907;
                 clienteBase.telefono = 2299665477;
                 clienteBase.nombreYapellido = "Roman" + " Riquelme";
-                clienteBase.Turnos = new List<Turno>();
 
                 listaClientes.Add(clienteBase);
 
@@ -101,7 +100,7 @@ namespace Logica.Clases
                 clienteBase2.dni = 45414815;
                 clienteBase2.telefono = 3493666650;
                 clienteBase2.nombreYapellido = "Joaquin" + " Lopez";
-                clienteBase2.Turnos = new List<Turno>(); 
+
 
                 listaClientes.Add(clienteBase2);
             }
@@ -151,8 +150,7 @@ namespace Logica.Clases
                 canchaBase.cantJugadores = 8;
                 canchaBase.precio = 4000;
                 canchaBase.idYnombre = canchaBase.id + " Norte";
-                canchaBase.Turnos = new List<Turno>();
-                canchaBase.Horarios = new List<Horario>();
+
 
 
                 listaCanchas.Add(canchaBase);
@@ -165,8 +163,7 @@ namespace Logica.Clases
                 canchaBase2.cantJugadores = 10;
                 canchaBase2.precio = 4000;
                 canchaBase2.idYnombre = canchaBase2.id + " Sur";
-                canchaBase2.Turnos = new List<Turno>(); 
-                canchaBase2.Horarios = new List<Horario>();
+
 
 
 
@@ -215,32 +212,30 @@ namespace Logica.Clases
                 Turno turnoBase = new Turno();
                 turnoBase.id = Turno.GenerateID();
                 turnoBase.fecha = new DateOnly(2023, 8, 8);
-                turnoBase.horario = new TimeOnly(15, 30);
+                turnoBase.horarioTurno = new TimeOnly(15, 30);
 
                 Cancha laCancha = Principal.ObtenerCanchas()[0];
-                turnoBase.cancha = laCancha;
+                turnoBase.canchaTurno = laCancha;
 
                 Cliente elCliente = Principal.ObtenerClientes()[0];
-                turnoBase.cliente = elCliente;
+                turnoBase.clienteTurno = elCliente;
            
-                laCancha.Turnos.Add(turnoBase);
-                elCliente.Turnos.Add(turnoBase);
+
                 listaTurnos.Add(turnoBase);
 
                 // SEGUNDO TURNO HARCODEADO.
                 Turno turnoBase2 = new Turno();
                 turnoBase2.id = Turno.GenerateID();
                 turnoBase2.fecha = new DateOnly(2023, 8, 10);
-                turnoBase2.horario = new TimeOnly(15, 30);
+                turnoBase2.horarioTurno = new TimeOnly(15, 30);
 
                 Cancha canchaBase = Principal.ObtenerCanchas()[1];
-                turnoBase2.cancha = canchaBase;
+                turnoBase2.canchaTurno = canchaBase;
 
                 Cliente clienteBase = Principal.ObtenerClientes()[1];
-                turnoBase2.cliente = clienteBase;
+                turnoBase2.clienteTurno = clienteBase;
 
-                canchaBase.Turnos.Add(turnoBase2);   
-                clienteBase.Turnos.Add(turnoBase2); 
+
                 listaTurnos.Add(turnoBase2);
                 
             }
@@ -250,25 +245,16 @@ namespace Logica.Clases
         public void altaTurno(Cancha cancha, Cliente cliente)
         {
             {
-                /*
+                
                 Turno newTurno = new Turno();
 
                 newTurno.id = Turno.GenerateID();
 
-                newTurno.precio = cancha.precio;
-                newTurno.canchaID = cancha.id;
-                newTurno.tipoCancha = cancha.tipo;
-
-                newTurno.cliente = cliente;
-                newTurno.nombreCliente = cliente.nombre;
-                newTurno.apellidoCliente = cliente.apellido;
-                newTurno.telCliente = cliente.telefono;
-
-                cancha.Turnos.Add(newTurno);
-                cliente.Turnos.Add(newTurno);
-
+                newTurno.canchaTurno = cancha;
+                newTurno.clienteTurno = cliente;
+               
                 listaTurnos.Add(newTurno);
-                */
+                
             }
 
         }
@@ -288,27 +274,21 @@ namespace Logica.Clases
                 horarioBase.hora = "17:00";
                 Cancha canchaBase = Principal.ObtenerCanchas()[0];
                 horarioBase.cancha = canchaBase;
-                horarioBase.nombreCancha = canchaBase.idYnombre;
                 listaHorarios.Add(horarioBase);
-                canchaBase.Horarios.Add(horarioBase);
 
 
                 Horario horarioBase2 = new Horario();
                 horarioBase2.hora = "18:30";
                 Cancha canchaBase2 = Principal.ObtenerCanchas()[1];
                 horarioBase2.cancha = canchaBase2;
-                horarioBase2.nombreCancha = canchaBase2.idYnombre;
                 listaHorarios.Add(horarioBase2);
-                canchaBase2.Horarios.Add(horarioBase2);
 
 
                 Horario horarioBase3 = new Horario();
                 horarioBase3.hora = "19:30";
                 Cancha canchaBase3 = Principal.ObtenerCanchas()[1];
                 horarioBase3.cancha = canchaBase3;
-                horarioBase3.nombreCancha = canchaBase3.idYnombre;
                 listaHorarios.Add(horarioBase3);
-                canchaBase3.Horarios.Add(horarioBase3);
 
 
             }
@@ -321,8 +301,6 @@ namespace Logica.Clases
 
                 newHorario.hora = Hora;
                 newHorario.cancha = cancha;
-                newHorario.nombreCancha = cancha.idYnombre;
-                cancha.Horarios.Add(newHorario);
                
 
                 listaHorarios.Add(newHorario);

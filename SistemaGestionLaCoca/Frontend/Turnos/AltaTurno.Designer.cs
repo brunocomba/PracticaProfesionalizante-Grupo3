@@ -52,11 +52,9 @@
             button1 = new Button();
             toolTip1 = new ToolTip(components);
             horarioBindingSource = new BindingSource(components);
-            dataGridView1 = new DataGridView();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -308,22 +306,12 @@
             // 
             horarioBindingSource.DataSource = typeof(Logica.Clases.Horario);
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(468, 142);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(527, 354);
-            dataGridView1.TabIndex = 14;
-            // 
             // AltaTurno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1025, 610);
-            Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -337,7 +325,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -366,6 +353,5 @@
         private Button button2;
         private ToolTip toolTip1;
         private BindingSource horarioBindingSource;
-        private DataGridView dataGridView1;
     }
 }

@@ -60,16 +60,6 @@ namespace Frontend
             cmboxHorarios.Items.AddRange(Principal.ObtenerHorarios().ToArray());
 
 
-            dataGridView1.Columns.Add("Nombre", "Nombre");
-            dataGridView1.Columns.Add("Direccion", "Dirección");
-            dataGridView1.Columns.Add("Contacto", "Contacto");
-            dataGridView1.Columns.Add("Producto", "Producto");
-            dataGridView1.Columns.Add("Cantidad", "Cantidad");
-            dataGridView1.Columns.Add("PrecioUnitario", "Precio Unitario");
-
-            // Ajustar el modo de visualización
-            dataGridView1.AutoGenerateColumns = false;
-
 
         }
 
@@ -95,9 +85,10 @@ namespace Frontend
 
             cmboxPrecio.DataSource = canchasFiltradas;
             cmboxPrecio.DisplayMember = "precio";
+            string canchaElegida = cmboxCancha.SelectedItem.ToString();
+            List<Horario> horasFiltradas = Principal.ObtenerHorarios().Where(hora => hora.cancha.idYnombre == canchaElegida).ToList();
 
-            cmboxHorarios.DataSource = canchasFiltradas;
-            cmboxHorarios.DisplayMember = "hora";
+            cmboxHorarios.DataSource = horasFiltradas;
 
 
             // hacer inspecciones y ver si funciona ver lo de horarios
@@ -114,11 +105,6 @@ namespace Frontend
 
         private void cmboxCancha_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string canchaElegida = cmboxCancha.SelectedItem.ToString();
-            List<Horario> horasFiltradas = Principal.ObtenerHorarios().Where(hora => hora.nombreCancha == canchaElegida).ToList();
-
-            cmboxHorarios.DataSource = horasFiltradas;
-            cmboxHorarios.DisplayMember = "horario";
 
         }
 

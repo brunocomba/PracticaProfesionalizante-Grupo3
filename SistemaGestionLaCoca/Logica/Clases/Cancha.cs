@@ -15,8 +15,7 @@ namespace Logica.Clases
         public string nombre { get; set; }
         public int precio { get; set; }
         public string idYnombre { get; set; }
-        public List<Turno> Turnos { get; set; }
-        public List<Horario> Horarios { get; set; }
+
 
         private static int lastID = 0;
 

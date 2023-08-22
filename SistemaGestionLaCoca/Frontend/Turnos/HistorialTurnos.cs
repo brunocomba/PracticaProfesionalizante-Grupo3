@@ -58,7 +58,7 @@ namespace Frontend
             MenuInicio menuInicio = new MenuInicio();
             menuInicio.Show();
             this.Hide();
-            MessageBox.Show("Freno");
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
