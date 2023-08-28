@@ -56,6 +56,7 @@
             label9 = new Label();
             errorProviderPass = new ErrorProvider(components);
             groupBox1 = new GroupBox();
+            lblErrorApellido = new Label();
             DatosPers.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderPass).BeginInit();
@@ -64,6 +65,7 @@
             // 
             // DatosPers
             // 
+            DatosPers.Controls.Add(lblErrorApellido);
             DatosPers.Controls.Add(lblErrorDni);
             DatosPers.Controls.Add(lblErrorTel);
             DatosPers.Controls.Add(label8);
@@ -115,7 +117,7 @@
             // txtApellido
             // 
             txtApellido.ForeColor = Color.Silver;
-            txtApellido.Location = new Point(127, 111);
+            txtApellido.Location = new Point(128, 111);
             txtApellido.MaxLength = 40;
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(195, 23);
@@ -128,7 +130,7 @@
             // txtDni
             // 
             txtDni.ForeColor = Color.Silver;
-            txtDni.Location = new Point(128, 150);
+            txtDni.Location = new Point(128, 171);
             txtDni.MaxLength = 8;
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(195, 23);
@@ -142,7 +144,7 @@
             // txtTel
             // 
             txtTel.ForeColor = Color.Silver;
-            txtTel.Location = new Point(127, 193);
+            txtTel.Location = new Point(128, 215);
             txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(195, 23);
@@ -169,7 +171,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(66, 158);
+            label6.Location = new Point(74, 173);
             label6.Name = "label6";
             label6.Size = new Size(28, 15);
             label6.TabIndex = 8;
@@ -180,7 +182,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(51, 201);
+            label5.Location = new Point(51, 218);
             label5.Name = "label5";
             label5.Size = new Size(54, 15);
             label5.TabIndex = 7;
@@ -216,9 +218,9 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = SystemColors.AppWorkspace;
-            btnCancelar.Location = new Point(675, 423);
+            btnCancelar.Location = new Point(665, 423);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(101, 29);
+            btnCancelar.Size = new Size(111, 29);
             btnCancelar.TabIndex = 16;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -245,7 +247,7 @@
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(132, 50);
             btnCrear.TabIndex = 2;
-            btnCrear.Text = "Crear nuevo usuario";
+            btnCrear.Text = "CREAR ";
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
@@ -366,6 +368,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "23";
             // 
+            // lblErrorApellido
+            // 
+            lblErrorApellido.AutoSize = true;
+            lblErrorApellido.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblErrorApellido.ForeColor = Color.Red;
+            lblErrorApellido.Location = new Point(127, 137);
+            lblErrorApellido.Name = "lblErrorApellido";
+            lblErrorApellido.Size = new Size(0, 13);
+            lblErrorApellido.TabIndex = 20;
+            // 
             // AltaAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -381,6 +393,7 @@
             MaximizeBox = false;
             Name = "AltaAdmin";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += AltaAdmin_Load;
             DatosPers.ResumeLayout(false);
             DatosPers.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -423,5 +436,6 @@
         private Label lblErrorTel;
         private Label lblErrorDni;
         private GroupBox groupBox1;
+        private Label lblErrorApellido;
     }
 }

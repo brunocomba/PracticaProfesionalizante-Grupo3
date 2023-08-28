@@ -52,9 +52,11 @@
             button1 = new Button();
             toolTip1 = new ToolTip(components);
             horarioBindingSource = new BindingSource(components);
+            turnoBindingSource = new BindingSource(components);
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -101,6 +103,7 @@
             groupBox1.Size = new Size(391, 496);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnAddHorarios
             // 
@@ -202,9 +205,9 @@
             btnAgregarCancha.FlatStyle = FlatStyle.Flat;
             btnAgregarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarCancha.ForeColor = Color.White;
-            btnAgregarCancha.Location = new Point(147, 443);
+            btnAgregarCancha.Location = new Point(141, 420);
             btnAgregarCancha.Name = "btnAgregarCancha";
-            btnAgregarCancha.Size = new Size(98, 35);
+            btnAgregarCancha.Size = new Size(107, 41);
             btnAgregarCancha.TabIndex = 4;
             btnAgregarCancha.Text = "AGREGAR";
             btnAgregarCancha.UseVisualStyleBackColor = true;
@@ -302,9 +305,9 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // horarioBindingSource
+            // turnoBindingSource
             // 
-            horarioBindingSource.DataSource = typeof(Logica.Clases.Horario);
+            turnoBindingSource.DataSource = typeof(Logica.Clases.Turno);
             // 
             // AltaTurno
             // 
@@ -325,6 +328,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -339,7 +343,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button btnAgregarCancha;
         private ComboBox cmboxCliente;
         private Button button1;
         private Label label6;
@@ -353,5 +356,8 @@
         private Button button2;
         private ToolTip toolTip1;
         private BindingSource horarioBindingSource;
+        private Button btnAgregarCancha;
+        private DataGridViewTextBoxColumn canchaTurnoDataGridViewTextBoxColumn;
+        private BindingSource turnoBindingSource;
     }
 }

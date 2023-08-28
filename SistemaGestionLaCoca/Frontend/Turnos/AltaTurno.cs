@@ -24,7 +24,7 @@ namespace Frontend
 
         }
 
-
+        Principal principal = new Principal();
 
 
         // METODO  PARA QUE AL CREAR UNA NUEVA CANCHA DE UN DEPORTE QUE YA ESTE CREADA, NO LO VUELVA A AGREGAR
@@ -56,9 +56,17 @@ namespace Frontend
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
 
             // Cargar horarios de turnos.
-            cmboxHorarios.DisplayMember = "hora";
-            cmboxHorarios.Items.AddRange(Principal.ObtenerHorarios().ToArray());
-
+            cmboxHorarios.Items.Add("16:00");
+            cmboxHorarios.Items.Add("16:30");
+            cmboxHorarios.Items.Add("17:00");
+            cmboxHorarios.Items.Add("17:30");
+            cmboxHorarios.Items.Add("18:00");
+            cmboxHorarios.Items.Add("18:30");
+            cmboxHorarios.Items.Add("19:00");
+            cmboxHorarios.Items.Add("19:30");
+            cmboxHorarios.Items.Add("20:00");
+            cmboxHorarios.Items.Add("20:30");
+            cmboxHorarios.Items.Add("21:00");
 
 
         }
@@ -86,9 +94,8 @@ namespace Frontend
             cmboxPrecio.DataSource = canchasFiltradas;
             cmboxPrecio.DisplayMember = "precio";
             string canchaElegida = cmboxCancha.SelectedItem.ToString();
-            List<Horario> horasFiltradas = Principal.ObtenerHorarios().Where(hora => hora.cancha.idYnombre == canchaElegida).ToList();
 
-            cmboxHorarios.DataSource = horasFiltradas;
+
 
 
             // hacer inspecciones y ver si funciona ver lo de horarios
@@ -96,7 +103,7 @@ namespace Frontend
         }
 
 
-        public List<Horario> horasFiltradas = new List<Horario>();
+
         private void cmboxPrecio_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -123,28 +130,55 @@ namespace Frontend
 
         private void btnAddHorarios_Click(object sender, EventArgs e)
         {
-            AltaNuevosHorarios altaNuevosHorarios = new AltaNuevosHorarios();
-            altaNuevosHorarios.Show();
-            this.Hide();
-        }
 
+        }
+       
+        
+        private static bool TurnoExiste(string hora, DateTime fecha)
+        {
+
+            foreach (Turno turno in Principal.ObtenerTurnos())
+            {
+                if (turno.Horario == hora && turno.Fecha == fecha)
+                {
+                    return true; // El turno ya existe en la lista
+                }
+            }
+            return false; // El turno no existe en la lista
+        }
+        
         private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
-            Principal principal = new Principal();
-            principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem);
-            MessageBox.Show($"Turno creado con exito al cliente");
+            
+            string horario = cmboxHorarios.SelectedItem.ToString();
+            DateTime fecha = dateTimePicker1.Value;
 
-            //PRUEBA, FUNCIONA EL ALTA. ARREGLAR CAMBIOS DE PANTALLA AL IR DESDE ESTE FORMULARIO.
+            if (TurnoExiste(horario, fecha) == true)
+            {
+                MessageBox.Show("No se puede registrar el turno por....", "ATENCION.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            else
+            {
+                principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem, dateTimePicker1.Value, cmboxHorarios.Text);
+                MessageBox.Show($"Turno creado con exito al cliente");
+
+            }
+           
+
+          
             // HACER VALIDACIONES
             // VER TEMAS HORARIOS.
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("sksk");
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

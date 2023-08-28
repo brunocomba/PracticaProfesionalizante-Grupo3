@@ -20,7 +20,6 @@ namespace Logica.Clases
 
         public static List<Turno> listaTurnos;
 
-        public static List<Horario> listaHorarios;
 
 
 
@@ -210,9 +209,11 @@ namespace Logica.Clases
 
                 // PRIMER TURNO HARCODEADO.
                 Turno turnoBase = new Turno();
-                turnoBase.id = Turno.GenerateID();
-                turnoBase.fecha = new DateOnly(2023, 8, 8);
-                turnoBase.horarioTurno = new TimeOnly(15, 30);
+                turnoBase.Id = Turno.GenerateID();
+                turnoBase.Fecha = new DateTime(2023, 8, 27);
+                turnoBase.Horario = ("16:30");
+                turnoBase.condicionReservado = true;
+
 
                 Cancha laCancha = Principal.ObtenerCanchas()[0];
                 turnoBase.canchaTurno = laCancha;
@@ -225,9 +226,10 @@ namespace Logica.Clases
 
                 // SEGUNDO TURNO HARCODEADO.
                 Turno turnoBase2 = new Turno();
-                turnoBase2.id = Turno.GenerateID();
-                turnoBase2.fecha = new DateOnly(2023, 8, 10);
-                turnoBase2.horarioTurno = new TimeOnly(15, 30);
+                turnoBase2.Id = Turno.GenerateID();
+                turnoBase2.Fecha = new DateTime(2023, 8, 25);
+                turnoBase2.Horario = ("18:00");
+                turnoBase2.condicionReservado = true;
 
                 Cancha canchaBase = Principal.ObtenerCanchas()[1];
                 turnoBase2.canchaTurno = canchaBase;
@@ -236,25 +238,29 @@ namespace Logica.Clases
                 turnoBase2.clienteTurno = clienteBase;
 
 
+
                 listaTurnos.Add(turnoBase2);
                 
             }
 
             return listaTurnos;
+
         }
-        public void altaTurno(Cancha cancha, Cliente cliente)
+        
+        public void altaTurno(Cancha cancha, Cliente cliente, DateTime fecha, string hora)
         {
             {
                 
                 Turno newTurno = new Turno();
 
-                newTurno.id = Turno.GenerateID();
+                newTurno.Id = Turno.GenerateID();
 
                 newTurno.canchaTurno = cancha;
                 newTurno.clienteTurno = cliente;
-               
-                listaTurnos.Add(newTurno);
-                
+                newTurno.Fecha = fecha;
+                newTurno.Horario = hora;
+                newTurno.condicionReservado = true;
+
             }
 
         }
@@ -262,51 +268,7 @@ namespace Logica.Clases
 
 
 
-        // ------------------------------------ HORARIOS.
-        public static List<Horario> ObtenerHorarios()
-        {
-            if (listaHorarios == null)
-            {
-                listaHorarios = new List<Horario>();
-
-                Horario horarioBase = new Horario();
-
-                horarioBase.hora = "17:00";
-                Cancha canchaBase = Principal.ObtenerCanchas()[0];
-                horarioBase.cancha = canchaBase;
-                listaHorarios.Add(horarioBase);
-
-
-                Horario horarioBase2 = new Horario();
-                horarioBase2.hora = "18:30";
-                Cancha canchaBase2 = Principal.ObtenerCanchas()[1];
-                horarioBase2.cancha = canchaBase2;
-                listaHorarios.Add(horarioBase2);
-
-
-                Horario horarioBase3 = new Horario();
-                horarioBase3.hora = "19:30";
-                Cancha canchaBase3 = Principal.ObtenerCanchas()[1];
-                horarioBase3.cancha = canchaBase3;
-                listaHorarios.Add(horarioBase3);
-
-
-            }
-            return listaHorarios;
-        }
-        public void altaHorario(string Hora, Cancha cancha)
-        {
-            {
-                Horario newHorario = new Horario();
-
-                newHorario.hora = Hora;
-                newHorario.cancha = cancha;
-               
-
-                listaHorarios.Add(newHorario);
-            }
-
-        }
+       
     }
 
    

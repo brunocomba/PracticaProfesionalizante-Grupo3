@@ -10,9 +10,6 @@
     <Compile Update="Administradores\ModificarAdmi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AltaNuevosHorarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Turnos\AltaTurno.cs">
       <SubType>Form</SubType>
     </Compile>

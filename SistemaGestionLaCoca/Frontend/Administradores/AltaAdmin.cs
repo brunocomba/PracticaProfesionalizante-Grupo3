@@ -168,6 +168,7 @@ namespace FrontEnd
                 MessageBox.Show("No se puede introducir numeros, solo LETRAS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
                 return;
+                // hacer que inabilite el poder escribir y mostrar el lbl de error
             }
         }
 
@@ -315,6 +316,11 @@ namespace FrontEnd
                 lblErrorDni.Text = "";
                 btnCrear.Enabled = true;
             }
+        }
+
+        private void AltaAdmin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
