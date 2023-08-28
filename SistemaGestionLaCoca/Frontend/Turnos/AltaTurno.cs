@@ -134,7 +134,7 @@ namespace Frontend
         }
        
         
-        private static bool TurnoExiste(string hora, DateTime fecha)
+        private static bool TurnoExiste(string hora, string fecha)
         {
 
             foreach (Turno turno in Principal.ObtenerTurnos())
@@ -149,9 +149,9 @@ namespace Frontend
         
         private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
-            
+
             string horario = cmboxHorarios.SelectedItem.ToString();
-            DateTime fecha = dateTimePicker1.Value;
+            string fecha = dateTimePicker1.Value.ToShortDateString();
 
             if (TurnoExiste(horario, fecha) == true)
             {
@@ -161,9 +161,8 @@ namespace Frontend
 
             else
             {
-                principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem, dateTimePicker1.Value, cmboxHorarios.Text);
-                MessageBox.Show($"Turno creado con exito al cliente");
-
+                principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem, dateTimePicker1.Value.ToShortDateString(), cmboxHorarios.Text);
+                MessageBox.Show($"Turno creado con exito al cliente {cmboxCliente.Text}");
             }
            
 

@@ -210,7 +210,7 @@ namespace Logica.Clases
                 // PRIMER TURNO HARCODEADO.
                 Turno turnoBase = new Turno();
                 turnoBase.Id = Turno.GenerateID();
-                turnoBase.Fecha = new DateTime(2023, 8, 27);
+                turnoBase.Fecha = ("28/08/2023");
                 turnoBase.Horario = ("16:30");
                 turnoBase.condicionReservado = true;
 
@@ -227,7 +227,7 @@ namespace Logica.Clases
                 // SEGUNDO TURNO HARCODEADO.
                 Turno turnoBase2 = new Turno();
                 turnoBase2.Id = Turno.GenerateID();
-                turnoBase2.Fecha = new DateTime(2023, 8, 25);
+                turnoBase2.Fecha = ("27/08/2023");
                 turnoBase2.Horario = ("18:00");
                 turnoBase2.condicionReservado = true;
 
@@ -247,7 +247,7 @@ namespace Logica.Clases
 
         }
         
-        public void altaTurno(Cancha cancha, Cliente cliente, DateTime fecha, string hora)
+        public void altaTurno(Cancha cancha, Cliente cliente, string fecha, string hora)
         {
             {
                 
@@ -260,6 +260,8 @@ namespace Logica.Clases
                 newTurno.Fecha = fecha;
                 newTurno.Horario = hora;
                 newTurno.condicionReservado = true;
+
+                listaTurnos.Add(newTurno);
 
             }
 

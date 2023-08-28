@@ -9,7 +9,7 @@ namespace Logica.Clases
     public class Turno
     {
         public int Id { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
         public string Horario { get; set; }
 
         //  Precio de la cancha dividido por la cant de jugadores de la misma
@@ -28,9 +28,9 @@ namespace Logica.Clases
         }
         public string MostrarInfo()
         {
-            return $"{Id} ; {Fecha.Day}/{Fecha.Month} ; {Horario} ; {clienteTurno.nombre} ; {clienteTurno.apellido} ;" +
+            return $"{Id} ; {Fecha}; {Horario} ; {clienteTurno.nombre} ; {clienteTurno.apellido} ;" +
                 $" {clienteTurno.telefono} ; {canchaTurno.id} ; {canchaTurno.tipo} ; {canchaTurno.precio}";
         }
     }
-
+    //{Fecha.Day}/{Fecha.Month}
 }
