@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Frontend",
+    "\\Frontend\\Administradores"
   ],
-  "SelectedNode": "\\SistemaGestionLaCoca.sln",
+  "SelectedNode": "\\Frontend\\Administradores\\AltaAdmin.cs",
   "PreviewInSolutionExplorer": false
 }

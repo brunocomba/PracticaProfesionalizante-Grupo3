@@ -31,17 +31,17 @@ namespace FrontEnd
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaAdmi));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaAdmi));
             groupBox1 = new GroupBox();
             label1 = new Label();
             btnVolver = new Button();
-            btnModificar = new Button();
-            btnEliminar = new Button();
-            btnCrear = new Button();
             panel1 = new Panel();
+            btnEliminar = new Button();
+            btnAgregar = new Button();
+            btnModificar = new Button();
             dgvAdministradores = new DataGridView();
             dniDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@ namespace FrontEnd
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(239, 41);
             label1.Name = "label1";
@@ -90,62 +90,61 @@ namespace FrontEnd
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // btnModificar
-            // 
-            btnModificar.FlatAppearance.BorderColor = Color.White;
-            btnModificar.FlatAppearance.BorderSize = 2;
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(17, 132);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(116, 41);
-            btnModificar.TabIndex = 3;
-            btnModificar.Text = "MODIFICAR";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.FlatAppearance.BorderSize = 2;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(17, 224);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(116, 44);
-            btnEliminar.TabIndex = 4;
-            btnEliminar.Text = "ELIMINAR";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnCrear
-            // 
-            btnCrear.BackColor = Color.SlateGray;
-            btnCrear.BackgroundImageLayout = ImageLayout.None;
-            btnCrear.FlatAppearance.BorderColor = Color.White;
-            btnCrear.FlatAppearance.BorderSize = 2;
-            btnCrear.FlatStyle = FlatStyle.Flat;
-            btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(15, 41);
-            btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(116, 44);
-            btnCrear.TabIndex = 5;
-            btnCrear.Text = "CREAR";
-            btnCrear.UseVisualStyleBackColor = false;
-            btnCrear.Click += btnCrear_Click;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.SlateGray;
-            panel1.Controls.Add(btnCrear);
-            panel1.Controls.Add(btnModificar);
             panel1.Controls.Add(btnEliminar);
+            panel1.Controls.Add(btnAgregar);
+            panel1.Controls.Add(btnModificar);
             panel1.Location = new Point(-3, 85);
             panel1.Name = "panel1";
-            panel1.Size = new Size(151, 586);
+            panel1.Size = new Size(143, 586);
             panel1.TabIndex = 12;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.FlatAppearance.BorderColor = Color.Black;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.Location = new Point(49, 282);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(49, 56);
+            btnEliminar.TabIndex = 10;
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.FlatAppearance.BorderColor = Color.Black;
+            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.Location = new Point(49, 92);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(49, 57);
+            btnAgregar.TabIndex = 9;
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.FlatAppearance.BorderColor = Color.Black;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Image = (Image)resources.GetObject("btnModificar.Image");
+            btnModificar.Location = new Point(49, 185);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(49, 51);
+            btnModificar.TabIndex = 8;
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click_1;
             // 
             // dgvAdministradores
             // 
@@ -181,7 +180,7 @@ namespace FrontEnd
             dgvAdministradores.DefaultCellStyle = dataGridViewCellStyle2;
             dgvAdministradores.EnableHeadersVisualStyles = false;
             dgvAdministradores.GridColor = Color.MidnightBlue;
-            dgvAdministradores.Location = new Point(263, 121);
+            dgvAdministradores.Location = new Point(263, 136);
             dgvAdministradores.Name = "dgvAdministradores";
             dgvAdministradores.ReadOnly = true;
             dgvAdministradores.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -267,9 +266,6 @@ namespace FrontEnd
         private Label label1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private Button btnVolver;
-        private Button btnModificar;
-        private Button btnEliminar;
-        private Button btnCrear;
         private Panel panel1;
         private DataGridView dgvAdministradores;
         private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
@@ -278,5 +274,8 @@ namespace FrontEnd
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private BindingSource administradorBindingSource;
+        private Button btnEliminar;
+        private Button btnAgregar;
+        private Button btnModificar;
     }
 }

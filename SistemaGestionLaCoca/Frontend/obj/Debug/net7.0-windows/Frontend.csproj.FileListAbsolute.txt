@@ -95,3 +95,4 @@ C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\Frontend.genruntimeconfig.cache
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net7.0-windows\ref\Frontend.dll
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net7.0-windows\FontAwesome.Sharp.dll
+C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net7.0-windows\FontAwesome.Sharp.dll

@@ -32,8 +32,16 @@ namespace FrontEnd
             this.Hide();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
+            AltaAdmin altaAdmin = new AltaAdmin(this);
+            altaAdmin.Show();
+            this.Hide();
+        }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+
             ModificarAdmi modAdmi = new ModificarAdmi();
 
             Administrador admi_Elegido = (Administrador)dgvAdministradores.CurrentRow.DataBoundItem;
@@ -46,7 +54,7 @@ namespace FrontEnd
             dgvAdministradores.Refresh();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             //MIRO EL ID SELECCIONADO EN LA GRILLA
             object DniElegido = this.dgvAdministradores.SelectedCells[0].Value;
@@ -72,15 +80,6 @@ namespace FrontEnd
             dgvAdministradores.DataSource = null;
 
             dgvAdministradores.DataSource = Principal.ObtenerAdministradores();
-
-        }
-
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            AltaAdmin altaAdmin = new AltaAdmin(this);
-            altaAdmin.Show();
-            this.Hide();
-
 
         }
     }

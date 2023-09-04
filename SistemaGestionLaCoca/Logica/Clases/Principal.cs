@@ -101,7 +101,9 @@ namespace Logica.Clases
             listaAdministradores.Remove(adminABorrare);
         }
 
+        // ------------------------------------------------------ METODOS DE VALIDACION.
 
+        // Verificar que los textbox no esten vacios.
         public bool VerificarTextBoxes(string Nombre, string Apellido, string Dni, string Tel, string User, string Pass, string ConfirPass)
         {
             if(!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
