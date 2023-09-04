@@ -18,6 +18,11 @@ namespace Frontend
         public HistorialTurnos()
         {
             InitializeComponent();
+            toolTip1.SetToolTip(btnCrear, "Crear nuevo turno.");
+            toolTip1.SetToolTip(btnModificar, "Modificar un turno.");
+            toolTip1.SetToolTip(btnEliminar, "Eliminar un turno.");
+
+
         }
         List<string> listaPropiedades = new List<string>();
         private void HistorialTurnos_Load(object sender, EventArgs e)
@@ -32,7 +37,7 @@ namespace Frontend
             listBox1.DataSource = listaPropiedades;
 
 
-            
+
         }
 
 
@@ -46,19 +51,14 @@ namespace Frontend
 
 
 
-        private void btnCrear_Click_1(object sender, EventArgs e)
-        {
-            AltaTurno altaTurno = new AltaTurno();
-            altaTurno.Show();
-            this.Hide();
-        }
+
 
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
             MenuInicio menuInicio = new MenuInicio();
             menuInicio.Show();
             this.Hide();
-            
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,6 +69,23 @@ namespace Frontend
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            AltaTurno altaTurno = new AltaTurno();
+            altaTurno.Show();
+            this.Hide();
         }
     }
 

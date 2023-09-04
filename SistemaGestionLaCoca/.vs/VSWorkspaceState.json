@@ -1,14 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Frontend",
-    "\\Frontend\\Administradores",
-    "\\Frontend\\Canchas",
-    "\\Frontend\\Clientes",
-    "\\Frontend\\Turnos",
-    "\\Logica",
-    "\\Logica\\Clases"
+    ""
   ],
-  "SelectedNode": "\\Logica\\Clases\\Cliente.cs",
+  "SelectedNode": "\\SistemaGestionLaCoca.sln",
   "PreviewInSolutionExplorer": false
 }

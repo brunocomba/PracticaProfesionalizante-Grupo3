@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Text.RegularExpressions;
+
+
 
 namespace Logica.Clases
 {
@@ -20,6 +22,31 @@ namespace Logica.Clases
 
         public static List<Turno> listaTurnos;
 
+        // ------------------------------------ VERIFICAR CARACTERES INGRESADOS.
+        public bool SoloLetras(string textBox)
+        {
+            foreach (char caracter in textBox)
+            {
+                if (!char.IsLetter(caracter))
+                {
+                    return false;
+
+                }
+            }
+            return true;
+        }
+
+        public bool SoloNumeros(string textBox)
+        {
+            foreach (char caracter in textBox)
+            {
+                if (!char.IsDigit(caracter))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
 
 
@@ -56,10 +83,9 @@ namespace Logica.Clases
             newAdmin.usuario = User;
             newAdmin.contrasenia = Pass;
 
-            listaAdministradores.Add(newAdmin);
+            ObtenerAdministradores().Add(newAdmin); 
         }
-
-
+       
         public void modificarAdmin(Administrador admiMod, string Nombre, string Apellido, int DNI, uint Tel, string User, string Pass)
         {
             admiMod.nombre = Nombre;
@@ -76,6 +102,69 @@ namespace Logica.Clases
         }
 
 
+        public bool VerificarTextBoxes(string Nombre, string Apellido, string Dni, string Tel, string User, string Pass, string ConfirPass)
+        {
+            if(!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
+                !string.IsNullOrEmpty(Tel.ToString()) && !string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(Pass) && !string.IsNullOrEmpty(ConfirPass))
+            {
+                return true;
+
+            }
+            return false;
+
+        }
+
+
+        // Confirmar si la confirmacion de la contraseña coincide con la prev ingresada.
+        public bool confirmarPass(string Pass, string ConfirPass)
+        {
+            if (Pass == ConfirPass)
+            {
+                return true;
+
+            }
+            return false;
+
+        }
+
+        // Verificar que la contraseña ingresada contiene al menos una letra MAYUSCULA y un numero.
+        public bool CumpleRequisitos(string Contra)
+        {
+            bool tieneMayuscula = Regex.IsMatch(Contra, @"[A-Z]");
+            bool tieneNumero = Regex.IsMatch(Contra, @"\d");
+
+            if (tieneMayuscula && tieneNumero)
+            {
+                return true;
+            }
+            return false; 
+        }
+
+        // Verificar que contenga si o si 10 caracteres lo ingresado en el apartado Telefono
+        public bool TelCompleto(string Tel)
+        {
+            int minimoDeCaracteres = 10;
+
+            if (Tel.Length < minimoDeCaracteres)
+            {
+                return false;
+            }
+            return true;
+        }
+        // Verificar que contenga si o si 8 caracteres lo ingresado en el apartado DNI
+        public bool DniCompleto(string DNI)
+        {
+            int minimoDeCaracteres = 8;
+
+            if (DNI.Length < minimoDeCaracteres)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
 
         // ------------------------------------ CLIENTES. 
         public static List<Cliente> ObtenerClientes()
@@ -90,6 +179,7 @@ namespace Logica.Clases
                 clienteBase.dni = 28167907;
                 clienteBase.telefono = 2299665477;
                 clienteBase.nombreYapellido = "Roman" + " Riquelme";
+               
 
                 listaClientes.Add(clienteBase);
 
@@ -200,6 +290,7 @@ namespace Logica.Clases
 
 
         // ------------------------------------ TURNOS.
+        
         public static List<Turno> ObtenerTurnos()
 
         {

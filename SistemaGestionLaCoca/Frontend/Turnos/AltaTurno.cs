@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using FrontEnd;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace Frontend
             cmboxDeporte.SelectedIndexChanged += cmboxDeporte_SelectedIndexChanged;
             //  MOSTRAR UN MENSAJE AL PASAR EL MOUSE POR ARRIBA DEL BOTON.
             toolTip1.SetToolTip(btnAgregarClientes, "Agregar un nuevo cliente.");
-            toolTip1.SetToolTip(btnAddHorarios, "Agregar nuevos horarios para turnos.");
+            toolTip1.SetToolTip(btnAddCanchas, "Agregar nuevas canchas.");
 
 
         }
@@ -122,18 +123,22 @@ namespace Frontend
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AltaCliente altaCliente = new AltaCliente();
+            AltaCliente altaCliente = new AltaCliente(this);
             altaCliente.Show();
             this.Hide();
+
         }
 
 
         private void btnAddHorarios_Click(object sender, EventArgs e)
         {
+            AltaCanchas altaCancha = new AltaCanchas(this);
+            altaCancha.Show();
+            this.Hide();
 
         }
-       
-        
+
+
         private static bool TurnoExiste(string hora, string fecha)
         {
 
@@ -146,7 +151,7 @@ namespace Frontend
             }
             return false; // El turno no existe en la lista
         }
-        
+
         private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
 
@@ -164,9 +169,9 @@ namespace Frontend
                 principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem, dateTimePicker1.Value.ToShortDateString(), cmboxHorarios.Text);
                 MessageBox.Show($"Turno creado con exito al cliente {cmboxCliente.Text}");
             }
-           
 
-          
+
+
             // HACER VALIDACIONES
             // VER TEMAS HORARIOS.
         }

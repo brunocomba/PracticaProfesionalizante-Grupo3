@@ -8,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace Frontend
 {
     public partial class AltaCliente : Form
     {
-        public AltaCliente()
+        private Form formPrevio;
+        public AltaCliente(Form formPrevio)
         {
             InitializeComponent();
+            this.formPrevio = formPrevio;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -135,9 +138,8 @@ namespace Frontend
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            ListaClientes listClientes = new ListaClientes();
-            listClientes.Show();
             this.Hide();
+            formPrevio.Show();
         }
 
         private void AltaCliente_Load(object sender, EventArgs e)

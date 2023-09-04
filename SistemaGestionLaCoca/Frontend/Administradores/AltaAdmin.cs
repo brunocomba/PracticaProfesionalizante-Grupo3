@@ -8,133 +8,68 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace FrontEnd
 {
     public partial class AltaAdmin : Form
     {
-        public AltaAdmin()
+        private Form formularioPrevio;
+        public AltaAdmin(Form formularioPrevio)
         {
             InitializeComponent();
+            this.formularioPrevio = formularioPrevio;
         }
 
-        ListaAdmi ListaAdmi = new ListaAdmi();
-
-        LogIn logIn = new LogIn();
+        Principal principal = new Principal();
 
 
         // ALTA NUEVO ADMIN
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            Principal principal = new Principal();
-            if (LogIn.formEnQueEstoy == true)
-            {
-                var SIoNo = MessageBox.Show("Cuenta Administrador generada con exito! " + " Haga click en ACEPTAR para continuar", "Crear nuevo usuario Administrador.",
+            principal.altaAdmin(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), uint.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
+            var SIoNo = MessageBox.Show($"Administrador {txtNombre.Text} creado con exito. \nHaga click en ACEPTAR para continuar", "Crear nuevo usuario Administrador",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-                if (SIoNo == DialogResult.OK)
-                {
-                    principal.altaAdmin(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text),
-                    uint.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
-
-                    logIn.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    var confirmarCancel = MessageBox.Show("¿Seguro desea cancelar la creacion?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                    if (confirmarCancel == DialogResult.Yes)
-                    {
-                        txtNombre.Text = "";
-                        txtApellido.Text = "";
-                        txtDni.Text = "";
-                        txtTel.Text = "";
-                        txtUser.Text = "";
-                        txtContra.Text = "";
-                    }
-                }
+            if (SIoNo == DialogResult.OK)
+            {
+                formularioPrevio.Show();
+                this.Hide();
             }
             else
             {
-                var SIoNo = MessageBox.Show("Cuenta Administrador generada con exito! " + " Haga click en ACEPTAR para continuar", "Crear nuevo usuario Administrador.",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-                if (SIoNo == DialogResult.OK)
+                var confirmarCancel = MessageBox.Show("¿Seguro desea cancelar la creacion?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (confirmarCancel == DialogResult.Yes)
                 {
-                    principal.altaAdmin(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text),
-                    uint.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
-                    ListaAdmi.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    var confirmarCancel = MessageBox.Show("¿Seguro desea cancelar la creacion?", "ATENCION", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Exclamation);
-                    if (confirmarCancel == DialogResult.Yes)
-                    {
-                        txtNombre.Text = "";
-                        txtApellido.Text = "";
-                        txtDni.Text = "";
-                        txtTel.Text = "";
-                        txtUser.Text = "";
-                        txtContra.Text = "";
-                    }
+                    txtNombre.Clear(); txtApellido.Clear(); txtDni.Clear(); txtTel.Clear(); txtUser.Clear(); txtContra.Clear(); txtConfirPass.Clear();
                 }
             }
 
-
-
-
+        }
+        private void AltaAdmin_Load(object sender, EventArgs e)
+        {
+            // INHABILITAR LOS BOTONES Y TEXTBOX DE DATOS DE USUARIO
+            btnCrear.Enabled = false;
+            txtUser.Enabled = false;
+            txtContra.Enabled = false;
+            txtConfirPass.Enabled = false;
         }
 
-        // VOLVER
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (LogIn.formEnQueEstoy == false)
-            {
-                ListaAdmi.Show();
-                this.Hide();
-
-            }
-            else
-            {
-                logIn.Show();
-                this.Hide();
-            }
-
+            formularioPrevio.Show();
+            this.Hide();
         }
 
-        // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
-        private void txtConfirPass_TextChanged(object sender, EventArgs e)
-        {
-            string password = txtContra.Text;
-            string confirPassword = txtConfirPass.Text;
 
-            if (password == confirPassword)
-            {
-                lblErrorPass.Text = "";
-                btnCrear.Enabled = true;
-            }
-            if (password != confirPassword)
-            {
-                lblErrorPass.Text = "Las contraseñas no coinciden";
-                btnCrear.Enabled = false;
-            }
-        }
+        // -------------------------------------------------------------------------------------------------------- VALIDACIONES DE DATOS.
 
         // Verificar si la contrasenia ingresada contiene al menos una letra mayúscula y al menos un número
-        private bool CumpleRequisitos(string contra)
+        private void txtContra_Validated(object sender, EventArgs e)
         {
-            bool tieneMayuscula = Regex.IsMatch(contra, @"[A-Z]");
-            bool tieneNumero = Regex.IsMatch(contra, @"\d");
-
-            return tieneMayuscula && tieneNumero; //si ambas se cumplen devuelve true, de lo contrario false
-        }
-        private void txtContra_Validating(object sender, CancelEventArgs e)
-        {
-            bool verificacion = CumpleRequisitos(txtContra.Text);
+            bool verificacion = principal.CumpleRequisitos(txtContra.Text);
 
             if (verificacion == false)
             {
@@ -148,180 +83,133 @@ namespace FrontEnd
             }
         }
 
-        // VALIDACIONES
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
+        private void txtConfirPass_Validating(object sender, CancelEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)
-                   || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            string password = txtContra.Text;
+            string confirPassword = txtConfirPass.Text;
+
+            if (principal.confirmarPass(password, confirPassword) == false)
             {
-                MessageBox.Show("No se puede introducir numeros, solo LETRAS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)
-                  || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir numeros, solo LETRAS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-                // hacer que inabilite el poder escribir y mostrar el lbl de error
-            }
-        }
-
-        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir letras, solo NUMEROS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir letras, solo NUMEROS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-
-        private void txtNombre_Enter(object sender, EventArgs e)
-        {
-            if (txtNombre.Text == "ej: Jose")
-            {
-                txtNombre.Text = "";
-                txtNombre.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtNombre_Leave(object sender, EventArgs e)
-        {
-            if (txtNombre.Text == "")
-            {
-                txtNombre.Text = "ej: Jose";
-                txtNombre.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txtApellido_Enter(object sender, EventArgs e)
-        {
-            if (txtApellido.Text == "ej: Perez")
-            {
-                txtApellido.Text = "";
-                txtApellido.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtApellido_Leave(object sender, EventArgs e)
-        {
-            if (txtApellido.Text == "")
-            {
-                txtApellido.Text = "ej: Perez";
-                txtApellido.ForeColor = Color.Silver;
-            }
-        }
-
-        private void txtDni_Enter(object sender, EventArgs e)
-        {
-            if (txtDni.Text == "ej: 45333456")
-            {
-                txtDni.Text = "";
-                txtDni.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void txtDni_Leave(object sender, EventArgs e)
-        {
-            if (txtDni.Text == "")
-            {
-                txtDni.Text = "ej: 45333456";
-                txtDni.ForeColor = Color.Silver;
-            }
-
-        }
-
-        private void txtTel_Enter(object sender, EventArgs e)
-        {
-            if (txtTel.Text == "cod area + numero sin el 15")
-            {
-                txtTel.Text = "";
-                txtTel.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtTel_Leave(object sender, EventArgs e)
-        {
-            if (txtTel.Text == "")
-            {
-                txtTel.Text = "cod area + numero sin el 15";
-                txtTel.ForeColor = Color.Silver;
-            }
-        }
-        private void txtUser_Enter(object sender, EventArgs e)
-        {
-            if (txtUser.Text == "joseperezz23")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtUser_Leave(object sender, EventArgs e)
-        {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "joseperezz23";
-                txtUser.ForeColor = Color.Silver;
-            }
-        }
-        private void txtTel_TextChanged(object sender, EventArgs e)
-        {
-            int minLength = 10; // Número mínimo de caracteres permitidos
-
-            if (txtTel.Text.Length < minLength)
-            {
-                lblErrorTel.Text = "Numero telefonico incompleto";
-
-                // El texto tiene menos caracteres que el mínimo requerido
-                // Aquí puedes mostrar un mensaje de error o tomar alguna acción
+                lblErrorPass.Text = "Las contraseñas no coinciden";
+                btnCrear.Enabled = false;
             }
             else
             {
-                lblErrorTel.Text = "";
+                lblErrorPass.Text = "";
+                btnCancelar.Enabled = true;
 
+            }
+
+            // VERIFICAR QUE TODOS LOS TEXTBOX CONTENGAN ALGUN DATO, SI NO ES ASI NO SE HABILITARA EL BOTON PARA CREAR UN NUEVO ADMI
+            // -----------------------------------------------------------------------------------------------------------------------------.
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+        }
+
+
+
+        // VERIFICAR QUE TODOS LOS TEXTBOX CONTENGAN ALGUN DATO, SI NO ES ASI NO SE HABILITARA EL BOTON PARA CREAR UN NUEVO ADMI.
+        // ----------------------------------------------------------------------------------------------------------------------------------
+        // VERIFICAR QUE EN LOS CAMPOS NUMERICOS SOLO HAYA NUMEROS Y EN LOS CAMPOS DE TEXTO SOLO LETRAS. (USUARIO Y CONTRASENIA NO SE VALIDAN)
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+            string texto = txtNombre.Text;
+
+            if (principal.SoloLetras(texto) == false)
+            {
+                MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txtApellido_Validating(object sender, CancelEventArgs e)
+        {
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+
+            string texto = txtApellido.Text;
+
+            if (principal.SoloLetras(texto) == false)
+            {
+                MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void txtDni_TextChanged(object sender, EventArgs e)
+        private void txtDni_Validating(object sender, CancelEventArgs e)
         {
-            int minLength = 8; // Número mínimo de caracteres permitidos
+            string texto = txtDni.Text;
 
-            if (txtDni.Text.Length < minLength)
+            if (principal.SoloNumeros(texto) == false)
+            {
+                MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+
+            // VERIFICAR QUE EL DNI INGRESADO CONTENGA 8 DIGITOS. (LO CORRECTO)
+            string DNI = txtDni.Text.ToString();
+            if (principal.DniCompleto(DNI) == false)
             {
                 lblErrorDni.Text = "DNI incompleto";
-                btnCrear.Enabled = false;
 
             }
             else
             {
                 lblErrorDni.Text = "";
-                btnCrear.Enabled = true;
+                txtUser.Enabled = true;
+                txtContra.Enabled = true;
+                txtConfirPass.Enabled = true;
+
             }
         }
 
-        private void AltaAdmin_Load(object sender, EventArgs e)
+        private void txtTel_Validating(object sender, CancelEventArgs e)
         {
+            string texto = txtTel.Text;
 
+            if (principal.SoloNumeros(texto) == false)
+            {
+                MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+
+            // VERIFICAR QUE EL TELEFONO INGRESADO CONTENGA 10 DIGITOS. (LO CORRECTO NRO DE AREA + NUMERO TEL)
+            string Tel = txtTel.Text.ToString();
+            if (principal.TelCompleto(Tel) == false)
+            {
+                lblErrorTel.Text = "Nro de telefono incompleto";
+
+            }
+            else
+            {
+                lblErrorTel.Text = "";
+                txtUser.Enabled = true;
+                txtContra.Enabled = true;
+                txtConfirPass.Enabled = true;
+            }
         }
+
+        private void txtUser_Validating(object sender, CancelEventArgs e)
+        {
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+        }
+
+        private void txtContra_Validating(object sender, CancelEventArgs e)
+        {
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+        }
+
+        
     }
 
 }

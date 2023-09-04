@@ -28,14 +28,12 @@ namespace FrontEnd
 
 
 
-        public static bool formEnQueEstoy;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AltaAdmin altaAdminForm = new AltaAdmin();
+            AltaAdmin altaAdminForm = new AltaAdmin(this);
             altaAdminForm.Show();
             this.Hide();
-            formEnQueEstoy = true;
 
 
         }

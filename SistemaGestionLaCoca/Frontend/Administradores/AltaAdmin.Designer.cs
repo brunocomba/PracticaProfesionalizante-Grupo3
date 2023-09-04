@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaAdmin));
             DatosPers = new GroupBox();
+            lblErrorApellido = new Label();
             lblErrorDni = new Label();
             lblErrorTel = new Label();
             label8 = new Label();
@@ -56,7 +57,6 @@
             label9 = new Label();
             errorProviderPass = new ErrorProvider(components);
             groupBox1 = new GroupBox();
-            lblErrorApellido = new Label();
             DatosPers.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderPass).BeginInit();
@@ -79,16 +79,26 @@
             DatosPers.Controls.Add(txtNombre);
             DatosPers.Location = new Point(24, 82);
             DatosPers.Name = "DatosPers";
-            DatosPers.Size = new Size(381, 332);
+            DatosPers.Size = new Size(381, 295);
             DatosPers.TabIndex = 5;
             DatosPers.TabStop = false;
+            // 
+            // lblErrorApellido
+            // 
+            lblErrorApellido.AutoSize = true;
+            lblErrorApellido.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblErrorApellido.ForeColor = Color.Red;
+            lblErrorApellido.Location = new Point(127, 137);
+            lblErrorApellido.Name = "lblErrorApellido";
+            lblErrorApellido.Size = new Size(0, 13);
+            lblErrorApellido.TabIndex = 20;
             // 
             // lblErrorDni
             // 
             lblErrorDni.AutoSize = true;
             lblErrorDni.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorDni.ForeColor = Color.Red;
-            lblErrorDni.Location = new Point(128, 175);
+            lblErrorDni.Location = new Point(128, 196);
             lblErrorDni.Name = "lblErrorDni";
             lblErrorDni.Size = new Size(0, 13);
             lblErrorDni.TabIndex = 19;
@@ -98,7 +108,7 @@
             lblErrorTel.AutoSize = true;
             lblErrorTel.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorTel.ForeColor = Color.Red;
-            lblErrorTel.Location = new Point(128, 219);
+            lblErrorTel.Location = new Point(128, 246);
             lblErrorTel.Name = "lblErrorTel";
             lblErrorTel.Size = new Size(0, 13);
             lblErrorTel.TabIndex = 18;
@@ -108,7 +118,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(128, 34);
+            label8.Location = new Point(138, 34);
             label8.Name = "label8";
             label8.Size = new Size(147, 20);
             label8.TabIndex = 17;
@@ -116,51 +126,40 @@
             // 
             // txtApellido
             // 
-            txtApellido.ForeColor = Color.Silver;
-            txtApellido.Location = new Point(128, 111);
+            txtApellido.ForeColor = Color.Black;
+            txtApellido.Location = new Point(128, 119);
             txtApellido.MaxLength = 40;
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(195, 23);
             txtApellido.TabIndex = 2;
-            txtApellido.Text = "ej: Perez";
-            txtApellido.Enter += txtApellido_Enter;
-            txtApellido.KeyPress += txtApellido_KeyPress;
-            txtApellido.Leave += txtApellido_Leave;
+            txtApellido.Validating += txtApellido_Validating;
             // 
             // txtDni
             // 
-            txtDni.ForeColor = Color.Silver;
-            txtDni.Location = new Point(128, 171);
+            txtDni.ForeColor = Color.Black;
+            txtDni.Location = new Point(127, 170);
             txtDni.MaxLength = 8;
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(195, 23);
+            txtDni.Size = new Size(196, 23);
             txtDni.TabIndex = 3;
-            txtDni.Text = "ej: 45333456";
-            txtDni.TextChanged += txtDni_TextChanged;
-            txtDni.Enter += txtDni_Enter;
-            txtDni.KeyPress += txtDni_KeyPress;
-            txtDni.Leave += txtDni_Leave;
+            txtDni.Validating += txtDni_Validating;
             // 
             // txtTel
             // 
-            txtTel.ForeColor = Color.Silver;
-            txtTel.Location = new Point(128, 215);
+            txtTel.ForeColor = Color.Black;
+            txtTel.Location = new Point(127, 220);
             txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(195, 23);
             txtTel.TabIndex = 4;
-            txtTel.Text = "cod area + numero sin el 15";
-            txtTel.TextChanged += txtTel_TextChanged;
-            txtTel.Enter += txtTel_Enter;
-            txtTel.KeyPress += txtTel_KeyPress;
-            txtTel.Leave += txtTel_Leave;
+            txtTel.Validating += txtTel_Validating;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(51, 119);
+            label7.Location = new Point(54, 127);
             label7.Name = "label7";
             label7.Size = new Size(51, 15);
             label7.TabIndex = 9;
@@ -171,7 +170,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(74, 173);
+            label6.Location = new Point(75, 173);
             label6.Name = "label6";
             label6.Size = new Size(28, 15);
             label6.TabIndex = 8;
@@ -182,7 +181,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(51, 218);
+            label5.Location = new Point(49, 228);
             label5.Name = "label5";
             label5.Size = new Size(54, 15);
             label5.TabIndex = 7;
@@ -201,16 +200,13 @@
             // 
             // txtNombre
             // 
-            txtNombre.ForeColor = Color.Silver;
+            txtNombre.ForeColor = Color.Black;
             txtNombre.Location = new Point(127, 72);
             txtNombre.MaxLength = 35;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(195, 23);
             txtNombre.TabIndex = 1;
-            txtNombre.Text = "ej: Jose";
-            txtNombre.Enter += txtNombre_Enter;
-            txtNombre.KeyPress += txtNombre_KeyPress;
-            txtNombre.Leave += txtNombre_Leave;
+            txtNombre.Validating += txtNombre_Validating;
             // 
             // btnCancelar
             // 
@@ -218,34 +214,34 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = SystemColors.AppWorkspace;
-            btnCancelar.Location = new Point(665, 423);
+            btnCancelar.Location = new Point(665, 404);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(111, 29);
+            btnCancelar.Size = new Size(111, 39);
             btnCancelar.TabIndex = 16;
-            btnCancelar.Text = "CANCELAR";
+            btnCancelar.Text = "VOLVER";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // txtContra
             // 
             txtContra.BackColor = SystemColors.InactiveBorder;
-            txtContra.Location = new Point(105, 112);
+            txtContra.Location = new Point(105, 119);
             txtContra.Name = "txtContra";
             txtContra.Size = new Size(195, 23);
             txtContra.TabIndex = 15;
             txtContra.Validating += txtContra_Validating;
+            txtContra.Validated += txtContra_Validated;
             // 
             // btnCrear
             // 
             btnCrear.BackColor = Color.FromArgb(26, 32, 40);
-            btnCrear.Enabled = false;
             btnCrear.FlatAppearance.BorderSize = 2;
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(111, 205);
+            btnCrear.Location = new Point(126, 232);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(132, 50);
+            btnCrear.Size = new Size(121, 40);
             btnCrear.TabIndex = 2;
             btnCrear.Text = "CREAR ";
             btnCrear.UseVisualStyleBackColor = false;
@@ -253,21 +249,19 @@
             // 
             // txtUser
             // 
-            txtUser.ForeColor = Color.Silver;
-            txtUser.Location = new Point(105, 77);
+            txtUser.ForeColor = Color.Black;
+            txtUser.Location = new Point(105, 72);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(195, 23);
             txtUser.TabIndex = 14;
-            txtUser.Text = "joseperezz23";
-            txtUser.Enter += txtUser_Enter;
-            txtUser.Leave += txtUser_Leave;
+            txtUser.Validating += txtUser_Validating;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(18, 119);
+            label4.Location = new Point(18, 127);
             label4.Name = "label4";
             label4.Size = new Size(72, 15);
             label4.TabIndex = 6;
@@ -287,11 +281,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(122, 37);
             label1.Name = "label1";
-            label1.Size = new Size(579, 32);
+            label1.Size = new Size(581, 32);
             label1.TabIndex = 4;
             label1.Text = "CREAR NUEVO USUARIO ADMINISTRADOR";
             // 
@@ -308,7 +302,7 @@
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(411, 82);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(365, 332);
+            groupBox2.Size = new Size(365, 295);
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
             // 
@@ -317,25 +311,26 @@
             lblErrorPass.AutoSize = true;
             lblErrorPass.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorPass.ForeColor = Color.Red;
-            lblErrorPass.Location = new Point(105, 193);
+            lblErrorPass.Location = new Point(105, 196);
             lblErrorPass.Name = "lblErrorPass";
             lblErrorPass.Size = new Size(0, 14);
             lblErrorPass.TabIndex = 21;
             // 
             // txtConfirPass
             // 
-            txtConfirPass.Location = new Point(105, 155);
+            txtConfirPass.Location = new Point(105, 170);
             txtConfirPass.Name = "txtConfirPass";
             txtConfirPass.Size = new Size(195, 23);
             txtConfirPass.TabIndex = 20;
-            txtConfirPass.TextChanged += txtConfirPass_TextChanged;
+
+            txtConfirPass.Validating += txtConfirPass_Validating;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(18, 150);
+            label10.Location = new Point(18, 163);
             label10.Name = "label10";
             label10.Size = new Size(69, 30);
             label10.TabIndex = 19;
@@ -346,7 +341,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(111, 34);
+            label9.Location = new Point(126, 34);
             label9.Name = "label9";
             label9.Size = new Size(121, 20);
             label9.TabIndex = 18;
@@ -367,16 +362,6 @@
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             groupBox1.Text = "23";
-            // 
-            // lblErrorApellido
-            // 
-            lblErrorApellido.AutoSize = true;
-            lblErrorApellido.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblErrorApellido.ForeColor = Color.Red;
-            lblErrorApellido.Location = new Point(127, 137);
-            lblErrorApellido.Name = "lblErrorApellido";
-            lblErrorApellido.Size = new Size(0, 13);
-            lblErrorApellido.TabIndex = 20;
             // 
             // AltaAdmin
             // 

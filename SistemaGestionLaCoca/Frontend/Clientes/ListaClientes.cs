@@ -21,7 +21,7 @@ namespace Frontend
         Principal principal = new Principal();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AltaCliente altaCliente = new AltaCliente();
+            AltaCliente altaCliente = new AltaCliente(this);
             altaCliente.Show();
             this.Hide();
         }

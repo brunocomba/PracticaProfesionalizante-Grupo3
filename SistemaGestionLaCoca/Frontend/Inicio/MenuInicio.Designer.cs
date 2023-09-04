@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
             label1 = new Label();
             groupBox1 = new GroupBox();
@@ -39,9 +40,19 @@
             pictureBox1 = new PictureBox();
             groupBox2 = new GroupBox();
             dateTimePicker1 = new DateTimePicker();
+            turnoBindingSource = new BindingSource(components);
+            dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            horarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            condicionReservadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            cancha = new DataGridViewTextBoxColumn();
+            clienteTurnoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -94,7 +105,6 @@
             button1.TabIndex = 8;
             button1.Text = "Canchas";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // btnAdministradores
             // 
@@ -148,7 +158,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // groupBox2
             // 
@@ -172,12 +181,65 @@
             dateTimePicker1.TabIndex = 1;
             dateTimePicker1.Value = new DateTime(2023, 7, 21, 22, 23, 0, 0);
             // 
+            // turnoBindingSource
+            // 
+            turnoBindingSource.DataSource = typeof(Logica.Clases.Turno);
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, fechaDataGridViewTextBoxColumn, horarioDataGridViewTextBoxColumn, condicionReservadoDataGridViewCheckBoxColumn, cancha, clienteTurnoDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = turnoBindingSource;
+            dataGridView1.Location = new Point(272, 196);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(669, 430);
+            dataGridView1.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // horarioDataGridViewTextBoxColumn
+            // 
+            horarioDataGridViewTextBoxColumn.DataPropertyName = "Horario";
+            horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
+            horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
+            // 
+            // condicionReservadoDataGridViewCheckBoxColumn
+            // 
+            condicionReservadoDataGridViewCheckBoxColumn.DataPropertyName = "condicionReservado";
+            condicionReservadoDataGridViewCheckBoxColumn.HeaderText = "condicionReservado";
+            condicionReservadoDataGridViewCheckBoxColumn.Name = "condicionReservadoDataGridViewCheckBoxColumn";
+            // 
+            // cancha
+            // 
+            cancha.DataPropertyName = "canchaTurno";
+            cancha.HeaderText = "canchaTurno";
+            cancha.Name = "cancha";
+            // 
+            // clienteTurnoDataGridViewTextBoxColumn
+            // 
+            clienteTurnoDataGridViewTextBoxColumn.DataPropertyName = "clienteTurno";
+            clienteTurnoDataGridViewTextBoxColumn.HeaderText = "clienteTurno";
+            clienteTurnoDataGridViewTextBoxColumn.Name = "clienteTurnoDataGridViewTextBoxColumn";
+            // 
             // MenuInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1034, 661);
+            Controls.Add(dataGridView1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -190,6 +252,8 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -205,5 +269,13 @@
         public Button btnAdministradores;
         public Button button1;
         private Label label2;
+        private BindingSource turnoBindingSource;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn condicionReservadoDataGridViewCheckBoxColumn;
+        private DataGridViewTextBoxColumn cancha;
+        private DataGridViewTextBoxColumn clienteTurnoDataGridViewTextBoxColumn;
     }
 }

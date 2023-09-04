@@ -33,7 +33,7 @@
             groupBox2 = new GroupBox();
             label4 = new Label();
             groupBox1 = new GroupBox();
-            btnAddHorarios = new Button();
+            btnAddCanchas = new Button();
             dateTimePicker1 = new DateTimePicker();
             label8 = new Label();
             label7 = new Label();
@@ -50,13 +50,14 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new Button();
-            toolTip1 = new ToolTip(components);
-            horarioBindingSource = new BindingSource(components);
+            iconToolStripButton1 = new FontAwesome.Sharp.IconToolStripButton();
             turnoBindingSource = new BindingSource(components);
+            horarioBindingSource = new BindingSource(components);
+            toolTip1 = new ToolTip(components);
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).BeginInit();
             SuspendLayout();
             // 
             // groupBox2
@@ -82,7 +83,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnAddHorarios);
+            groupBox1.Controls.Add(btnAddCanchas);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
@@ -105,19 +106,19 @@
             groupBox1.TabStop = false;
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // btnAddHorarios
+            // btnAddCanchas
             // 
-            btnAddHorarios.BackColor = Color.FromArgb(26, 32, 40);
-            btnAddHorarios.FlatStyle = FlatStyle.Popup;
-            btnAddHorarios.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAddHorarios.ForeColor = Color.White;
-            btnAddHorarios.Location = new Point(337, 271);
-            btnAddHorarios.Name = "btnAddHorarios";
-            btnAddHorarios.Size = new Size(32, 28);
-            btnAddHorarios.TabIndex = 19;
-            btnAddHorarios.Text = "+";
-            btnAddHorarios.UseVisualStyleBackColor = false;
-            btnAddHorarios.Click += btnAddHorarios_Click;
+            btnAddCanchas.BackColor = Color.FromArgb(26, 32, 40);
+            btnAddCanchas.FlatStyle = FlatStyle.Popup;
+            btnAddCanchas.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddCanchas.ForeColor = Color.White;
+            btnAddCanchas.Location = new Point(337, 155);
+            btnAddCanchas.Name = "btnAddCanchas";
+            btnAddCanchas.Size = new Size(32, 28);
+            btnAddCanchas.TabIndex = 19;
+            btnAddCanchas.Text = "+";
+            btnAddCanchas.UseVisualStyleBackColor = false;
+            btnAddCanchas.Click += btnAddHorarios_Click;
             // 
             // dateTimePicker1
             // 
@@ -305,6 +306,15 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // iconToolStripButton1
+            // 
+            iconToolStripButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconToolStripButton1.IconColor = Color.Black;
+            iconToolStripButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconToolStripButton1.Name = "iconToolStripButton1";
+            iconToolStripButton1.Size = new Size(23, 23);
+            iconToolStripButton1.Text = "iconToolStripButton1";
+            // 
             // turnoBindingSource
             // 
             turnoBindingSource.DataSource = typeof(Logica.Clases.Turno);
@@ -327,8 +337,8 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)horarioBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -352,12 +362,13 @@
         private Label label7;
         private ComboBox cmboxHorarios;
         private DateTimePicker dateTimePicker1;
-        private Button btnAddHorarios;
+        private Button btnAddCanchas;
         private Button button2;
-        private ToolTip toolTip1;
-        private BindingSource horarioBindingSource;
         private Button btnAgregarCancha;
         private DataGridViewTextBoxColumn canchaTurnoDataGridViewTextBoxColumn;
+        private FontAwesome.Sharp.IconToolStripButton iconToolStripButton1;
         private BindingSource turnoBindingSource;
+        private BindingSource horarioBindingSource;
+        private ToolTip toolTip1;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Logica.Clases
 {
     public class Cliente
@@ -14,7 +15,10 @@ namespace Logica.Clases
         public uint telefono { get; set; }
         public string nombreYapellido { get; set; }
 
-      
+        public override string ToString()
+        {
+            return nombre;
+        }
 
     }
 }

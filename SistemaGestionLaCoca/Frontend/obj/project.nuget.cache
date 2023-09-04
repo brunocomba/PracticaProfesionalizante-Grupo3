@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vsgeX1d2keHDiljheZ3G526v/8rG/FcXLtjBE2H41GOhD2lXdhHXEjI/yFfILE2tc8cnxxE/koE1XctF7CN5KQ==",
+  "dgSpecHash": "4py9SusZzgebhOjuTfYITp6Xi6lIrgDV19n2dBdvftE1/CQyVV1Jrg3kiBCFzkCEWxG1d2uuqTyI/sIFuWXfhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brcom\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

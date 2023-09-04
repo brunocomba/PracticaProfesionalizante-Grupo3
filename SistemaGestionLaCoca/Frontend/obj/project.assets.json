@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
+      "FontAwesome.Sharp/6.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "Logica/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -15,6 +27,21 @@
     }
   },
   "libraries": {
+    "FontAwesome.Sharp/6.3.0": {
+      "sha512": "3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.3.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    },
     "Logica/1.0.0": {
       "type": "project",
       "path": "../Logica/Logica.csproj",
@@ -23,23 +50,24 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "FontAwesome.Sharp >= 6.3.0",
       "Logica >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tinch\\.nuget\\packages\\": {}
+    "C:\\Users\\brcom\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
+      "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
       "projectName": "Frontend",
-      "projectPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
-      "packagesPath": "C:\\Users\\tinch\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\obj\\",
+      "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
+      "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tinch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +81,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj": {
-              "projectPath": "C:\\Users\\tinch\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj"
+            "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj": {
+              "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj"
             }
           }
         }
@@ -68,6 +96,12 @@
     "frameworks": {
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows",
+        "dependencies": {
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.3.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

@@ -36,9 +36,9 @@ namespace Frontend
             label1 = new Label();
             btnVolver = new Button();
             panel1 = new Panel();
+            btnEliminar = new Button();
             btnCrear = new Button();
             btnModificar = new Button();
-            btnEliminar = new Button();
             label2 = new Label();
             txtFiltrarTurnos = new TextBox();
             turnoBindingSource8 = new BindingSource(components);
@@ -67,6 +67,8 @@ namespace Frontend
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            bindingSource1 = new BindingSource(components);
+            toolTip1 = new ToolTip(components);
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource8).BeginInit();
@@ -80,6 +82,7 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -88,18 +91,18 @@ namespace Frontend
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-3, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1041, 96);
+            groupBox1.Size = new Size(1041, 89);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(381, 40);
             label1.Name = "label1";
-            label1.Size = new Size(277, 32);
+            label1.Size = new Size(281, 32);
             label1.TabIndex = 0;
             label1.Text = "HISTORIAL TURNOS";
             // 
@@ -120,57 +123,58 @@ namespace Frontend
             // panel1
             // 
             panel1.BackColor = Color.SlateGray;
+            panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(btnModificar);
-            panel1.Controls.Add(btnEliminar);
-            panel1.Location = new Point(-3, 85);
+            panel1.Location = new Point(-3, 78);
             panel1.Name = "panel1";
-            panel1.Size = new Size(151, 597);
+            panel1.Size = new Size(122, 604);
             panel1.TabIndex = 16;
-            // 
-            // btnCrear
-            // 
-            btnCrear.BackColor = Color.SlateGray;
-            btnCrear.BackgroundImageLayout = ImageLayout.None;
-            btnCrear.FlatAppearance.BorderColor = Color.White;
-            btnCrear.FlatAppearance.BorderSize = 2;
-            btnCrear.FlatStyle = FlatStyle.Flat;
-            btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(15, 41);
-            btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(116, 44);
-            btnCrear.TabIndex = 5;
-            btnCrear.Text = "CREAR";
-            btnCrear.UseVisualStyleBackColor = false;
-            btnCrear.Click += btnCrear_Click_1;
-            // 
-            // btnModificar
-            // 
-            btnModificar.FlatAppearance.BorderColor = Color.White;
-            btnModificar.FlatAppearance.BorderSize = 2;
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(17, 132);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(116, 41);
-            btnModificar.TabIndex = 3;
-            btnModificar.Text = "MODIFICAR";
-            btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            btnEliminar.FlatAppearance.BorderSize = 2;
+            btnEliminar.FlatAppearance.BorderColor = Color.Black;
+            btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(17, 224);
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.Location = new Point(33, 285);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(116, 44);
-            btnEliminar.TabIndex = 4;
-            btnEliminar.Text = "ELIMINAR";
+            btnEliminar.Size = new Size(49, 56);
+            btnEliminar.TabIndex = 7;
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnCrear
+            // 
+            btnCrear.FlatAppearance.BorderColor = Color.Black;
+            btnCrear.FlatAppearance.BorderSize = 0;
+            btnCrear.FlatStyle = FlatStyle.Flat;
+            btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCrear.ForeColor = Color.White;
+            btnCrear.Image = (Image)resources.GetObject("btnCrear.Image");
+            btnCrear.Location = new Point(33, 95);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new Size(49, 57);
+            btnCrear.TabIndex = 6;
+            btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.FlatAppearance.BorderColor = Color.Black;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Image = (Image)resources.GetObject("btnModificar.Image");
+            btnModificar.Location = new Point(33, 188);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(49, 51);
+            btnModificar.TabIndex = 3;
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // label2
             // 
@@ -427,6 +431,7 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource6).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -478,5 +483,9 @@ namespace Frontend
         private Label label9;
         private Label label10;
         private Label label11;
+        private BindingSource bindingSource1;
+        private Button button1;
+        private Button button2;
+        private ToolTip toolTip1;
     }
 }

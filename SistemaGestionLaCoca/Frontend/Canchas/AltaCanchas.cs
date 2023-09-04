@@ -17,9 +17,11 @@ namespace FrontEnd
     {
         string Tipo;
         string CantJugadores;
-        public AltaCanchas()
+        private Form formularioPrevio;
+        public AltaCanchas(Form formularioPrevio)
         {
             InitializeComponent();
+            this.formularioPrevio = formularioPrevio;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -84,9 +86,8 @@ namespace FrontEnd
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListaCanchas listaCanchas = new ListaCanchas();
-            listaCanchas.Show();
             this.Hide();
+            formularioPrevio.Show();
         }
     }
 }

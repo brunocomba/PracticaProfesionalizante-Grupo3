@@ -1,4 +1,5 @@
 ﻿using Frontend;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,18 +45,12 @@ namespace FrontEnd
 
         private void MenuInicio_Load(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = Principal.ObtenerTurnos();
+
+
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ListaCanchas listaCanchas = new ListaCanchas();
-            listaCanchas.Show();
-            this.Hide();
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

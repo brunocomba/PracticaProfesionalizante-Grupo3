@@ -25,7 +25,12 @@ namespace Logica.Clases
             return lastID;
         }
 
+        public override string ToString()
+        {
+            return $"{id} {tipo} ";
+        }
 
-        
+
+
     }
 }

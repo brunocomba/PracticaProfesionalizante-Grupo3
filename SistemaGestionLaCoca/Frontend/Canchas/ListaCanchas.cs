@@ -32,7 +32,7 @@ namespace Frontend
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AltaCanchas altaCanchas = new AltaCanchas();
+            AltaCanchas altaCanchas = new AltaCanchas(this);
             altaCanchas.Show();
             this.Hide();
         }

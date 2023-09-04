@@ -77,12 +77,11 @@ namespace FrontEnd
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            AltaAdmin altaAdmin = new AltaAdmin();
+            AltaAdmin altaAdmin = new AltaAdmin(this);
             altaAdmin.Show();
             this.Hide();
 
 
-            LogIn.formEnQueEstoy = false;
         }
     }
 }
