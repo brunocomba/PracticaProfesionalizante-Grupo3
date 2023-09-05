@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
+
 
 
 
@@ -104,6 +106,18 @@ namespace Logica.Clases
         // ------------------------------------------------------ METODOS DE VALIDACION.
 
         // Verificar que los textbox no esten vacios.
+
+        public bool VerificarTextBoxesDatosPersonales(string Nombre, string Apellido, string Dni, string Tel)
+        {
+            if (!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
+                !string.IsNullOrEmpty(Tel.ToString()))
+            {
+                return true;
+
+            }
+            return false;
+
+        }
         public bool VerificarTextBoxes(string Nombre, string Apellido, string Dni, string Tel, string User, string Pass, string ConfirPass)
         {
             if(!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&

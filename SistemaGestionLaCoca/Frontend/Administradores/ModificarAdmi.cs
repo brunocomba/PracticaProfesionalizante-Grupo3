@@ -23,6 +23,7 @@ namespace Frontend
         Principal principal = new Principal();
         ListaAdmi ListaAdmi = new ListaAdmi();
 
+        //------------------------------------ MOSTRAR INFORMACION DEL OBJETO SE
         private Administrador adminQueEdito;
         public void ModificarAdmin(Administrador admin)
         {
@@ -66,16 +67,18 @@ namespace Frontend
 
 
         // Verificar si la contrasenia ingresada contiene al menos una letra mayúscula y al menos un número
-        private bool CumpleRequisitos(string contra)
-        {
-            bool tieneMayuscula = Regex.IsMatch(contra, @"[A-Z]");
-            bool tieneNumero = Regex.IsMatch(contra, @"\d");
 
-            return tieneMayuscula && tieneNumero; //si ambas se cumplen devuelve true, de lo contrario false
-        }
-        private void txtContra_Validating_1(object sender, CancelEventArgs e)
+
+
+        // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
+
+
+
+        //VALIDACIONES.
+
+        private void txtContra_Validated_1(object sender, EventArgs e)
         {
-            bool verificacion = CumpleRequisitos(txtContra.Text);
+            bool verificacion = principal.CumpleRequisitos(txtContra.Text);
 
             if (verificacion == false)
             {
@@ -87,103 +90,27 @@ namespace Frontend
             {
                 errorProviderPass.SetError(txtContra, "");
             }
+
         }
 
-        // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
-        private void txtConfirPass_TextChanged_1(object sender, EventArgs e)
+        private void txtConfirPass_Validated_1(object sender, EventArgs e)
         {
             string password = txtContra.Text;
             string confirPassword = txtConfirPass.Text;
 
-            if (password == confirPassword)
+            if (principal.confirmarPass(password, confirPassword) == false)
             {
-                lblPassError.Text = "";
-                btnModificar.Enabled = true;
-            }
-            if (password != confirPassword)
-            {
-                lblPassError.Text = "Las contraseñas no coinciden";
+                lblErrorPass.Text = "Las contraseñas no coinciden";
                 btnModificar.Enabled = false;
-            }
-        }
-
-
-        //VALIDACIONES
-        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)
-                  || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir numeros, solo LETRAS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtApellido_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)
-                  || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir numeros, solo LETRAS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtDni_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir letras, solo NUMEROS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtTel_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("No se puede introducir letras, solo NUMEROS.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtTel_TextChanged_1(object sender, EventArgs e)
-        {
-            int minLength = 10; // Número mínimo de caracteres permitidos
-
-            if (txtTel.Text.Length < minLength)
-            {
-                lblErrorTel.Text = "Numero telefonico incompleto";
-
-                // El texto tiene menos caracteres que el mínimo requerido
-                // Aquí puedes mostrar un mensaje de error o tomar alguna acción
             }
             else
             {
-                lblErrorTel.Text = "";
-
-            }
-        }
-
-        private void txtDni_TextChanged(object sender, EventArgs e)
-        {
-            int minLength = 8; // Número mínimo de caracteres permitidos
-
-            if (txtDni.Text.Length < minLength)
-            {
-                lblErrorDni.Text = "DNI incompleto";
-                btnModificar.Enabled = false;
-
-            }
-            else
-            {
-                lblErrorDni.Text = "";
+                lblErrorPass.Text = "";
                 btnModificar.Enabled = true;
+
             }
+
+
         }
     }
 }

@@ -322,7 +322,6 @@
             txtConfirPass.Name = "txtConfirPass";
             txtConfirPass.Size = new Size(195, 23);
             txtConfirPass.TabIndex = 20;
-
             txtConfirPass.Validating += txtConfirPass_Validating;
             // 
             // label10

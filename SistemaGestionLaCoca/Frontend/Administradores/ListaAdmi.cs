@@ -56,21 +56,18 @@ namespace FrontEnd
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            //MIRO EL ID SELECCIONADO EN LA GRILLA
-            object DniElegido = this.dgvAdministradores.SelectedCells[0].Value;
-            int DniSeleccionado = (int)DniElegido;
+            //MIRO EL ID SELECCIONADO EN LA GRILLA.
 
             Administrador valor_Elegido = (Administrador)dgvAdministradores.CurrentRow.DataBoundItem;
 
             if (valor_Elegido != null)
             {
-                var confirmacion = MessageBox.Show("Seguro que desea eliminar este administrador, con el DNI " + DniSeleccionado, "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var confirmacion = MessageBox.Show("Seguro que desea eliminar este administrador, con el DNI " + valor_Elegido.dni, "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
                 if (confirmacion == DialogResult.OK)
                 {
                     principal.removeAdmin(valor_Elegido);
                 }
-
             }
             else
             {
@@ -78,7 +75,6 @@ namespace FrontEnd
             }
 
             dgvAdministradores.DataSource = null;
-
             dgvAdministradores.DataSource = Principal.ObtenerAdministradores();
 
         }

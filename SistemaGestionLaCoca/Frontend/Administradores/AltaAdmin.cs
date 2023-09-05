@@ -69,9 +69,9 @@ namespace FrontEnd
         // Verificar si la contrasenia ingresada contiene al menos una letra mayúscula y al menos un número
         private void txtContra_Validated(object sender, EventArgs e)
         {
-            bool verificacion = principal.CumpleRequisitos(txtContra.Text);
+            bool verifiarRequisitos = principal.CumpleRequisitos(txtContra.Text);
 
-            if (verificacion == false)
+            if (verifiarRequisitos == false)
             {
                 errorProviderPass.SetError(txtContra, "La contraseña debe contener como minimo una MAYUSCULA y un NUMERO");
                 txtContra.SelectAll();
@@ -82,59 +82,77 @@ namespace FrontEnd
                 errorProviderPass.SetError(txtContra, "");
             }
         }
+     
+     
 
-        // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
-        private void txtConfirPass_Validating(object sender, CancelEventArgs e)
-        {
-            string password = txtContra.Text;
-            string confirPassword = txtConfirPass.Text;
-
-            if (principal.confirmarPass(password, confirPassword) == false)
-            {
-                lblErrorPass.Text = "Las contraseñas no coinciden";
-                btnCrear.Enabled = false;
-            }
-            else
-            {
-                lblErrorPass.Text = "";
-                btnCancelar.Enabled = true;
-
-            }
-
-            // VERIFICAR QUE TODOS LOS TEXTBOX CONTENGAN ALGUN DATO, SI NO ES ASI NO SE HABILITARA EL BOTON PARA CREAR UN NUEVO ADMI
-            // -----------------------------------------------------------------------------------------------------------------------------.
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
-        }
-
-
-
-        // VERIFICAR QUE TODOS LOS TEXTBOX CONTENGAN ALGUN DATO, SI NO ES ASI NO SE HABILITARA EL BOTON PARA CREAR UN NUEVO ADMI.
+        // VERIFICAR QUE LOS TEXTBOX DE DATOS PERSONALES CONTENGAN ALGUN DATO, SI NO ES ASI NO SE HABILITARA EL BOTON PARA CREAR UN NUEVO ADMI.
         // ----------------------------------------------------------------------------------------------------------------------------------
         // VERIFICAR QUE EN LOS CAMPOS NUMERICOS SOLO HAYA NUMEROS Y EN LOS CAMPOS DE TEXTO SOLO LETRAS. (USUARIO Y CONTRASENIA NO SE VALIDAN)
         private void txtNombre_Validating(object sender, CancelEventArgs e)
         {
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
+
             string texto = txtNombre.Text;
 
             if (principal.SoloLetras(texto) == false)
             {
                 MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+
+
+            bool verificacion = principal.VerificarTextBoxesDatosPersonales(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text);
+            // Volver a validar que el dni este completo
+            string DNI = txtDni.Text.ToString();
+            bool dniCompleto = principal.DniCompleto(DNI);
+
+            // Volver a validar que el telefono este completo
+            string Tel = txtTel.Text.ToString();
+            bool telVerificado = principal.TelCompleto(Tel);
+
+            if (telVerificado == true && verificacion == true && dniCompleto == true)
+            {
+                txtUser.Enabled = true;
+                txtContra.Enabled = true;
+                txtConfirPass.Enabled = true;
+            }
+            else
+            {
+                txtUser.Enabled = false;
+                txtContra.Enabled = false;
+                txtConfirPass.Enabled = false;
             }
 
         }
 
         private void txtApellido_Validating(object sender, CancelEventArgs e)
         {
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
 
             string texto = txtApellido.Text;
 
             if (principal.SoloLetras(texto) == false)
             {
                 MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            bool verificacion = principal.VerificarTextBoxesDatosPersonales(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text);
+            // Volver a validar que el dni este completo
+            string DNI = txtDni.Text.ToString();
+            bool dniCompleto = principal.DniCompleto(DNI);
+
+            // Volver a validar que el telefono este completo
+            string Tel = txtTel.Text.ToString();
+            bool telVerificado = principal.TelCompleto(Tel);
+
+            if (telVerificado == true && verificacion == true && dniCompleto == true)
+            {
+                txtUser.Enabled = true;
+                txtContra.Enabled = true;
+                txtConfirPass.Enabled = true;
+            }
+            else
+            {
+                txtUser.Enabled = false;
+                txtContra.Enabled = false;
+                txtConfirPass.Enabled = false;
             }
         }
 
@@ -148,12 +166,10 @@ namespace FrontEnd
 
             }
 
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
-
             // VERIFICAR QUE EL DNI INGRESADO CONTENGA 8 DIGITOS. (LO CORRECTO)
             string DNI = txtDni.Text.ToString();
-            if (principal.DniCompleto(DNI) == false)
+            bool dniCompleto = principal.DniCompleto(DNI);
+            if (dniCompleto == false)
             {
                 lblErrorDni.Text = "DNI incompleto";
 
@@ -161,10 +177,25 @@ namespace FrontEnd
             else
             {
                 lblErrorDni.Text = "";
+            }
+
+
+            bool verificacion = principal.VerificarTextBoxesDatosPersonales(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text);
+            // Volver a validar que el telefono este completo
+           
+            string Tel = txtTel.Text.ToString();
+            bool telVerificado = principal.TelCompleto(Tel);
+            if (telVerificado == true && verificacion == true && dniCompleto == true)
+            {
                 txtUser.Enabled = true;
                 txtContra.Enabled = true;
                 txtConfirPass.Enabled = true;
-
+            }
+            else
+            {
+                txtUser.Enabled = false;
+                txtContra.Enabled = false;
+                txtConfirPass.Enabled = false;
             }
         }
 
@@ -172,44 +203,91 @@ namespace FrontEnd
         {
             string texto = txtTel.Text;
 
+
             if (principal.SoloNumeros(texto) == false)
             {
                 MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
 
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
+
 
             // VERIFICAR QUE EL TELEFONO INGRESADO CONTENGA 10 DIGITOS. (LO CORRECTO NRO DE AREA + NUMERO TEL)
             string Tel = txtTel.Text.ToString();
-            if (principal.TelCompleto(Tel) == false)
+            bool telVerificado = principal.TelCompleto(Tel);
+            if (telVerificado == false)
             {
                 lblErrorTel.Text = "Nro de telefono incompleto";
-
             }
             else
             {
                 lblErrorTel.Text = "";
+            }
+
+            bool verificacion = principal.VerificarTextBoxesDatosPersonales(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text);
+            // Volver a validar que el dni este completo
+            string DNI = txtDni.Text.ToString();
+            bool dniCompleto = principal.DniCompleto(DNI);
+            if (telVerificado == true && verificacion == true && dniCompleto == true)
+            {
                 txtUser.Enabled = true;
                 txtContra.Enabled = true;
                 txtConfirPass.Enabled = true;
             }
+            else
+            {
+                txtUser.Enabled = false;
+                txtContra.Enabled = false;
+                txtConfirPass.Enabled = false;
+            }
         }
+
+
+        // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
+        private void txtConfirPass_Validating(object sender, CancelEventArgs e)
+        {
+            string password = txtContra.Text;
+            string confirPassword = txtConfirPass.Text;
+
+            bool verificarPass = principal.confirmarPass(password, confirPassword);
+            if (verificarPass == false)
+            {
+                lblErrorPass.Text = "Las contraseñas no coinciden";
+            }
+            else
+            {
+                lblErrorPass.Text = "";
+
+            }
+
+            // VERIFICAR QUE TODOS LOS TEXTBOX DCONTENGAN ALGUN DATO, SI NO ES ASI NO SE HABILITARA EL BOTON PARA CREAR UN NUEVO ADMI
+            // -----------------------------------------------------------------------------------------------------------------------------.
+            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            btnCrear.Enabled = verificacion;
+
+            // Volver a verificar que la contraseña cumple los requisitos
+            bool verifiarRequisitos = principal.CumpleRequisitos(txtContra.Text);
+            if (verificacion == true && verificarPass == true && verifiarRequisitos == true)
+            {
+                btnCrear.Enabled = true;
+            }
+            else
+            {
+                btnCrear.Enabled = false;
+            }
+        }
+
 
         private void txtUser_Validating(object sender, CancelEventArgs e)
         {
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
+
         }
 
         private void txtContra_Validating(object sender, CancelEventArgs e)
         {
-            bool verificacion = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
-            btnCrear.Enabled = verificacion;
+
         }
 
-        
+   
     }
 
 }

@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Frontend",
-    "\\Frontend\\Administradores"
+    "\\Frontend\\Administradores",
+    "\\Logica",
+    "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\Frontend\\Administradores\\AltaAdmin.cs",
+  "SelectedNode": "\\Logica\\Clases\\Principal.cs",
   "PreviewInSolutionExplorer": false
 }
