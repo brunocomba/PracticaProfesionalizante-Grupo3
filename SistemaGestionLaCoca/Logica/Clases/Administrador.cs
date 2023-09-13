@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +10,12 @@ namespace Logica.Clases
 {
     public class Administrador
     {
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public int dni { get; set; }
-        public uint telefono { get; set; }
-        public string usuario { get; set; }
-        public string contrasenia { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int DNI { get; set; }
+        public decimal Telefono { get; set; }
+        public string Usuario { get; set; }
+        public string Contrasenia { get; set; }
     }
 }

@@ -32,3 +32,4 @@ C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Logica\obj\Debug\net7.0\refint\Logica.dll
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Logica\obj\Debug\net7.0\Logica.pdb
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Logica\obj\Debug\net7.0\ref\Logica.dll
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Logica\obj\Debug\net7.0\Logica.csproj.AssemblyReference.cache

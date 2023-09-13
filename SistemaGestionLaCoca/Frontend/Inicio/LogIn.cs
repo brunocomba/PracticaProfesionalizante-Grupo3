@@ -47,16 +47,16 @@ namespace FrontEnd
             password = txtContrasenia.Text;
 
             bool inicioSesionExitoso = false;
-
+            /*
             foreach (var admGuardado in Principal.ObtenerAdministradores())
             {
-                if (admGuardado.usuario == user && admGuardado.contrasenia == password)
+                if (admGuardado.Usuario == user && admGuardado.Contrasenia == password)
                 {
                     inicioSesionExitoso = true;
                     break;
                 }
             }
-
+            */
             if (inicioSesionExitoso)
             {
                 MessageBox.Show("Inicio de sesión exitoso. ¡Bienvenido, " + user + "!");

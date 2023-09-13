@@ -14,16 +14,28 @@ namespace Logica.Clases
 {
     public class Principal
     {
+        // Instancia de la base de datos.
+        ApplicationDbContex context = new ApplicationDbContex();
+
+
         // ------------------------------------ LISTAS.
 
-        public static List<Administrador> listaAdministradores;
+        public List<Administrador> ListaAdministradores = new List<Administrador>();
 
-        public static List<Cliente> listaClientes;
+     
 
         public static List<Cancha> listaCanchas;
 
         public static List<Turno> listaTurnos;
 
+        public List<Administrador> ObtenerListaAdmi()
+        {
+            ListaAdministradores = context.Administradores.ToList();
+
+            return ListaAdministradores;
+        }
+        
+        
         // ------------------------------------ VERIFICAR CARACTERES INGRESADOS.
         public bool SoloLetras(string textBox)
         {
@@ -51,61 +63,54 @@ namespace Logica.Clases
         }
 
 
-
         // ------------------------------------ ADMINISTRADORES.
-        public static List<Administrador> ObtenerAdministradores()
-        {
-            if (listaAdministradores == null)
-            {
-                listaAdministradores = new List<Administrador>();
 
-                Administrador adminBase = new Administrador();
-
-                adminBase.nombre = "Bruno";
-                adminBase.apellido = "Comba";
-                adminBase.dni = 45414815;
-                adminBase.telefono = 3493662312;
-                adminBase.usuario = "boot";
-                adminBase.contrasenia = "123";
-
-                listaAdministradores.Add(adminBase);
-
-            }
-            return listaAdministradores;
-        }
-
-        public void altaAdmin(string Nombre, string Apellido, int Dni, uint Tel, string User, string Pass)
+       
+        // ALTA
+        public void AltaAdmi(string nombre, string apellido, int dni, decimal tel, string user, string pass)
         {
             Administrador newAdmin = new Administrador();
 
-            newAdmin.nombre = Nombre;
-            newAdmin.apellido = Apellido;
-            newAdmin.dni = Dni;
-            newAdmin.telefono = Tel;
-            newAdmin.usuario = User;
-            newAdmin.contrasenia = Pass;
+            newAdmin.Nombre = nombre;
+            newAdmin.Apellido = apellido;
+            newAdmin.DNI = dni;
+            newAdmin.Telefono = tel;
+            newAdmin.Usuario = user;
+            newAdmin.Contrasenia = pass;
 
-            ObtenerAdministradores().Add(newAdmin); 
+            context.Administradores.Add(newAdmin);  
+            context.SaveChanges();
         }
-       
-        public void modificarAdmin(Administrador admiMod, string Nombre, string Apellido, int DNI, uint Tel, string User, string Pass)
+
+        // MODIFICACION
+        public void ModificarAdmin(Administrador admiMod, string nombre, string apellido, int dni, decimal tel, string user, string pass)
         {
-            admiMod.nombre = Nombre;
-            admiMod.apellido = Apellido;
-            admiMod.dni = DNI;
-            admiMod.telefono = Tel;
-            admiMod.usuario = User;
-            admiMod.contrasenia = Pass;
+            if (admiMod != null)
+            {
+                admiMod.Nombre = nombre;
+                admiMod.Apellido = apellido;
+                admiMod.DNI = dni;
+                admiMod.Telefono = tel;
+                admiMod.Usuario = user;
+                admiMod.Contrasenia = pass;
+
+                context.Administradores.Update(admiMod);
+                context.SaveChanges();
+            }
         }
 
-        public void removeAdmin(Administrador adminABorrare)
+        // BAJA
+        public void RemoveAdmin(Administrador admiABorrar)
         {
-            listaAdministradores.Remove(adminABorrare);
+            if (admiABorrar != null)
+            {
+                context.Administradores.Remove(admiABorrar);
+                context.SaveChanges();
+            }
         }
+            // ------------------------------------------------------ METODOS DE VALIDACION.
 
-        // ------------------------------------------------------ METODOS DE VALIDACION.
-
-        // Verificar que los textbox no esten vacios.
+            // Verificar que los textbox no esten vacios.
 
         public bool VerificarTextBoxesDatosPersonales(string Nombre, string Apellido, string Dni, string Tel)
         {
@@ -180,9 +185,8 @@ namespace Logica.Clases
         }
 
 
-
-
-        // ------------------------------------ CLIENTES. 
+        public static List<Cliente> listaClientes;
+        // ----------------------------------------------CLIENTES. 
         public static List<Cliente> ObtenerClientes()
         {
             if (listaClientes == null)

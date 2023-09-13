@@ -54,7 +54,7 @@ namespace Frontend
             this.Hide();
 
             dgvCanchas.DataSource = null; // Eliminar el origen de datos actual
-            dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            //dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
             dgvCanchas.Refresh();
         }
         private void btnEliminar_Click(object sender, EventArgs e)

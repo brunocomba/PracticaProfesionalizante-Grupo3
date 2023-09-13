@@ -50,7 +50,7 @@ namespace Frontend
             this.Hide();
 
             dgvClientes.DataSource = null; // Eliminar el origen de datos actual
-            dgvClientes.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            //dgvClientes.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
             dgvClientes.Refresh();
         }
 

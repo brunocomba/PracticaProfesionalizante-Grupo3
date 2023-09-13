@@ -51,6 +51,7 @@
             label3 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            checkBoXMostrarContra = new CheckBox();
             lblErrorPass = new Label();
             txtConfirPass = new TextBox();
             label10 = new Label();
@@ -77,9 +78,9 @@
             DatosPers.Controls.Add(label5);
             DatosPers.Controls.Add(label2);
             DatosPers.Controls.Add(txtNombre);
-            DatosPers.Location = new Point(24, 82);
+            DatosPers.Location = new Point(12, 82);
             DatosPers.Name = "DatosPers";
-            DatosPers.Size = new Size(381, 295);
+            DatosPers.Size = new Size(393, 313);
             DatosPers.TabIndex = 5;
             DatosPers.TabStop = false;
             // 
@@ -116,11 +117,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
             label8.Location = new Point(138, 34);
             label8.Name = "label8";
-            label8.Size = new Size(147, 20);
+            label8.Size = new Size(165, 18);
             label8.TabIndex = 17;
             label8.Text = "DATOS PERSONALES";
             // 
@@ -214,7 +215,7 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = SystemColors.AppWorkspace;
-            btnCancelar.Location = new Point(665, 404);
+            btnCancelar.Location = new Point(651, 413);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(111, 39);
             btnCancelar.TabIndex = 16;
@@ -227,9 +228,9 @@
             txtContra.BackColor = SystemColors.InactiveBorder;
             txtContra.Location = new Point(105, 119);
             txtContra.Name = "txtContra";
+            txtContra.PasswordChar = '*';
             txtContra.Size = new Size(195, 23);
             txtContra.TabIndex = 15;
-            txtContra.Validating += txtContra_Validating;
             txtContra.Validated += txtContra_Validated;
             // 
             // btnCrear
@@ -239,7 +240,7 @@
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(126, 232);
+            btnCrear.Location = new Point(126, 257);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(121, 40);
             btnCrear.TabIndex = 2;
@@ -254,7 +255,6 @@
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(195, 23);
             txtUser.TabIndex = 14;
-            txtUser.Validating += txtUser_Validating;
             // 
             // label4
             // 
@@ -291,6 +291,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(checkBoXMostrarContra);
             groupBox2.Controls.Add(lblErrorPass);
             groupBox2.Controls.Add(txtConfirPass);
             groupBox2.Controls.Add(label10);
@@ -302,9 +303,23 @@
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(411, 82);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(365, 295);
+            groupBox2.Size = new Size(381, 313);
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
+            // 
+            // checkBoXMostrarContra
+            // 
+            checkBoXMostrarContra.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            checkBoXMostrarContra.AutoSize = true;
+            checkBoXMostrarContra.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoXMostrarContra.ForeColor = Color.White;
+            checkBoXMostrarContra.Location = new Point(179, 220);
+            checkBoXMostrarContra.Name = "checkBoXMostrarContra";
+            checkBoXMostrarContra.Size = new Size(121, 18);
+            checkBoXMostrarContra.TabIndex = 22;
+            checkBoXMostrarContra.Text = "Mostrar contraseña";
+            checkBoXMostrarContra.UseVisualStyleBackColor = true;
+            checkBoXMostrarContra.CheckedChanged += checkBoXMostrarContra_CheckedChanged;
             // 
             // lblErrorPass
             // 
@@ -320,6 +335,7 @@
             // 
             txtConfirPass.Location = new Point(105, 170);
             txtConfirPass.Name = "txtConfirPass";
+            txtConfirPass.PasswordChar = '*';
             txtConfirPass.Size = new Size(195, 23);
             txtConfirPass.TabIndex = 20;
             txtConfirPass.Validating += txtConfirPass_Validating;
@@ -338,11 +354,11 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
             label9.Location = new Point(126, 34);
             label9.Name = "label9";
-            label9.Size = new Size(121, 20);
+            label9.Size = new Size(131, 18);
             label9.TabIndex = 18;
             label9.Text = "DATOS USUARIO";
             // 
@@ -377,7 +393,6 @@
             MaximizeBox = false;
             Name = "AltaAdmin";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += AltaAdmin_Load;
             DatosPers.ResumeLayout(false);
             DatosPers.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -421,5 +436,6 @@
         private Label lblErrorDni;
         private GroupBox groupBox1;
         private Label lblErrorApellido;
+        private CheckBox checkBoXMostrarContra;
     }
 }
