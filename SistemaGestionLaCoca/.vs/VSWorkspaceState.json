@@ -3,9 +3,11 @@
     "",
     "\\Frontend",
     "\\Frontend\\Administradores",
+    "\\Frontend\\Inicio",
+    "\\Frontend\\Turnos",
     "\\Logica",
     "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\Logica\\Clases\\Administrador.cs",
+  "SelectedNode": "\\Frontend\\Administradores\\ListaAdmi.cs",
   "PreviewInSolutionExplorer": false
 }

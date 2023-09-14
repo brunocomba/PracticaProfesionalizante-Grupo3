@@ -26,11 +26,7 @@ namespace Logica.Clases
             lastID++;
             return lastID;
         }
-        public string MostrarInfo()
-        {
-            return $"{Id} ; {Fecha}; {Horario} ; {clienteTurno.nombre} ; {clienteTurno.apellido} ;" +
-                $" {clienteTurno.telefono} ; {canchaTurno.id} ; {canchaTurno.tipo} ; {canchaTurno.precio}";
-        }
+       
     }
     //{Fecha.Day}/{Fecha.Month}
 }

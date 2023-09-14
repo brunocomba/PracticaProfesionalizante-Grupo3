@@ -21,24 +21,23 @@ namespace Frontend
             adminQueEdito = admin;
             txtNombre.Text = adminQueEdito.Nombre;
             txtApellido.Text = adminQueEdito.Apellido;
-            txtDni.Text = adminQueEdito.DNI.ToString();
+            txtDNI.Text = adminQueEdito.DNI.ToString();
             txtTel.Text = adminQueEdito.Telefono.ToString();
             txtUser.Text = adminQueEdito.Usuario.ToString();
             txtContra.Text = adminQueEdito.Contrasenia.ToString();
 
         }
-
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnCrear_Click(object sender, EventArgs e)
         {
             // VOLVER A VALIDAR TODAS LAS VERIFICACIONES CUANDO APRETA EL BOTON CREAR
 
-            bool veriTextBoxs = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            bool veriTextBoxs = principal.VerificarTextBoxAdmi(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtDNI.Text);
 
-            bool coincidenContra = principal.confirmarPass(txtContra.Text, txtConfirPass.Text);
+            bool coincidenContra = principal.confirmarPass(txtContra.Text, txtConfiContra.Text);
 
             bool requisitosContra = principal.CumpleRequisitos(txtContra.Text);
 
-            bool requisitosDNI = principal.DniCompleto(txtDni.Text);
+            bool requisitosDNI = principal.DniCompleto(txtDNI.Text);
 
             bool requisitosTel = principal.TelCompleto(txtTel.Text);
 
@@ -47,7 +46,7 @@ namespace Frontend
                 var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion? ", "ATENCION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (SIoNO == DialogResult.OK)
                 {
-                    principal.ModificarAdmin(adminQueEdito, txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text),
+                    principal.ModificarAdmin(adminQueEdito, txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text),
                     decimal.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
 
                     MessageBox.Show("Administrador modificado con exito!");
@@ -84,13 +83,14 @@ namespace Frontend
             {
                 MessageBox.Show("Numero de telefono incompleto.", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
 
+
         //--------------------------------------------------- VALIDACIONES -------------------------------------------------------------.
+
         // Verificar si la contrasenia ingresada contiene al menos una letra mayúscula y al menos un número
-        private void txtContra_Validated_1(object sender, EventArgs e)
+        private void txtContra_Validated(object sender, EventArgs e)
         {
             bool verificacion = principal.CumpleRequisitos(txtContra.Text);
 
@@ -107,10 +107,11 @@ namespace Frontend
         }
 
         // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
-        private void txtConfirPass_Validated_1(object sender, EventArgs e)
+
+        private void txtConfiContra_Validated(object sender, EventArgs e)
         {
             string password = txtContra.Text;
-            string confirPassword = txtConfirPass.Text;
+            string confirPassword = txtConfiContra.Text;
 
             if (principal.confirmarPass(password, confirPassword) == false)
             {
@@ -122,7 +123,9 @@ namespace Frontend
             }
         }
 
-        private void txtNombre_Validating(object sender, CancelEventArgs e)
+
+        // VERIFICAR QUE EN LOS CAMPOS NUMERICOS SOLO HAYA NUMEROS Y EN LOS CAMPOS DE TEXTO SOLO LETRAS. (USUARIO Y CONTRASENIA NO SE VALIDAN)
+        private void txtNombre_Validating_1(object sender, CancelEventArgs e)
         {
             string texto = txtNombre.Text;
 
@@ -130,9 +133,10 @@ namespace Frontend
             {
                 MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void txtApellido_Validating(object sender, CancelEventArgs e)
+        private void txtApellido_Validating_1(object sender, CancelEventArgs e)
         {
             string texto = txtApellido.Text;
 
@@ -142,17 +146,19 @@ namespace Frontend
             }
         }
 
-        private void txtDni_Validating(object sender, CancelEventArgs e)
+        private void txtDNI_Validating(object sender, CancelEventArgs e)
         {
-            string texto = txtDni.Text;
+            string texto = txtDNI.Text;
 
             if (principal.SoloNumeros(texto) == false)
             {
                 MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+
             // VERIFICAR QUE EL DNI INGRESADO CONTENGA 8 DIGITOS. (LO CORRECTO)
-            string DNI = txtDni.Text.ToString();
+            string DNI = txtDNI.Text.ToString();
             bool dniCompleto = principal.DniCompleto(DNI);
             if (dniCompleto == false)
             {
@@ -165,7 +171,7 @@ namespace Frontend
             }
         }
 
-        private void txtTel_Validating(object sender, CancelEventArgs e)
+        private void txtTel_Validating_1(object sender, CancelEventArgs e)
         {
             string texto = txtTel.Text;
 
@@ -173,6 +179,8 @@ namespace Frontend
             {
                 MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
 
             // VERIFICAR QUE EL TELEFONO INGRESADO CONTENGA 10 DIGITOS. (LO CORRECTO NRO DE AREA + NUMERO TEL)
             string Tel = txtTel.Text.ToString();
@@ -186,28 +194,29 @@ namespace Frontend
                 lblErrorTel.Text = "";
             }
 
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ListaAdmi.Show();
-            this.Hide();
 
-        }
-
-        private void checkBoXMostrarContra_CheckedChanged(object sender, EventArgs e)
+        // mostrar la contra
+        private void checkBoXMostrarContra_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBoXMostrarContra.Checked == true)
             {
                 txtContra.PasswordChar = '\0';
-                txtConfirPass.PasswordChar = '\0';
+                txtConfiContra.PasswordChar = '\0';
             }
             else
             {
                 txtContra.PasswordChar = '*';
-                txtConfirPass.PasswordChar = '*';
+                txtConfiContra.PasswordChar = '*';
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            ListaAdmi.Show();
+            this.Hide();
+        }
+
     }
 }

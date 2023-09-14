@@ -38,17 +38,18 @@ namespace Frontend
             groupBox1 = new GroupBox();
             label1 = new Label();
             dgvClientes = new DataGridView();
-            dniDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             apellidoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteBindingSource = new BindingSource(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btnVolver = new Button();
-            btnEliminar = new Button();
-            btnModificar = new Button();
-            btnAgregar = new Button();
             panel1 = new Panel();
+            btnDelete = new Button();
+            btnAgregar = new Button();
+            btnMod = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
@@ -62,18 +63,18 @@ namespace Frontend
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-3, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1041, 96);
+            groupBox1.Size = new Size(1272, 96);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(353, 36);
+            label1.Location = new Point(433, 38);
             label1.Name = "label1";
-            label1.Size = new Size(432, 32);
+            label1.Size = new Size(433, 32);
             label1.TabIndex = 0;
             label1.Text = "LISTA CLIENTES REGISTRADOS";
             // 
@@ -99,7 +100,7 @@ namespace Frontend
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { dniDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, apellidoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn });
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, apellidoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn });
             dgvClientes.DataSource = clienteBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
@@ -111,7 +112,7 @@ namespace Frontend
             dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
             dgvClientes.EnableHeadersVisualStyles = false;
             dgvClientes.GridColor = Color.MidnightBlue;
-            dgvClientes.Location = new Point(263, 121);
+            dgvClientes.Location = new Point(274, 135);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -125,33 +126,40 @@ namespace Frontend
             dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(563, 474);
+            dgvClientes.Size = new Size(788, 561);
             dgvClientes.TabIndex = 2;
             // 
-            // dniDataGridViewTextBoxColumn
+            // iDDataGridViewTextBoxColumn
             // 
-            dniDataGridViewTextBoxColumn.DataPropertyName = "dni";
-            dniDataGridViewTextBoxColumn.HeaderText = "DNI";
-            dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
-            dniDataGridViewTextBoxColumn.ReadOnly = true;
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dNIDataGridViewTextBoxColumn
+            // 
+            dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            dNIDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apellidoDataGridViewTextBoxColumn
             // 
-            apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
             apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             apellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
-            telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
             telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             telefonoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -165,79 +173,79 @@ namespace Frontend
             btnVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnVolver.FlatAppearance.BorderSize = 2;
             btnVolver.FlatStyle = FlatStyle.Flat;
-            btnVolver.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(869, 605);
+            btnVolver.Location = new Point(1097, 685);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(109, 44);
+            btnVolver.Size = new Size(127, 40);
             btnVolver.TabIndex = 10;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // btnEliminar
-            // 
-            btnEliminar.Anchor = AnchorStyles.Left;
-            btnEliminar.FlatAppearance.BorderSize = 2;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(17, 246);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(116, 44);
-            btnEliminar.TabIndex = 7;
-            btnEliminar.Text = "ELIMINAR";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Anchor = AnchorStyles.Left;
-            btnModificar.FlatAppearance.BorderSize = 2;
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(17, 145);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(116, 44);
-            btnModificar.TabIndex = 8;
-            btnModificar.Text = "MODIFICAR";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Anchor = AnchorStyles.Left;
-            btnAgregar.FlatAppearance.BorderSize = 2;
-            btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(17, 45);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(116, 44);
-            btnAgregar.TabIndex = 6;
-            btnAgregar.Text = "AGREGAR";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Left;
             panel1.BackColor = Color.SlateGray;
+            panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnAgregar);
-            panel1.Controls.Add(btnModificar);
-            panel1.Controls.Add(btnEliminar);
+            panel1.Controls.Add(btnMod);
             panel1.Location = new Point(-3, 85);
             panel1.Name = "panel1";
-            panel1.Size = new Size(151, 590);
+            panel1.Size = new Size(151, 661);
             panel1.TabIndex = 11;
+            // 
+            // btnDelete
+            // 
+            btnDelete.FlatAppearance.BorderColor = Color.Black;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Image = (Image)resources.GetObject("btnDelete.Image");
+            btnDelete.Location = new Point(42, 311);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(49, 56);
+            btnDelete.TabIndex = 14;
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.FlatAppearance.BorderColor = Color.Black;
+            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.Location = new Point(42, 101);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(49, 57);
+            btnAgregar.TabIndex = 13;
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click_1;
+            // 
+            // btnMod
+            // 
+            btnMod.FlatAppearance.BorderColor = Color.Black;
+            btnMod.FlatAppearance.BorderSize = 0;
+            btnMod.FlatStyle = FlatStyle.Flat;
+            btnMod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMod.ForeColor = Color.White;
+            btnMod.Image = (Image)resources.GetObject("btnMod.Image");
+            btnMod.Location = new Point(42, 209);
+            btnMod.Name = "btnMod";
+            btnMod.Size = new Size(49, 51);
+            btnMod.TabIndex = 12;
+            btnMod.UseVisualStyleBackColor = true;
+            btnMod.Click += btnMod_Click;
             // 
             // ListaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
-            ClientSize = new Size(1034, 661);
+            ClientSize = new Size(1259, 748);
             Controls.Add(panel1);
             Controls.Add(btnVolver);
             Controls.Add(dgvClientes);
@@ -268,9 +276,12 @@ namespace Frontend
         private BindingSource clienteBindingSource;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btnVolver;
-        private Button btnEliminar;
-        private Button btnModificar;
         private Button btnAgregar;
         private Panel panel1;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
+        private Button btnDelete;
+        private Button button2;
+        private Button btnMod;
     }
 }

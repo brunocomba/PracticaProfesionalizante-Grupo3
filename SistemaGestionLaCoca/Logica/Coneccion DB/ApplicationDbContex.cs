@@ -7,7 +7,9 @@ namespace Logica
     internal class ApplicationDbContex : DbContext
     {
         public DbSet<Administrador> Administradores { get; set; }
-    
+        public DbSet<Cliente> Clientes { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

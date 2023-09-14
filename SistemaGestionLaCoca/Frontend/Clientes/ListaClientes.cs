@@ -19,17 +19,12 @@ namespace Frontend
             InitializeComponent();
         }
         Principal principal = new Principal();
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            AltaCliente altaCliente = new AltaCliente(this);
-            altaCliente.Show();
-            this.Hide();
-        }
+
 
         private void ListaClientes_Load(object sender, EventArgs e)
         {
             dgvClientes.DataSource = null;
-            dgvClientes.DataSource = Principal.ObtenerClientes();
+            dgvClientes.DataSource = principal.ObtenerListClientes();
 
         }
 
@@ -41,46 +36,60 @@ namespace Frontend
         }
 
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            ModificarCliente modCliente = new ModificarCliente();
-            Cliente cliente_Elegido = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-            modCliente.ModificaCliente(cliente_Elegido);
-            modCliente.Show();
+            AltaCliente altaCliente = new AltaCliente(this);
+            altaCliente.Show();
             this.Hide();
-
-            dgvClientes.DataSource = null; // Eliminar el origen de datos actual
-            //dgvClientes.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
-            dgvClientes.Refresh();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnMod_Click(object sender, EventArgs e)
         {
-            //MIRO EL ID SELECCIONADO EN LA GRILLA
-            object DniElegido = this.dgvClientes.SelectedCells[0].Value;
-            int DniSeleccionado = (int)DniElegido;
-
-            Cliente valor_Elegido = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-
-            if (valor_Elegido != null)
+            ModificarCliente modCliente = new ModificarCliente();
+            if (dgvClientes.Rows.Count > 0)
             {
-                var confirmacion = MessageBox.Show("Seguro que desea eliminar este cliente con el DNI" + DniSeleccionado, "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-                if (confirmacion == DialogResult.OK)
-                {
-                    principal.removeCliente(valor_Elegido);
-                }
-
+                // convertir a objeto cliente la fila seleccionada en la grilla
+                Cliente cliente_Elegido = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                // pasarle el cliente elegido en bla grilla al metodo del formulario de modificacion para que lo utilice
+                modCliente.ModificaCliente(cliente_Elegido);
+                modCliente.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("No hay ningun cliente seleccionado");
+                MessageBox.Show("No hay clientes registrados para realizar una modificacion.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            dgvClientes.DataSource = null;
-
-            dgvClientes.DataSource = Principal.ObtenerClientes();
+            dgvClientes.DataSource = null; // Eliminar el origen de datos actual
+            dgvClientes.DataSource = principal.ObtenerListClientes(); // Asignar la lista actualizada
+            dgvClientes.Refresh();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // CONVERTIR A OBJETO TIPO CLIENTE LA FILA ELEGIDA EN LA GRILLA.
+
+
+            if (dgvClientes.Rows.Count > 0)
+            {
+                Cliente cliente_Elegido = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                var confirmacion = MessageBox.Show("Seguro que desea eliminar este cliente, con el DNI " + cliente_Elegido.DNI, "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.OK)
+                {
+                    principal.removeCliente(cliente_Elegido);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay clientes registrados para eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+            dgvClientes.DataSource = null;
+            dgvClientes.DataSource = principal.ObtenerListaAdmi();
+        }
     }
 }

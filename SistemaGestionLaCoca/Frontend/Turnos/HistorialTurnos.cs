@@ -30,8 +30,8 @@ namespace Frontend
 
             foreach (var turno in Principal.ObtenerTurnos())
             {
-                string propConcatenada = turno.MostrarInfo();
-                listaPropiedades.Add(propConcatenada);
+                //string propConcatenada = turno.MostrarInfo();
+                //listaPropiedades.Add(propConcatenada);
 
             }
             listBox1.DataSource = listaPropiedades;

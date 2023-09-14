@@ -31,12 +31,12 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaAdmin));
             DatosPers = new GroupBox();
+            txtDNI = new TextBox();
             lblErrorApellido = new Label();
             lblErrorDni = new Label();
             lblErrorTel = new Label();
             label8 = new Label();
             txtApellido = new TextBox();
-            txtDni = new TextBox();
             txtTel = new TextBox();
             label7 = new Label();
             label6 = new Label();
@@ -51,9 +51,9 @@
             label3 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            txtConfirContra = new TextBox();
             checkBoXMostrarContra = new CheckBox();
             lblErrorPass = new Label();
-            txtConfirPass = new TextBox();
             label10 = new Label();
             label9 = new Label();
             errorProviderPass = new ErrorProvider(components);
@@ -66,12 +66,12 @@
             // 
             // DatosPers
             // 
+            DatosPers.Controls.Add(txtDNI);
             DatosPers.Controls.Add(lblErrorApellido);
             DatosPers.Controls.Add(lblErrorDni);
             DatosPers.Controls.Add(lblErrorTel);
             DatosPers.Controls.Add(label8);
             DatosPers.Controls.Add(txtApellido);
-            DatosPers.Controls.Add(txtDni);
             DatosPers.Controls.Add(txtTel);
             DatosPers.Controls.Add(label7);
             DatosPers.Controls.Add(label6);
@@ -80,9 +80,19 @@
             DatosPers.Controls.Add(txtNombre);
             DatosPers.Location = new Point(12, 82);
             DatosPers.Name = "DatosPers";
-            DatosPers.Size = new Size(393, 313);
+            DatosPers.Size = new Size(446, 395);
             DatosPers.TabIndex = 5;
             DatosPers.TabStop = false;
+            // 
+            // txtDNI
+            // 
+            txtDNI.ForeColor = Color.Black;
+            txtDNI.Location = new Point(164, 186);
+            txtDNI.MaxLength = 8;
+            txtDNI.Name = "txtDNI";
+            txtDNI.Size = new Size(212, 23);
+            txtDNI.TabIndex = 21;
+            txtDNI.Validating += txtDNI_Validating_1;
             // 
             // lblErrorApellido
             // 
@@ -99,7 +109,7 @@
             lblErrorDni.AutoSize = true;
             lblErrorDni.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorDni.ForeColor = Color.Red;
-            lblErrorDni.Location = new Point(128, 196);
+            lblErrorDni.Location = new Point(164, 212);
             lblErrorDni.Name = "lblErrorDni";
             lblErrorDni.Size = new Size(0, 13);
             lblErrorDni.TabIndex = 19;
@@ -109,7 +119,7 @@
             lblErrorTel.AutoSize = true;
             lblErrorTel.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorTel.ForeColor = Color.Red;
-            lblErrorTel.Location = new Point(128, 246);
+            lblErrorTel.Location = new Point(164, 268);
             lblErrorTel.Name = "lblErrorTel";
             lblErrorTel.Size = new Size(0, 13);
             lblErrorTel.TabIndex = 18;
@@ -119,7 +129,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(138, 34);
+            label8.Location = new Point(148, 34);
             label8.Name = "label8";
             label8.Size = new Size(165, 18);
             label8.TabIndex = 17;
@@ -128,84 +138,74 @@
             // txtApellido
             // 
             txtApellido.ForeColor = Color.Black;
-            txtApellido.Location = new Point(128, 119);
+            txtApellido.Location = new Point(164, 137);
             txtApellido.MaxLength = 40;
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(195, 23);
+            txtApellido.Size = new Size(212, 23);
             txtApellido.TabIndex = 2;
             txtApellido.Validating += txtApellido_Validating;
-            // 
-            // txtDni
-            // 
-            txtDni.ForeColor = Color.Black;
-            txtDni.Location = new Point(127, 170);
-            txtDni.MaxLength = 8;
-            txtDni.Name = "txtDni";
-            txtDni.Size = new Size(196, 23);
-            txtDni.TabIndex = 3;
-            txtDni.Validating += txtDni_Validating;
             // 
             // txtTel
             // 
             txtTel.ForeColor = Color.Black;
-            txtTel.Location = new Point(127, 220);
+            txtTel.Location = new Point(164, 242);
             txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
-            txtTel.Size = new Size(195, 23);
+            txtTel.Size = new Size(212, 23);
             txtTel.TabIndex = 4;
             txtTel.Validating += txtTel_Validating;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(54, 127);
+            label7.Location = new Point(54, 144);
             label7.Name = "label7";
-            label7.Size = new Size(51, 15);
+            label7.Size = new Size(53, 16);
             label7.TabIndex = 9;
             label7.Text = "Apellido";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(75, 173);
+            label6.Location = new Point(79, 196);
             label6.Name = "label6";
-            label6.Size = new Size(28, 15);
+            label6.Size = new Size(28, 16);
             label6.TabIndex = 8;
             label6.Text = "DNI";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(49, 228);
+            label5.Location = new Point(68, 249);
             label5.Name = "label5";
-            label5.Size = new Size(54, 15);
+            label5.Size = new Size(54, 16);
             label5.TabIndex = 7;
             label5.Text = "Telefono";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(51, 80);
+            label2.Location = new Point(54, 94);
             label2.Name = "label2";
-            label2.Size = new Size(52, 15);
+            label2.Size = new Size(52, 16);
             label2.TabIndex = 4;
             label2.Text = "Nombre";
             // 
             // txtNombre
             // 
             txtNombre.ForeColor = Color.Black;
-            txtNombre.Location = new Point(127, 72);
+            txtNombre.Location = new Point(164, 87);
             txtNombre.MaxLength = 35;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(195, 23);
+            txtNombre.Size = new Size(212, 23);
             txtNombre.TabIndex = 1;
             txtNombre.Validating += txtNombre_Validating;
             // 
@@ -215,9 +215,9 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = SystemColors.AppWorkspace;
-            btnCancelar.Location = new Point(651, 413);
+            btnCancelar.Location = new Point(762, 510);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(111, 39);
+            btnCancelar.Size = new Size(134, 39);
             btnCancelar.TabIndex = 16;
             btnCancelar.Text = "VOLVER";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -226,10 +226,10 @@
             // txtContra
             // 
             txtContra.BackColor = SystemColors.InactiveBorder;
-            txtContra.Location = new Point(105, 119);
+            txtContra.Location = new Point(159, 137);
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
-            txtContra.Size = new Size(195, 23);
+            txtContra.Size = new Size(212, 23);
             txtContra.TabIndex = 15;
             txtContra.Validated += txtContra_Validated;
             // 
@@ -240,7 +240,7 @@
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(126, 257);
+            btnCrear.Location = new Point(159, 290);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(121, 40);
             btnCrear.TabIndex = 2;
@@ -251,30 +251,30 @@
             // txtUser
             // 
             txtUser.ForeColor = Color.Black;
-            txtUser.Location = new Point(105, 72);
+            txtUser.Location = new Point(159, 85);
             txtUser.Name = "txtUser";
-            txtUser.Size = new Size(195, 23);
+            txtUser.Size = new Size(212, 23);
             txtUser.TabIndex = 14;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(18, 127);
+            label4.Location = new Point(45, 139);
             label4.Name = "label4";
-            label4.Size = new Size(72, 15);
+            label4.Size = new Size(73, 16);
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(18, 85);
+            label3.Location = new Point(45, 87);
             label3.Name = "label3";
-            label3.Size = new Size(51, 15);
+            label3.Size = new Size(51, 16);
             label3.TabIndex = 5;
             label3.Text = "Usuario";
             // 
@@ -283,7 +283,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(122, 37);
+            label1.Location = new Point(160, 36);
             label1.Name = "label1";
             label1.Size = new Size(581, 32);
             label1.TabIndex = 4;
@@ -291,9 +291,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtConfirContra);
             groupBox2.Controls.Add(checkBoXMostrarContra);
             groupBox2.Controls.Add(lblErrorPass);
-            groupBox2.Controls.Add(txtConfirPass);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(btnCrear);
             groupBox2.Controls.Add(label9);
@@ -301,11 +301,21 @@
             groupBox2.Controls.Add(txtUser);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label3);
-            groupBox2.Location = new Point(411, 82);
+            groupBox2.Location = new Point(464, 82);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(381, 313);
+            groupBox2.Size = new Size(449, 395);
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
+            // 
+            // txtConfirContra
+            // 
+            txtConfirContra.ForeColor = Color.Black;
+            txtConfirContra.Location = new Point(159, 189);
+            txtConfirContra.Name = "txtConfirContra";
+            txtConfirContra.PasswordChar = '*';
+            txtConfirContra.Size = new Size(212, 23);
+            txtConfirContra.TabIndex = 22;
+            txtConfirContra.Validated += txtConfirContra_Validated;
             // 
             // checkBoXMostrarContra
             // 
@@ -313,7 +323,7 @@
             checkBoXMostrarContra.AutoSize = true;
             checkBoXMostrarContra.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             checkBoXMostrarContra.ForeColor = Color.White;
-            checkBoXMostrarContra.Location = new Point(179, 220);
+            checkBoXMostrarContra.Location = new Point(250, 241);
             checkBoXMostrarContra.Name = "checkBoXMostrarContra";
             checkBoXMostrarContra.Size = new Size(121, 18);
             checkBoXMostrarContra.TabIndex = 22;
@@ -326,28 +336,19 @@
             lblErrorPass.AutoSize = true;
             lblErrorPass.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorPass.ForeColor = Color.Red;
-            lblErrorPass.Location = new Point(105, 196);
+            lblErrorPass.Location = new Point(159, 212);
             lblErrorPass.Name = "lblErrorPass";
             lblErrorPass.Size = new Size(0, 14);
             lblErrorPass.TabIndex = 21;
             // 
-            // txtConfirPass
-            // 
-            txtConfirPass.Location = new Point(105, 170);
-            txtConfirPass.Name = "txtConfirPass";
-            txtConfirPass.PasswordChar = '*';
-            txtConfirPass.Size = new Size(195, 23);
-            txtConfirPass.TabIndex = 20;
-            txtConfirPass.Validating += txtConfirPass_Validating;
-            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(18, 163);
+            label10.Location = new Point(45, 179);
             label10.Name = "label10";
-            label10.Size = new Size(69, 30);
+            label10.Size = new Size(71, 32);
             label10.TabIndex = 19;
             label10.Text = "Confirmar \r\ncontraseña";
             // 
@@ -356,7 +357,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(126, 34);
+            label9.Location = new Point(138, 34);
             label9.Name = "label9";
             label9.Size = new Size(131, 18);
             label9.TabIndex = 18;
@@ -373,7 +374,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(0, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(813, 86);
+            groupBox1.Size = new Size(930, 86);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             groupBox1.Text = "23";
@@ -383,7 +384,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
-            ClientSize = new Size(804, 464);
+            ClientSize = new Size(925, 570);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(DatosPers);
@@ -411,7 +412,6 @@
         private Button btnCrear;
         private TextBox txtUser;
         private TextBox txtApellido;
-        private TextBox txtDni;
         private TextBox txtTel;
         private Label label4;
         private Label label7;
@@ -423,7 +423,6 @@
         private Label label1;
         private Label label8;
         private GroupBox groupBox2;
-        private TextBox txtConfirPass;
         private Label label10;
         private Label label9;
         private Label lblErrorPass;
@@ -437,5 +436,7 @@
         private GroupBox groupBox1;
         private Label lblErrorApellido;
         private CheckBox checkBoXMostrarContra;
+        private TextBox txtDNI;
+        private TextBox txtConfirContra;
     }
 }

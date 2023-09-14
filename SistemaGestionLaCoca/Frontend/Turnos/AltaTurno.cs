@@ -46,7 +46,9 @@ namespace Frontend
         private void AltaTurno_Load(object sender, EventArgs e)
         {
             cmboxCliente.DisplayMember = "nombreYapellido"; // Establecer la propiedad a mostrar en el ComboBox
-            cmboxCliente.Items.AddRange(Principal.ObtenerClientes().ToArray());
+
+
+            //cmboxCliente.Items.AddRange(Principal.ObtenerClientes().ToArray());
 
 
             AgregarDeportesUnicos(Principal.ObtenerCanchas());

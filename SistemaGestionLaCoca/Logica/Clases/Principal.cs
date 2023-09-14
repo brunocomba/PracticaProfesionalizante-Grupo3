@@ -6,9 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
-
-
-
+using System.Drawing;
 
 namespace Logica.Clases
 {
@@ -18,23 +16,21 @@ namespace Logica.Clases
         ApplicationDbContex context = new ApplicationDbContex();
 
 
-        // ------------------------------------ LISTAS.
+        // ------------------------------------ LISTAS -------------------------------
 
-        public List<Administrador> ListaAdministradores = new List<Administrador>();
+        public  List<Administrador> ListaAdministradores = new List<Administrador>();
 
+        public  List<Cliente> ListaClientes = new List<Cliente>();
+
+        public List<Cancha> ListaCanchas = new List<Cancha>();
+
+        public List<Turno> ListaTurnos = new List<Turno>();
      
 
         public static List<Cancha> listaCanchas;
 
         public static List<Turno> listaTurnos;
 
-        public List<Administrador> ObtenerListaAdmi()
-        {
-            ListaAdministradores = context.Administradores.ToList();
-
-            return ListaAdministradores;
-        }
-        
         
         // ------------------------------------ VERIFICAR CARACTERES INGRESADOS.
         public bool SoloLetras(string textBox)
@@ -63,10 +59,10 @@ namespace Logica.Clases
         }
 
 
-        // ------------------------------------ ADMINISTRADORES.
+        // -------------------------------------------- ADMINISTRADORES ----------------------------------------------------------------
 
        
-        // ALTA
+        // Alta
         public void AltaAdmi(string nombre, string apellido, int dni, decimal tel, string user, string pass)
         {
             Administrador newAdmin = new Administrador();
@@ -82,7 +78,7 @@ namespace Logica.Clases
             context.SaveChanges();
         }
 
-        // MODIFICACION
+        // Modificacion
         public void ModificarAdmin(Administrador admiMod, string nombre, string apellido, int dni, decimal tel, string user, string pass)
         {
             if (admiMod != null)
@@ -99,7 +95,7 @@ namespace Logica.Clases
             }
         }
 
-        // BAJA
+        // Baja
         public void RemoveAdmin(Administrador admiABorrar)
         {
             if (admiABorrar != null)
@@ -108,22 +104,21 @@ namespace Logica.Clases
                 context.SaveChanges();
             }
         }
-            // ------------------------------------------------------ METODOS DE VALIDACION.
 
-            // Verificar que los textbox no esten vacios.
-
-        public bool VerificarTextBoxesDatosPersonales(string Nombre, string Apellido, string Dni, string Tel)
+        // Devolver lista
+        public  List<Administrador> ObtenerListaAdmi()
         {
-            if (!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
-                !string.IsNullOrEmpty(Tel.ToString()))
-            {
-                return true;
+            ListaAdministradores = context.Administradores.ToList();
 
-            }
-            return false;
-
+            return ListaAdministradores;
         }
-        public bool VerificarTextBoxes(string Nombre, string Apellido, string Dni, string Tel, string User, string Pass, string ConfirPass)
+
+
+        // ------------------------------------------------------ METODOS DE VALIDACION Front Administradores.
+
+        // Verificar que los textbox no esten vacios.
+
+        public bool VerificarTextBoxAdmi(string Nombre, string Apellido, string Dni, string Tel, string User, string Pass, string ConfirPass)
         {
             if(!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
                 !string.IsNullOrEmpty(Tel.ToString()) && !string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(Pass) && !string.IsNullOrEmpty(ConfirPass))
@@ -172,6 +167,7 @@ namespace Logica.Clases
             }
             return true;
         }
+
         // Verificar que contenga si o si 8 caracteres lo ingresado en el apartado DNI
         public bool DniCompleto(string DNI)
         {
@@ -185,62 +181,115 @@ namespace Logica.Clases
         }
 
 
-        public static List<Cliente> listaClientes;
-        // ----------------------------------------------CLIENTES. 
-        public static List<Cliente> ObtenerClientes()
+        // Inicio de sesion (LogIn)
+        public string  InicioDeSesion(string usuario, string pass)
         {
-            if (listaClientes == null)
+            ListaAdministradores = context.Administradores.ToList();
+
+
+            if (ListaAdministradores.Count > 0)
             {
-                listaClientes = new List<Cliente>();
-
-                Cliente clienteBase = new Cliente();
-                clienteBase.nombre = "Roman";
-                clienteBase.apellido = "Riquelme";
-                clienteBase.dni = 28167907;
-                clienteBase.telefono = 2299665477;
-                clienteBase.nombreYapellido = "Roman" + " Riquelme";
-               
-
-                listaClientes.Add(clienteBase);
-
-                Cliente clienteBase2 = new Cliente();
-                clienteBase2.nombre = "Joaquin";
-                clienteBase2.apellido = "Lopez";
-                clienteBase2.dni = 45414815;
-                clienteBase2.telefono = 3493666650;
-                clienteBase2.nombreYapellido = "Joaquin" + " Lopez";
-
-
-                listaClientes.Add(clienteBase2);
+                foreach (var admiGuardado in ListaAdministradores)
+                {
+                    if (admiGuardado.Usuario == usuario && admiGuardado.Contrasenia == pass)
+                    {
+                        return $"Inicio de sesion exitoso.\n!Bienvenido, {usuario}! ";
+                    }
+                    else
+                    {
+                        return "Nombre de usuario o contraseña incorrectos.\nPor favor, inténtalo de nuevo.";
+                    }
+                }
             }
-            return listaClientes;
+            return "No hay ningun administrador registrado en el sistema.";
+           
         }
-        public void altaCliente(string Nombre, string Apellido, int Dni, uint Tel)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // ----------------------------------------------CLIENTES. 
+ 
+        
+        public void AltaCliente(string nombre, string apellido, int dni, decimal tel)
         {
             Cliente newCliente = new Cliente();
 
-            newCliente.nombre = Nombre;
-            newCliente.apellido = Apellido;
-            newCliente.dni = Dni;
-            newCliente.telefono = Tel;
-            newCliente.nombreYapellido = Nombre + " " + Apellido;
+            newCliente.Nombre = nombre;
+            newCliente.Apellido = apellido;
+            newCliente.DNI = dni;
+            newCliente.Telefono = tel;
 
-
-            listaClientes.Add(newCliente);
+            context.Clientes.Add(newCliente);
+            context.SaveChanges();
         }
-        public void modificarCliente(Cliente clienteMod, string Nombre, string Apellido, int DNI, uint Tel)
+    
+        
+        public void modificarCliente(Cliente clienteMod, string nombre, string apellido, int dni, decimal tel)
         {
-            clienteMod.nombre = Nombre;
-            clienteMod.apellido = Apellido;
-            clienteMod.dni = DNI;
-            clienteMod.telefono = Tel;
-            clienteMod.nombreYapellido = Nombre + " " + Apellido;
+            if (clienteMod != null)
+            {
+                clienteMod.Nombre = nombre;
+                clienteMod.Apellido = apellido;
+                clienteMod.DNI = dni;
+                clienteMod.Telefono = tel;
+
+                context.Clientes.Update(clienteMod);
+                context.SaveChanges();
+            }          
+        }
+         
+        public void removeCliente(Cliente clienteABorrar)
+        {
+            if (clienteABorrar != null)
+            {
+                context.Clientes.Remove(clienteABorrar);
+                context.SaveChanges();
+            }
         }
 
-        public void removeCliente(Cliente ClienteABorrar)
+        public  List<Cliente> ObtenerListClientes()
         {
-            listaClientes.Remove(ClienteABorrar);
+            ListaClientes = context.Clientes.ToList();
+
+            return ListaClientes;
         }
+
+        // Verificar que los textbox no esten vacios.
+        public bool VerificarTextBoxCliente(string Nombre, string Apellido, string Dni, string Tel)
+        {
+            if (!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
+                !string.IsNullOrEmpty(Tel.ToString()))
+            {
+                return true;
+
+            }
+            return false;
+
+        }
+
 
 
 
@@ -329,8 +378,6 @@ namespace Logica.Clases
                 Cancha laCancha = Principal.ObtenerCanchas()[0];
                 turnoBase.canchaTurno = laCancha;
 
-                Cliente elCliente = Principal.ObtenerClientes()[0];
-                turnoBase.clienteTurno = elCliente;
            
 
                 listaTurnos.Add(turnoBase);
@@ -345,8 +392,6 @@ namespace Logica.Clases
                 Cancha canchaBase = Principal.ObtenerCanchas()[1];
                 turnoBase2.canchaTurno = canchaBase;
 
-                Cliente clienteBase = Principal.ObtenerClientes()[1];
-                turnoBase2.clienteTurno = clienteBase;
 
 
 

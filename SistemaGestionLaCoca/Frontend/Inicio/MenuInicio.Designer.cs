@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
             label1 = new Label();
             groupBox1 = new GroupBox();
@@ -40,19 +39,9 @@
             pictureBox1 = new PictureBox();
             groupBox2 = new GroupBox();
             dateTimePicker1 = new DateTimePicker();
-            turnoBindingSource = new BindingSource(components);
-            dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            horarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            condicionReservadoDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            cancha = new DataGridViewTextBoxColumn();
-            clienteTurnoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)turnoBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -78,7 +67,7 @@
             groupBox1.Controls.Add(btnTurnos);
             groupBox1.Location = new Point(-4, -8);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(176, 675);
+            groupBox1.Size = new Size(176, 763);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
@@ -162,11 +151,11 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.SlateGray;
-            groupBox2.Controls.Add(dateTimePicker1);
             groupBox2.Controls.Add(pictureBox1);
+            groupBox2.Controls.Add(dateTimePicker1);
             groupBox2.Location = new Point(-4, -8);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1041, 102);
+            groupBox2.Size = new Size(1264, 102);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             // 
@@ -175,71 +164,18 @@
             dateTimePicker1.CalendarFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.CalendarForeColor = SystemColors.WindowText;
             dateTimePicker1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(779, 65);
+            dateTimePicker1.Location = new Point(1004, 65);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(247, 22);
             dateTimePicker1.TabIndex = 1;
             dateTimePicker1.Value = new DateTime(2023, 7, 21, 22, 23, 0, 0);
-            // 
-            // turnoBindingSource
-            // 
-            turnoBindingSource.DataSource = typeof(Logica.Clases.Turno);
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, fechaDataGridViewTextBoxColumn, horarioDataGridViewTextBoxColumn, condicionReservadoDataGridViewCheckBoxColumn, cancha, clienteTurnoDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = turnoBindingSource;
-            dataGridView1.Location = new Point(272, 196);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(669, 430);
-            dataGridView1.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // horarioDataGridViewTextBoxColumn
-            // 
-            horarioDataGridViewTextBoxColumn.DataPropertyName = "Horario";
-            horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
-            horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
-            // 
-            // condicionReservadoDataGridViewCheckBoxColumn
-            // 
-            condicionReservadoDataGridViewCheckBoxColumn.DataPropertyName = "condicionReservado";
-            condicionReservadoDataGridViewCheckBoxColumn.HeaderText = "condicionReservado";
-            condicionReservadoDataGridViewCheckBoxColumn.Name = "condicionReservadoDataGridViewCheckBoxColumn";
-            // 
-            // cancha
-            // 
-            cancha.DataPropertyName = "canchaTurno";
-            cancha.HeaderText = "canchaTurno";
-            cancha.Name = "cancha";
-            // 
-            // clienteTurnoDataGridViewTextBoxColumn
-            // 
-            clienteTurnoDataGridViewTextBoxColumn.DataPropertyName = "clienteTurno";
-            clienteTurnoDataGridViewTextBoxColumn.HeaderText = "clienteTurno";
-            clienteTurnoDataGridViewTextBoxColumn.Name = "clienteTurnoDataGridViewTextBoxColumn";
             // 
             // MenuInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
-            ClientSize = new Size(1034, 661);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1259, 748);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -252,8 +188,6 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)turnoBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -269,13 +203,5 @@
         public Button btnAdministradores;
         public Button button1;
         private Label label2;
-        private BindingSource turnoBindingSource;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn condicionReservadoDataGridViewCheckBoxColumn;
-        private DataGridViewTextBoxColumn cancha;
-        private DataGridViewTextBoxColumn clienteTurnoDataGridViewTextBoxColumn;
     }
 }

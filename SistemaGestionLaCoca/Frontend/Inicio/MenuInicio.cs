@@ -45,12 +45,11 @@ namespace FrontEnd
 
         private void MenuInicio_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Principal.ObtenerTurnos();
 
 
 
         }
 
-        
+
     }
 }

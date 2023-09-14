@@ -1,41 +1,24 @@
-﻿using Logica.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+using Logica.Clases;
 
 namespace FrontEnd
 {
     public partial class LogIn : Form
     {
-        Principal principal = new Principal();
-        private string userRegistrado;
-        private string passRegistrada;
-        private string password;
-        private string user;
-        private int cantIntentos = 5;
-        private int contador;
         MenuInicio menuInicio = new MenuInicio();
         public LogIn()
         {
             InitializeComponent();
+
         }
 
-
-
+        Principal principal = new Principal();
 
         private void button1_Click(object sender, EventArgs e)
         {
             AltaAdmin altaAdminForm = new AltaAdmin(this);
             altaAdminForm.Show();
             this.Hide();
-
-
         }
 
 
@@ -43,49 +26,22 @@ namespace FrontEnd
         private void btnContinuar_Click(object sender, EventArgs e)
         {
             // valor ingresados por pantalla
-            user = txtUsuario.Text;
-            password = txtContrasenia.Text;
+            string user = txtUsuario.Text;
+            string password = txtContrasenia.Text;
 
-            bool inicioSesionExitoso = false;
-            /*
-            foreach (var admGuardado in Principal.ObtenerAdministradores())
+            string LoQueDevuelve = principal.InicioDeSesion(user, password);
+
+            if (LoQueDevuelve == $"Inicio de sesion exitoso.\n!Bienvenido, {user}! ")
             {
-                if (admGuardado.Usuario == user && admGuardado.Contrasenia == password)
-                {
-                    inicioSesionExitoso = true;
-                    break;
-                }
-            }
-            */
-            if (inicioSesionExitoso)
-            {
-                MessageBox.Show("Inicio de sesión exitoso. ¡Bienvenido, " + user + "!");
+                MessageBox.Show(LoQueDevuelve, "Inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 menuInicio.Show();
                 this.Hide();
             }
             else
             {
+                MessageBox.Show(LoQueDevuelve, "Inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                do
-                {
-                    contador = contador + 1;
-                    int total = cantIntentos - contador;
-                    MessageBox.Show($"Nombre de usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.\n Intentos restantes: {total}", "ATENCION!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtContrasenia.Text = "";
-                    txtUsuario.Text = "";
-
-                    if (total == 0)
-                    {
-                        MessageBox.Show($"Usuario bloqueado\n Cantidad de intentos fallidos agotada.", "ATENCION!.",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtContrasenia.Text = "";
-                        txtUsuario.Text = "";
-                    }
-
-                } while (user.Equals(userRegistrado) && password.Equals(passRegistrada));
             }
-
         }
 
 
@@ -104,8 +60,12 @@ namespace FrontEnd
 
         private void LogIn_Load(object sender, EventArgs e)
         {
+            toolTip1.SetToolTip(iconoUsuario, "Usuario");
+            toolTip1.SetToolTip(iconoPass, "Contraseña");
 
         }
+
+
     }
 
 }

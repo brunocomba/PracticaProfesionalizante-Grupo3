@@ -43,7 +43,6 @@ namespace FrontEnd
             btnAgregar = new Button();
             btnModificar = new Button();
             dgvAdministradores = new DataGridView();
-            administradorBindingSource = new BindingSource(components);
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             apellidoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@ namespace FrontEnd
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             usuarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             contraseniaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            administradorBindingSource = new BindingSource(components);
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAdministradores).BeginInit();
@@ -63,7 +63,7 @@ namespace FrontEnd
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-3, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1041, 96);
+            groupBox1.Size = new Size(1268, 96);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -72,7 +72,7 @@ namespace FrontEnd
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(239, 41);
+            label1.Location = new Point(360, 39);
             label1.Name = "label1";
             label1.Size = new Size(564, 32);
             label1.TabIndex = 0;
@@ -84,9 +84,9 @@ namespace FrontEnd
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(878, 596);
+            btnVolver.Location = new Point(1111, 694);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(112, 43);
+            btnVolver.Size = new Size(122, 42);
             btnVolver.TabIndex = 2;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace FrontEnd
             panel1.Controls.Add(btnModificar);
             panel1.Location = new Point(-3, 85);
             panel1.Name = "panel1";
-            panel1.Size = new Size(143, 586);
+            panel1.Size = new Size(143, 669);
             panel1.TabIndex = 12;
             // 
             // btnEliminar
@@ -196,12 +196,8 @@ namespace FrontEnd
             dgvAdministradores.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvAdministradores.RowTemplate.Height = 25;
             dgvAdministradores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAdministradores.Size = new Size(656, 474);
+            dgvAdministradores.Size = new Size(872, 561);
             dgvAdministradores.TabIndex = 13;
-            // 
-            // administradorBindingSource
-            // 
-            administradorBindingSource.DataSource = typeof(Administrador);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -252,12 +248,16 @@ namespace FrontEnd
             contraseniaDataGridViewTextBoxColumn.Name = "contraseniaDataGridViewTextBoxColumn";
             contraseniaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // administradorBindingSource
+            // 
+            administradorBindingSource.DataSource = typeof(Administrador);
+            // 
             // ListaAdmi
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
-            ClientSize = new Size(1034, 661);
+            ClientSize = new Size(1259, 748);
             Controls.Add(dgvAdministradores);
             Controls.Add(panel1);
             Controls.Add(btnVolver);

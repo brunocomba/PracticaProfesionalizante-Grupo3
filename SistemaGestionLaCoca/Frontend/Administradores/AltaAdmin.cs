@@ -19,13 +19,13 @@ namespace FrontEnd
         // ALTA NUEVO ADMIN
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            bool veriTextBoxs = principal.VerificarTextBoxes(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirPass.Text);
+            bool veriTextBoxs = principal.VerificarTextBoxAdmi(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirContra.Text);
 
-            bool coincidenContra = principal.confirmarPass(txtContra.Text, txtConfirPass.Text);
+            bool coincidenContra = principal.confirmarPass(txtContra.Text, txtConfirContra.Text);
 
             bool requisitosContra = principal.CumpleRequisitos(txtContra.Text);
 
-            bool requisitosDNI = principal.DniCompleto(txtDni.Text);
+            bool requisitosDNI = principal.DniCompleto(txtDNI.Text);
 
             bool requisitosTel = principal.TelCompleto(txtTel.Text);
 
@@ -34,10 +34,11 @@ namespace FrontEnd
                 var SIoNO = MessageBox.Show($"Seguro desea crear este nuevo usuario administador?", "ATENCION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (SIoNO == DialogResult.OK)
                 {
-                    principal.AltaAdmi(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), decimal.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
+                    principal.AltaAdmi(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), decimal.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
 
                     MessageBox.Show("Administrador creado con exito!");
-                    ListaAdmi.Show();
+                    formularioPrevio.Refresh(); 
+                    formularioPrevio.Show();
                     this.Hide();
                 }
                 else
@@ -93,10 +94,10 @@ namespace FrontEnd
         }
 
         // VERIFICAR SI LAS CONTRASENIAS COINCIDEN
-        private void txtConfirPass_Validating(object sender, CancelEventArgs e)
+        private void txtConfirContra_Validated(object sender, EventArgs e)
         {
             string password = txtContra.Text;
-            string confirPassword = txtConfirPass.Text;
+            string confirPassword = txtConfirContra.Text;
 
             bool verificarPass = principal.confirmarPass(password, confirPassword);
             if (verificarPass == false)
@@ -109,7 +110,6 @@ namespace FrontEnd
 
             }
         }
-
 
         // ----------------------------------------------------------------------------------------------------------------------------------
         // VERIFICAR QUE EN LOS CAMPOS NUMERICOS SOLO HAYA NUMEROS Y EN LOS CAMPOS DE TEXTO SOLO LETRAS. (USUARIO Y CONTRASENIA NO SE VALIDAN)
@@ -135,9 +135,10 @@ namespace FrontEnd
             }
         }
 
-        private void txtDni_Validating(object sender, CancelEventArgs e)
+
+        private void txtDNI_Validating_1(object sender, CancelEventArgs e)
         {
-            string texto = txtDni.Text;
+            string texto = txtDNI.Text;
 
             if (principal.SoloNumeros(texto) == false)
             {
@@ -145,7 +146,7 @@ namespace FrontEnd
             }
 
             // VERIFICAR QUE EL DNI INGRESADO CONTENGA 8 DIGITOS. (LO CORRECTO)
-            string DNI = txtDni.Text.ToString();
+            string DNI = txtDNI.Text.ToString();
             bool dniCompleto = principal.DniCompleto(DNI);
             if (dniCompleto == false)
             {
@@ -156,7 +157,6 @@ namespace FrontEnd
                 lblErrorDni.Text = "";
             }
         }
-
         private void txtTel_Validating(object sender, CancelEventArgs e)
         {
             string texto = txtTel.Text;
@@ -193,14 +193,16 @@ namespace FrontEnd
             if (checkBoXMostrarContra.Checked == true)
             {
                 txtContra.PasswordChar = '\0';
-                txtConfirPass.PasswordChar = '\0';
+                txtConfirContra.PasswordChar = '\0';
             }
             else
             {
                 txtContra.PasswordChar = '*';
-                txtConfirPass.PasswordChar = '*';
+                txtConfirContra.PasswordChar = '*';
             }
         }
+
+     
     }
 
 }
