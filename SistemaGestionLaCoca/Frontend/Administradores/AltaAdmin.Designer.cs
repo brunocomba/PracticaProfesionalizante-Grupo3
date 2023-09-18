@@ -91,7 +91,7 @@
             txtDNI.MaxLength = 8;
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(212, 23);
-            txtDNI.TabIndex = 21;
+            txtDNI.TabIndex = 3;
             txtDNI.Validating += txtDNI_Validating_1;
             // 
             // lblErrorApellido
@@ -218,7 +218,7 @@
             btnCancelar.Location = new Point(762, 510);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(134, 39);
-            btnCancelar.TabIndex = 16;
+            btnCancelar.TabIndex = 9;
             btnCancelar.Text = "VOLVER";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -230,7 +230,7 @@
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
             txtContra.Size = new Size(212, 23);
-            txtContra.TabIndex = 15;
+            txtContra.TabIndex = 6;
             txtContra.Validated += txtContra_Validated;
             // 
             // btnCrear
@@ -243,7 +243,7 @@
             btnCrear.Location = new Point(159, 290);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(121, 40);
-            btnCrear.TabIndex = 2;
+            btnCrear.TabIndex = 8;
             btnCrear.Text = "CREAR ";
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
@@ -254,7 +254,7 @@
             txtUser.Location = new Point(159, 85);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(212, 23);
-            txtUser.TabIndex = 14;
+            txtUser.TabIndex = 5;
             // 
             // label4
             // 
@@ -314,7 +314,7 @@
             txtConfirContra.Name = "txtConfirContra";
             txtConfirContra.PasswordChar = '*';
             txtConfirContra.Size = new Size(212, 23);
-            txtConfirContra.TabIndex = 22;
+            txtConfirContra.TabIndex = 7;
             txtConfirContra.Validated += txtConfirContra_Validated;
             // 
             // checkBoXMostrarContra

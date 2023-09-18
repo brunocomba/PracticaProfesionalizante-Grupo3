@@ -44,7 +44,7 @@ namespace Frontend
         private void txtFiltrarTurnos_TextChanged(object sender, EventArgs e)
         {
             string busqueda = txtFiltrarTurnos.Text.ToLower(); // Convierte el término de búsqueda a minúsculas
-            var resultados = Principal.ObtenerTurnos().Where(turno => turno.Id.ToString().Contains(busqueda) || turno.Fecha.ToString().Contains(busqueda)).ToList();
+            var resultados = Principal.ObtenerTurnos().Where(turno => turno.ID.ToString().Contains(busqueda) || turno.Fecha.ToString().Contains(busqueda)).ToList();
 
 
         }

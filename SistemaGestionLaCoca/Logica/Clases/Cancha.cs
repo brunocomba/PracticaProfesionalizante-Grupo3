@@ -9,27 +9,14 @@ namespace Logica.Clases
     public class Cancha
     {
 
-        public int id { get; set; }
-        public string tipo { get; set; }
-        public int cantJugadores { get; set; }
-        public string nombre { get; set; }
-        public int precio { get; set; }
-        public string idYnombre { get; set; }
+        public int ID { get; set; }
+        public string Tipo { get; set; }
+        public int Cantidad_Jugadores { get; set; }
+        public string Nombre { get; set; }
+        public int Precio { get; set; }
 
 
-        private static int lastID = 0;
-
-        public static int GenerateID()
-        {
-            lastID++;
-            return lastID;
-        }
-
-        public override string ToString()
-        {
-            return $"{id} {tipo} ";
-        }
-
+       
 
 
     }

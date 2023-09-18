@@ -25,10 +25,10 @@ namespace Frontend
         public void ModificacionCancha(Cancha cancha)
         {
             CanchaQueEdito = cancha;
-            txtNombre.Text = CanchaQueEdito.nombre;
-            cmboxTipo.Text = CanchaQueEdito.tipo;
-            cmboxCantJugadores.Text = CanchaQueEdito.cantJugadores.ToString();
-            txtPrecio.Text = CanchaQueEdito.precio.ToString();
+            txtNombre.Text = CanchaQueEdito.Nombre;
+            cmboxTipo.Text = CanchaQueEdito.Tipo;
+            cmboxCantJugadores.Text = CanchaQueEdito.Cantidad_Jugadores.ToString();
+            txtPrecio.Text = CanchaQueEdito.Precio.ToString();
 
         }
 
@@ -49,8 +49,8 @@ namespace Frontend
 
         private void btnModificarCancha_Click_1(object sender, EventArgs e)
         {
-            var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{CanchaQueEdito.nombre} por {txtNombre.Text}\n{CanchaQueEdito.tipo} por {cmboxTipo.Text}\n" +
-                $"{CanchaQueEdito.cantJugadores} por {cmboxCantJugadores.Text}\n{CanchaQueEdito.precio} por {txtPrecio.Text}\n\nPresione ACEPTAR para continuar.   ",
+            var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{CanchaQueEdito.Nombre} por {txtNombre.Text}\n{CanchaQueEdito.Tipo} por {cmboxTipo.Text}\n" +
+                $"{CanchaQueEdito.Cantidad_Jugadores} por {cmboxCantJugadores.Text}\n{CanchaQueEdito.Precio} por {txtPrecio.Text}\n\nPresione ACEPTAR para continuar.   ",
                 "ATENCION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (SIoNO == DialogResult.OK)
             {

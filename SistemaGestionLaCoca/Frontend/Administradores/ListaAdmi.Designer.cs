@@ -87,7 +87,7 @@ namespace FrontEnd
             btnVolver.Location = new Point(1111, 694);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(122, 42);
-            btnVolver.TabIndex = 2;
+            btnVolver.TabIndex = 4;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
@@ -111,10 +111,10 @@ namespace FrontEnd
             btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.Location = new Point(49, 282);
+            btnEliminar.Location = new Point(49, 318);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(49, 56);
-            btnEliminar.TabIndex = 10;
+            btnEliminar.TabIndex = 3;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click_1;
             // 
@@ -129,7 +129,7 @@ namespace FrontEnd
             btnAgregar.Location = new Point(49, 92);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(49, 57);
-            btnAgregar.TabIndex = 9;
+            btnAgregar.TabIndex = 1;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
@@ -141,10 +141,10 @@ namespace FrontEnd
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
             btnModificar.Image = (Image)resources.GetObject("btnModificar.Image");
-            btnModificar.Location = new Point(49, 185);
+            btnModificar.Location = new Point(49, 208);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(49, 51);
-            btnModificar.TabIndex = 8;
+            btnModificar.TabIndex = 2;
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click_1;
             // 

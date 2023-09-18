@@ -91,7 +91,7 @@
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.Yes;
             button1.Size = new Size(118, 34);
-            button1.TabIndex = 8;
+            button1.TabIndex = 2;
             button1.Text = "Canchas";
             button1.UseVisualStyleBackColor = true;
             // 
@@ -105,7 +105,7 @@
             btnAdministradores.Name = "btnAdministradores";
             btnAdministradores.RightToLeft = RightToLeft.Yes;
             btnAdministradores.Size = new Size(152, 38);
-            btnAdministradores.TabIndex = 7;
+            btnAdministradores.TabIndex = 4;
             btnAdministradores.Text = "Administradores";
             btnAdministradores.UseVisualStyleBackColor = true;
             btnAdministradores.Click += btnAdministradores_Click;
@@ -119,7 +119,7 @@
             btnClientes.Location = new Point(27, 394);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(118, 34);
-            btnClientes.TabIndex = 6;
+            btnClientes.TabIndex = 3;
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = true;
             btnClientes.Click += btnClientes_Click;
@@ -133,7 +133,7 @@
             btnTurnos.Location = new Point(27, 228);
             btnTurnos.Name = "btnTurnos";
             btnTurnos.Size = new Size(118, 32);
-            btnTurnos.TabIndex = 2;
+            btnTurnos.TabIndex = 1;
             btnTurnos.Text = "Turnos";
             btnTurnos.UseVisualStyleBackColor = true;
             btnTurnos.Click += btnTurnos_Click;

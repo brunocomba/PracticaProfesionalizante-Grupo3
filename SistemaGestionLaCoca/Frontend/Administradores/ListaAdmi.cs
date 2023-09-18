@@ -46,7 +46,7 @@ namespace FrontEnd
                 modAdmi.Show();
                 this.Hide();
             }
-          
+
 
             dgvAdministradores.DataSource = null; // Eliminar el origen de datos actual
             dgvAdministradores.DataSource = principal.ObtenerListaAdmi(); // Asignar la lista actualizada
@@ -70,7 +70,7 @@ namespace FrontEnd
                 MessageBox.Show("No hay ningun cliente seleccionado");
             }
 
-          
+
             dgvAdministradores.DataSource = null;
             dgvAdministradores.DataSource = principal.ObtenerListaAdmi();
 

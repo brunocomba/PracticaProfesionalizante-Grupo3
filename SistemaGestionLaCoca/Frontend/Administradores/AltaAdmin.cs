@@ -37,7 +37,7 @@ namespace FrontEnd
                     principal.AltaAdmi(txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), decimal.Parse(txtTel.Text), txtUser.Text, txtContra.Text);
 
                     MessageBox.Show("Administrador creado con exito!");
-                    formularioPrevio.Refresh(); 
+                    formularioPrevio.Refresh();
                     formularioPrevio.Show();
                     this.Hide();
                 }
@@ -202,7 +202,7 @@ namespace FrontEnd
             }
         }
 
-     
+
     }
 
 }

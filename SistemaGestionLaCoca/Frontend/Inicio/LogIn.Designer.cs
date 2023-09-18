@@ -123,7 +123,7 @@
             button1.Location = new Point(140, 352);
             button1.Name = "button1";
             button1.Size = new Size(128, 33);
-            button1.TabIndex = 6;
+            button1.TabIndex = 4;
             button1.Text = "CREAR CUENTA";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -138,7 +138,7 @@
             btnContinuar.Location = new Point(140, 225);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(128, 32);
-            btnContinuar.TabIndex = 4;
+            btnContinuar.TabIndex = 3;
             btnContinuar.Text = "ENTRAR";
             btnContinuar.UseVisualStyleBackColor = true;
             btnContinuar.Click += btnContinuar_Click;
@@ -149,7 +149,7 @@
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
             txtContrasenia.Size = new Size(214, 23);
-            txtContrasenia.TabIndex = 4;
+            txtContrasenia.TabIndex = 2;
             // 
             // label2
             // 
@@ -168,7 +168,7 @@
             txtUsuario.Location = new Point(120, 72);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(214, 23);
-            txtUsuario.TabIndex = 3;
+            txtUsuario.TabIndex = 1;
             // 
             // label1
             // 

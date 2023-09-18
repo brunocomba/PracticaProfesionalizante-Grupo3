@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Logica.Clases
 {
@@ -185,7 +186,12 @@ namespace Logica.Clases
         public string  InicioDeSesion(string usuario, string pass)
         {
             ListaAdministradores = context.Administradores.ToList();
-
+            
+            // si los strings ingresados son nulos, devuelve ese mensaje en un messagebox
+            if (string.IsNullOrEmpty(usuario) && string.IsNullOrEmpty(pass))
+            {
+                return "Complete los campos por favor.";
+            }
 
             if (ListaAdministradores.Count > 0)
             {
@@ -204,6 +210,7 @@ namespace Logica.Clases
             return "No hay ningun administrador registrado en el sistema.";
            
         }
+
 
 
 
@@ -294,67 +301,43 @@ namespace Logica.Clases
 
 
         // ------------------------------------ CANCHAS.
-        public static List<Cancha> ObtenerCanchas()
-        {
-            if (listaCanchas == null)
-            {
-                listaCanchas = new List<Cancha>();
-
-                Cancha canchaBase = new Cancha();
-
-                canchaBase.id = Cancha.GenerateID();
-                canchaBase.nombre = "Norte";
-                canchaBase.tipo = "BASQUET";
-                canchaBase.cantJugadores = 8;
-                canchaBase.precio = 4000;
-                canchaBase.idYnombre = canchaBase.id + " Norte";
-
-
-
-                listaCanchas.Add(canchaBase);
-
-                Cancha canchaBase2 = new Cancha();
-
-                canchaBase2.id = Cancha.GenerateID();
-                canchaBase2.nombre = "Sur";
-                canchaBase2.tipo = "FUTBOL";
-                canchaBase2.cantJugadores = 10;
-                canchaBase2.precio = 4000;
-                canchaBase2.idYnombre = canchaBase2.id + " Sur";
-
-
-
-
-                listaCanchas.Add(canchaBase2);
-            }
-            return listaCanchas;
-        }
-        public void altaCancha(string Nombre, string Tipo, int CantJugadores, int Precio)
+      
+        public void AltaCancha(string nombre, string tipo, int cantJugadores, int precio)
         {
             Cancha newCancha = new Cancha();
 
-            newCancha.id = Cancha.GenerateID();
-            newCancha.nombre = Nombre;
-            newCancha.tipo = Tipo;
-            newCancha.cantJugadores = CantJugadores;
-            newCancha.precio = Precio;
-            newCancha.idYnombre = newCancha.id + " " + Nombre;
+            newCancha.Nombre = nombre;
+            newCancha.Tipo = tipo;
+            newCancha.Cantidad_Jugadores = cantJugadores;
+            newCancha.Precio = precio;
 
-
-            listaCanchas.Add(newCancha);
+            context.Canchas.Add(newCancha);
+            context.SaveChanges();
         }
 
-        public void modificarCancha(Cancha canchaMod, string Nombre, string Tipo, int CantJug, int Precio)
+        public void modificarCancha(Cancha canchaMod, string nombre, string tipo, int cantJug, int precio)
         {
-            canchaMod.nombre = Nombre;
-            canchaMod.tipo = Tipo;
-            canchaMod.cantJugadores = CantJug;
-            canchaMod.precio = Precio;
+            if (canchaMod != null)
+            {
+                canchaMod.Nombre = nombre;
+                canchaMod.Tipo = tipo;
+                canchaMod.Cantidad_Jugadores = cantJug;
+                canchaMod.Precio = precio;
+
+                context.Canchas.Update(canchaMod);
+                context.SaveChanges();
+            }
+           
         }
 
         public void removeCancha(Cancha CanchaABorrar)
         {
-            listaCanchas.Remove(CanchaABorrar);
+            if (CanchaABorrar != null)
+            {
+                context.Canchas.Remove(CanchaABorrar);
+                context.SaveChanges();  
+
+            }
         }
 
 
@@ -369,14 +352,10 @@ namespace Logica.Clases
 
                 // PRIMER TURNO HARCODEADO.
                 Turno turnoBase = new Turno();
-                turnoBase.Id = Turno.GenerateID();
                 turnoBase.Fecha = ("28/08/2023");
                 turnoBase.Horario = ("16:30");
-                turnoBase.condicionReservado = true;
 
 
-                Cancha laCancha = Principal.ObtenerCanchas()[0];
-                turnoBase.canchaTurno = laCancha;
 
            
 
@@ -384,13 +363,9 @@ namespace Logica.Clases
 
                 // SEGUNDO TURNO HARCODEADO.
                 Turno turnoBase2 = new Turno();
-                turnoBase2.Id = Turno.GenerateID();
                 turnoBase2.Fecha = ("27/08/2023");
                 turnoBase2.Horario = ("18:00");
-                turnoBase2.condicionReservado = true;
 
-                Cancha canchaBase = Principal.ObtenerCanchas()[1];
-                turnoBase2.canchaTurno = canchaBase;
 
 
 
@@ -409,13 +384,12 @@ namespace Logica.Clases
                 
                 Turno newTurno = new Turno();
 
-                newTurno.Id = Turno.GenerateID();
 
-                newTurno.canchaTurno = cancha;
-                newTurno.clienteTurno = cliente;
+                newTurno.Cancha_Turno = cancha;
+                newTurno.Cliente_Turno = cliente;
                 newTurno.Fecha = fecha;
                 newTurno.Horario = hora;
-                newTurno.condicionReservado = true;
+                newTurno.Reservado = true;
 
                 listaTurnos.Add(newTurno);
 

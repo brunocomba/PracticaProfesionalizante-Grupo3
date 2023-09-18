@@ -34,9 +34,9 @@ namespace Frontend
         {
             foreach (Cancha deporte in nuevosDeportes)
             {
-                if (!cmboxDeporte.Items.Cast<string>().Any(item => item.Equals(deporte.tipo)))
+                if (!cmboxDeporte.Items.Cast<string>().Any(item => item.Equals(deporte.Tipo)))
                 {
-                    cmboxDeporte.Items.Add(deporte.tipo);
+                    cmboxDeporte.Items.Add(deporte.Tipo);
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace Frontend
             //cmboxCliente.Items.AddRange(Principal.ObtenerClientes().ToArray());
 
 
-            AgregarDeportesUnicos(Principal.ObtenerCanchas());
+           // AgregarDeportesUnicos(Principal.ObtenerCanchas());
             //cmboxDeporte.DisplayMember = "Tipo";
             //cmboxDeporte.Items.AddRange(Principal.ObtenerCanchas().ToArray()); 
 
@@ -89,7 +89,7 @@ namespace Frontend
         {
 
             string deporteElegido = cmboxDeporte.SelectedItem.ToString();
-            List<Cancha> canchasFiltradas = Principal.ObtenerCanchas().Where(cancha => cancha.tipo == deporteElegido).ToList();
+           // List<Cancha> canchasFiltradas = Principal.ObtenerCanchas().Where(cancha => cancha.Tipo == deporteElegido).ToList();
 
             cmboxCancha.DataSource = canchasFiltradas;
             cmboxCancha.DisplayMember = "idYnombre";

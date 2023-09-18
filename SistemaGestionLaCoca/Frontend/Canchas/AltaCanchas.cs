@@ -54,7 +54,7 @@ namespace FrontEnd
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (confirmacion == DialogResult.OK)
             {
-                principal.altaCancha(txtNombre.Text, Tipo, int.Parse(CantJugadores), int.Parse(txtPrecio.Text));
+                principal.AltaCancha(txtNombre.Text, Tipo, int.Parse(CantJugadores), int.Parse(txtPrecio.Text));
                 ListaCanchas listaCanchas = new ListaCanchas();
                 listaCanchas.Show();
                 this.Hide();
