@@ -52,7 +52,7 @@ namespace Frontend
                 , "Seguro desea realizar esta modificacion?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (SIoNO == DialogResult.OK)
                 {
-                    principal.modificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), decimal.Parse(txtTEL.Text));
+                    principal.ModificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), decimal.Parse(txtTEL.Text));
 
                     MessageBox.Show("Cliente modificado con exito!");
                     ListaClientes.Show();

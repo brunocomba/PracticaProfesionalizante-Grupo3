@@ -50,6 +50,11 @@ namespace FrontEnd
 
         }
 
-
+        private void btnCanchas_Click(object sender, EventArgs e)
+        {
+            ListaCanchas listaCanchas = new ListaCanchas();
+            listaCanchas.Show();    
+            this.Hide();
+        }
     }
 }

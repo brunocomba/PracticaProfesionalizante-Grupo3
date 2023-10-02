@@ -15,8 +15,7 @@ namespace FrontEnd
 {
     public partial class AltaCanchas : Form
     {
-        string Tipo;
-        string CantJugadores;
+
         private Form formularioPrevio;
         public AltaCanchas(Form formularioPrevio)
         {
@@ -24,23 +23,15 @@ namespace FrontEnd
             this.formularioPrevio = formularioPrevio;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         Principal principal = new Principal();
         private void AltaCanchas_Load(object sender, EventArgs e)
         {
-            /*
-            cmboxTipo.DisplayMember = "DNI"; // Establecer la propiedad a mostrar en el ComboBox
-            cmboxTipo.Items.AddRange(Principal.ObtenerClientes().ToArray());   
-            */
-
+            // Cargar combo de tipo de deporte
             cmboxTipo.Items.Add("BASQUET");
             cmboxTipo.Items.Add("FUTBOL");
             cmboxTipo.Items.Add("PADEL");
 
-
+            // Cargar combo de cantidad de jugadores
             cmboxCantJugadores.Items.Add("4");
             cmboxCantJugadores.Items.Add("8");
             cmboxCantJugadores.Items.Add("10");
@@ -50,11 +41,11 @@ namespace FrontEnd
             Principal principal = new Principal();
 
             var confirmacion = MessageBox.Show($"Seguro que desea agregar una cancha con los siguientes datos?\n" +
-                $" Nombre: {txtNombre.Text}\n Tipo: {Tipo}\n Cantidad de Jugadores: {int.Parse(CantJugadores)}", "Atencion",
+                $" Nombre: {txtNombre.Text}\n Tipo: {cmboxTipo.SelectedItem}\n Cantidad de Jugadores: {cmboxCantJugadores.SelectedItem}", "Atencion",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (confirmacion == DialogResult.OK)
             {
-                principal.AltaCancha(txtNombre.Text, Tipo, int.Parse(CantJugadores), int.Parse(txtPrecio.Text));
+                principal.AltaCancha(txtNombre.Text, cmboxCantJugadores.SelectedItem.ToString(), int.Parse(cmboxCantJugadores.SelectedItem.ToString()), int.Parse(txtPrecio.Text));
                 ListaCanchas listaCanchas = new ListaCanchas();
                 listaCanchas.Show();
                 this.Hide();
@@ -75,12 +66,12 @@ namespace FrontEnd
 
         private void cmboxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tipo = cmboxTipo.SelectedItem.ToString();
+            //Tipo = cmboxTipo.SelectedItem.ToString();
         }
 
         private void cmboxCantJugadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CantJugadores = cmboxCantJugadores.SelectedItem.ToString();
+            //CantJugadores = cmboxCantJugadores.SelectedItem.ToString();
 
         }
 

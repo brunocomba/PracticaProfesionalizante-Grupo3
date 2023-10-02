@@ -36,6 +36,7 @@
             txtNombre = new TextBox();
             cmboxTipo = new ComboBox();
             groupBox1 = new GroupBox();
+            label7 = new Label();
             label6 = new Label();
             txtPrecio = new TextBox();
             label5 = new Label();
@@ -43,7 +44,6 @@
             button1 = new Button();
             label4 = new Label();
             groupBox2 = new GroupBox();
-            label7 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -67,18 +67,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(68, 150);
+            label1.Location = new Point(47, 150);
             label1.Name = "label1";
-            label1.Size = new Size(31, 16);
+            label1.Size = new Size(52, 16);
             label1.TabIndex = 2;
-            label1.Text = "Tipo";
+            label1.Text = "Deporte";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(36, 205);
+            label2.Location = new Point(36, 207);
             label2.Name = "label2";
             label2.Size = new Size(63, 32);
             label2.TabIndex = 3;
@@ -132,6 +132,17 @@
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(162, 30);
+            label7.Name = "label7";
+            label7.Size = new Size(109, 16);
+            label7.TabIndex = 11;
+            label7.Text = "DATOS CANCHA";
+            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -155,11 +166,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(55, 274);
+            label5.Location = new Point(36, 270);
             label5.Name = "label5";
-            label5.Size = new Size(44, 16);
+            label5.Size = new Size(73, 32);
             label5.TabIndex = 5;
-            label5.Text = "Precio";
+            label5.Text = "Precio total\r\ndel turno";
             // 
             // cmboxCantJugadores
             // 
@@ -207,17 +218,6 @@
             groupBox2.Size = new Size(934, 96);
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(162, 30);
-            label7.Name = "label7";
-            label7.Size = new Size(109, 16);
-            label7.TabIndex = 11;
-            label7.Text = "DATOS CANCHA";
             // 
             // AltaCanchas
             // 

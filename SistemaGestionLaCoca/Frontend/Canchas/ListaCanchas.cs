@@ -26,7 +26,7 @@ namespace Frontend
         private void ListaCanchas_Load(object sender, EventArgs e)
         {
             dgvCanchas.DataSource = null;
-            //dgvCanchas.DataSource = Principal.ObtenerCanchas();
+            dgvCanchas.DataSource = principal.ObtenerListaCanchas();
 
         }
 
@@ -93,6 +93,11 @@ namespace Frontend
             dgvCanchas.DataSource = null;
 
             //dgvCanchas.DataSource = Principal.ObtenerCanchas();
+        }
+
+        private void dgvCanchas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

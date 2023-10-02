@@ -32,7 +32,7 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             label2 = new Label();
-            button1 = new Button();
+            btnCanchas = new Button();
             btnAdministradores = new Button();
             btnClientes = new Button();
             btnTurnos = new Button();
@@ -60,7 +60,7 @@
             // 
             groupBox1.BackColor = Color.SlateGray;
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnCanchas);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnAdministradores);
             groupBox1.Controls.Add(btnClientes);
@@ -81,19 +81,20 @@
             label2.TabIndex = 9;
             label2.Text = "-----------------------------------";
             // 
-            // button1
+            // btnCanchas
             // 
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(27, 309);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.Yes;
-            button1.Size = new Size(118, 34);
-            button1.TabIndex = 2;
-            button1.Text = "Canchas";
-            button1.UseVisualStyleBackColor = true;
+            btnCanchas.FlatAppearance.BorderSize = 2;
+            btnCanchas.FlatStyle = FlatStyle.Flat;
+            btnCanchas.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCanchas.ForeColor = Color.White;
+            btnCanchas.Location = new Point(27, 309);
+            btnCanchas.Name = "btnCanchas";
+            btnCanchas.RightToLeft = RightToLeft.Yes;
+            btnCanchas.Size = new Size(118, 34);
+            btnCanchas.TabIndex = 2;
+            btnCanchas.Text = "Canchas";
+            btnCanchas.UseVisualStyleBackColor = true;
+            btnCanchas.Click += btnCanchas_Click;
             // 
             // btnAdministradores
             // 
@@ -201,7 +202,7 @@
         private GroupBox groupBox2;
         private DateTimePicker dateTimePicker1;
         public Button btnAdministradores;
-        public Button button1;
+        public Button btnCanchas;
         private Label label2;
     }
 }

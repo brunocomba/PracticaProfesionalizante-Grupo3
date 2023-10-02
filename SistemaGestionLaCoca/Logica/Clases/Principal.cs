@@ -28,7 +28,7 @@ namespace Logica.Clases
         public List<Turno> ListaTurnos = new List<Turno>();
      
 
-        public static List<Cancha> listaCanchas;
+ 
 
         public static List<Turno> listaTurnos;
 
@@ -254,7 +254,7 @@ namespace Logica.Clases
         }
     
         
-        public void modificarCliente(Cliente clienteMod, string nombre, string apellido, int dni, decimal tel)
+        public void ModificarCliente(Cliente clienteMod, string nombre, string apellido, int dni, decimal tel)
         {
             if (clienteMod != null)
             {
@@ -302,6 +302,7 @@ namespace Logica.Clases
 
         // ------------------------------------ CANCHAS.
       
+       
         public void AltaCancha(string nombre, string tipo, int cantJugadores, int precio)
         {
             Cancha newCancha = new Cancha();
@@ -340,9 +341,16 @@ namespace Logica.Clases
             }
         }
 
+        public List<Cancha> ObtenerListaCanchas()
+        {
+            ListaCanchas = context.Canchas.ToList();
+
+            return ListaCanchas;
+        }
+
 
         // ------------------------------------ TURNOS.
-        
+
         public static List<Turno> ObtenerTurnos()
 
         {

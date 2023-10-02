@@ -30,57 +30,19 @@ namespace Frontend
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaCanchas));
             groupBox1 = new GroupBox();
             label1 = new Label();
-            canchaBindingSource = new BindingSource(components);
             btnVolver = new Button();
-            canchaBindingSource1 = new BindingSource(components);
-            canchaBindingSource2 = new BindingSource(components);
-            canchaBindingSource3 = new BindingSource(components);
-            canchaBindingSource4 = new BindingSource(components);
-            canchaBindingSource5 = new BindingSource(components);
-            canchaBindingSource7 = new BindingSource(components);
-            administradorBindingSource = new BindingSource(components);
-            canchaBindingSource6 = new BindingSource(components);
-            canchaBindingSource8 = new BindingSource(components);
-            canchaBindingSource9 = new BindingSource(components);
-            administradorBindingSource1 = new BindingSource(components);
-            administradorBindingSource2 = new BindingSource(components);
-            canchaBindingSource10 = new BindingSource(components);
-            canchaBindingSource11 = new BindingSource(components);
-            canchaBindingSource12 = new BindingSource(components);
             dgvCanchas = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cantJugadoresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             btnEliminar = new Button();
             btnModificar = new Button();
             btnAgregar = new Button();
             panel2 = new Panel();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCanchas).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -106,10 +68,6 @@ namespace Frontend
             label1.TabIndex = 0;
             label1.Text = "LISTA CANCHAS REGISTRADAS";
             // 
-            // canchaBindingSource
-            // 
-            canchaBindingSource.DataSource = typeof(Cancha);
-            // 
             // btnVolver
             // 
             btnVolver.FlatAppearance.BorderSize = 2;
@@ -124,66 +82,6 @@ namespace Frontend
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // canchaBindingSource1
-            // 
-            canchaBindingSource1.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource2
-            // 
-            canchaBindingSource2.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource3
-            // 
-            canchaBindingSource3.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource4
-            // 
-            canchaBindingSource4.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource5
-            // 
-            canchaBindingSource5.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource7
-            // 
-            canchaBindingSource7.DataSource = typeof(Cancha);
-            // 
-            // administradorBindingSource
-            // 
-            administradorBindingSource.DataSource = typeof(Administrador);
-            // 
-            // canchaBindingSource6
-            // 
-            canchaBindingSource6.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource8
-            // 
-            canchaBindingSource8.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource9
-            // 
-            canchaBindingSource9.DataSource = typeof(Cancha);
-            // 
-            // administradorBindingSource1
-            // 
-            administradorBindingSource1.DataSource = typeof(Administrador);
-            // 
-            // administradorBindingSource2
-            // 
-            administradorBindingSource2.DataSource = typeof(Administrador);
-            // 
-            // canchaBindingSource10
-            // 
-            canchaBindingSource10.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource11
-            // 
-            canchaBindingSource11.DataSource = typeof(Cancha);
-            // 
-            // canchaBindingSource12
-            // 
-            canchaBindingSource12.DataSource = typeof(Cancha);
-            // 
             // dgvCanchas
             // 
             dgvCanchas.AllowUserToAddRows = false;
@@ -191,7 +89,6 @@ namespace Frontend
             dgvCanchas.AllowUserToResizeColumns = false;
             dgvCanchas.AllowUserToResizeRows = false;
             dgvCanchas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvCanchas.AutoGenerateColumns = false;
             dgvCanchas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCanchas.BackgroundColor = Color.FromArgb(26, 32, 40);
             dgvCanchas.BorderStyle = BorderStyle.None;
@@ -206,8 +103,6 @@ namespace Frontend
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvCanchas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCanchas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvCanchas.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, cantJugadoresDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
-            dgvCanchas.DataSource = canchaBindingSource12;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -234,41 +129,7 @@ namespace Frontend
             dgvCanchas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCanchas.Size = new Size(563, 474);
             dgvCanchas.TabIndex = 13;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "ID";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
-            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantJugadoresDataGridViewTextBoxColumn
-            // 
-            cantJugadoresDataGridViewTextBoxColumn.DataPropertyName = "cantJugadores";
-            cantJugadoresDataGridViewTextBoxColumn.HeaderText = "Cantidad  jugadores";
-            cantJugadoresDataGridViewTextBoxColumn.Name = "cantJugadoresDataGridViewTextBoxColumn";
-            cantJugadoresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
-            precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            precioDataGridViewTextBoxColumn.ReadOnly = true;
+            dgvCanchas.CellContentClick += dgvCanchas_CellContentClick;
             // 
             // btnEliminar
             // 
@@ -341,22 +202,6 @@ namespace Frontend
             Load += ListaCanchas_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)administradorBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)canchaBindingSource12).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCanchas).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -366,29 +211,10 @@ namespace Frontend
 
         private GroupBox groupBox1;
         private Label label1;
-        private BindingSource canchaBindingSource;
         private Button btnVolver;
-        private BindingSource canchaBindingSource2;
-        private BindingSource canchaBindingSource1;
-        private BindingSource canchaBindingSource3;
-        private BindingSource canchaBindingSource4;
-        private BindingSource canchaBindingSource5;
-        private BindingSource administradorBindingSource;
-        private BindingSource canchaBindingSource6;
-        private BindingSource canchaBindingSource7;
-        private BindingSource canchaBindingSource10;
-        private BindingSource canchaBindingSource8;
-        private BindingSource canchaBindingSource9;
-        private BindingSource administradorBindingSource1;
-        private BindingSource administradorBindingSource2;
-        private BindingSource canchaBindingSource11;
-        private BindingSource canchaBindingSource12;
         private DataGridView dgvCanchas;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cantJugadoresDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private Button btnEliminar;
         private Button btnModificar;
         private Button btnAgregar;

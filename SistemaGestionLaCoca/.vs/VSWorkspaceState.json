@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Frontend",
+    "\\Frontend\\Canchas",
+    "\\Frontend\\Turnos",
+    "\\Logica",
+    "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\SistemaGestionLaCoca.sln",
+  "SelectedNode": "\\Frontend\\Turnos\\AltaTurno.cs",
   "PreviewInSolutionExplorer": false
 }
