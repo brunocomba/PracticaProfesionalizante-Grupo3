@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Frontend",
+    "\\Frontend\\Administradores",
     "\\Frontend\\Canchas",
     "\\Frontend\\Turnos",
     "\\Logica",
     "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\Frontend\\Turnos\\AltaTurno.cs",
+  "SelectedNode": "\\Frontend\\Administradores\\AltaAdmin.cs",
   "PreviewInSolutionExplorer": false
 }
