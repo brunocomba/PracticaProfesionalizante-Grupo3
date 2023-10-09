@@ -11,6 +11,8 @@ namespace Logica
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Cancha> Canchas { get; set; }
         public DbSet<Turno> Turnos { get; set; }
+        public DbSet<Elemento> Elementos { get; set; }
+        public DbSet<ElementoCancha> ElementoCancha { get; set; }
 
 
 

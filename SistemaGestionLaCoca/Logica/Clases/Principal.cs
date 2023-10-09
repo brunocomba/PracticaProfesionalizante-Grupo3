@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.Collections;
 
 namespace Logica.Clases
 {
@@ -408,8 +409,79 @@ namespace Logica.Clases
 
 
 
-       
+
+
+
+
+
+
+        // ------------------------------------ ELEMENTOS.
+
+        public void altaElemento(string nombre, int stock)
+        {
+            Elemento elemento = new Elemento();
+            elemento.Nombre = nombre;
+            elemento.Stock = stock;
+
+            context.Elementos.Add(elemento);
+            context.SaveChanges();
+
+
+        }
+        public void ModificarElemento(Elemento elemento, string nombre, int stock)
+        {
+            if (elemento != null)
+            {
+                elemento.Nombre = nombre;
+                elemento.Stock = stock;
+                
+
+                context.Elementos.Update(elemento);
+                context.SaveChanges();
+            }
+        }
+
+        public void RemoveElemento(Elemento elemento)
+        {
+            if (elemento != null)
+            {
+                context.Elementos.Remove(elemento);
+                context.SaveChanges();
+            }
+        }
+
+        public List<Elemento> ObtenerElementos()
+        {
+            var listaElementos = context.Elementos.ToList();
+
+            return listaElementos;
+        }
+
+
+        // ----------------------------------- ELEMENTOS CANCHA.
+        public void AsigElementoCancha(Cancha cancha, Elemento elemento, int cant)
+        {
+            ElementoCancha elementoCancha = new ElementoCancha();
+            elementoCancha.Cancha = cancha;
+            elementoCancha.Elemento = elemento;
+            elementoCancha.Cantidad = cant;
+
+            // bajar la cantidad en el stock
+            elementoCancha.Elemento.Stock -= cant;
+            // ver ejemplo de buscar por ID y desp mpodificar
+
+            context.ElementoCancha.Add(elementoCancha);
+            context.SaveChanges();
+
+
+            // guardarlo en la BD
+        }
+
+
+
+
+
     }
 
-   
+
 }

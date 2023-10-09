@@ -10,6 +10,12 @@
     <Compile Update="Administradores\ModificarAdmi.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Elementos Cancha\AsignarElemento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Elementos\AltaElemento.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Turnos\AltaTurno.cs">
       <SubType>Form</SubType>
     </Compile>

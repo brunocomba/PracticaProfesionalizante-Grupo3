@@ -69,3 +69,5 @@ C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos_Cancha.AsignarElemento.resources
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos.AltaElemento.resources

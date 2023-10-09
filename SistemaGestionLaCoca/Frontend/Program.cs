@@ -1,4 +1,7 @@
+using Frontend.Elementos;
+using Frontend.Elementos_Cancha;
 using FrontEnd;
+using System.Windows.Controls;
 
 namespace Frontend
 {
@@ -13,7 +16,7 @@ namespace Frontend
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LogIn());
+            Application.Run(new AsignarElemento());
         }
     }
 }

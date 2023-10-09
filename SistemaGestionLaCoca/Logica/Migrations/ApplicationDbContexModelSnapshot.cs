@@ -110,13 +110,59 @@ namespace Logica.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("Logica.Clases.Turno", b =>
+            modelBuilder.Entity("Logica.Clases.Elemento", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Elementos");
+                });
+
+            modelBuilder.Entity("Logica.Clases.ElementoCancha", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("CanchaID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ElementoID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CanchaID");
+
+                    b.HasIndex("ElementoID");
+
+                    b.ToTable("ElementoCancha");
+                });
+
+            modelBuilder.Entity("Logica.Clases.Turno", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<int>("Cancha_TurnoID")
                         .HasColumnType("int");
@@ -135,13 +181,32 @@ namespace Logica.Migrations
                     b.Property<bool>("Reservado")
                         .HasColumnType("bit");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.HasIndex("Cancha_TurnoID");
 
                     b.HasIndex("Cliente_TurnoID");
 
                     b.ToTable("Turnos");
+                });
+
+            modelBuilder.Entity("Logica.Clases.ElementoCancha", b =>
+                {
+                    b.HasOne("Logica.Clases.Cancha", "Cancha")
+                        .WithMany()
+                        .HasForeignKey("CanchaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Logica.Clases.Elemento", "Elemento")
+                        .WithMany()
+                        .HasForeignKey("ElementoID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cancha");
+
+                    b.Navigation("Elemento");
                 });
 
             modelBuilder.Entity("Logica.Clases.Turno", b =>

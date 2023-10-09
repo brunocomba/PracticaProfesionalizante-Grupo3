@@ -4,10 +4,11 @@
     "\\Frontend",
     "\\Frontend\\Administradores",
     "\\Frontend\\Canchas",
+    "\\Frontend\\Inicio",
     "\\Frontend\\Turnos",
     "\\Logica",
     "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\Frontend\\Administradores\\AltaAdmin.cs",
+  "SelectedNode": "\\Frontend\\Inicio\\MenuInicio.cs",
   "PreviewInSolutionExplorer": false
 }

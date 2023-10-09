@@ -11,8 +11,11 @@ namespace Logica.Clases
         public string Nombre { get; set; }
         public int Precio { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Nombre}";
+        }
 
-       
 
 
     }
