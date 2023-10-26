@@ -28,19 +28,20 @@ namespace FrontEnd
             // valor ingresados por pantalla
             string user = txtUsuario.Text;
             string password = txtContrasenia.Text;
-
-            string LoQueDevuelve = principal.InicioDeSesion(user, password);
-
-            if (LoQueDevuelve == $"Inicio de sesion exitoso.\n!Bienvenido, {user}! ")
+            try
             {
-                MessageBox.Show(LoQueDevuelve, "Inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                menuInicio.Show();
-                this.Hide();
+                principal.LogIn(user, password);
+                if (principal.LogIn(user, password) == true)
+                {
+                    MessageBox.Show($"Inicio de sesion exitoso.\n!Bienvenido, {user}!", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    menuInicio.Show();
+                    this.Hide();
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(LoQueDevuelve, "Inicio de sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

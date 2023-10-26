@@ -24,17 +24,11 @@ namespace Frontend
 
 
         }
+        Principal principal = new Principal();
         List<string> listaPropiedades = new List<string>();
         private void HistorialTurnos_Load(object sender, EventArgs e)
         {
-
-            foreach (var turno in Principal.ObtenerTurnos())
-            {
-                //string propConcatenada = turno.MostrarInfo();
-                //listaPropiedades.Add(propConcatenada);
-
-            }
-            listBox1.DataSource = listaPropiedades;
+            dgvTurnos.DataSource = principal.ListadoTurnos();
 
 
 
@@ -44,7 +38,7 @@ namespace Frontend
         private void txtFiltrarTurnos_TextChanged(object sender, EventArgs e)
         {
             string busqueda = txtFiltrarTurnos.Text.ToLower(); // Convierte el término de búsqueda a minúsculas
-            var resultados = Principal.ObtenerTurnos().Where(turno => turno.ID.ToString().Contains(busqueda) || turno.Fecha.ToString().Contains(busqueda)).ToList();
+
 
 
         }
@@ -86,6 +80,15 @@ namespace Frontend
             AltaTurno altaTurno = new AltaTurno();
             altaTurno.Show();
             this.Hide();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable dt = principal.ListadoTurnos();
+            DataTable resultadosFiltrados = principal.FiltrarDatos(dt, txtFiltrarTurnos.Text);
+
+            dgvTurnos.DataSource = null;
+            dgvTurnos.DataSource = resultadosFiltrados;
         }
     }
 

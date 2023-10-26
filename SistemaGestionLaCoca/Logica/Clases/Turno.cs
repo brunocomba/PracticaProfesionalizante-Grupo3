@@ -13,12 +13,17 @@ namespace Logica.Clases
         public string Horario { get; set; }
 
         //  Precio de la cancha dividido por la cant de jugadores de la misma
-        public bool Reservado { get; set; } // hacer la condicion
 
-        public Cancha Cancha_Turno { get; set; }
-        public Cliente Cliente_Turno { get; set; }
-        
+        public Cancha Cancha { get; set; }
+        public Cliente Cliente { get; set; }
+        public Reservado Condicion { get; set; } // hacer la condicion
 
+
+        public enum Reservado
+        {
+            No = 0,
+            Si = 1
+        }
 
        
     }

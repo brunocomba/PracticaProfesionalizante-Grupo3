@@ -28,20 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
             label1 = new Label();
             groupBox1 = new GroupBox();
+            btneElementos = new Button();
             label2 = new Label();
+            btnClientes = new Button();
             btnCanchas = new Button();
             btnAdministradores = new Button();
-            btnClientes = new Button();
             btnTurnos = new Button();
             pictureBox1 = new PictureBox();
             groupBox2 = new GroupBox();
             dateTimePicker1 = new DateTimePicker();
+            dgvTurnosDeHoy = new DataGridView();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnosDeHoy).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -59,17 +65,33 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.SlateGray;
+            groupBox1.Controls.Add(btneElementos);
             groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(btnClientes);
             groupBox1.Controls.Add(btnCanchas);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnAdministradores);
-            groupBox1.Controls.Add(btnClientes);
             groupBox1.Controls.Add(btnTurnos);
             groupBox1.Location = new Point(-4, -8);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(176, 763);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
+            // 
+            // btneElementos
+            // 
+            btneElementos.FlatAppearance.BorderSize = 2;
+            btneElementos.FlatStyle = FlatStyle.Flat;
+            btneElementos.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btneElementos.ForeColor = Color.White;
+            btneElementos.Location = new Point(27, 478);
+            btneElementos.Name = "btneElementos";
+            btneElementos.RightToLeft = RightToLeft.Yes;
+            btneElementos.Size = new Size(118, 52);
+            btneElementos.TabIndex = 10;
+            btneElementos.Text = "Stock Elementos";
+            btneElementos.UseVisualStyleBackColor = true;
+            btneElementos.Click += btneElementos_Click;
             // 
             // label2
             // 
@@ -81,13 +103,27 @@
             label2.TabIndex = 9;
             label2.Text = "-----------------------------------";
             // 
+            // btnClientes
+            // 
+            btnClientes.FlatAppearance.BorderSize = 2;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Location = new Point(27, 311);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(118, 34);
+            btnClientes.TabIndex = 3;
+            btnClientes.Text = "Clientes";
+            btnClientes.UseVisualStyleBackColor = true;
+            btnClientes.Click += btnClientes_Click;
+            // 
             // btnCanchas
             // 
             btnCanchas.FlatAppearance.BorderSize = 2;
             btnCanchas.FlatStyle = FlatStyle.Flat;
             btnCanchas.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCanchas.ForeColor = Color.White;
-            btnCanchas.Location = new Point(27, 309);
+            btnCanchas.Location = new Point(27, 398);
             btnCanchas.Name = "btnCanchas";
             btnCanchas.RightToLeft = RightToLeft.Yes;
             btnCanchas.Size = new Size(118, 34);
@@ -102,7 +138,7 @@
             btnAdministradores.FlatStyle = FlatStyle.Flat;
             btnAdministradores.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdministradores.ForeColor = Color.White;
-            btnAdministradores.Location = new Point(16, 484);
+            btnAdministradores.Location = new Point(16, 563);
             btnAdministradores.Name = "btnAdministradores";
             btnAdministradores.RightToLeft = RightToLeft.Yes;
             btnAdministradores.Size = new Size(152, 38);
@@ -110,20 +146,6 @@
             btnAdministradores.Text = "Administradores";
             btnAdministradores.UseVisualStyleBackColor = true;
             btnAdministradores.Click += btnAdministradores_Click;
-            // 
-            // btnClientes
-            // 
-            btnClientes.FlatAppearance.BorderSize = 2;
-            btnClientes.FlatStyle = FlatStyle.Flat;
-            btnClientes.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(27, 394);
-            btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(118, 34);
-            btnClientes.TabIndex = 3;
-            btnClientes.Text = "Clientes";
-            btnClientes.UseVisualStyleBackColor = true;
-            btnClientes.Click += btnClientes_Click;
             // 
             // btnTurnos
             // 
@@ -171,12 +193,61 @@
             dateTimePicker1.TabIndex = 1;
             dateTimePicker1.Value = new DateTime(2023, 7, 21, 22, 23, 0, 0);
             // 
+            // dgvTurnosDeHoy
+            // 
+            dgvTurnosDeHoy.AllowUserToAddRows = false;
+            dgvTurnosDeHoy.AllowUserToDeleteRows = false;
+            dgvTurnosDeHoy.AllowUserToResizeColumns = false;
+            dgvTurnosDeHoy.AllowUserToResizeRows = false;
+            dgvTurnosDeHoy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvTurnosDeHoy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTurnosDeHoy.BackgroundColor = Color.FromArgb(26, 32, 40);
+            dgvTurnosDeHoy.BorderStyle = BorderStyle.None;
+            dgvTurnosDeHoy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTurnosDeHoy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle4.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvTurnosDeHoy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvTurnosDeHoy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvTurnosDeHoy.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvTurnosDeHoy.EnableHeadersVisualStyles = false;
+            dgvTurnosDeHoy.GridColor = Color.MidnightBlue;
+            dgvTurnosDeHoy.Location = new Point(281, 148);
+            dgvTurnosDeHoy.Name = "dgvTurnosDeHoy";
+            dgvTurnosDeHoy.ReadOnly = true;
+            dgvTurnosDeHoy.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvTurnosDeHoy.RowHeadersVisible = false;
+            dgvTurnosDeHoy.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(49, 66, 82);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dgvTurnosDeHoy.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgvTurnosDeHoy.RowTemplate.Height = 25;
+            dgvTurnosDeHoy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTurnosDeHoy.Size = new Size(872, 561);
+            dgvTurnosDeHoy.TabIndex = 20;
+            // 
             // MenuInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1259, 748);
+            Controls.Add(dgvTurnosDeHoy);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -189,6 +260,7 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvTurnosDeHoy).EndInit();
             ResumeLayout(false);
         }
 
@@ -204,5 +276,7 @@
         public Button btnAdministradores;
         public Button btnCanchas;
         private Label label2;
+        public Button btneElementos;
+        private DataGridView dgvTurnosDeHoy;
     }
 }

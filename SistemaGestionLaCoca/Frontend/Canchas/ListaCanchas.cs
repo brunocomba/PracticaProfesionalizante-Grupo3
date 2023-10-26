@@ -1,4 +1,5 @@
-﻿using FrontEnd;
+﻿using Frontend.Elementos_Cancha;
+using FrontEnd;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -30,21 +31,14 @@ namespace Frontend
 
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
             AltaCanchas altaCanchas = new AltaCanchas(this);
             altaCanchas.Show();
             this.Hide();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            MenuInicio menuInicio = new MenuInicio();
-            menuInicio.Show();
-            this.Hide();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModCancha_Click(object sender, EventArgs e)
         {
             ModificarCancha modCancha = new ModificarCancha();
             Cancha cancha_Elegida = (Cancha)dgvCanchas.CurrentRow.DataBoundItem;
@@ -57,7 +51,8 @@ namespace Frontend
             //dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
             dgvCanchas.Refresh();
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
+
+        private void btnEliminarCancha_Click(object sender, EventArgs e)
         {
             //MIRO EL ID SELECCIONADO EN LA GRILLA
             object CanchaElegida = this.dgvCanchas.SelectedCells[0].Value;
@@ -92,12 +87,24 @@ namespace Frontend
 
             dgvCanchas.DataSource = null;
 
-            //dgvCanchas.DataSource = Principal.ObtenerCanchas();
+            dgvCanchas.DataSource = principal.ObtenerListaCanchas();
         }
 
-        private void dgvCanchas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.Show();
+            this.Hide();
         }
+
+
+
+        private void btnElementosDeCancha_Click(object sender, EventArgs e)
+        {
+            ListaElementosCancha listaElementosCancha = new ListaElementosCancha();
+            listaElementosCancha.Show();
+            this.Hide();
+        }
+
     }
 }

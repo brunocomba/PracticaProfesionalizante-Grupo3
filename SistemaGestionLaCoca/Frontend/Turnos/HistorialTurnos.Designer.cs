@@ -32,6 +32,9 @@ namespace Frontend
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialTurnos));
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             label1 = new Label();
             btnVolver = new Button();
@@ -57,18 +60,10 @@ namespace Frontend
             horarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             canchaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            listBox1 = new ListBox();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
             bindingSource1 = new BindingSource(components);
             toolTip1 = new ToolTip(components);
+            dgvTurnos = new DataGridView();
+            btnBuscar = new Button();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource8).BeginInit();
@@ -83,6 +78,7 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -91,7 +87,7 @@ namespace Frontend
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-3, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1041, 89);
+            groupBox1.Size = new Size(1267, 89);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             // 
@@ -100,7 +96,7 @@ namespace Frontend
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(381, 40);
+            label1.Location = new Point(505, 35);
             label1.Name = "label1";
             label1.Size = new Size(281, 32);
             label1.TabIndex = 0;
@@ -112,7 +108,7 @@ namespace Frontend
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(906, 605);
+            btnVolver.Location = new Point(1117, 677);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(116, 44);
             btnVolver.TabIndex = 15;
@@ -128,7 +124,7 @@ namespace Frontend
             panel1.Controls.Add(btnModificar);
             panel1.Location = new Point(-3, 78);
             panel1.Name = "panel1";
-            panel1.Size = new Size(122, 604);
+            panel1.Size = new Size(128, 672);
             panel1.TabIndex = 16;
             // 
             // btnEliminar
@@ -139,7 +135,7 @@ namespace Frontend
             btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.Location = new Point(33, 285);
+            btnEliminar.Location = new Point(37, 281);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(49, 56);
             btnEliminar.TabIndex = 7;
@@ -154,7 +150,7 @@ namespace Frontend
             btnCrear.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrear.ForeColor = Color.White;
             btnCrear.Image = (Image)resources.GetObject("btnCrear.Image");
-            btnCrear.Location = new Point(33, 95);
+            btnCrear.Location = new Point(37, 91);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(49, 57);
             btnCrear.TabIndex = 6;
@@ -169,7 +165,7 @@ namespace Frontend
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
             btnModificar.Image = (Image)resources.GetObject("btnModificar.Image");
-            btnModificar.Location = new Point(33, 188);
+            btnModificar.Location = new Point(37, 184);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(49, 51);
             btnModificar.TabIndex = 3;
@@ -191,9 +187,11 @@ namespace Frontend
             // 
             txtFiltrarTurnos.BackColor = Color.FromArgb(26, 32, 40);
             txtFiltrarTurnos.BorderStyle = BorderStyle.FixedSingle;
+            txtFiltrarTurnos.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFiltrarTurnos.ForeColor = Color.White;
             txtFiltrarTurnos.Location = new Point(287, 126);
             txtFiltrarTurnos.Name = "txtFiltrarTurnos";
-            txtFiltrarTurnos.Size = new Size(613, 23);
+            txtFiltrarTurnos.Size = new Size(613, 22);
             txtFiltrarTurnos.TabIndex = 18;
             txtFiltrarTurnos.TextChanged += txtFiltrarTurnos_TextChanged;
             // 
@@ -276,137 +274,76 @@ namespace Frontend
             clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
             clienteDataGridViewTextBoxColumn.Width = 94;
             // 
-            // listBox1
+            // dgvTurnos
             // 
-            listBox1.BackColor = Color.FromArgb(26, 32, 40);
-            listBox1.BorderStyle = BorderStyle.None;
-            listBox1.ColumnWidth = 23;
-            listBox1.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            listBox1.ForeColor = Color.White;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 17;
-            listBox1.Location = new Point(226, 217);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(674, 408);
-            listBox1.TabIndex = 19;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            dgvTurnos.AllowUserToAddRows = false;
+            dgvTurnos.AllowUserToDeleteRows = false;
+            dgvTurnos.AllowUserToResizeColumns = false;
+            dgvTurnos.AllowUserToResizeRows = false;
+            dgvTurnos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTurnos.BackgroundColor = Color.FromArgb(26, 32, 40);
+            dgvTurnos.BorderStyle = BorderStyle.None;
+            dgvTurnos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTurnos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle4.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvTurnos.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvTurnos.EnableHeadersVisualStyles = false;
+            dgvTurnos.GridColor = Color.MidnightBlue;
+            dgvTurnos.Location = new Point(208, 169);
+            dgvTurnos.Name = "dgvTurnos";
+            dgvTurnos.ReadOnly = true;
+            dgvTurnos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvTurnos.RowHeadersVisible = false;
+            dgvTurnos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(49, 66, 82);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dgvTurnos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgvTurnos.RowTemplate.Height = 25;
+            dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTurnos.Size = new Size(872, 561);
+            dgvTurnos.TabIndex = 19;
             // 
-            // label3
+            // btnBuscar
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(224, 189);
-            label3.Name = "label3";
-            label3.Size = new Size(19, 16);
-            label3.TabIndex = 20;
-            label3.Text = "ID";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(518, 189);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 16);
-            label4.TabIndex = 21;
-            label4.Text = "Telefono";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(447, 189);
-            label5.Name = "label5";
-            label5.Size = new Size(53, 16);
-            label5.TabIndex = 22;
-            label5.Text = "Apellido";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(378, 189);
-            label6.Name = "label6";
-            label6.Size = new Size(52, 16);
-            label6.TabIndex = 23;
-            label6.Text = "Nombre";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(320, 189);
-            label7.Name = "label7";
-            label7.Size = new Size(34, 16);
-            label7.TabIndex = 24;
-            label7.Text = "Hora";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(260, 189);
-            label8.Name = "label8";
-            label8.Size = new Size(43, 16);
-            label8.TabIndex = 25;
-            label8.Text = "Fecha";
-            label8.Click += label8_Click;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(578, 173);
-            label9.Name = "label9";
-            label9.Size = new Size(51, 32);
-            label9.TabIndex = 26;
-            label9.Text = "Cancha\r\n    ID";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(635, 189);
-            label10.Name = "label10";
-            label10.Size = new Size(52, 16);
-            label10.TabIndex = 27;
-            label10.Text = "Deporte";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(693, 189);
-            label11.Name = "label11";
-            label11.Size = new Size(44, 16);
-            label11.TabIndex = 28;
-            label11.Text = "Precio";
+            btnBuscar.FlatAppearance.BorderSize = 2;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.ForeColor = SystemColors.AppWorkspace;
+            btnBuscar.Location = new Point(926, 120);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(93, 30);
+            btnBuscar.TabIndex = 20;
+            btnBuscar.Text = "BUSCAR";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // HistorialTurnos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
-            ClientSize = new Size(1034, 661);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(listBox1);
+            ClientSize = new Size(1259, 748);
+            Controls.Add(btnBuscar);
+            Controls.Add(dgvTurnos);
             Controls.Add(txtFiltrarTurnos);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -432,6 +369,7 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource7).EndInit();
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -473,19 +411,11 @@ namespace Frontend
         private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn canchaDataGridViewTextBoxColumn1;
-        private ListBox listBox1;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
         private BindingSource bindingSource1;
         private Button button1;
         private Button button2;
         private ToolTip toolTip1;
+        private DataGridView dgvTurnos;
+        private Button btnBuscar;
     }
 }

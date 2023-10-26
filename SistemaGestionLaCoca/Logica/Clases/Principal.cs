@@ -5,10 +5,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.EntityFrameworkCore;
-using System.Drawing;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using System.Collections;
+using System.Data;
+
+using static Logica.Clases.Turno;
+
 
 namespace Logica.Clases
 {
@@ -27,52 +27,90 @@ namespace Logica.Clases
         public List<Cancha> ListaCanchas = new List<Cancha>();
 
         public List<Turno> ListaTurnos = new List<Turno>();
-     
-
- 
 
         public static List<Turno> listaTurnos;
 
         
         // ------------------------------------ VERIFICAR CARACTERES INGRESADOS.
+
+
+        // metodo para verificar que la cadena tenga Solo Letras.
         public bool SoloLetras(string textBox)
         {
             foreach (char caracter in textBox)
             {
-                if (!char.IsLetter(caracter))
+                if (char.IsDigit(caracter))
                 {
-                    return false;
+                    return true;
 
                 }
             }
-            return true;
+            return false;
         }
 
+
+        // metodo para verificar que la cadena tenga Solo Numeros.
         public bool SoloNumeros(string textBox)
         {
             foreach (char caracter in textBox)
             {
-                if (!char.IsDigit(caracter))
+                if (char.IsLetter(caracter))
                 {
-                    return false;
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
 
         // -------------------------------------------- ADMINISTRADORES ----------------------------------------------------------------
 
        
-        // Alta
-        public void AltaAdmi(string nombre, string apellido, int dni, decimal tel, string user, string pass)
+        // --------------------------------------------------------------------------Alta
+        public void AltaAdmi(string nombre, string apellido, string dni, string tel, string user, string pass, string confirmPass)
         {
+           // EXCEPCIONES
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(tel)
+                || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrEmpty(confirmPass))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (dni.Length <= 7)
+            {
+                throw new Exception("El DNI esta incompleto.");
+            }
+            
+            if (tel.Length <= 9)
+            {
+                throw new Exception("El Numero de Telefeno ingresado esta incomleto.\nEs necesario el codigo de area.");
+            }
+
+            if (SoloNumeros(dni) || SoloNumeros(tel))
+            {
+                throw new Exception("El DNI o Numero de Telefono ingresado no puede letras.");
+            }
+            
+            if (SoloLetras(nombre) || SoloLetras(apellido))
+            {
+                throw new Exception("El Nombre o Apellido ingresado no puede contener numeros.");
+            }
+            if (CumpleRequisitos(pass) == false) 
+            {
+                throw new Exception("La contraseña debe contener al menos una mayuscula y una letra.");
+            }
+            if (confirmarPass(pass, confirmPass) == false)
+            {
+                throw new Exception("Las contraseñas ingresadas no coinciden.");
+            }
+
+
             Administrador newAdmin = new Administrador();
 
             newAdmin.Nombre = nombre;
             newAdmin.Apellido = apellido;
-            newAdmin.DNI = dni;
-            newAdmin.Telefono = tel;
+            newAdmin.DNI = int.Parse(dni);
+            newAdmin.Telefono = long.Parse(tel);
             newAdmin.Usuario = user;
             newAdmin.Contrasenia = pass;
 
@@ -80,15 +118,51 @@ namespace Logica.Clases
             context.SaveChanges();
         }
 
-        // Modificacion
-        public void ModificarAdmin(Administrador admiMod, string nombre, string apellido, int dni, decimal tel, string user, string pass)
-        {
+        // -------------------------------------------------------------------------------------------------------------Modificacion
+        public void ModificarAdmin(Administrador admiMod, string nombre, string apellido, string dni, string tel, string user, string pass, string confirmPass)
+        { 
+            // EXCEPCIONES
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(tel)
+                || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrEmpty(confirmPass))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (dni.Length <= 7)
+            {
+                throw new Exception("El DNI esta incompleto.");
+            }
+
+            if (tel.Length <= 9)
+            {
+                throw new Exception("El Numero de Telefeno ingresado esta incomleto.\nEs necesario el codigo de area.");
+            }
+
+            if (SoloNumeros(dni) || SoloNumeros(tel))
+            {
+                throw new Exception("El DNI o Numero de Telefono ingresado no puede letras.");
+            }
+
+            if (SoloLetras(nombre) || SoloLetras(apellido))
+            {
+                throw new Exception("El Nombre o Apellido ingresado no puede contener numeros.");
+            }
+            if (CumpleRequisitos(pass) == false)
+            {
+                throw new Exception("La contraseña debe contener al menos una mayuscula y una letra.");
+            }
+
+            if (confirmarPass(pass, confirmPass) == false)
+            {
+                throw new Exception("Las contraseñas ingresadas no coinciden.");
+            }
+
             if (admiMod != null)
             {
                 admiMod.Nombre = nombre;
                 admiMod.Apellido = apellido;
-                admiMod.DNI = dni;
-                admiMod.Telefono = tel;
+                admiMod.DNI = int.Parse(dni);
+                admiMod.Telefono = long.Parse(tel);
                 admiMod.Usuario = user;
                 admiMod.Contrasenia = pass;
 
@@ -119,18 +193,6 @@ namespace Logica.Clases
         // ------------------------------------------------------ METODOS DE VALIDACION Front Administradores.
 
         // Verificar que los textbox no esten vacios.
-
-        public bool VerificarTextBoxAdmi(string Nombre, string Apellido, string Dni, string Tel, string User, string Pass, string ConfirPass)
-        {
-            if(!string.IsNullOrEmpty(Nombre) && !string.IsNullOrEmpty(Apellido) && !string.IsNullOrEmpty(Dni.ToString()) &&
-                !string.IsNullOrEmpty(Tel.ToString()) && !string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(Pass) && !string.IsNullOrEmpty(ConfirPass))
-            {
-                return true;
-
-            }
-            return false;
-
-        }
 
 
         // Confirmar si la confirmacion de la contraseña coincide con la prev ingresada.
@@ -182,37 +244,39 @@ namespace Logica.Clases
             return true;
         }
 
-
-        // Inicio de sesion (LogIn)
-        public string  InicioDeSesion(string usuario, string pass)
+        public bool LogIn(string user, string pass)
         {
-            ListaAdministradores = context.Administradores.ToList();
-            
-            // si los strings ingresados son nulos, devuelve ese mensaje en un messagebox
-            if (string.IsNullOrEmpty(usuario) && string.IsNullOrEmpty(pass))
+            var listaAdm = context.Administradores.ToList();
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                return "Complete los campos por favor.";
+                throw new Exception("Complete los campos por favor.");
+                
             }
-
-            if (ListaAdministradores.Count > 0)
+            if (listaAdm.Count > 0)
             {
-                foreach (var admiGuardado in ListaAdministradores)
+                foreach (var admiGuardado in listaAdm)
                 {
-                    if (admiGuardado.Usuario == usuario && admiGuardado.Contrasenia == pass)
+                    if (admiGuardado.Usuario != user || admiGuardado.Contrasenia != pass)
                     {
-                        return $"Inicio de sesion exitoso.\n!Bienvenido, {usuario}! ";
+                        throw new Exception($"Nombre de usuario o contraseña incorrectos.\nPor favor, inténtalo de nuevo.");
                     }
                     else
                     {
-                        return "Nombre de usuario o contraseña incorrectos.\nPor favor, inténtalo de nuevo.";
+                        return true;
                     }
+
                 }
             }
-            return "No hay ningun administrador registrado en el sistema.";
-           
+            else
+            {
+                throw new Exception("No hay ningun administrador registrado en el sistema.");
+            }
+            return false;
         }
 
 
+
+ 
 
 
 
@@ -241,28 +305,76 @@ namespace Logica.Clases
         // ----------------------------------------------CLIENTES. 
  
         
-        public void AltaCliente(string nombre, string apellido, int dni, decimal tel)
+        public void AltaCliente(string nombre, string apellido, string dni, string tel)
         {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(tel))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (dni.Length <= 7)
+            {
+                throw new Exception("El DNI esta incompleto.");
+            }
+
+            if (tel.Length <= 9)
+            {
+                throw new Exception("El Numero de Telefeno ingresado esta incomleto.\nEs necesario el codigo de area.");
+            }
+
+            if (SoloNumeros(dni) || SoloNumeros(tel))
+            {
+                throw new Exception("El DNI o Numero de Telefono ingresado no puede letras.");
+            }
+
+            if (SoloLetras(nombre) || SoloLetras(apellido))
+            {
+                throw new Exception("El Nombre o Apellido ingresado no puede contener numeros.");
+            }
             Cliente newCliente = new Cliente();
 
             newCliente.Nombre = nombre;
             newCliente.Apellido = apellido;
-            newCliente.DNI = dni;
-            newCliente.Telefono = tel;
+            newCliente.DNI = int.Parse(dni);
+            newCliente.Telefono = long.Parse(tel);
 
             context.Clientes.Add(newCliente);
             context.SaveChanges();
         }
     
         
-        public void ModificarCliente(Cliente clienteMod, string nombre, string apellido, int dni, decimal tel)
+        public void ModificarCliente(Cliente clienteMod, string nombre, string apellido, string dni, string tel)
         {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(tel))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (dni.Length <= 7)
+            {
+                throw new Exception("El DNI esta incompleto.");
+            }
+
+            if (tel.Length <= 9)
+            {
+                throw new Exception("El Numero de Telefeno ingresado esta incomleto.\nEs necesario el codigo de area.");
+            }
+
+            if (SoloNumeros(dni) || SoloNumeros(tel))
+            {
+                throw new Exception("El DNI o Numero de Telefono ingresado no puede letras.");
+            }
+
+            if (SoloLetras(nombre) || SoloLetras(apellido))
+            {
+                throw new Exception("El Nombre o Apellido ingresado no puede contener numeros.");
+            }
             if (clienteMod != null)
             {
                 clienteMod.Nombre = nombre;
                 clienteMod.Apellido = apellido;
-                clienteMod.DNI = dni;
-                clienteMod.Telefono = tel;
+                clienteMod.DNI = int.Parse(dni);
+                clienteMod.Telefono = long.Parse(tel);
 
                 context.Clientes.Update(clienteMod);
                 context.SaveChanges();
@@ -271,11 +383,13 @@ namespace Logica.Clases
          
         public void removeCliente(Cliente clienteABorrar)
         {
-            if (clienteABorrar != null)
+            if (clienteABorrar == null)
             {
-                context.Clientes.Remove(clienteABorrar);
-                context.SaveChanges();
+                throw new Exception("No hay ningun cliente seleccionado");
+
             }
+            context.Clientes.Remove(clienteABorrar);
+            context.SaveChanges();
         }
 
         public  List<Cliente> ObtenerListClientes()
@@ -299,32 +413,58 @@ namespace Logica.Clases
         }
 
 
-
-
         // ------------------------------------ CANCHAS.
       
-       
-        public void AltaCancha(string nombre, string tipo, int cantJugadores, int precio)
+
+        public void AltaCancha(string nombre, string deporte, string cantJugadores, string precio)
         {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(deporte) || string.IsNullOrWhiteSpace(cantJugadores) || string.IsNullOrWhiteSpace(precio))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (SoloNumeros(cantJugadores) || SoloNumeros(precio))
+            {
+                throw new Exception("La cantidad de jugadores o el precio ingresado no puede letras.");
+            }
+
+            if (SoloLetras(nombre))
+            {
+                throw new Exception("El Nombre ingresado no puede contener numeros.");
+            }
             Cancha newCancha = new Cancha();
 
-            newCancha.Nombre = nombre;
-            newCancha.Tipo = tipo;
-            newCancha.Cantidad_Jugadores = cantJugadores;
-            newCancha.Precio = precio;
+            newCancha.nombre = nombre;
+            newCancha.Deporte = deporte;
+            newCancha.Cantidad_Jugadores = int.Parse(cantJugadores);
+            newCancha.Precio = decimal.Parse(precio);
 
             context.Canchas.Add(newCancha);
             context.SaveChanges();
         }
 
-        public void modificarCancha(Cancha canchaMod, string nombre, string tipo, int cantJug, int precio)
+        public void modificarCancha(Cancha canchaMod, string nombre, string deporte, string cantJug, string precio)
         {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(deporte) || string.IsNullOrWhiteSpace(cantJug) || string.IsNullOrWhiteSpace(precio))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (SoloNumeros(cantJug) || SoloNumeros(precio))
+            {
+                throw new Exception("La cantidad de jugadores o el precio ingresado no puede contener letras.");
+            }
+
+            if (SoloLetras(nombre))
+            {
+                throw new Exception("El Nombre ingresado no puede contener numeros.");
+            }
             if (canchaMod != null)
             {
-                canchaMod.Nombre = nombre;
-                canchaMod.Tipo = tipo;
-                canchaMod.Cantidad_Jugadores = cantJug;
-                canchaMod.Precio = precio;
+                canchaMod.nombre = nombre;
+                canchaMod.Deporte = deporte;
+                canchaMod.Cantidad_Jugadores = int.Parse(cantJug);
+                canchaMod.Precio = decimal.Parse(precio);
 
                 context.Canchas.Update(canchaMod);
                 context.SaveChanges();
@@ -349,93 +489,346 @@ namespace Logica.Clases
             return ListaCanchas;
         }
 
+        public List<string> DeportesSinRepetir()
+        {
+            var listaDeportes = new List<string>();
+
+            foreach (var cancha in ObtenerListaCanchas())
+            {
+                if (!listaDeportes.Contains(cancha.Deporte))  // no tiene ese deporte en la lista de deportes que hay
+                {
+                    listaDeportes.Add(cancha.Deporte);
+                }
+
+            }
+            return listaDeportes;
+
+        }
+
+        public List<Cancha> CanchasDeSoloUnDeporte(string deporte)
+        {
+            var canchasFiltraadas = ObtenerListaCanchas().Where(cancha => cancha.Deporte == deporte).ToList();
+
+            return canchasFiltraadas;
+        }
+
 
         // ------------------------------------ TURNOS.
 
-        public static List<Turno> ObtenerTurnos()
-
+        public static List<string> HorariosFutbol;
+        public static List<string> ListaHorariosFutbol()
         {
-            if (listaTurnos == null)
+            if (HorariosFutbol == null)
             {
-                listaTurnos = new List<Turno>();
+                HorariosFutbol = new List<string>
+                {
+                    "16:00",
+                    "16:30",
+                    "17:00",
+                    "17:30",
+                    "18:00",
+                    "18:30",
+                    "19:00",
+                    "19:30",
+                    "20:00",
+                    "20:30",
+                    "21:00",
+                    "21:30"
+                };
 
-                // PRIMER TURNO HARCODEADO.
-                Turno turnoBase = new Turno();
-                turnoBase.Fecha = ("28/08/2023");
-                turnoBase.Horario = ("16:30");
+            }
+            return HorariosFutbol;
+        }
 
+        public static List<string> HorariosBasquet;
+        public static List<string> ListaHorariosBasquet()
+        {
+            if (HorariosBasquet == null)
+            {
+                HorariosBasquet = new List<string>
+                {
+                    "16:00",
+                    "17:00",
+                    "18:00",
+                    "19:00",
+                    "20:00",
+                    "21:00",
+                    "22:00"
+                };
+
+            }
+            return HorariosBasquet;
+        }
+        public static bool EsFormatoValido(string hora)
+        {
+            // Patrón de expresión regular para el formato "xx:xx".
+            string patron = @"^\d{2}:\d{2}$";
+
+            // Verifica si el input coincide con el patrón.
+            return Regex.IsMatch(hora, patron);
+        }
+
+
+        public static void AgregarHorario(string horario, string deporte)
+        {
+            if (horario.Length < 5)
+            {
+                throw new Exception("El horario ingresado no contiene los caracteres solicitados.");
+            }
+            if (EsFormatoValido(horario) ==  false)
+            {
+                throw new Exception("El horario ingresado no coincide con el patron solicitado\nPATRON SOLICITADO\nxx:xx\n(donde x es cualquier digito).");
+            }
+
+            if (deporte == "BASQUET")
+            {
+                HorariosBasquet.Add(horario);
+            }
+            if (deporte == "FUTBOL")
+            {
+                HorariosFutbol.Add(horario);
+            }
+
+        }
+        public void AltaTurno(Cliente cliente, Cancha cancha, string fecha, string hora)
+        {
+            // verificaciones;
+             
+            var listaTurnos = context.Turnos.ToList();
+            foreach (var turn in listaTurnos)
+            {
+                if (turn.Horario.Contains(hora) && turn.Fecha.Contains(fecha) && turn.Cancha.Equals(cancha))
+                {
+                    throw new Exception("El turno solicitado ya se encuentra registrado.");
+
+                }
+            }
+
+
+
+
+            Turno turno = new Turno();
+            turno.Cliente = cliente;
+            turno.Cancha = cancha;
+            turno.Fecha = fecha;
+            turno.Horario = hora;
+            turno.Condicion = Reservado.Si;
 
 
            
 
-                listaTurnos.Add(turnoBase);
-
-                // SEGUNDO TURNO HARCODEADO.
-                Turno turnoBase2 = new Turno();
-                turnoBase2.Fecha = ("27/08/2023");
-                turnoBase2.Horario = ("18:00");
+            context.Turnos.Add(turno);
+            context.SaveChanges();
 
 
-
-
-
-                listaTurnos.Add(turnoBase2);
-                
-            }
-
-            return listaTurnos;
 
         }
-        
-        public void altaTurno(Cancha cancha, Cliente cliente, string fecha, string hora)
+        public void ModificarTurno(Turno turno, Cliente cliente, Cancha cancha, string fecha, string hora)
         {
+            if (turno != null)
+            {
+                turno.Cliente = cliente;
+                turno.Cancha = cancha;
+                turno.Fecha = fecha;
+                turno.Horario = hora;
+                turno.Condicion = Reservado.Si;
+
+
+                context.Turnos.Update(turno);
+                context.SaveChanges();
+            }
+        }
+
+        
+        public DataTable ListadoTurnos()
+        {
+            var consulta = from turno in context.Turnos
+                           join cliente in context.Clientes on turno.Cliente.ID equals cliente.ID
+                           join cancha in context.Canchas on turno.Cancha.ID equals cancha.ID
+
+                           select new
+                           {
+                               turno.ID,
+                               turno.Fecha,
+                               turno.Horario,
+                               cancha.Deporte,
+                               cancha.nombre,
+                               cliente.Nombre,
+                               cliente.Apellido,
+                               cliente.Telefono,
+
+                           };
+
+            // convertir en lista la consulta 
+            var listaConsulta = consulta.ToList();
+
+            // crear datatable
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID Turno", typeof(int));
+            dataTable.Columns.Add("Fecha", typeof(string));
+            dataTable.Columns.Add("Horario", typeof(string));
+            dataTable.Columns.Add("Deporte", typeof(string));
+            dataTable.Columns.Add("Cancha", typeof(string));
+            dataTable.Columns.Add("Nombre", typeof(string));
+            dataTable.Columns.Add("Apellido", typeof(string));
+            dataTable.Columns.Add("Telefono", typeof(long));
+
+
+            // asiganar los valores de la lista al datatable
+            
+            foreach (var resultado in listaConsulta)
+            {
+                dataTable.Rows.Add(resultado.ID, resultado.Fecha, resultado.Horario, resultado.Deporte, resultado.nombre, resultado.Nombre, resultado.Apellido, resultado.Telefono);
+            }
+            
+            return dataTable;
+            
+        }
+
+        public DataTable turnosDelDia()
+        {
+            var consulta = from turno in context.Turnos
+                           join cliente in context.Clientes on turno.Cliente.ID equals cliente.ID
+                           join cancha in context.Canchas on turno.Cancha.ID equals cancha.ID
+
+                           select new
+                           {
+                               turno.ID,
+                               turno.Fecha,
+                               turno.Horario,
+                               cancha.Deporte,
+                               cancha.nombre,
+                               cliente.Nombre,
+                               cliente.Apellido,
+                               cliente.Telefono,
+
+                           };
+
+            // convertir en lista la consulta 
+            var listaConsulta = consulta.ToList();
+
+            // crear datatable
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID Turno", typeof(int));
+            dataTable.Columns.Add("Fecha", typeof(string));
+            dataTable.Columns.Add("Horario", typeof(string));
+            dataTable.Columns.Add("Deporte", typeof(string));
+            dataTable.Columns.Add("Cancha", typeof(string));
+            dataTable.Columns.Add("Nombre", typeof(string));
+            dataTable.Columns.Add("Apellido", typeof(string));
+            dataTable.Columns.Add("Telefono", typeof(long));
+
+
+            // asiganar los valores de la lista al datatable
+            foreach (var resultado in listaConsulta)
             {
                 
-                Turno newTurno = new Turno();
+                DateTime fechaTurno = DateTime.Parse(resultado.Fecha);    // convertir la fecha (que es un string) a tipo datetime para hacer la verificacion  que coincida con el dia actual
+                DateTime fechaLarga = DateTime.Now; // fecha en formato largo (fecha y horas)
+                DateTime fecha = fechaLarga.Date; // fecha en formato cortoc (anio, mes, dia)
 
+                if (fechaTurno == fecha)
+                {
+                    dataTable.Rows.Add(resultado.ID, resultado.Fecha, resultado.Horario, resultado.Deporte, resultado.nombre, resultado.Nombre, resultado.Apellido, resultado.Telefono);
 
-                newTurno.Cancha_Turno = cancha;
-                newTurno.Cliente_Turno = cliente;
-                newTurno.Fecha = fecha;
-                newTurno.Horario = hora;
-                newTurno.Reservado = true;
-
-                listaTurnos.Add(newTurno);
-
+                }
             }
+
+            return dataTable;
 
         }
 
+        public DataTable FiltrarDatos(DataTable dataTable, string valorBusqueda)
+        {
+            DataTable resultadoFiltrado = dataTable.Clone(); // Clona la estructura del DataTable original.
 
+            foreach (DataRow fila in dataTable.Rows)
+            {
+                foreach (DataColumn columna in dataTable.Columns)
+                {
+                    // Verifica si el valor de la columna contiene el valor de búsqueda.
+                    if (fila[columna].ToString().Contains(valorBusqueda))
+                    {
+                        resultadoFiltrado.ImportRow(fila); // Agrega la fila al resultado filtrado.
+                        break; // Sal del bucle interno, ya que se encontró una coincidencia en esta fila.
+                    }
+                }
+            }
 
-
-
-
+            return resultadoFiltrado;
+        }
 
 
 
 
         // ------------------------------------ ELEMENTOS.
 
-        public void altaElemento(string nombre, int stock)
+        public void altaElemento(string nombre, string stock)
         {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(stock))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+            if (SoloNumeros(stock))
+            {
+                throw new Exception("El stock ingresado no puede contener letras.");
+            }
+
+            if (SoloLetras(nombre))
+            {
+                throw new Exception("El Nombre ingresado no puede contener numeros.");
+            }
+
             Elemento elemento = new Elemento();
             elemento.Nombre = nombre;
-            elemento.Stock = stock;
+            elemento.Stock = int.Parse(stock);
 
             context.Elementos.Add(elemento);
             context.SaveChanges();
 
 
         }
-        public void ModificarElemento(Elemento elemento, string nombre, int stock)
+        public void ModificarElemento(Elemento elemento, string nombre, string stock)
         {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(stock))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+            if (SoloNumeros(stock))
+            {
+                throw new Exception("El stock ingresado no puede contener letras.");
+            }
+
+            if (SoloLetras(nombre))
+            {
+                throw new Exception("El Nombre ingresado no puede contener numeros.");
+            }
+
             if (elemento != null)
             {
                 elemento.Nombre = nombre;
-                elemento.Stock = stock;
+                elemento.Stock = int.Parse(stock);
                 
 
+                context.Elementos.Update(elemento);
+                context.SaveChanges();
+            }
+        }
+
+        public void AgregarStock(Elemento elemento, string masStock)
+        {
+            if (string.IsNullOrWhiteSpace(masStock))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+            if (SoloNumeros(masStock))
+            {
+                throw new Exception("El stock ingresado no puede contener letras.");
+            }
+
+            if (elemento != null)
+            {
+                elemento.Stock = elemento.Stock + int.Parse(masStock);
                 context.Elementos.Update(elemento);
                 context.SaveChanges();
             }
@@ -476,10 +869,68 @@ namespace Logica.Clases
 
             // guardarlo en la BD
         }
+        public DataTable ObtenerAsignacionDeElementos()
+        {
+            var consulta = from asignacion in context.ElementoCancha
+                           join elemento in context.Elementos on asignacion.Elemento.ID equals elemento.ID
+                           join cancha in context.Canchas on asignacion.Cancha.ID equals cancha.ID
+        
+                           select new
+                           {
+                               asignacion.ID,
+                               cancha.nombre,
+                               cancha.Deporte,
+                               elemento.Nombre,
+                               asignacion.Cantidad,
+                               
+
+                           };
+
+            // convertir en lista la consulta 
+            var listaConsulta = consulta.ToList();
+
+            // crear datatable
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID", typeof(int));
+            dataTable.Columns.Add("Cancha", typeof(string));
+            dataTable.Columns.Add("Deporte", typeof(string));
+            dataTable.Columns.Add("Elemento", typeof(string));
+            dataTable.Columns.Add("Cantidad", typeof(int));            
+
+            // asiganar los valores de la lista al datatable
+            foreach (var resultado in listaConsulta)
+            {
+                dataTable.Rows.Add(resultado.ID, resultado.nombre, resultado.Deporte, resultado.Nombre, resultado.Cantidad);
+            }
+
+            return dataTable;
+
+        }
+ 
+  
+
+        public void ModificarAsignacionElemento(ElementoCancha elementoCancha, Cancha cancha, Elemento elemento, int cantidad)
+        {
+            if (elementoCancha != null)
+            {
+                elementoCancha.Cancha = cancha;
+                elementoCancha.Elemento = elemento;
+                elementoCancha.Cantidad = cantidad;
 
 
+                context.ElementoCancha.Update(elementoCancha);
+                context.SaveChanges();
+            }
+        }
 
-
+        public void RemoveAsignacionElemento(ElementoCancha elementoCancha)
+        {
+            if (elementoCancha != null)
+            {
+                context.ElementoCancha.Remove(elementoCancha);
+                context.SaveChanges();
+            }
+        }
 
     }
 

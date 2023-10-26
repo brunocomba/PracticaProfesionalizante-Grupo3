@@ -101,7 +101,7 @@
             btnVolver.TabIndex = 9;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += btnVolver_Click;
+            btnVolver.Click += btnVolver_Click_1;
             // 
             // groupBox2
             // 
@@ -129,7 +129,6 @@
             txtConfiContra.PasswordChar = '*';
             txtConfiContra.Size = new Size(212, 23);
             txtConfiContra.TabIndex = 7;
-            txtConfiContra.Validated += txtConfiContra_Validated;
             // 
             // checkBoXMostrarContra
             // 
@@ -200,7 +199,6 @@
             txtContra.PasswordChar = '*';
             txtContra.Size = new Size(212, 23);
             txtContra.TabIndex = 6;
-            txtContra.Validated += txtContra_Validated;
             // 
             // txtUser
             // 
@@ -260,7 +258,6 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(212, 23);
             txtDNI.TabIndex = 3;
-            txtDNI.Validating += txtDNI_Validating;
             // 
             // lblErrorApellido
             // 
@@ -311,7 +308,6 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(212, 23);
             txtApellido.TabIndex = 2;
-            txtApellido.Validating += txtApellido_Validating_1;
             // 
             // txtTel
             // 
@@ -321,7 +317,6 @@
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(212, 23);
             txtTel.TabIndex = 4;
-            txtTel.Validating += txtTel_Validating_1;
             // 
             // label7
             // 
@@ -375,7 +370,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(212, 23);
             txtNombre.TabIndex = 1;
-            txtNombre.Validating += txtNombre_Validating_1;
             // 
             // ModificarAdmi
             // 

@@ -42,41 +42,35 @@ namespace Frontend
         // VALIDACIONES
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            bool textBoxCompletos = principal.VerificarTextBoxCliente(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTEL.Text);
-            bool DniCompleto = principal.DniCompleto(txtDNI.Text);
-            bool TelCompleto = principal.TelCompleto(txtTEL.Text);
-
-            if (textBoxCompletos && DniCompleto && TelCompleto == true)
+            try
             {
                 var SIoNO = MessageBox.Show($"{clienteQueEdito.Nombre} por {txtNombre.Text}\n{clienteQueEdito.Apellido} por {txtApellido.Text}\n{clienteQueEdito.DNI} por {txtDNI.Text}\n{clienteQueEdito.Telefono} por {txtTEL.Text} "
                 , "Seguro desea realizar esta modificacion?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (SIoNO == DialogResult.OK)
                 {
-                    principal.ModificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, int.Parse(txtDNI.Text), decimal.Parse(txtTEL.Text));
+                    principal.ModificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTEL.Text);
 
-                    MessageBox.Show("Cliente modificado con exito!");
-                    ListaClientes.Show();
-                    this.Hide();
+                    MessageBox.Show($"El cliente ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 else
                 {
-                    ListaClientes.Show();
-                    this.Hide();
+                    var confirmarCancelacion = MessageBox.Show($"Seguro que desea cancelar la operacion?", "Atencion", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning);
+                    if (confirmarCancelacion == DialogResult.OK)
+                    {
+                        txtNombre.Clear();
+                        txtApellido.Clear();
+                        txtDNI.Clear();
+                        txtTEL.Clear();
+                    }
                 }
             }
-            else if (textBoxCompletos == false)
+            catch (Exception camposIncompletos)
             {
-                MessageBox.Show("Por favor completa todos los campos.", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (DniCompleto == false)
-            {
-                MessageBox.Show("DNI incompleto.", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (TelCompleto == false)
-            {
-                MessageBox.Show("Numero de telefono incompleto.", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                MessageBox.Show("Error: " + camposIncompletos.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
 
         }
 
@@ -86,82 +80,5 @@ namespace Frontend
             this.Hide();
         }
 
-        private void txtNombre_Validating(object sender, CancelEventArgs e)
-        {
-            string texto = txtNombre.Text;
-
-            if (principal.SoloLetras(texto) == false)
-            {
-                MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNombre.Clear();
-            }
-        }
-
-        private void txtApellido_Validating(object sender, CancelEventArgs e)
-        {
-            string texto = txtApellido.Text;
-
-            if (principal.SoloLetras(texto) == false)
-            {
-                MessageBox.Show("Solo se permiten LETRAS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtApellido.Clear();
-
-            }
-        }
-
-        private void txtDNI_Validating(object sender, CancelEventArgs e)
-        {
-            string texto = txtDNI.Text;
-
-            if (principal.SoloNumeros(texto) == false)
-            {
-                MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDNI.Clear();
-
-            }
-
-            // VERIFICAR QUE EL DNI INGRESADO CONTENGA 8 DIGITOS. (LO CORRECTO)
-            string DNI = txtDNI.Text.ToString();
-            bool dniCompleto = principal.DniCompleto(DNI);
-            if (dniCompleto == false)
-            {
-                lblErrorDni.Text = "DNI incompleto";
-            }
-            else
-            {
-                lblErrorDni.Text = "";
-            }
-        }
-
-        private void txtTEL_Validating(object sender, CancelEventArgs e)
-        {
-            string texto = txtTEL.Text;
-
-
-            if (principal.SoloNumeros(texto) == false)
-            {
-                MessageBox.Show("Solo se permiten NUMEROS en este campo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTEL.Clear();
-
-            }
-
-
-            // VERIFICAR QUE EL TELEFONO INGRESADO CONTENGA 10 DIGITOS. (LO CORRECTO NRO DE AREA + NUMERO TEL)
-            string Tel = txtTEL.Text.ToString();
-            bool telVerificado = principal.TelCompleto(Tel);
-            if (telVerificado == false)
-            {
-                lblErrorTel.Text = "Nro de telefono incompleto";
-            }
-            else
-            {
-                lblErrorTel.Text = "";
-            }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

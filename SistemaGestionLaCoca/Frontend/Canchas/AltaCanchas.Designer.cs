@@ -34,7 +34,7 @@
             label2 = new Label();
             label3 = new Label();
             txtNombre = new TextBox();
-            cmboxTipo = new ComboBox();
+            cmboxDeporte = new ComboBox();
             groupBox1 = new GroupBox();
             label7 = new Label();
             label6 = new Label();
@@ -102,16 +102,15 @@
             txtNombre.Size = new Size(236, 23);
             txtNombre.TabIndex = 1;
             // 
-            // cmboxTipo
+            // cmboxDeporte
             // 
-            cmboxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmboxTipo.FlatStyle = FlatStyle.Flat;
-            cmboxTipo.FormattingEnabled = true;
-            cmboxTipo.Location = new Point(140, 143);
-            cmboxTipo.Name = "cmboxTipo";
-            cmboxTipo.Size = new Size(236, 23);
-            cmboxTipo.TabIndex = 2;
-            cmboxTipo.SelectedIndexChanged += cmboxTipo_SelectedIndexChanged;
+            cmboxDeporte.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxDeporte.FlatStyle = FlatStyle.Flat;
+            cmboxDeporte.FormattingEnabled = true;
+            cmboxDeporte.Location = new Point(140, 143);
+            cmboxDeporte.Name = "cmboxDeporte";
+            cmboxDeporte.Size = new Size(236, 23);
+            cmboxDeporte.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -120,7 +119,7 @@
             groupBox1.Controls.Add(txtPrecio);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(cmboxCantJugadores);
-            groupBox1.Controls.Add(cmboxTipo);
+            groupBox1.Controls.Add(cmboxDeporte);
             groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
@@ -181,7 +180,6 @@
             cmboxCantJugadores.Name = "cmboxCantJugadores";
             cmboxCantJugadores.Size = new Size(236, 23);
             cmboxCantJugadores.TabIndex = 3;
-            cmboxCantJugadores.SelectedIndexChanged += cmboxCantJugadores_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -247,7 +245,7 @@
         private Label label2;
         private Label label3;
         private TextBox txtNombre;
-        private ComboBox cmboxTipo;
+        private ComboBox cmboxDeporte;
         private GroupBox groupBox1;
         private Button button1;
         private Label label4;

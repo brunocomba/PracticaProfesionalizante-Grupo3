@@ -92,7 +92,6 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(212, 23);
             txtDNI.TabIndex = 3;
-            txtDNI.Validating += txtDNI_Validating_1;
             // 
             // lblErrorApellido
             // 
@@ -143,7 +142,6 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(212, 23);
             txtApellido.TabIndex = 2;
-            txtApellido.Validating += txtApellido_Validating;
             // 
             // txtTel
             // 
@@ -153,7 +151,6 @@
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(212, 23);
             txtTel.TabIndex = 4;
-            txtTel.Validating += txtTel_Validating;
             // 
             // label7
             // 
@@ -207,7 +204,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(212, 23);
             txtNombre.TabIndex = 1;
-            txtNombre.Validating += txtNombre_Validating;
             // 
             // btnCancelar
             // 
@@ -231,7 +227,6 @@
             txtContra.PasswordChar = '*';
             txtContra.Size = new Size(212, 23);
             txtContra.TabIndex = 6;
-            txtContra.Validated += txtContra_Validated;
             // 
             // btnCrear
             // 
@@ -315,7 +310,6 @@
             txtConfirContra.PasswordChar = '*';
             txtConfirContra.Size = new Size(212, 23);
             txtConfirContra.TabIndex = 7;
-            txtConfirContra.Validated += txtConfirContra_Validated;
             // 
             // checkBoXMostrarContra
             // 

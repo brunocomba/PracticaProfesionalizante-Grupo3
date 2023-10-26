@@ -30,6 +30,7 @@ namespace Frontend
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -38,12 +39,20 @@ namespace Frontend
             label1 = new Label();
             btnVolver = new Button();
             dgvCanchas = new DataGridView();
-            btnEliminar = new Button();
-            btnModificar = new Button();
-            btnAgregar = new Button();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            deporteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cantidadJugadoresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            canchaBindingSource = new BindingSource(components);
             panel2 = new Panel();
+            btnEliminarCancha = new Button();
+            btnAgregarCancha = new Button();
+            btnModCancha = new Button();
+            btnElementosDeCancha = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCanchas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)canchaBindingSource).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,18 +62,18 @@ namespace Frontend
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(-3, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1041, 96);
+            groupBox1.Size = new Size(1267, 96);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(353, 36);
+            label1.Location = new Point(427, 36);
             label1.Name = "label1";
-            label1.Size = new Size(429, 32);
+            label1.Size = new Size(432, 32);
             label1.TabIndex = 0;
             label1.Text = "LISTA CANCHAS REGISTRADAS";
             // 
@@ -74,7 +83,7 @@ namespace Frontend
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(890, 605);
+            btnVolver.Location = new Point(1111, 681);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(116, 44);
             btnVolver.TabIndex = 9;
@@ -89,6 +98,7 @@ namespace Frontend
             dgvCanchas.AllowUserToResizeColumns = false;
             dgvCanchas.AllowUserToResizeRows = false;
             dgvCanchas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvCanchas.AutoGenerateColumns = false;
             dgvCanchas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCanchas.BackgroundColor = Color.FromArgb(26, 32, 40);
             dgvCanchas.BorderStyle = BorderStyle.None;
@@ -103,6 +113,8 @@ namespace Frontend
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvCanchas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCanchas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvCanchas.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, nombreDataGridViewTextBoxColumn, deporteDataGridViewTextBoxColumn, cantidadJugadoresDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
+            dgvCanchas.DataSource = canchaBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -113,7 +125,7 @@ namespace Frontend
             dgvCanchas.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCanchas.EnableHeadersVisualStyles = false;
             dgvCanchas.GridColor = Color.MidnightBlue;
-            dgvCanchas.Location = new Point(263, 121);
+            dgvCanchas.Location = new Point(219, 138);
             dgvCanchas.Name = "dgvCanchas";
             dgvCanchas.ReadOnly = true;
             dgvCanchas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -127,69 +139,125 @@ namespace Frontend
             dgvCanchas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvCanchas.RowTemplate.Height = 25;
             dgvCanchas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCanchas.Size = new Size(563, 474);
+            dgvCanchas.Size = new Size(831, 561);
             dgvCanchas.TabIndex = 13;
-            dgvCanchas.CellContentClick += dgvCanchas_CellContentClick;
             // 
-            // btnEliminar
+            // dataGridViewTextBoxColumn1
             // 
-            btnEliminar.FlatAppearance.BorderSize = 2;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(17, 268);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(116, 44);
-            btnEliminar.TabIndex = 7;
-            btnEliminar.Text = "ELIMINAR";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
+            dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            dataGridViewTextBoxColumn1.HeaderText = "ID";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // btnModificar
+            // nombreDataGridViewTextBoxColumn
             // 
-            btnModificar.FlatAppearance.BorderSize = 2;
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(17, 160);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(116, 44);
-            btnModificar.TabIndex = 8;
-            btnModificar.Text = "MODIFICAR";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btnAgregar
+            // deporteDataGridViewTextBoxColumn
             // 
-            btnAgregar.FlatAppearance.BorderSize = 2;
-            btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(17, 52);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(116, 44);
-            btnAgregar.TabIndex = 6;
-            btnAgregar.Text = "AGREGAR";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
+            deporteDataGridViewTextBoxColumn.DataPropertyName = "Deporte";
+            deporteDataGridViewTextBoxColumn.HeaderText = "Deporte";
+            deporteDataGridViewTextBoxColumn.Name = "deporteDataGridViewTextBoxColumn";
+            deporteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadJugadoresDataGridViewTextBoxColumn
+            // 
+            cantidadJugadoresDataGridViewTextBoxColumn.DataPropertyName = "Cantidad_Jugadores";
+            cantidadJugadoresDataGridViewTextBoxColumn.HeaderText = "Jugadores";
+            cantidadJugadoresDataGridViewTextBoxColumn.Name = "cantidadJugadoresDataGridViewTextBoxColumn";
+            cantidadJugadoresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            precioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // canchaBindingSource
+            // 
+            canchaBindingSource.DataSource = typeof(Cancha);
             // 
             // panel2
             // 
             panel2.BackColor = Color.SlateGray;
-            panel2.Controls.Add(btnAgregar);
-            panel2.Controls.Add(btnModificar);
-            panel2.Controls.Add(btnEliminar);
+            panel2.Controls.Add(btnEliminarCancha);
+            panel2.Controls.Add(btnAgregarCancha);
+            panel2.Controls.Add(btnModCancha);
             panel2.Location = new Point(-3, 86);
             panel2.Name = "panel2";
-            panel2.Size = new Size(151, 585);
+            panel2.Size = new Size(151, 664);
             panel2.TabIndex = 12;
+            // 
+            // btnEliminarCancha
+            // 
+            btnEliminarCancha.FlatAppearance.BorderColor = Color.Black;
+            btnEliminarCancha.FlatAppearance.BorderSize = 0;
+            btnEliminarCancha.FlatStyle = FlatStyle.Flat;
+            btnEliminarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarCancha.ForeColor = Color.White;
+            btnEliminarCancha.Image = (Image)resources.GetObject("btnEliminarCancha.Image");
+            btnEliminarCancha.Location = new Point(46, 287);
+            btnEliminarCancha.Name = "btnEliminarCancha";
+            btnEliminarCancha.Size = new Size(49, 56);
+            btnEliminarCancha.TabIndex = 16;
+            btnEliminarCancha.UseVisualStyleBackColor = true;
+            btnEliminarCancha.Click += btnEliminarCancha_Click;
+            // 
+            // btnAgregarCancha
+            // 
+            btnAgregarCancha.FlatAppearance.BorderColor = Color.Black;
+            btnAgregarCancha.FlatAppearance.BorderSize = 0;
+            btnAgregarCancha.FlatStyle = FlatStyle.Flat;
+            btnAgregarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregarCancha.ForeColor = Color.White;
+            btnAgregarCancha.Image = (Image)resources.GetObject("btnAgregarCancha.Image");
+            btnAgregarCancha.Location = new Point(46, 61);
+            btnAgregarCancha.Name = "btnAgregarCancha";
+            btnAgregarCancha.Size = new Size(49, 57);
+            btnAgregarCancha.TabIndex = 14;
+            btnAgregarCancha.UseVisualStyleBackColor = true;
+            btnAgregarCancha.Click += btnAgregarCancha_Click;
+            // 
+            // btnModCancha
+            // 
+            btnModCancha.FlatAppearance.BorderColor = Color.Black;
+            btnModCancha.FlatAppearance.BorderSize = 0;
+            btnModCancha.FlatStyle = FlatStyle.Flat;
+            btnModCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModCancha.ForeColor = Color.White;
+            btnModCancha.Image = (Image)resources.GetObject("btnModCancha.Image");
+            btnModCancha.Location = new Point(46, 177);
+            btnModCancha.Name = "btnModCancha";
+            btnModCancha.Size = new Size(49, 51);
+            btnModCancha.TabIndex = 15;
+            btnModCancha.UseVisualStyleBackColor = true;
+            btnModCancha.Click += btnModCancha_Click;
+            // 
+            // btnElementosDeCancha
+            // 
+            btnElementosDeCancha.FlatAppearance.BorderSize = 2;
+            btnElementosDeCancha.FlatStyle = FlatStyle.Flat;
+            btnElementosDeCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnElementosDeCancha.ForeColor = Color.White;
+            btnElementosDeCancha.Location = new Point(1111, 138);
+            btnElementosDeCancha.Name = "btnElementosDeCancha";
+            btnElementosDeCancha.Size = new Size(116, 44);
+            btnElementosDeCancha.TabIndex = 9;
+            btnElementosDeCancha.Text = "Elementos de cancha";
+            btnElementosDeCancha.UseVisualStyleBackColor = true;
+            btnElementosDeCancha.Click += btnElementosDeCancha_Click;
             // 
             // ListaCanchas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
-            ClientSize = new Size(1034, 661);
+            ClientSize = new Size(1259, 748);
+            Controls.Add(btnElementosDeCancha);
             Controls.Add(dgvCanchas);
             Controls.Add(btnVolver);
             Controls.Add(panel2);
@@ -203,6 +271,7 @@ namespace Frontend
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCanchas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)canchaBindingSource).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -215,9 +284,16 @@ namespace Frontend
         private DataGridView dgvCanchas;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cantJugadoresDataGridViewTextBoxColumn;
-        private Button btnEliminar;
-        private Button btnModificar;
-        private Button btnAgregar;
         private Panel panel2;
+        private Button btnElementosDeCancha;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn deporteDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cantidadJugadoresDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private BindingSource canchaBindingSource;
+        private Button btnEliminarCancha;
+        private Button btnAgregarCancha;
+        private Button btnModCancha;
     }
 }

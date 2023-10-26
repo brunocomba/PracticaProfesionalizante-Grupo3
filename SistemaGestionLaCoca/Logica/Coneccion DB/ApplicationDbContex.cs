@@ -15,8 +15,6 @@ namespace Logica
         public DbSet<ElementoCancha> ElementoCancha { get; set; }
 
 
-
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=BR-PC;database=LaCocaBD;trusted_connection=true;Encrypt=False");

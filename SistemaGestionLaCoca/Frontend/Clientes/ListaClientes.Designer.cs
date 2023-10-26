@@ -38,22 +38,27 @@ namespace Frontend
             groupBox1 = new GroupBox();
             label1 = new Label();
             dgvClientes = new DataGridView();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            apellidoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            clienteBindingSource = new BindingSource(components);
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btnVolver = new Button();
             panel1 = new Panel();
             btnDelete = new Button();
             btnAgregar = new Button();
             btnMod = new Button();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            apellidoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            iDDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            apellidoDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            clienteBindingSource2 = new BindingSource(components);
+            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            apellidoDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            iDDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)clienteBindingSource2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -85,7 +90,6 @@ namespace Frontend
             dgvClientes.AllowUserToResizeColumns = false;
             dgvClientes.AllowUserToResizeRows = false;
             dgvClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvClientes.AutoGenerateColumns = false;
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.BackgroundColor = Color.FromArgb(26, 32, 40);
             dgvClientes.BorderStyle = BorderStyle.None;
@@ -100,8 +104,7 @@ namespace Frontend
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, apellidoDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn });
-            dgvClientes.DataSource = clienteBindingSource;
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn2, nombreDataGridViewTextBoxColumn2, apellidoDataGridViewTextBoxColumn2, dataGridViewTextBoxColumn1, telefonoDataGridViewTextBoxColumn });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -128,45 +131,6 @@ namespace Frontend
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvClientes.Size = new Size(788, 561);
             dgvClientes.TabIndex = 2;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dNIDataGridViewTextBoxColumn
-            // 
-            dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
-            dNIDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteBindingSource
-            // 
-            clienteBindingSource.DataSource = typeof(Cliente);
             // 
             // btnVolver
             // 
@@ -203,7 +167,7 @@ namespace Frontend
             btnDelete.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
             btnDelete.Image = (Image)resources.GetObject("btnDelete.Image");
-            btnDelete.Location = new Point(42, 311);
+            btnDelete.Location = new Point(48, 282);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(49, 56);
             btnDelete.TabIndex = 14;
@@ -218,7 +182,7 @@ namespace Frontend
             btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregar.ForeColor = Color.White;
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
-            btnAgregar.Location = new Point(42, 101);
+            btnAgregar.Location = new Point(48, 72);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(49, 57);
             btnAgregar.TabIndex = 13;
@@ -233,12 +197,93 @@ namespace Frontend
             btnMod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnMod.ForeColor = Color.White;
             btnMod.Image = (Image)resources.GetObject("btnMod.Image");
-            btnMod.Location = new Point(42, 209);
+            btnMod.Location = new Point(48, 180);
             btnMod.Name = "btnMod";
             btnMod.Size = new Size(49, 51);
             btnMod.TabIndex = 12;
             btnMod.UseVisualStyleBackColor = true;
             btnMod.Click += btnMod_Click;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID Cliente";
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.Width = 158;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            nombreDataGridViewTextBoxColumn.Width = 158;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            apellidoDataGridViewTextBoxColumn.Width = 157;
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn1.HeaderText = "ID Cliente";
+            iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            iDDataGridViewTextBoxColumn1.Width = 158;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            nombreDataGridViewTextBoxColumn1.Width = 158;
+            // 
+            // apellidoDataGridViewTextBoxColumn1
+            // 
+            apellidoDataGridViewTextBoxColumn1.DataPropertyName = "Apellido";
+            apellidoDataGridViewTextBoxColumn1.HeaderText = "Apellido";
+            apellidoDataGridViewTextBoxColumn1.Name = "apellidoDataGridViewTextBoxColumn1";
+            apellidoDataGridViewTextBoxColumn1.Width = 157;
+            // 
+            // clienteBindingSource2
+            // 
+            clienteBindingSource2.DataSource = typeof(Cliente);
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "DNI";
+            dataGridViewTextBoxColumn1.HeaderText = "DNI";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn2
+            // 
+            apellidoDataGridViewTextBoxColumn2.DataPropertyName = "Apellido";
+            apellidoDataGridViewTextBoxColumn2.HeaderText = "Apellido";
+            apellidoDataGridViewTextBoxColumn2.Name = "apellidoDataGridViewTextBoxColumn2";
+            apellidoDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn2
+            // 
+            nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
+            nombreDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            iDDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // ListaClientes
             // 
@@ -259,8 +304,8 @@ namespace Frontend
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)clienteBindingSource).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)clienteBindingSource2).EndInit();
             ResumeLayout(false);
         }
 
@@ -270,18 +315,23 @@ namespace Frontend
         private Label label1;
         private DataGridView dgvClientes;
         private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private BindingSource clienteBindingSource;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btnVolver;
         private Button btnAgregar;
         private Panel panel1;
-        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private Button btnDelete;
         private Button button2;
         private Button btnMod;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private BindingSource clienteBindingSource2;
     }
 }

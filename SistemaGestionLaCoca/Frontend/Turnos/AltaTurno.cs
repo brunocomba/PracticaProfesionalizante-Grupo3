@@ -1,4 +1,5 @@
-﻿using FrontEnd;
+﻿using Frontend.Turnos;
+using FrontEnd;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,6 @@ namespace Frontend
         public AltaTurno()
         {
             InitializeComponent();
-            cmboxDeporte.SelectedIndexChanged += cmboxDeporte_SelectedIndexChanged;
-            //  MOSTRAR UN MENSAJE AL PASAR EL MOUSE POR ARRIBA DEL BOTON.
-            toolTip1.SetToolTip(btnAgregarClientes, "Agregar un nuevo cliente.");
-            toolTip1.SetToolTip(btnAddCanchas, "Agregar nuevas canchas.");
-
-
         }
 
         Principal principal = new Principal();
@@ -34,9 +29,9 @@ namespace Frontend
         {
             foreach (Cancha deporte in nuevosDeportes)
             {
-                if (!cmboxDeporte.Items.Cast<string>().Any(item => item.Equals(deporte.Tipo)))
+                if (!cmboxDeporte.Items.Cast<string>().Any(item => item.Equals(deporte.Deporte)))
                 {
-                    cmboxDeporte.Items.Add(deporte.Tipo);
+                    cmboxDeporte.Items.Add(deporte.Deporte);
                 }
             }
         }
@@ -45,31 +40,31 @@ namespace Frontend
 
         private void AltaTurno_Load(object sender, EventArgs e)
         {
-            cmboxCliente.DisplayMember = "nombreYapellido"; // Establecer la propiedad a mostrar en el ComboBox
+            cmboxCliente.Items.AddRange(principal.ObtenerListClientes().ToArray());
+
+
+            cmboxDeporte.Items.AddRange(principal.DeportesSinRepetir().ToArray());
+            cmboxDeporte.DisplayMember = "Deporte";   // Establecer la propiedad a mostrar en el ComboBox
 
 
             //cmboxCliente.Items.AddRange(Principal.ObtenerClientes().ToArray());
 
 
-           // AgregarDeportesUnicos(Principal.ObtenerCanchas());
+            // AgregarDeportesUnicos(Principal.ObtenerCanchas());
             //cmboxDeporte.DisplayMember = "Tipo";
             //cmboxDeporte.Items.AddRange(Principal.ObtenerCanchas().ToArray()); 
 
-            dateTimePicker1.Value = DateTime.Now; // Establecer el dia de la fecha al ejecutarse.
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            FechaTurno.Value = DateTime.Now; // Establecer el dia de la fecha al ejecutarse.
+            FechaTurno.CustomFormat = "dd/MM/yyyy";
 
             // Cargar horarios de turnos.
-            cmboxHorarios.Items.Add("16:00");
-            cmboxHorarios.Items.Add("16:30");
-            cmboxHorarios.Items.Add("17:00");
-            cmboxHorarios.Items.Add("17:30");
-            cmboxHorarios.Items.Add("18:00");
-            cmboxHorarios.Items.Add("18:30");
-            cmboxHorarios.Items.Add("19:00");
-            cmboxHorarios.Items.Add("19:30");
-            cmboxHorarios.Items.Add("20:00");
-            cmboxHorarios.Items.Add("20:30");
-            cmboxHorarios.Items.Add("21:00");
+
+
+
+            //  MOSTRAR UN MENSAJE AL PASAR EL MOUSE POR ARRIBA DEL BOTON.
+            toolTip1.SetToolTip(btnAgregarClientes, "Agregar un nuevo cliente.");
+            toolTip1.SetToolTip(btnAddCanchas, "Agregar nuevas canchas.");
+            toolTip1.SetToolTip(btnAgregarHorario, "Agregar nuevos horarios.");
 
 
         }
@@ -89,14 +84,14 @@ namespace Frontend
         {
 
             string deporteElegido = cmboxDeporte.SelectedItem.ToString();
-           // List<Cancha> canchasFiltradas = Principal.ObtenerCanchas().Where(cancha => cancha.Tipo == deporteElegido).ToList();
 
-            cmboxCancha.DataSource = canchasFiltradas;
-            cmboxCancha.DisplayMember = "idYnombre";
+            cmboxCancha.Items.AddRange(principal.CanchasDeSoloUnDeporte(deporteElegido).ToArray());
 
-            cmboxPrecio.DataSource = canchasFiltradas;
-            cmboxPrecio.DisplayMember = "precio";
-            string canchaElegida = cmboxCancha.SelectedItem.ToString();
+            cmboxCancha.DisplayMember = "Nombre";
+
+
+
+
 
 
 
@@ -105,23 +100,6 @@ namespace Frontend
 
         }
 
-
-
-        private void cmboxPrecio_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void cmboxCancha_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -140,53 +118,50 @@ namespace Frontend
 
         }
 
-
-        private static bool TurnoExiste(string hora, string fecha)
-        {
-
-            foreach (Turno turno in Principal.ObtenerTurnos())
-            {
-                if (turno.Horario == hora && turno.Fecha == fecha)
-                {
-                    return true; // El turno ya existe en la lista
-                }
-            }
-            return false; // El turno no existe en la lista
-        }
-
         private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
-
+            Cliente clienteElegido = (Cliente)cmboxCliente.SelectedItem;
+            Cancha canchaElegida = (Cancha)cmboxCancha.SelectedItem;
+            DateTime fecha = FechaTurno.Value; // obtener la fecha del timePicker
+            string fechaSelecciona = fecha.ToString("yyyy-MM-dd");  // convertirla a string con el formato de fecha solamente
             string horario = cmboxHorarios.SelectedItem.ToString();
-            string fecha = dateTimePicker1.Value.ToShortDateString();
 
-            if (TurnoExiste(horario, fecha) == true)
+            MessageBox.Show($"DATOS DEL TURNO\nCliente: {clienteElegido.Nombre} {clienteElegido.Apellido}\n" +
+                $"Fecha: {fechaSelecciona}\nHora: {horario}\nDeporte: {canchaElegida.nombre}\nDeporte: {canchaElegida.Deporte}");
+
+            try
             {
-                MessageBox.Show("No se puede registrar el turno por....", "ATENCION.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                principal.AltaTurno(clienteElegido, canchaElegida, fechaSelecciona, horario);
 
             }
-
-            else
+            catch (Exception turnoYaRegistrado)
             {
-                principal.altaTurno((Cancha)cmboxCancha.SelectedItem, (Cliente)cmboxCliente.SelectedItem, dateTimePicker1.Value.ToShortDateString(), cmboxHorarios.Text);
-                MessageBox.Show($"Turno creado con exito al cliente {cmboxCliente.Text}");
+                MessageBox.Show("Error: " + turnoYaRegistrado.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void cmboxCancha_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cancha canchaElegida = (Cancha)cmboxCancha.SelectedItem;
+            txtPrecio.Text = canchaElegida.Precio.ToString(); // mostrar en el textbox de precio,el precio de la cancha elegida
+
+            if (canchaElegida.Deporte == "FUTBOL")
+            {
+                cmboxHorarios.Items.AddRange(Principal.ListaHorariosFutbol().ToArray());
+            }
+            if (canchaElegida.Deporte == "BASQUET")
+            {
+                cmboxHorarios.Items.AddRange(Principal.ListaHorariosBasquet().ToArray());
             }
 
-
-
-            // HACER VALIDACIONES
-            // VER TEMAS HORARIOS.
         }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAgregarHorario_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            AgregarHorario agregarHorario = new AgregarHorario();
+            agregarHorario.Show();
+            this.Hide();
         }
     }
 }

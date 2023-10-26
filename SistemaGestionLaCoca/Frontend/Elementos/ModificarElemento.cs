@@ -1,0 +1,68 @@
+﻿using Logica.Clases;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Frontend.Elementos
+{
+    public partial class ModificarElemento : Form
+    {
+        public ModificarElemento()
+        {
+            InitializeComponent();
+        }
+
+        private Elemento elementoQueEdito;
+        public void ModificacionElemento(Elemento elemento)
+        {
+            elementoQueEdito = elemento;
+            txtNombre.Text = elementoQueEdito.Nombre;
+            txtStock.Text = elementoQueEdito.Stock.ToString();
+        }
+
+        Principal principal = new Principal();
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{elementoQueEdito.Nombre} por {txtNombre.Text}\n{elementoQueEdito.Stock} por {txtStock.Text}" +
+                    $"\n\nPresione ACEPTAR para continuar.", "ATENCION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (SIoNO == DialogResult.OK)
+                {
+                    principal.ModificarElemento(elementoQueEdito, txtNombre.Text, txtStock.Text);
+                    MessageBox.Show($"El elemento ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    var rtaCancel = MessageBox.Show("Seguro quiere cancelar los cambios?", "Advertencia", MessageBoxButtons.YesNo);
+                    if (rtaCancel == DialogResult.Yes)
+                    {
+                        txtNombre.Clear();
+                        txtStock.Clear();
+                    }
+                }
+            }
+            catch (Exception camposIncompletos) 
+            {
+                MessageBox.Show("Error: " + camposIncompletos.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            StockElementos elementos = new StockElementos();
+            elementos.Show();
+            this.Hide();
+        }
+    }
+}

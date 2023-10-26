@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AsignarElemento));
             groupBox2 = new GroupBox();
             label4 = new Label();
-            button1 = new Button();
+            btnVolver = new Button();
             groupBox1 = new GroupBox();
             label7 = new Label();
             cmboxElementos = new ComboBox();
@@ -66,19 +66,19 @@
             label4.TabIndex = 8;
             label4.Text = "ASIGNAR ELEMENTO A UNA CANCHA";
             // 
-            // button1
+            // btnVolver
             // 
-            button1.BackColor = Color.FromArgb(26, 32, 40);
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.AppWorkspace;
-            button1.Location = new Point(766, 516);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 30);
-            button1.TabIndex = 10;
-            button1.Text = "VOLVER";
-            button1.UseVisualStyleBackColor = false;
+            btnVolver.BackColor = Color.FromArgb(26, 32, 40);
+            btnVolver.FlatAppearance.BorderSize = 2;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.ForeColor = SystemColors.AppWorkspace;
+            btnVolver.Location = new Point(766, 516);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(111, 30);
+            btnVolver.TabIndex = 10;
+            btnVolver.Text = "VOLVER";
+            btnVolver.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -101,7 +101,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(175, 19);
+            label7.Location = new Point(174, 19);
             label7.Name = "label7";
             label7.Size = new Size(89, 16);
             label7.TabIndex = 11;
@@ -188,7 +188,7 @@
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(925, 570);
             Controls.Add(groupBox2);
-            Controls.Add(button1);
+            Controls.Add(btnVolver);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -207,7 +207,7 @@
 
         private GroupBox groupBox2;
         private Label label4;
-        private Button button1;
+        private Button btnVolver;
         private GroupBox groupBox1;
         private Label label7;
         private ComboBox cmboxElementos;

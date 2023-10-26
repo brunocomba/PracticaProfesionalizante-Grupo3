@@ -73,7 +73,6 @@
             // 
             // btnVolver
             // 
-            btnVolver.Enabled = false;
             btnVolver.FlatAppearance.BorderSize = 2;
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -105,7 +104,6 @@
             groupBox3.Size = new Size(475, 408);
             groupBox3.TabIndex = 33;
             groupBox3.TabStop = false;
-            groupBox3.Enter += groupBox3_Enter;
             // 
             // lblErrorDni
             // 
@@ -129,7 +127,6 @@
             // 
             // btnModificar
             // 
-            btnModificar.Enabled = false;
             btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -149,7 +146,6 @@
             txtTEL.Name = "txtTEL";
             txtTEL.Size = new Size(202, 23);
             txtTEL.TabIndex = 30;
-            txtTEL.Validating += txtTEL_Validating;
             // 
             // txtApellido
             // 
@@ -158,7 +154,6 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(202, 23);
             txtApellido.TabIndex = 29;
-            txtApellido.Validating += txtApellido_Validating;
             // 
             // txtDNI
             // 
@@ -167,7 +162,6 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(202, 23);
             txtDNI.TabIndex = 28;
-            txtDNI.Validating += txtDNI_Validating;
             // 
             // label9
             // 
@@ -220,7 +214,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(202, 23);
             txtNombre.TabIndex = 21;
-            txtNombre.Validating += txtNombre_Validating;
             // 
             // label2
             // 

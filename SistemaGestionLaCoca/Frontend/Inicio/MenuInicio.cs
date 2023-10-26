@@ -1,4 +1,5 @@
 ﻿using Frontend;
+using Frontend.Elementos;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace FrontEnd
         }
 
 
-
+        Principal principal = new Principal();
 
         private void btnAdministradores_Click(object sender, EventArgs e)
         {
@@ -45,15 +46,21 @@ namespace FrontEnd
 
         private void MenuInicio_Load(object sender, EventArgs e)
         {
-
-
+            dgvTurnosDeHoy.DataSource = principal.turnosDelDia();
 
         }
 
         private void btnCanchas_Click(object sender, EventArgs e)
         {
             ListaCanchas listaCanchas = new ListaCanchas();
-            listaCanchas.Show();    
+            listaCanchas.Show();
+            this.Hide();
+        }
+
+        private void btneElementos_Click(object sender, EventArgs e)
+        {
+            StockElementos listaElementos = new StockElementos();
+            listaElementos.Show();
             this.Hide();
         }
     }

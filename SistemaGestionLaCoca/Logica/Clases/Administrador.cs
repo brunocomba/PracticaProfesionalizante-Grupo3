@@ -14,7 +14,7 @@ namespace Logica.Clases
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int DNI { get; set; }
-        public decimal Telefono { get; set; }
+        public long Telefono { get; set; }
         public string Usuario { get; set; }
         public string Contrasenia { get; set; }
     }

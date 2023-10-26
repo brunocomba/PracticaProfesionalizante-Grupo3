@@ -13,7 +13,25 @@
     <Compile Update="Elementos Cancha\AsignarElemento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Elementos Cancha\ListaElementosCancha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Elementos Cancha\ModificarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Elementos\AgregarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Elementos\AltaElemento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Elementos\StockElementos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Elementos\ModificarElemento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Turnos\AgregarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Turnos\AltaTurno.cs">

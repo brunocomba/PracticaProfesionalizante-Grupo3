@@ -17,16 +17,18 @@ namespace Frontend
         {
             InitializeComponent();
         }
+
+
         Principal principal = new Principal();
         ListaCanchas listaCanchas = new ListaCanchas();
 
-        private Cancha CanchaQueEdito;
 
+        private Cancha CanchaQueEdito;
         public void ModificacionCancha(Cancha cancha)
         {
             CanchaQueEdito = cancha;
-            txtNombre.Text = CanchaQueEdito.Nombre;
-            cmboxTipo.Text = CanchaQueEdito.Tipo;
+            txtNombre.Text = CanchaQueEdito.nombre;
+            cmboxDeporte.Text = CanchaQueEdito.Deporte;
             cmboxCantJugadores.Text = CanchaQueEdito.Cantidad_Jugadores.ToString();
             txtPrecio.Text = CanchaQueEdito.Precio.ToString();
 
@@ -35,12 +37,10 @@ namespace Frontend
 
         private void ModificarCancha_Load(object sender, EventArgs e)
         {
-            cmboxTipo.Items.Add("BASQUET");
-            cmboxTipo.Items.Add("FUTBOL");
-            cmboxTipo.Items.Add("PADEL");
+            cmboxDeporte.Items.Add("BASQUET");
+            cmboxDeporte.Items.Add("FUTBOL");
 
 
-            cmboxCantJugadores.Items.Add("4");
             cmboxCantJugadores.Items.Add("8");
             cmboxCantJugadores.Items.Add("10");
 
@@ -49,26 +49,50 @@ namespace Frontend
 
         private void btnModificarCancha_Click_1(object sender, EventArgs e)
         {
-            var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{CanchaQueEdito.Nombre} por {txtNombre.Text}\n{CanchaQueEdito.Tipo} por {cmboxTipo.Text}\n" +
+
+            // verificar que los combos no esten incompletos
+            try
+            {
+                if (cmboxDeporte.SelectedItem == null || cmboxCantJugadores.SelectedItem == null)
+                {
+                    throw new Exception("No se ha seleccionado ningún elemento en el ComboBox.");  
+                }
+            }
+            catch (Exception comboxImcompletos)
+            {
+                MessageBox.Show("Error: " + comboxImcompletos.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // si lo estan tira este msj de error
+
+            }
+
+            try
+            {
+                var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{CanchaQueEdito.nombre} por {txtNombre.Text}\n{CanchaQueEdito.Deporte} por {cmboxDeporte.Text}\n" +
                 $"{CanchaQueEdito.Cantidad_Jugadores} por {cmboxCantJugadores.Text}\n{CanchaQueEdito.Precio} por {txtPrecio.Text}\n\nPresione ACEPTAR para continuar.   ",
                 "ATENCION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (SIoNO == DialogResult.OK)
-            {
-                principal.modificarCancha(CanchaQueEdito, txtNombre.Text, cmboxTipo.Text, int.Parse(cmboxCantJugadores.Text),
-                int.Parse(txtPrecio.Text));
-
-                MessageBox.Show("Cancha modificado con exito!");
-                listaCanchas.Show();
-                this.Hide();
-            }
-            else
-            {
-                var rtaCancel = MessageBox.Show("Seguro quiere cancelar los cambios?", "Advertencia", MessageBoxButtons.YesNo);
-                if (rtaCancel == DialogResult.Yes)
+                if (SIoNO == DialogResult.OK)
                 {
-                    listaCanchas.Show();
-                    this.Hide();
+                    principal.modificarCancha(CanchaQueEdito, txtNombre.Text, cmboxDeporte.Text, cmboxCantJugadores.Text, txtPrecio.Text);
+
+                    MessageBox.Show($"La cancha ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 }
+                else
+                {
+                    var rtaCancel = MessageBox.Show("Seguro quiere cancelar los cambios?", "Advertencia", MessageBoxButtons.YesNo);
+                    if (rtaCancel == DialogResult.Yes)
+                    {
+                        txtNombre.Clear();
+                        txtPrecio.Clear();
+                        cmboxCantJugadores.Text = "";
+                        cmboxDeporte.Text = "";
+
+                    }
+                }
+
+            }
+            catch (Exception camposIncompletos)
+            {
+                MessageBox.Show("Error: " + camposIncompletos.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -82,17 +106,16 @@ namespace Frontend
 
 
 
-
-        // Deshabilitar que se pueda introducir texto en el comboBox una vez apretado el mismo
-        private void cmboxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        // DESAHABILITAR LA OPCION DE PODER INGRESAR TEXTO EN EL COMBO UNA VEZ HAYA HECHO CLICK EN EL COMBOBOX ESPECIFICO.
+        private void cmboxDeporte_MouseClick(object sender, MouseEventArgs e)
         {
-            cmboxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            cmboxDeporte.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        private void cmboxCantJugadores_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void cmboxCantJugadores_MouseClick(object sender, MouseEventArgs e)
+        {
             cmboxCantJugadores.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
     }
 }

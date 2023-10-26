@@ -32,7 +32,7 @@ namespace Frontend.Elementos_Cancha
             Elemento elementoElegido = (Elemento)cmboxElementos.SelectedItem;
 
             principal.AsigElementoCancha(canchaElegida, elementoElegido, int.Parse(txtCantidad.Text));
-            MessageBox.Show($"El elemento: {elementoElegido.Nombre} fue asignado a la cancha: {canchaElegida.Nombre} exitosamente! ");
+            MessageBox.Show($"El elemento: {elementoElegido.Nombre} fue asignado a la cancha: {canchaElegida.nombre} exitosamente! ");
         }
     }
 }

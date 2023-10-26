@@ -132,7 +132,6 @@
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(202, 23);
             txtTel.TabIndex = 30;
-            txtTel.Validating += txtTel_Validating;
             // 
             // txtApellido
             // 
@@ -141,7 +140,6 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(202, 23);
             txtApellido.TabIndex = 29;
-            txtApellido.Validating += txtApellido_Validating;
             // 
             // txtDNI
             // 
@@ -150,7 +148,6 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(202, 23);
             txtDNI.TabIndex = 28;
-            txtDNI.Validating += txtDNI_Validating;
             // 
             // label6
             // 
@@ -203,7 +200,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(202, 23);
             txtNombre.TabIndex = 21;
-            txtNombre.Validating += txtNombre_Validating;
             // 
             // label2
             // 
@@ -244,7 +240,6 @@
             MaximizeBox = false;
             Name = "AltaCliente";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += AltaCliente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

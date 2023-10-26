@@ -44,8 +44,8 @@ namespace Logica.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Telefono")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<long>("Telefono")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Usuario")
                         .IsRequired()
@@ -67,14 +67,14 @@ namespace Logica.Migrations
                     b.Property<int>("Cantidad_Jugadores")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("Deporte")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Precio")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Tipo")
+                    b.Property<string>("nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -102,8 +102,8 @@ namespace Logica.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Telefono")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<long>("Telefono")
+                        .HasColumnType("bigint");
 
                     b.HasKey("ID");
 
@@ -164,10 +164,13 @@ namespace Logica.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("Cancha_TurnoID")
+                    b.Property<int>("CanchaID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cliente_TurnoID")
+                    b.Property<int>("ClienteID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Condicion")
                         .HasColumnType("int");
 
                     b.Property<string>("Fecha")
@@ -178,14 +181,11 @@ namespace Logica.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Reservado")
-                        .HasColumnType("bit");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("Cancha_TurnoID");
+                    b.HasIndex("CanchaID");
 
-                    b.HasIndex("Cliente_TurnoID");
+                    b.HasIndex("ClienteID");
 
                     b.ToTable("Turnos");
                 });
@@ -211,21 +211,21 @@ namespace Logica.Migrations
 
             modelBuilder.Entity("Logica.Clases.Turno", b =>
                 {
-                    b.HasOne("Logica.Clases.Cancha", "Cancha_Turno")
+                    b.HasOne("Logica.Clases.Cancha", "Cancha")
                         .WithMany()
-                        .HasForeignKey("Cancha_TurnoID")
+                        .HasForeignKey("CanchaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Logica.Clases.Cliente", "Cliente_Turno")
+                    b.HasOne("Logica.Clases.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("Cliente_TurnoID")
+                        .HasForeignKey("ClienteID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cancha_Turno");
+                    b.Navigation("Cancha");
 
-                    b.Navigation("Cliente_Turno");
+                    b.Navigation("Cliente");
                 });
 #pragma warning restore 612, 618
         }
