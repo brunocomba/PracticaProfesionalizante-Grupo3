@@ -1,4 +1,5 @@
 ﻿using Frontend;
+using Logica;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -63,9 +64,14 @@ namespace FrontEnd
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (confirmacion == DialogResult.OK)
                 {
-                    MessageBox.Show($"La cancha {txtNombre.Text} fue agregado con exito!", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     principal.AltaCancha(txtNombre.Text, cmboxDeporte.Text, cmboxCantJugadores.Text, (txtPrecio.Text));
-                    
+                    MessageBox.Show($"La cancha {txtNombre.Text} fue agregado con exito!", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtNombre.Clear();
+                    cmboxCantJugadores.Text = "";
+                    cmboxDeporte.Text = "";
+                    txtPrecio.Clear();
+
                 }
                 else
                 {
@@ -92,6 +98,33 @@ namespace FrontEnd
         {
             this.Hide();
             formularioPrevio.Show();
+        }
+
+        private void AltaCanchas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+
         }
     }
 }

@@ -240,6 +240,8 @@
             MaximizeBox = false;
             Name = "AltaCliente";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += AltaCliente_FormClosing;
+            Load += AltaCliente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

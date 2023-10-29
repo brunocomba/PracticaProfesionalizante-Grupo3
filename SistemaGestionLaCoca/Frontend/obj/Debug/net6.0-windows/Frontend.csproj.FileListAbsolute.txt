@@ -70,10 +70,9 @@ C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos_Cancha.AsignarElemento.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos.AltaElemento.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos_Cancha.ListaElementosCancha.resources
-C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos_Cancha.ModificarAsignacion.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos.ModificarElemento.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos.StockElementos.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net6.0-windows\Logica.dll
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\bin\Debug\net6.0-windows\Logica.pdb
-C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Turnos.AgregarHorario.resources
 C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Elementos.AgregarStock.resources
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Turnos.ModificarTurno.resources

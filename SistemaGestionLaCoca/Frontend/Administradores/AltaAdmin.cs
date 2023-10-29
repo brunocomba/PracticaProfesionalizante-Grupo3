@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using Logica;
+using Logica.Clases;
 using System.ComponentModel;
 
 
@@ -29,6 +30,14 @@ namespace FrontEnd
                 {
                     principal.AltaAdmi(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTel.Text, txtUser.Text, txtContra.Text, txtConfirContra.Text);
                     MessageBox.Show($"El  Administrador {txtNombre.Text} {txtApellido.Text} ha sido creado con exito!", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtNombre.Clear();
+                    txtApellido.Clear();
+                    txtDNI.Clear();
+                    txtTel.Clear();
+                    txtUser.Clear();
+                    txtContra.Clear();
+                    txtConfirContra.Clear();
                 }
                 else
                 {
@@ -82,7 +91,31 @@ namespace FrontEnd
 
         }
 
+        private void AltaAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
 
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 
 }

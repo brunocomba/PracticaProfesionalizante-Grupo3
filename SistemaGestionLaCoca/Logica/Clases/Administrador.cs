@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,5 +18,14 @@ namespace Logica.Clases
         public long Telefono { get; set; }
         public string Usuario { get; set; }
         public string Contrasenia { get; set; }
+
+        public SioNo Logueado {  get; set; } 
+        public enum SioNo
+        {
+            NO = 0,
+            SI = 1
+        }
+
+        
     }
 }

@@ -73,12 +73,13 @@
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(766, 516);
+            btnVolver.Location = new Point(766, 509);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(111, 30);
+            btnVolver.Size = new Size(111, 37);
             btnVolver.TabIndex = 10;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // groupBox1
             // 
@@ -101,11 +102,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(174, 19);
+            label7.Location = new Point(154, 19);
             label7.Name = "label7";
-            label7.Size = new Size(89, 16);
+            label7.Size = new Size(137, 16);
             label7.TabIndex = 11;
-            label7.Text = "ASIGNACION";
+            label7.Text = "DATOS ASIGNACION";
             // 
             // cmboxElementos
             // 
@@ -195,6 +196,7 @@
             MaximizeBox = false;
             Name = "AsignarElemento";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += AsignarElemento_FormClosing;
             Load += AsignarElemento_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();

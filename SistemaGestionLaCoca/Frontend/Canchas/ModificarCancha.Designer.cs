@@ -230,6 +230,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "ModificarCancha";
+            FormClosing += ModificarCancha_FormClosing;
             Load += ModificarCancha_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();

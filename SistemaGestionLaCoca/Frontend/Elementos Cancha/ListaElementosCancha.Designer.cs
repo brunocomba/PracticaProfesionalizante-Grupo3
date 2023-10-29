@@ -34,22 +34,16 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaElementosCancha));
             dgvElementosCancha = new DataGridView();
-            elementoCanchaBindingSource2 = new BindingSource(components);
-            elementoCanchaBindingSource = new BindingSource(components);
             btnVolver = new Button();
             panel2 = new Panel();
             btnDeleteAsig = new Button();
             btnAgregarAsig = new Button();
-            btnModAsig = new Button();
             groupBox1 = new GroupBox();
             label1 = new Label();
-            elementoCanchaBindingSource1 = new BindingSource(components);
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dgvElementosCancha).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)elementoCanchaBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)elementoCanchaBindingSource).BeginInit();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)elementoCanchaBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // dgvElementosCancha
@@ -83,7 +77,7 @@
             dgvElementosCancha.DefaultCellStyle = dataGridViewCellStyle2;
             dgvElementosCancha.EnableHeadersVisualStyles = false;
             dgvElementosCancha.GridColor = Color.MidnightBlue;
-            dgvElementosCancha.Location = new Point(228, 124);
+            dgvElementosCancha.Location = new Point(225, 124);
             dgvElementosCancha.Name = "dgvElementosCancha";
             dgvElementosCancha.ReadOnly = true;
             dgvElementosCancha.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -99,14 +93,6 @@
             dgvElementosCancha.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvElementosCancha.Size = new Size(851, 579);
             dgvElementosCancha.TabIndex = 21;
-            // 
-            // elementoCanchaBindingSource2
-            // 
-            elementoCanchaBindingSource2.DataSource = typeof(Logica.Clases.ElementoCancha);
-            // 
-            // elementoCanchaBindingSource
-            // 
-            elementoCanchaBindingSource.DataSource = typeof(Logica.Clases.ElementoCancha);
             // 
             // btnVolver
             // 
@@ -127,7 +113,6 @@
             panel2.BackColor = Color.SlateGray;
             panel2.Controls.Add(btnDeleteAsig);
             panel2.Controls.Add(btnAgregarAsig);
-            panel2.Controls.Add(btnModAsig);
             panel2.Location = new Point(-3, 73);
             panel2.Name = "panel2";
             panel2.Size = new Size(151, 672);
@@ -141,7 +126,7 @@
             btnDeleteAsig.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDeleteAsig.ForeColor = Color.White;
             btnDeleteAsig.Image = (Image)resources.GetObject("btnDeleteAsig.Image");
-            btnDeleteAsig.Location = new Point(44, 279);
+            btnDeleteAsig.Location = new Point(44, 188);
             btnDeleteAsig.Name = "btnDeleteAsig";
             btnDeleteAsig.Size = new Size(49, 56);
             btnDeleteAsig.TabIndex = 24;
@@ -162,21 +147,6 @@
             btnAgregarAsig.TabIndex = 23;
             btnAgregarAsig.UseVisualStyleBackColor = true;
             btnAgregarAsig.Click += btnAgregarAsig_Click;
-            // 
-            // btnModAsig
-            // 
-            btnModAsig.FlatAppearance.BorderColor = Color.Black;
-            btnModAsig.FlatAppearance.BorderSize = 0;
-            btnModAsig.FlatStyle = FlatStyle.Flat;
-            btnModAsig.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModAsig.ForeColor = Color.White;
-            btnModAsig.Image = (Image)resources.GetObject("btnModAsig.Image");
-            btnModAsig.Location = new Point(44, 177);
-            btnModAsig.Name = "btnModAsig";
-            btnModAsig.Size = new Size(49, 51);
-            btnModAsig.TabIndex = 22;
-            btnModAsig.UseVisualStyleBackColor = true;
-            btnModAsig.Click += btnModAsig_Click;
             // 
             // groupBox1
             // 
@@ -199,10 +169,6 @@
             label1.TabIndex = 0;
             label1.Text = "LISTADO ELEMENTOS POR CANCHA";
             // 
-            // elementoCanchaBindingSource1
-            // 
-            elementoCanchaBindingSource1.DataSource = typeof(Logica.Clases.ElementoCancha);
-            // 
             // ListaElementosCancha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -218,29 +184,24 @@
             MaximizeBox = false;
             Name = "ListaElementosCancha";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ListaElementosCancha_FormClosing;
             Load += ListaElementosCancha_Load;
             ((System.ComponentModel.ISupportInitialize)dgvElementosCancha).EndInit();
-            ((System.ComponentModel.ISupportInitialize)elementoCanchaBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)elementoCanchaBindingSource).EndInit();
             panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)elementoCanchaBindingSource1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dgvElementosCancha;
-        private BindingSource elementoCanchaBindingSource;
         private Button btnVolver;
         private Panel panel2;
         private GroupBox groupBox1;
         private Label label1;
-        private BindingSource elementoCanchaBindingSource1;
-        private BindingSource elementoCanchaBindingSource2;
         private Button btnDeleteAsig;
         private Button btnAgregarAsig;
-        private Button btnModAsig;
+        private ToolTip toolTip1;
     }
 }

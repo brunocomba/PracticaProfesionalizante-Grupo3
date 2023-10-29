@@ -1,11 +1,11 @@
 ﻿
 using Logica.Clases;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace FrontEnd
 {
     public partial class LogIn : Form
     {
-        MenuInicio menuInicio = new MenuInicio();
         public LogIn()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace FrontEnd
             this.Hide();
         }
 
+        MenuInicio menuInicio = new MenuInicio();
 
         //INICIO DE SESION..
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -30,10 +31,12 @@ namespace FrontEnd
             string password = txtContrasenia.Text;
             try
             {
-                principal.LogIn(user, password);
-                if (principal.LogIn(user, password) == true)
+                bool resultado = principal.LogIn(user, password);
+
+                if (resultado == true)
                 {
-                    MessageBox.Show($"Inicio de sesion exitoso.\n!Bienvenido, {user}!", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    MessageBox.Show($"Inicio de sesion exitoso.\n!Bienvenido, {user}!", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);                  
                     menuInicio.Show();
                     this.Hide();
 

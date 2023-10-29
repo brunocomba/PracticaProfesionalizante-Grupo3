@@ -71,9 +71,9 @@
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(766, 513);
+            btnVolver.Location = new Point(766, 507);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(111, 36);
+            btnVolver.Size = new Size(111, 42);
             btnVolver.TabIndex = 10;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
@@ -168,6 +168,7 @@
             MaximizeBox = false;
             Name = "AltaElemento";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += AltaElemento_FormClosing;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

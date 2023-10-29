@@ -1,4 +1,5 @@
 ﻿using Frontend;
+using Logica;
 using Logica.Clases;
 
 namespace FrontEnd
@@ -15,6 +16,12 @@ namespace FrontEnd
         {
             dgvAdministradores.DataSource = principal.ObtenerListaAdmi();
             dgvAdministradores.Refresh();
+
+
+            toolTip1.SetToolTip(btnAgregar, "Crear nuevo administrador.");
+            toolTip1.SetToolTip(btnModificar, "Modificar un administrador.");
+            toolTip1.SetToolTip(btnEliminar, "Eliminar un administrador.");
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -74,6 +81,32 @@ namespace FrontEnd
             dgvAdministradores.DataSource = null;
             dgvAdministradores.DataSource = principal.ObtenerListaAdmi();
 
+        }
+
+        private void ListaAdmi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using Logica;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,8 @@ namespace Frontend.Elementos
                     principal.ModificarElemento(elementoQueEdito, txtNombre.Text, txtStock.Text);
                     MessageBox.Show($"El elemento ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    txtNombre.Clear();
+                    txtStock.Clear();
                 }
                 else
                 {
@@ -50,7 +53,7 @@ namespace Frontend.Elementos
                     }
                 }
             }
-            catch (Exception camposIncompletos) 
+            catch (Exception camposIncompletos)
             {
                 MessageBox.Show("Error: " + camposIncompletos.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -64,5 +67,35 @@ namespace Frontend.Elementos
             elementos.Show();
             this.Hide();
         }
-    }
-}
+
+        private void ModificarElemento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void ModificarElemento_Load(object sender, EventArgs e)
+        {
+
+        }
+}   }

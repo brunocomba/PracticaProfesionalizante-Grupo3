@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using Logica;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +56,7 @@ namespace Frontend
             {
                 if (cmboxDeporte.SelectedItem == null || cmboxCantJugadores.SelectedItem == null)
                 {
-                    throw new Exception("No se ha seleccionado ningún elemento en el ComboBox.");  
+                    throw new Exception("No se ha seleccionado ningún elemento en el ComboBox.");
                 }
             }
             catch (Exception comboxImcompletos)
@@ -74,7 +75,12 @@ namespace Frontend
                     principal.modificarCancha(CanchaQueEdito, txtNombre.Text, cmboxDeporte.Text, cmboxCantJugadores.Text, txtPrecio.Text);
 
                     MessageBox.Show($"La cancha ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
+                    txtNombre.Clear();
+                    txtPrecio.Clear();
+                    cmboxCantJugadores.Text = "";
+                    cmboxDeporte.Text = "";
+
                 }
                 else
                 {
@@ -116,6 +122,32 @@ namespace Frontend
         {
             cmboxCantJugadores.DropDownStyle = ComboBoxStyle.DropDownList;
 
+        }
+
+        private void ModificarCancha_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

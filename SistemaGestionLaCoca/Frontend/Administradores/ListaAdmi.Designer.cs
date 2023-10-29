@@ -51,6 +51,7 @@ namespace FrontEnd
             usuarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             contraseniaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             administradorBindingSource = new BindingSource(components);
+            toolTip1 = new ToolTip(components);
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAdministradores).BeginInit();
@@ -111,7 +112,7 @@ namespace FrontEnd
             btnEliminar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.Location = new Point(49, 318);
+            btnEliminar.Location = new Point(44, 318);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(49, 56);
             btnEliminar.TabIndex = 3;
@@ -126,7 +127,7 @@ namespace FrontEnd
             btnAgregar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregar.ForeColor = Color.White;
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
-            btnAgregar.Location = new Point(49, 92);
+            btnAgregar.Location = new Point(44, 92);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(49, 57);
             btnAgregar.TabIndex = 1;
@@ -141,7 +142,7 @@ namespace FrontEnd
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
             btnModificar.Image = (Image)resources.GetObject("btnModificar.Image");
-            btnModificar.Location = new Point(49, 208);
+            btnModificar.Location = new Point(44, 208);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(49, 51);
             btnModificar.TabIndex = 2;
@@ -267,6 +268,7 @@ namespace FrontEnd
             MaximizeBox = false;
             Name = "ListaAdmi";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ListaAdmi_FormClosing;
             Load += ListaAdmi_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -296,5 +298,6 @@ namespace FrontEnd
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn contraseniaDataGridViewTextBoxColumn;
+        private ToolTip toolTip1;
     }
 }

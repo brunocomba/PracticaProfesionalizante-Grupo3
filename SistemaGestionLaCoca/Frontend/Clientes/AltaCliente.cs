@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using Logica;
+using Logica.Clases;
 
 namespace Frontend
 {
@@ -18,12 +19,17 @@ namespace Frontend
             try
             {
                 var confirmacion = MessageBox.Show($"Seguro que desea agregar este nuevo cliente?\n" +
-                $" Nombre: {txtNombre.Text}\n Apellido: {txtApellido.Text}\nDNI: {txtDNI.Text}\nTelefono: {txtTel.Text}", "Atencion",MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                $" Nombre: {txtNombre.Text}\n Apellido: {txtApellido.Text}\nDNI: {txtDNI.Text}\nTelefono: {txtTel.Text}", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 if (confirmacion == DialogResult.OK)
                 {
                     principal.AltaCliente(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTel.Text);
                     MessageBox.Show($"El cliente {txtNombre.Text} {txtApellido.Text} fue agregado con exito!", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtNombre.Clear();
+                    txtApellido.Clear();
+                    txtDNI.Clear();
+                    txtTel.Clear();
                 }
                 else
                 {
@@ -51,6 +57,37 @@ namespace Frontend
         {
             this.Hide();
             formPrevio.Show();
+        }
+
+        private void AltaCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AltaCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

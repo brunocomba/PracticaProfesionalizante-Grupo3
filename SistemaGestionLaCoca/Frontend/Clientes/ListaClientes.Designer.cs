@@ -38,6 +38,11 @@ namespace Frontend
             groupBox1 = new GroupBox();
             label1 = new Label();
             dgvClientes = new DataGridView();
+            iDDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            apellidoDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             btnVolver = new Button();
             panel1 = new Panel();
             btnDelete = new Button();
@@ -50,11 +55,7 @@ namespace Frontend
             nombreDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             apellidoDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             clienteBindingSource2 = new BindingSource(components);
-            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            apellidoDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            iDDataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            toolTip1 = new ToolTip(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             panel1.SuspendLayout();
@@ -131,6 +132,41 @@ namespace Frontend
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvClientes.Size = new Size(788, 561);
             dgvClientes.TabIndex = 2;
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            iDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn2
+            // 
+            nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
+            nombreDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn2
+            // 
+            apellidoDataGridViewTextBoxColumn2.DataPropertyName = "Apellido";
+            apellidoDataGridViewTextBoxColumn2.HeaderText = "Apellido";
+            apellidoDataGridViewTextBoxColumn2.Name = "apellidoDataGridViewTextBoxColumn2";
+            apellidoDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "DNI";
+            dataGridViewTextBoxColumn1.HeaderText = "DNI";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // btnVolver
             // 
@@ -250,41 +286,6 @@ namespace Frontend
             // 
             clienteBindingSource2.DataSource = typeof(Cliente);
             // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "DNI";
-            dataGridViewTextBoxColumn1.HeaderText = "DNI";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn2
-            // 
-            apellidoDataGridViewTextBoxColumn2.DataPropertyName = "Apellido";
-            apellidoDataGridViewTextBoxColumn2.HeaderText = "Apellido";
-            apellidoDataGridViewTextBoxColumn2.Name = "apellidoDataGridViewTextBoxColumn2";
-            apellidoDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn2
-            // 
-            nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
-            nombreDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // iDDataGridViewTextBoxColumn2
-            // 
-            iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn2.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
-            iDDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // ListaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -300,6 +301,7 @@ namespace Frontend
             MaximizeBox = false;
             Name = "ListaClientes";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ListaClientes_FormClosing;
             Load += ListaClientes_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -333,5 +335,6 @@ namespace Frontend
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private BindingSource clienteBindingSource2;
+        private ToolTip toolTip1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Frontend;
 using Frontend.Elementos;
+using Logica;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace FrontEnd
 {
     public partial class MenuInicio : Form
     {
+
         public MenuInicio()
         {
             InitializeComponent();
@@ -46,8 +48,9 @@ namespace FrontEnd
 
         private void MenuInicio_Load(object sender, EventArgs e)
         {
+            Administrador admLogueado = principal.BuscarAdmLogueado();
             dgvTurnosDeHoy.DataSource = principal.turnosDelDia();
-
+            btnAdministrador.Text = $"{admLogueado.Nombre} {admLogueado.Apellido}";
         }
 
         private void btnCanchas_Click(object sender, EventArgs e)
@@ -62,6 +65,69 @@ namespace FrontEnd
             StockElementos listaElementos = new StockElementos();
             listaElementos.Show();
             this.Hide();
+        }
+
+        
+        private void MenuInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+        private void btnAdministrador_Click(object sender, EventArgs e)
+        {
+            // si no esta visible,  lo va a mostrar
+            if (!panelAdmiLogueado.Visible)
+            {
+                panelAdmiLogueado.Visible = true;
+            }
+            else // si lo esta mostrando, lo va a ocultar
+            {
+                panelAdmiLogueado.Visible = false;
+            }
+        }
+
+        private void btnCambiarCuenta_Click(object sender, EventArgs e)
+        {
+            LogIn logIn = new LogIn();
+            logIn.Show();
+            this.Hide();
+        }
+
+
+        private void btnCerrarCesion_Click(object sender, EventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            Administrador admActual = principal.BuscarAdmLogueado();
+            var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rta == DialogResult.OK)
+            {
+
+                Application.Exit();
+                admActual.Logueado = Administrador.SioNo.NO;
+                context.Administradores.Update(admActual);
+                context.SaveChanges();
+            }
         }
     }
 }

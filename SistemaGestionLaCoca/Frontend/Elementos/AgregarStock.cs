@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using Logica;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,10 +28,21 @@ namespace Frontend.Elementos
 
         private void btnAgregarStock_Click(object sender, EventArgs e)
         {
-            Elemento elementoElegido = (Elemento)cmboxElementos.SelectedItem;
+            try
+            {
+                Elemento elementoElegido = (Elemento)cmboxElementos.SelectedItem;
 
-            principal.AgregarStock(elementoElegido, txtStock.Text);
-            MessageBox.Show($"El stock al elemento: {elementoElegido.Nombre} fue agregado con exito!\n\nStock actual del elemento {elementoElegido.Nombre} es: {elementoElegido.Stock}", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                principal.AgregarStock(elementoElegido, txtStock.Text);
+                MessageBox.Show($"El stock al elemento: {elementoElegido.Nombre} fue agregado con exito!\n\nEl stock actual del elemento {elementoElegido.Nombre} es de: {elementoElegido.Stock}", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtStock.Clear();
+            }
+            catch (Exception camposIncompletos)
+            {
+                MessageBox.Show("Error: " + camposIncompletos.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
 
         }
 
@@ -39,6 +51,32 @@ namespace Frontend.Elementos
             StockElementos stockElementos = new StockElementos();
             stockElementos.Show();
             this.Hide();
+        }
+
+        private void AgregarStock_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

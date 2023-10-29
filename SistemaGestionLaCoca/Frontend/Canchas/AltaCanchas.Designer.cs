@@ -231,6 +231,7 @@
             MaximizeBox = false;
             Name = "AltaCanchas";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += AltaCanchas_FormClosing;
             Load += AltaCanchas_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

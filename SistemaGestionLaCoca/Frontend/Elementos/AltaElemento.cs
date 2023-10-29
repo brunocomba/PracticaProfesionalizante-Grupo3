@@ -1,4 +1,5 @@
-﻿using Logica.Clases;
+﻿using Logica;
+using Logica.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,12 +25,18 @@ namespace Frontend.Elementos
         {
             try
             {
+
                 var confirmacion = MessageBox.Show($"Seguro que desea agregar este nuevo elemento?\n" +
-                $" Nombre: {txtNombre.Text}\n Stock: {txtStock.Text}", "Atencion",  MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                $" Nombre: {txtNombre.Text}\n Stock: {txtStock.Text}", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (confirmacion == DialogResult.OK)
                 {
-                    principal.altaElemento(txtNombre.Text, txtStock.Text);
+                    string nombre = txtNombre.Text.ToUpper(); // convertir el texto en ingresado a mayusculas.
+
+                    principal.altaElemento(nombre, txtStock.Text);
                     MessageBox.Show($"El elemento {txtNombre.Text} fue agregado con exito!", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtNombre.Clear();
+                    txtStock.Clear();
 
                 }
                 else
@@ -40,10 +47,10 @@ namespace Frontend.Elementos
                     {
                         txtNombre.Clear();
                         txtStock.Clear();
-                      
+
                     }
                 }
-                
+
             }
             catch (Exception camposIncompletos)
             {
@@ -57,6 +64,32 @@ namespace Frontend.Elementos
             StockElementos listaElementos = new StockElementos();
             listaElementos.Show();
             this.Hide();
+        }
+
+        private void AltaElemento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

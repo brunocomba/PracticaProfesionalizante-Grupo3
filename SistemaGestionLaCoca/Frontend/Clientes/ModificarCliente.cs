@@ -1,4 +1,5 @@
 ﻿using FrontEnd;
+using Logica;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,6 @@ namespace Frontend
             InitializeComponent();
         }
 
-
-        Principal principal = new Principal();
-        ListaClientes ListaClientes = new ListaClientes();
-
-
-
         private Cliente clienteQueEdito;
 
         // mostar datos del cliente elegido en la grilla
@@ -38,8 +33,8 @@ namespace Frontend
 
         }
 
+        Principal principal = new Principal();
 
-        // VALIDACIONES
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
@@ -51,6 +46,11 @@ namespace Frontend
                     principal.ModificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTEL.Text);
 
                     MessageBox.Show($"El cliente ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtNombre.Clear();
+                    txtApellido.Clear();
+                    txtDNI.Clear();
+                    txtTEL.Clear();
 
                 }
                 else
@@ -76,9 +76,35 @@ namespace Frontend
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            ListaClientes ListaClientes = new ListaClientes();
             ListaClientes.Show();
             this.Hide();
         }
 
-    }
-}
+        private void ModificarCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+}   }

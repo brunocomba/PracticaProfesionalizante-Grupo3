@@ -1,14 +1,6 @@
 ﻿using FrontEnd;
+using Logica;
 using Logica.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Frontend.Elementos
 {
@@ -25,6 +17,10 @@ namespace Frontend.Elementos
         {
             dgvElementos.DataSource = principal.ObtenerElementos();
 
+
+            toolTip1.SetToolTip(btnAgregarElemento, "Crear nuevo elemento.");
+            toolTip1.SetToolTip(btnModElemento, "Modificar un elemento.");
+            toolTip1.SetToolTip(btnDelete, "Eliminar un elemento.");
         }
 
 
@@ -69,6 +65,54 @@ namespace Frontend.Elementos
             AgregarStock agregarStock = new AgregarStock();
             agregarStock.Show();
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            if (dgvElementos.Rows.Count > 0)
+            {
+                Elemento elementoElegido = (Elemento)dgvElementos.CurrentRow.DataBoundItem;
+                var confirmacion = MessageBox.Show($"Seguro que desea eliminar el elemento {elementoElegido.Nombre} del sistema? ", "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.OK)
+                {
+                    principal.RemoveElemento(elementoElegido);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos registrados para eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dgvElementos.DataSource = null;
+            dgvElementos.DataSource = principal.ObtenerElementos();
+        }
+
+        private void StockElementos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

@@ -71,9 +71,9 @@
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(766, 510);
+            btnVolver.Location = new Point(766, 506);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(111, 36);
+            btnVolver.Size = new Size(111, 40);
             btnVolver.TabIndex = 13;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
@@ -168,6 +168,8 @@
             MaximizeBox = false;
             Name = "ModificarElemento";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ModificarElemento_FormClosing;
+            Load += ModificarElemento_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

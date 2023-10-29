@@ -40,6 +40,9 @@ namespace Logica.Migrations
                     b.Property<int>("DNI")
                         .HasColumnType("int");
 
+                    b.Property<int>("Logueado")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -112,11 +115,11 @@ namespace Logica.Migrations
 
             modelBuilder.Entity("Logica.Clases.Elemento", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -125,7 +128,7 @@ namespace Logica.Migrations
                     b.Property<int>("Stock")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Elementos");
                 });
@@ -144,14 +147,14 @@ namespace Logica.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<int>("ElementoID")
+                    b.Property<int>("ElementoId")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.HasIndex("CanchaID");
 
-                    b.HasIndex("ElementoID");
+                    b.HasIndex("ElementoId");
 
                     b.ToTable("ElementoCancha");
                 });
@@ -168,9 +171,6 @@ namespace Logica.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ClienteID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Condicion")
                         .HasColumnType("int");
 
                     b.Property<string>("Fecha")
@@ -200,7 +200,7 @@ namespace Logica.Migrations
 
                     b.HasOne("Logica.Clases.Elemento", "Elemento")
                         .WithMany()
-                        .HasForeignKey("ElementoID")
+                        .HasForeignKey("ElementoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -1,5 +1,6 @@
 ﻿using Frontend.Elementos_Cancha;
 using FrontEnd;
+using Logica;
 using Logica.Clases;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,11 @@ namespace Frontend
         {
             dgvCanchas.DataSource = null;
             dgvCanchas.DataSource = principal.ObtenerListaCanchas();
+
+
+            toolTip1.SetToolTip(btnAgregarCancha, "Crear nueva cancha.");
+            toolTip1.SetToolTip(btnModCancha, "Modificar una cancha.");
+            toolTip1.SetToolTip(btnEliminarCancha, "Eliminar una cancha.");
 
         }
 
@@ -106,5 +112,30 @@ namespace Frontend
             this.Hide();
         }
 
+        private void ListaCanchas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

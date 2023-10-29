@@ -5,7 +5,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace Logica
 {
-    internal class ApplicationDbContex : DbContext
+    public class ApplicationDbContex : DbContext
     {
         public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Cliente> Clientes { get; set; }

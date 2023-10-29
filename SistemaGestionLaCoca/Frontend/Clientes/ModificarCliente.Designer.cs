@@ -240,6 +240,7 @@
             MaximizeBox = false;
             Name = "ModificarCliente";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ModificarCliente_FormClosing;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);

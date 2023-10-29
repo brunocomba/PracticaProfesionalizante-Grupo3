@@ -50,6 +50,7 @@ namespace Frontend
             btnAgregarCancha = new Button();
             btnModCancha = new Button();
             btnElementosDeCancha = new Button();
+            toolTip1 = new ToolTip(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCanchas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource).BeginInit();
@@ -243,9 +244,9 @@ namespace Frontend
             btnElementosDeCancha.FlatStyle = FlatStyle.Flat;
             btnElementosDeCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnElementosDeCancha.ForeColor = Color.White;
-            btnElementosDeCancha.Location = new Point(1111, 138);
+            btnElementosDeCancha.Location = new Point(1095, 138);
             btnElementosDeCancha.Name = "btnElementosDeCancha";
-            btnElementosDeCancha.Size = new Size(116, 44);
+            btnElementosDeCancha.Size = new Size(132, 44);
             btnElementosDeCancha.TabIndex = 9;
             btnElementosDeCancha.Text = "Elementos de cancha";
             btnElementosDeCancha.UseVisualStyleBackColor = true;
@@ -267,6 +268,7 @@ namespace Frontend
             MaximizeBox = false;
             Name = "ListaCanchas";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ListaCanchas_FormClosing;
             Load += ListaCanchas_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -295,5 +297,6 @@ namespace Frontend
         private Button btnEliminarCancha;
         private Button btnAgregarCancha;
         private Button btnModCancha;
+        private ToolTip toolTip1;
     }
 }

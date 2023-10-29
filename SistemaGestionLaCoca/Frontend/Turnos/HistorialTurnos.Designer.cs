@@ -32,9 +32,9 @@ namespace Frontend
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialTurnos));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             label1 = new Label();
             btnVolver = new Button();
@@ -63,6 +63,7 @@ namespace Frontend
             bindingSource1 = new BindingSource(components);
             toolTip1 = new ToolTip(components);
             dgvTurnos = new DataGridView();
+            turnoBindingSource10 = new BindingSource(components);
             btnBuscar = new Button();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -79,6 +80,7 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource10).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -286,23 +288,23 @@ namespace Frontend
             dgvTurnos.BorderStyle = BorderStyle.None;
             dgvTurnos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTurnos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle4.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvTurnos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvTurnos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTurnos.EnableHeadersVisualStyles = false;
             dgvTurnos.GridColor = Color.MidnightBlue;
             dgvTurnos.Location = new Point(208, 169);
@@ -311,16 +313,21 @@ namespace Frontend
             dgvTurnos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvTurnos.RowHeadersVisible = false;
             dgvTurnos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(49, 66, 82);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dgvTurnos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(49, 66, 82);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dgvTurnos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvTurnos.RowTemplate.Height = 25;
             dgvTurnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTurnos.Size = new Size(872, 561);
             dgvTurnos.TabIndex = 19;
+            dgvTurnos.CellContentClick += dgvTurnos_CellContentClick;
+            // 
+            // turnoBindingSource10
+            // 
+            turnoBindingSource10.DataSource = typeof(Turno);
             // 
             // btnBuscar
             // 
@@ -353,6 +360,7 @@ namespace Frontend
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "HistorialTurnos";
+            FormClosing += HistorialTurnos_FormClosing;
             Load += HistorialTurnos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -370,6 +378,7 @@ namespace Frontend
             ((System.ComponentModel.ISupportInitialize)turnoBindingSource9).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)turnoBindingSource10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -417,5 +426,6 @@ namespace Frontend
         private ToolTip toolTip1;
         private DataGridView dgvTurnos;
         private Button btnBuscar;
+        private BindingSource turnoBindingSource10;
     }
 }

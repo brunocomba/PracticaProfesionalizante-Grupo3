@@ -4,12 +4,13 @@
     "\\Frontend",
     "\\Frontend\\Administradores",
     "\\Frontend\\Canchas",
+    "\\Frontend\\Elementos",
     "\\Frontend\\Elementos Cancha",
     "\\Frontend\\Inicio",
     "\\Frontend\\Turnos",
     "\\Logica",
     "\\Logica\\Clases"
   ],
-  "SelectedNode": "\\Frontend\\Canchas\\AltaCanchas.cs",
+  "SelectedNode": "\\Frontend\\Turnos\\HistorialTurnos.cs",
   "PreviewInSolutionExplorer": false
 }

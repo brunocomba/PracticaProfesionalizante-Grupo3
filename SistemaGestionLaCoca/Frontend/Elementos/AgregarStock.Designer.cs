@@ -71,9 +71,9 @@
             btnVolver.FlatStyle = FlatStyle.Flat;
             btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.AppWorkspace;
-            btnVolver.Location = new Point(766, 513);
+            btnVolver.Location = new Point(766, 509);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(111, 35);
+            btnVolver.Size = new Size(111, 39);
             btnVolver.TabIndex = 13;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = false;
@@ -171,6 +171,7 @@
             MaximizeBox = false;
             Name = "AgregarStock";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += AgregarStock_FormClosing;
             Load += AgregarStock_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();

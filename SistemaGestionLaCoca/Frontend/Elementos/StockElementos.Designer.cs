@@ -34,7 +34,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockElementos));
             dgvElementos = new DataGridView();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             stockDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             elementoBindingSource = new BindingSource(components);
@@ -46,6 +45,7 @@
             groupBox1 = new GroupBox();
             label1 = new Label();
             btnAgregarStock = new Button();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dgvElementos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)elementoBindingSource).BeginInit();
             panel2.SuspendLayout();
@@ -74,7 +74,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvElementos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvElementos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvElementos.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, stockDataGridViewTextBoxColumn });
+            dgvElementos.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, stockDataGridViewTextBoxColumn });
             dgvElementos.DataSource = elementoBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
@@ -102,13 +102,6 @@
             dgvElementos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvElementos.Size = new Size(858, 577);
             dgvElementos.TabIndex = 17;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -166,6 +159,7 @@
             btnDelete.Size = new Size(49, 56);
             btnDelete.TabIndex = 20;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnAgregarElemento
             // 
@@ -223,7 +217,7 @@
             btnAgregarStock.FlatAppearance.BorderSize = 2;
             btnAgregarStock.FlatStyle = FlatStyle.Flat;
             btnAgregarStock.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregarStock.ForeColor = SystemColors.AppWorkspace;
+            btnAgregarStock.ForeColor = Color.White;
             btnAgregarStock.Location = new Point(1103, 142);
             btnAgregarStock.Name = "btnAgregarStock";
             btnAgregarStock.Size = new Size(116, 44);
@@ -248,6 +242,7 @@
             MaximizeBox = false;
             Name = "StockElementos";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += StockElementos_FormClosing;
             Load += ListaElementos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvElementos).EndInit();
             ((System.ComponentModel.ISupportInitialize)elementoBindingSource).EndInit();
@@ -272,5 +267,6 @@
         private Button btnAgregarElemento;
         private Button btnModElemento;
         private Button btnAgregarStock;
+        private ToolTip toolTip1;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaAdmin));
             DatosPers = new GroupBox();
             txtDNI = new TextBox();
@@ -56,11 +55,9 @@
             lblErrorPass = new Label();
             label10 = new Label();
             label9 = new Label();
-            errorProviderPass = new ErrorProvider(components);
             groupBox1 = new GroupBox();
             DatosPers.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProviderPass).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -357,11 +354,6 @@
             label9.TabIndex = 18;
             label9.Text = "DATOS USUARIO";
             // 
-            // errorProviderPass
-            // 
-            errorProviderPass.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
-            errorProviderPass.ContainerControl = this;
-            // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.SlateGray;
@@ -388,11 +380,11 @@
             MaximizeBox = false;
             Name = "AltaAdmin";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += AltaAdmin_FormClosing;
             DatosPers.ResumeLayout(false);
             DatosPers.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProviderPass).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -424,7 +416,6 @@
         private ErrorProvider errorProvider2;
         private ErrorProvider errorProvider3;
         private ErrorProvider errorProvider4;
-        private ErrorProvider errorProviderPass;
         private Label lblErrorTel;
         private Label lblErrorDni;
         private GroupBox groupBox1;

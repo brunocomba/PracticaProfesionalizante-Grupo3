@@ -386,6 +386,7 @@
             MaximizeBox = false;
             Name = "ModificarAdmi";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += ModificarAdmi_FormClosing;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderPass).EndInit();

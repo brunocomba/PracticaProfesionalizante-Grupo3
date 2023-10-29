@@ -49,11 +49,9 @@
             label6 = new Label();
             btnAgregarCancha = new Button();
             label5 = new Label();
-            button1 = new Button();
-            iconToolStripButton1 = new FontAwesome.Sharp.IconToolStripButton();
+            btnVolver = new Button();
             toolTip1 = new ToolTip(components);
             groupBox3 = new GroupBox();
-            btnAgregarHorario = new Button();
             txtPrecio = new TextBox();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -104,20 +102,20 @@
             btnAddCanchas.FlatStyle = FlatStyle.Popup;
             btnAddCanchas.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddCanchas.ForeColor = Color.White;
-            btnAddCanchas.Location = new Point(339, 214);
+            btnAddCanchas.Location = new Point(387, 214);
             btnAddCanchas.Name = "btnAddCanchas";
             btnAddCanchas.Size = new Size(32, 28);
             btnAddCanchas.TabIndex = 19;
             btnAddCanchas.Text = "+";
             btnAddCanchas.UseVisualStyleBackColor = false;
-            btnAddCanchas.Click += btnAddHorarios_Click;
+            btnAddCanchas.Click += btnAddCanchas_Click;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(145, 19);
+            label9.Location = new Point(165, 19);
             label9.Name = "label9";
             label9.Size = new Size(100, 16);
             label9.TabIndex = 5;
@@ -131,7 +129,7 @@
             cmboxCliente.FormattingEnabled = true;
             cmboxCliente.Location = new Point(95, 76);
             cmboxCliente.Name = "cmboxCliente";
-            cmboxCliente.Size = new Size(226, 23);
+            cmboxCliente.Size = new Size(276, 23);
             cmboxCliente.TabIndex = 7;
             // 
             // label3
@@ -151,13 +149,13 @@
             btnAgregarClientes.FlatStyle = FlatStyle.Popup;
             btnAgregarClientes.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarClientes.ForeColor = Color.White;
-            btnAgregarClientes.Location = new Point(339, 75);
+            btnAgregarClientes.Location = new Point(387, 74);
             btnAgregarClientes.Name = "btnAgregarClientes";
             btnAgregarClientes.Size = new Size(32, 28);
             btnAgregarClientes.TabIndex = 12;
             btnAgregarClientes.Text = "+";
             btnAgregarClientes.UseVisualStyleBackColor = false;
-            btnAgregarClientes.Click += button2_Click;
+            btnAgregarClientes.Click += btnAgregarClientes_Click;
             // 
             // cmboxDeporte
             // 
@@ -166,7 +164,7 @@
             cmboxDeporte.FormattingEnabled = true;
             cmboxDeporte.Location = new Point(95, 148);
             cmboxDeporte.Name = "cmboxDeporte";
-            cmboxDeporte.Size = new Size(226, 23);
+            cmboxDeporte.Size = new Size(276, 23);
             cmboxDeporte.TabIndex = 2;
             cmboxDeporte.SelectedIndexChanged += cmboxDeporte_SelectedIndexChanged;
             // 
@@ -177,7 +175,7 @@
             cmboxCancha.FormattingEnabled = true;
             cmboxCancha.Location = new Point(95, 220);
             cmboxCancha.Name = "cmboxCancha";
-            cmboxCancha.Size = new Size(226, 23);
+            cmboxCancha.Size = new Size(276, 23);
             cmboxCancha.TabIndex = 3;
             cmboxCancha.SelectedIndexChanged += cmboxCancha_SelectedIndexChanged;
             // 
@@ -207,11 +205,11 @@
             // 
             FechaTurno.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FechaTurno.Format = DateTimePickerFormat.Custom;
-            FechaTurno.Location = new Point(118, 74);
+            FechaTurno.Location = new Point(105, 74);
             FechaTurno.MaxDate = new DateTime(2030, 12, 31, 0, 0, 0, 0);
             FechaTurno.MinDate = new DateTime(2023, 8, 13, 0, 0, 0, 0);
             FechaTurno.Name = "FechaTurno";
-            FechaTurno.Size = new Size(226, 21);
+            FechaTurno.Size = new Size(296, 21);
             FechaTurno.TabIndex = 18;
             // 
             // label8
@@ -219,7 +217,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(45, 155);
+            label8.Location = new Point(33, 156);
             label8.Name = "label8";
             label8.Size = new Size(55, 16);
             label8.TabIndex = 17;
@@ -230,7 +228,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(45, 79);
+            label7.Location = new Point(33, 80);
             label7.Name = "label7";
             label7.Size = new Size(43, 16);
             label7.TabIndex = 16;
@@ -241,9 +239,9 @@
             cmboxHorarios.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboxHorarios.FlatStyle = FlatStyle.Flat;
             cmboxHorarios.FormattingEnabled = true;
-            cmboxHorarios.Location = new Point(118, 148);
+            cmboxHorarios.Location = new Point(105, 148);
             cmboxHorarios.Name = "cmboxHorarios";
-            cmboxHorarios.Size = new Size(226, 23);
+            cmboxHorarios.Size = new Size(296, 23);
             cmboxHorarios.TabIndex = 15;
             // 
             // label6
@@ -251,7 +249,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(96, 226);
+            label6.Location = new Point(84, 226);
             label6.Name = "label6";
             label6.Size = new Size(16, 17);
             label6.TabIndex = 12;
@@ -263,7 +261,7 @@
             btnAgregarCancha.FlatStyle = FlatStyle.Flat;
             btnAgregarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarCancha.ForeColor = Color.White;
-            btnAgregarCancha.Location = new Point(142, 292);
+            btnAgregarCancha.Location = new Point(153, 292);
             btnAgregarCancha.Name = "btnAgregarCancha";
             btnAgregarCancha.Size = new Size(134, 41);
             btnAgregarCancha.TabIndex = 4;
@@ -276,39 +274,29 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(41, 227);
+            label5.Location = new Point(34, 228);
             label5.Name = "label5";
             label5.Size = new Size(44, 16);
             label5.TabIndex = 5;
             label5.Text = "Precio";
             // 
-            // button1
+            // btnVolver
             // 
-            button1.BackColor = Color.FromArgb(26, 32, 40);
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.AppWorkspace;
-            button1.Location = new Point(878, 540);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 40);
-            button1.TabIndex = 7;
-            button1.Text = "VOLVER";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // iconToolStripButton1
-            // 
-            iconToolStripButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconToolStripButton1.IconColor = Color.Black;
-            iconToolStripButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconToolStripButton1.Name = "iconToolStripButton1";
-            iconToolStripButton1.Size = new Size(23, 23);
-            iconToolStripButton1.Text = "iconToolStripButton1";
+            btnVolver.BackColor = Color.FromArgb(26, 32, 40);
+            btnVolver.FlatAppearance.BorderSize = 2;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.ForeColor = SystemColors.AppWorkspace;
+            btnVolver.Location = new Point(878, 540);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(111, 40);
+            btnVolver.TabIndex = 7;
+            btnVolver.Text = "VOLVER";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(btnAgregarHorario);
             groupBox3.Controls.Add(txtPrecio);
             groupBox3.Controls.Add(btnAgregarCancha);
             groupBox3.Controls.Add(FechaTurno);
@@ -319,30 +307,16 @@
             groupBox3.Controls.Add(label8);
             groupBox3.Location = new Point(519, 103);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(452, 372);
+            groupBox3.Size = new Size(452, 390);
             groupBox3.TabIndex = 20;
             groupBox3.TabStop = false;
-            // 
-            // btnAgregarHorario
-            // 
-            btnAgregarHorario.BackColor = Color.FromArgb(26, 32, 40);
-            btnAgregarHorario.FlatStyle = FlatStyle.Popup;
-            btnAgregarHorario.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregarHorario.ForeColor = Color.White;
-            btnAgregarHorario.Location = new Point(359, 148);
-            btnAgregarHorario.Name = "btnAgregarHorario";
-            btnAgregarHorario.Size = new Size(32, 28);
-            btnAgregarHorario.TabIndex = 20;
-            btnAgregarHorario.Text = "+";
-            btnAgregarHorario.UseVisualStyleBackColor = false;
-            btnAgregarHorario.Click += btnAgregarHorario_Click;
             // 
             // txtPrecio
             // 
             txtPrecio.Enabled = false;
-            txtPrecio.Location = new Point(118, 220);
+            txtPrecio.Location = new Point(105, 220);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(226, 23);
+            txtPrecio.Size = new Size(296, 23);
             txtPrecio.TabIndex = 19;
             // 
             // AltaTurno
@@ -352,13 +326,14 @@
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1025, 610);
             Controls.Add(groupBox3);
-            Controls.Add(button1);
+            Controls.Add(btnVolver);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "AltaTurno";
+            FormClosing += AltaTurno_FormClosing;
             Load += AltaTurno_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
@@ -381,7 +356,7 @@
         private Label label2;
         private Label label1;
         private ComboBox cmboxCliente;
-        private Button button1;
+        private Button btnVolver;
         private Label label6;
         private Button btnAgregarClientes;
         private Label label8;
@@ -391,11 +366,9 @@
         private Button btnAddCanchas;
         private Button btnAgregarCancha;
         private DataGridViewTextBoxColumn canchaTurnoDataGridViewTextBoxColumn;
-        private FontAwesome.Sharp.IconToolStripButton iconToolStripButton1;
         private ToolTip toolTip1;
         private Label label9;
         private GroupBox groupBox3;
         private TextBox txtPrecio;
-        private Button btnAgregarHorario;
     }
 }

@@ -1,15 +1,9 @@
-﻿using FrontEnd;
+﻿using Frontend.Turnos;
+using FrontEnd;
+using Logica;
 using Logica.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace Frontend
 {
@@ -18,9 +12,6 @@ namespace Frontend
         public HistorialTurnos()
         {
             InitializeComponent();
-            toolTip1.SetToolTip(btnCrear, "Crear nuevo turno.");
-            toolTip1.SetToolTip(btnModificar, "Modificar un turno.");
-            toolTip1.SetToolTip(btnEliminar, "Eliminar un turno.");
 
 
         }
@@ -30,7 +21,9 @@ namespace Frontend
         {
             dgvTurnos.DataSource = principal.ListadoTurnos();
 
-
+            toolTip1.SetToolTip(btnCrear, "Crear nuevo turno.");
+            toolTip1.SetToolTip(btnModificar, "Modificar un turno.");
+            toolTip1.SetToolTip(btnEliminar, "Eliminar un turno.");
 
         }
 
@@ -42,7 +35,10 @@ namespace Frontend
 
 
         }
+        private void CheckAsistio_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
 
 
 
@@ -67,11 +63,42 @@ namespace Frontend
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            ModificarTurno modTurno = new ModificarTurno();
 
+            object celda1Turno = this.dgvTurnos.SelectedCells[0].Value; // obtener el valor de la columna Id-Asignacion
+            int idTurno = (int)celda1Turno; // convertirlo en INT
+
+            // pasarle al metodo del form de modificacion el turno elegido en la grilla
+            modTurno.ModTurno(idTurno);
+            modTurno.Show();
+            this.Hide();
+
+            dgvTurnos.DataSource = null; // Eliminar el origen de datos actual
+            //dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            dgvTurnos.Refresh();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (dgvTurnos.Rows.Count > 0)
+            {
+                object celda1Turno = this.dgvTurnos.SelectedCells[0].Value; // obtener el valor de la columna Id-Asignacion
+                int idTurno = (int)celda1Turno; // convertirlo en INT
+
+                var confirmacion = MessageBox.Show($"Seguro que desea eliminar el turno seleccionado del sistema? ", "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.OK)
+                {
+                    principal.EliminarTurno(idTurno);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos registrados para eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dgvTurnos.DataSource = null;
+            dgvTurnos.DataSource = principal.ListadoTurnos();
 
         }
 
@@ -90,6 +117,37 @@ namespace Frontend
             dgvTurnos.DataSource = null;
             dgvTurnos.DataSource = resultadosFiltrados;
         }
-    }
 
+        private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void HistorialTurnos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            // Preguntar si desea cerrar el programa o no.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Administrador admActual = principal.BuscarAdmLogueado();
+                var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rta == DialogResult.OK)
+                {
+
+                    Application.Exit();
+
+                    // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
+                    admActual.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(admActual);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+    }
 }

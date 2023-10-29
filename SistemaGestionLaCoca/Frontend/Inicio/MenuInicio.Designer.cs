@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             groupBox1 = new GroupBox();
             btneElementos = new Button();
@@ -42,12 +42,20 @@
             btnTurnos = new Button();
             pictureBox1 = new PictureBox();
             groupBox2 = new GroupBox();
+            btnAdministrador = new Button();
+            pictureBox2 = new PictureBox();
             dateTimePicker1 = new DateTimePicker();
             dgvTurnosDeHoy = new DataGridView();
+            panelAdmiLogueado = new Panel();
+            btnCerrarCesion = new Button();
+            btnCambiarCuenta = new Button();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTurnosDeHoy).BeginInit();
+            panelAdmiLogueado.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -174,6 +182,9 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.SlateGray;
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(btnAdministrador);
+            groupBox2.Controls.Add(pictureBox2);
             groupBox2.Controls.Add(pictureBox1);
             groupBox2.Controls.Add(dateTimePicker1);
             groupBox2.Location = new Point(-4, -8);
@@ -182,14 +193,40 @@
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             // 
+            // btnAdministrador
+            // 
+            btnAdministrador.FlatAppearance.BorderSize = 0;
+            btnAdministrador.FlatAppearance.MouseDownBackColor = Color.White;
+            btnAdministrador.FlatStyle = FlatStyle.Flat;
+            btnAdministrador.Font = new Font("Arial", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
+            btnAdministrador.ForeColor = Color.White;
+            btnAdministrador.Location = new Point(1079, 68);
+            btnAdministrador.Name = "btnAdministrador";
+            btnAdministrador.RightToLeft = RightToLeft.Yes;
+            btnAdministrador.Size = new Size(179, 28);
+            btnAdministrador.TabIndex = 11;
+            btnAdministrador.UseVisualStyleBackColor = true;
+            btnAdministrador.Click += btnAdministrador_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.ErrorImage = (Image)resources.GetObject("pictureBox2.ErrorImage");
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(1044, 68);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(29, 28);
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
             // dateTimePicker1
             // 
             dateTimePicker1.CalendarFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.CalendarForeColor = SystemColors.WindowText;
+            dateTimePicker1.CalendarForeColor = Color.FromArgb(255, 192, 192);
             dateTimePicker1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(1004, 65);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(1044, 20);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(247, 22);
+            dateTimePicker1.Size = new Size(214, 22);
             dateTimePicker1.TabIndex = 1;
             dateTimePicker1.Value = new DateTime(2023, 7, 21, 22, 23, 0, 0);
             // 
@@ -205,41 +242,95 @@
             dgvTurnosDeHoy.BorderStyle = BorderStyle.None;
             dgvTurnosDeHoy.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTurnosDeHoy.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle4.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvTurnosDeHoy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvTurnosDeHoy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvTurnosDeHoy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvTurnosDeHoy.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvTurnosDeHoy.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTurnosDeHoy.EnableHeadersVisualStyles = false;
             dgvTurnosDeHoy.GridColor = Color.MidnightBlue;
-            dgvTurnosDeHoy.Location = new Point(281, 148);
+            dgvTurnosDeHoy.Location = new Point(223, 163);
             dgvTurnosDeHoy.Name = "dgvTurnosDeHoy";
             dgvTurnosDeHoy.ReadOnly = true;
             dgvTurnosDeHoy.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvTurnosDeHoy.RowHeadersVisible = false;
             dgvTurnosDeHoy.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(26, 32, 40);
-            dataGridViewCellStyle6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(49, 66, 82);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dgvTurnosDeHoy.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(26, 32, 40);
+            dataGridViewCellStyle3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(49, 66, 82);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dgvTurnosDeHoy.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvTurnosDeHoy.RowTemplate.Height = 25;
             dgvTurnosDeHoy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTurnosDeHoy.Size = new Size(872, 561);
+            dgvTurnosDeHoy.Size = new Size(887, 561);
             dgvTurnosDeHoy.TabIndex = 20;
+            // 
+            // panelAdmiLogueado
+            // 
+            panelAdmiLogueado.BackColor = Color.SlateGray;
+            panelAdmiLogueado.Controls.Add(btnCerrarCesion);
+            panelAdmiLogueado.Controls.Add(btnCambiarCuenta);
+            panelAdmiLogueado.Location = new Point(1075, 100);
+            panelAdmiLogueado.Name = "panelAdmiLogueado";
+            panelAdmiLogueado.Size = new Size(179, 76);
+            panelAdmiLogueado.TabIndex = 21;
+            panelAdmiLogueado.Visible = false;
+            // 
+            // btnCerrarCesion
+            // 
+            btnCerrarCesion.FlatAppearance.BorderSize = 0;
+            btnCerrarCesion.FlatAppearance.MouseDownBackColor = Color.White;
+            btnCerrarCesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarCesion.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCerrarCesion.ForeColor = Color.White;
+            btnCerrarCesion.Location = new Point(0, 42);
+            btnCerrarCesion.Name = "btnCerrarCesion";
+            btnCerrarCesion.RightToLeft = RightToLeft.Yes;
+            btnCerrarCesion.Size = new Size(179, 28);
+            btnCerrarCesion.TabIndex = 13;
+            btnCerrarCesion.Text = "Cerrar cesion";
+            btnCerrarCesion.UseVisualStyleBackColor = true;
+            btnCerrarCesion.Click += btnCerrarCesion_Click;
+            // 
+            // btnCambiarCuenta
+            // 
+            btnCambiarCuenta.FlatAppearance.BorderSize = 0;
+            btnCambiarCuenta.FlatAppearance.MouseDownBackColor = Color.White;
+            btnCambiarCuenta.FlatStyle = FlatStyle.Flat;
+            btnCambiarCuenta.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCambiarCuenta.ForeColor = Color.White;
+            btnCambiarCuenta.Location = new Point(0, 3);
+            btnCambiarCuenta.Name = "btnCambiarCuenta";
+            btnCambiarCuenta.RightToLeft = RightToLeft.Yes;
+            btnCambiarCuenta.Size = new Size(179, 33);
+            btnCambiarCuenta.TabIndex = 12;
+            btnCambiarCuenta.Text = "Cambiar cuenta";
+            btnCambiarCuenta.UseVisualStyleBackColor = true;
+            btnCambiarCuenta.Click += btnCambiarCuenta_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(986, 25);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 16);
+            label3.TabIndex = 11;
+            label3.Text = "Hoy es:";
             // 
             // MenuInicio
             // 
@@ -247,6 +338,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1259, 748);
+            Controls.Add(panelAdmiLogueado);
             Controls.Add(dgvTurnosDeHoy);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -255,12 +347,16 @@
             MaximizeBox = false;
             Name = "MenuInicio";
             StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += MenuInicio_FormClosing;
             Load += MenuInicio_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTurnosDeHoy).EndInit();
+            panelAdmiLogueado.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -278,5 +374,11 @@
         private Label label2;
         public Button btneElementos;
         private DataGridView dgvTurnosDeHoy;
+        private PictureBox pictureBox2;
+        public Button btnAdministrador;
+        private Panel panelAdmiLogueado;
+        public Button btnCambiarCuenta;
+        public Button btnCerrarCesion;
+        private Label label3;
     }
 }
