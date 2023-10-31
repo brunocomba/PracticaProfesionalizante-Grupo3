@@ -145,6 +145,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(151, 674);
             panel2.TabIndex = 16;
+            panel2.Paint += panel2_Paint;
             // 
             // btnDelete
             // 

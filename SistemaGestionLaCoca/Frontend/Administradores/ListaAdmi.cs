@@ -45,18 +45,17 @@ namespace FrontEnd
             if (dgvAdministradores.Rows.Count > 0)
             {
                 ModificarAdmi modAdmi = new ModificarAdmi();
-                // CONVERTIR A OBJETO TIPO ADMINISTRADOR LA FILA ELEGIDA EN LA GRILLA.
-                Administrador admi_Elegido = (Administrador)dgvAdministradores.CurrentRow.DataBoundItem;
-                // PASARLE AL METODO DEL FORMULARIO DE MODIFICACION DICHO OBJETO SELECCIONADO.
-                modAdmi.ModificarAdmin(admi_Elegido);
-                // MOSTRAR EL FORMULARIO DE MODIFICACION.
                 modAdmi.Show();
                 this.Hide();
             }
-
+            else
+            {
+                MessageBox.Show("No hay administradores registrados para realizar una modificacion.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             dgvAdministradores.DataSource = null; // Eliminar el origen de datos actual
             dgvAdministradores.DataSource = principal.ObtenerListaAdmi(); // Asignar la lista actualizada
+            dgvAdministradores.Refresh();
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)

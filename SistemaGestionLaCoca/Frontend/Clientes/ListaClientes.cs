@@ -52,10 +52,6 @@ namespace Frontend
             ModificarCliente modCliente = new ModificarCliente();
             if (dgvClientes.Rows.Count > 0)
             {
-                // convertir a objeto cliente la fila seleccionada en la grilla
-                Cliente cliente_Elegido = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
-                // pasarle el cliente elegido en bla grilla al metodo del formulario de modificacion para que lo utilice
-                modCliente.ModificaCliente(cliente_Elegido);
                 modCliente.Show();
                 this.Hide();
             }
@@ -89,12 +85,11 @@ namespace Frontend
                 MessageBox.Show("No hay clientes registrados para eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-
             dgvClientes.DataSource = null;
             dgvClientes.DataSource = principal.ObtenerListaAdmi();
         }
+
+
 
         private void ListaClientes_FormClosing(object sender, FormClosingEventArgs e)
         {

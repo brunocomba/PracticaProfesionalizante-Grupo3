@@ -36,15 +36,18 @@ namespace Frontend.Elementos
             // Instancia del formulario de modificacion
             ModificarElemento modElemento = new ModificarElemento();
 
-            Elemento elemento_Elegido = (Elemento)dgvElementos.CurrentRow.DataBoundItem;
-
-            // acceder al metodo del forulario y pasarle lo seleccionado en la grilla
-            modElemento.ModificacionElemento(elemento_Elegido);
-            modElemento.Show();
-            this.Hide();
+            if (dgvElementos.Rows.Count > 0)
+            {
+                modElemento.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos registrados para realizar una modificacion.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             dgvElementos.DataSource = null; // Eliminar el origen de datos actual
-            //dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            dgvElementos.DataSource = principal.ObtenerElementos(); // Asignar la lista actualizada
             dgvElementos.Refresh();
         }
 
@@ -113,6 +116,11 @@ namespace Frontend.Elementos
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

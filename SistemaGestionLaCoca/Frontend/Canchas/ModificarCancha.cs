@@ -1,14 +1,5 @@
 ﻿using Logica;
 using Logica.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Frontend
 {
@@ -21,21 +12,9 @@ namespace Frontend
 
 
         Principal principal = new Principal();
-        ListaCanchas listaCanchas = new ListaCanchas();
 
 
         private Cancha CanchaQueEdito;
-        public void ModificacionCancha(Cancha cancha)
-        {
-            CanchaQueEdito = cancha;
-            txtNombre.Text = CanchaQueEdito.nombre;
-            cmboxDeporte.Text = CanchaQueEdito.Deporte;
-            cmboxCantJugadores.Text = CanchaQueEdito.Cantidad_Jugadores.ToString();
-            txtPrecio.Text = CanchaQueEdito.Precio.ToString();
-
-        }
-
-
         private void ModificarCancha_Load(object sender, EventArgs e)
         {
             cmboxDeporte.Items.Add("BASQUET");
@@ -45,6 +24,8 @@ namespace Frontend
             cmboxCantJugadores.Items.Add("8");
             cmboxCantJugadores.Items.Add("10");
 
+
+            cmboxCanchas.Items.AddRange(principal.ObtenerListaCanchas().ToArray());
         }
 
 
@@ -106,6 +87,7 @@ namespace Frontend
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ListaCanchas listaCanchas = new ListaCanchas();
             listaCanchas.Show();
             this.Hide();
         }
@@ -148,6 +130,18 @@ namespace Frontend
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void cmboxCanchas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cancha canchaElegida = (Cancha)cmboxCanchas.SelectedItem;
+
+            CanchaQueEdito = canchaElegida;
+            txtNombre.Text = CanchaQueEdito.nombre;
+            cmboxDeporte.Text = CanchaQueEdito.Deporte;
+            cmboxCantJugadores.Text = CanchaQueEdito.Cantidad_Jugadores.ToString();
+            txtPrecio.Text = CanchaQueEdito.Precio.ToString();
+
         }
     }
 }

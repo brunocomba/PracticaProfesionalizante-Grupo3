@@ -41,6 +41,8 @@
             label8 = new Label();
             btnVolver = new Button();
             groupBox1 = new GroupBox();
+            cmboxTurnos = new ComboBox();
+            label10 = new Label();
             btnAddCanchas = new Button();
             label9 = new Label();
             cmboxCliente = new ComboBox();
@@ -178,6 +180,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmboxTurnos);
+            groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(btnAddCanchas);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(cmboxCliente);
@@ -193,13 +197,34 @@
             groupBox1.TabIndex = 23;
             groupBox1.TabStop = false;
             // 
+            // cmboxTurnos
+            // 
+            cmboxTurnos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxTurnos.FormattingEnabled = true;
+            cmboxTurnos.Location = new Point(98, 72);
+            cmboxTurnos.Name = "cmboxTurnos";
+            cmboxTurnos.Size = new Size(276, 23);
+            cmboxTurnos.TabIndex = 21;
+            cmboxTurnos.SelectedIndexChanged += cmboxTurnos_SelectedIndexChanged;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(25, 63);
+            label10.Name = "label10";
+            label10.Size = new Size(59, 32);
+            label10.TabIndex = 20;
+            label10.Text = "Turno a\r\nmodificar";
+            // 
             // btnAddCanchas
             // 
             btnAddCanchas.BackColor = Color.FromArgb(26, 32, 40);
             btnAddCanchas.FlatStyle = FlatStyle.Popup;
             btnAddCanchas.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddCanchas.ForeColor = Color.White;
-            btnAddCanchas.Location = new Point(387, 214);
+            btnAddCanchas.Location = new Point(390, 262);
             btnAddCanchas.Name = "btnAddCanchas";
             btnAddCanchas.Size = new Size(32, 28);
             btnAddCanchas.TabIndex = 19;
@@ -224,7 +249,7 @@
             cmboxCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboxCliente.FlatStyle = FlatStyle.Flat;
             cmboxCliente.FormattingEnabled = true;
-            cmboxCliente.Location = new Point(95, 76);
+            cmboxCliente.Location = new Point(98, 124);
             cmboxCliente.Name = "cmboxCliente";
             cmboxCliente.Size = new Size(276, 23);
             cmboxCliente.TabIndex = 7;
@@ -234,7 +259,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(23, 87);
+            label3.Location = new Point(26, 135);
             label3.Name = "label3";
             label3.Size = new Size(47, 16);
             label3.TabIndex = 4;
@@ -246,7 +271,7 @@
             btnAgregarClientes.FlatStyle = FlatStyle.Popup;
             btnAgregarClientes.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarClientes.ForeColor = Color.White;
-            btnAgregarClientes.Location = new Point(387, 74);
+            btnAgregarClientes.Location = new Point(390, 122);
             btnAgregarClientes.Name = "btnAgregarClientes";
             btnAgregarClientes.Size = new Size(32, 28);
             btnAgregarClientes.TabIndex = 12;
@@ -259,7 +284,7 @@
             cmboxDeporte.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboxDeporte.FlatStyle = FlatStyle.Flat;
             cmboxDeporte.FormattingEnabled = true;
-            cmboxDeporte.Location = new Point(95, 148);
+            cmboxDeporte.Location = new Point(98, 196);
             cmboxDeporte.Name = "cmboxDeporte";
             cmboxDeporte.Size = new Size(276, 23);
             cmboxDeporte.TabIndex = 2;
@@ -270,7 +295,7 @@
             cmboxCancha.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboxCancha.FlatStyle = FlatStyle.Flat;
             cmboxCancha.FormattingEnabled = true;
-            cmboxCancha.Location = new Point(95, 220);
+            cmboxCancha.Location = new Point(98, 268);
             cmboxCancha.Name = "cmboxCancha";
             cmboxCancha.Size = new Size(276, 23);
             cmboxCancha.TabIndex = 3;
@@ -281,7 +306,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 227);
+            label2.Location = new Point(22, 275);
             label2.Name = "label2";
             label2.Size = new Size(51, 16);
             label2.TabIndex = 3;
@@ -292,7 +317,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(22, 155);
+            label1.Location = new Point(25, 203);
             label1.Name = "label1";
             label1.Size = new Size(52, 16);
             label1.TabIndex = 2;
@@ -370,5 +395,7 @@
         private GroupBox groupBox2;
         private Label label4;
         private ToolTip toolTip1;
+        private ComboBox cmboxTurnos;
+        private Label label10;
     }
 }

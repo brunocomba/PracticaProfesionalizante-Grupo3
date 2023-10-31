@@ -39,27 +39,31 @@ namespace Frontend.Elementos_Cancha
             this.Hide();
         }
 
-        private void btnModAsig_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDeleteAsig_Click(object sender, EventArgs e)
         {
-            object elemento = this.dgvElementosCancha.SelectedCells[3].Value; // obtener el valor de la columna Id-Elemento
-            int idElemetno = (int)elemento; // convertirlo en INT
-
-            object asig = this.dgvElementosCancha.SelectedCells[0].Value; // obtener el valor de la columna Id-Asignacion
-            int idAsig = (int)asig; // convertirlo en INT
-
-
-            var confirmacion = MessageBox.Show($"Seguro que desea eliminar la asignacion del elemento a la cancha?" +
-                 $"\nLa cantidad del elemento en la asignacion sera otra vez agregado al stock.", "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-            if (confirmacion == DialogResult.OK)
+            if (dgvElementosCancha.Rows.Count > 0)
             {
-                principal.RemoveAsignacionElemento(idElemetno, idAsig);
+                object elemento = this.dgvElementosCancha.SelectedCells[3].Value; // obtener el valor de la columna Id-Elemento
+                int idElemetno = (int)elemento; // convertirlo en INT
+
+                object asig = this.dgvElementosCancha.SelectedCells[0].Value; // obtener el valor de la columna Id-Asignacion
+                int idAsig = (int)asig; // convertirlo en INT
+
+
+                var confirmacion = MessageBox.Show($"Seguro que desea eliminar la asignacion del elemento a la cancha?" +
+                     $"\nLa cantidad del elemento en la asignacion sera otra vez agregado al stock.", "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.OK)
+                {
+                    principal.RemoveAsignacionElemento(idElemetno, idAsig);
+                }
             }
+            else
+            {
+                MessageBox.Show("No hay asignaciones de elementos registradas para eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
 
             dgvElementosCancha.DataSource = null;
             dgvElementosCancha.DataSource = principal.ObtenerAsignacionDeElementos();

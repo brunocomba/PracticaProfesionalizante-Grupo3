@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarAdmi));
             groupBox1 = new GroupBox();
             label1 = new Label();
-            errorProviderPass = new ErrorProvider(components);
             btnVolver = new Button();
             groupBox2 = new GroupBox();
             txtConfiContra = new TextBox();
@@ -46,6 +44,8 @@
             label4 = new Label();
             label3 = new Label();
             DatosPers = new GroupBox();
+            cmboxAdm = new ComboBox();
+            label11 = new Label();
             txtDNI = new TextBox();
             lblErrorApellido = new Label();
             lblErrorDni = new Label();
@@ -59,7 +59,6 @@
             label2 = new Label();
             txtNombre = new TextBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProviderPass).BeginInit();
             groupBox2.SuspendLayout();
             DatosPers.SuspendLayout();
             SuspendLayout();
@@ -84,10 +83,6 @@
             label1.Size = new Size(403, 32);
             label1.TabIndex = 4;
             label1.Text = "MODIFICAR ADMINISTRADOR";
-            // 
-            // errorProviderPass
-            // 
-            errorProviderPass.ContainerControl = this;
             // 
             // btnVolver
             // 
@@ -232,6 +227,8 @@
             // 
             // DatosPers
             // 
+            DatosPers.Controls.Add(cmboxAdm);
+            DatosPers.Controls.Add(label11);
             DatosPers.Controls.Add(txtDNI);
             DatosPers.Controls.Add(lblErrorApellido);
             DatosPers.Controls.Add(lblErrorDni);
@@ -250,10 +247,31 @@
             DatosPers.TabIndex = 23;
             DatosPers.TabStop = false;
             // 
+            // cmboxAdm
+            // 
+            cmboxAdm.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxAdm.FormattingEnabled = true;
+            cmboxAdm.Location = new Point(160, 87);
+            cmboxAdm.Name = "cmboxAdm";
+            cmboxAdm.Size = new Size(212, 23);
+            cmboxAdm.TabIndex = 22;
+            cmboxAdm.SelectedIndexChanged += cmboxAdm_SelectedIndexChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(50, 87);
+            label11.Name = "label11";
+            label11.Size = new Size(87, 32);
+            label11.TabIndex = 21;
+            label11.Text = "Administrador\r\na modificar";
+            // 
             // txtDNI
             // 
             txtDNI.ForeColor = Color.Black;
-            txtDNI.Location = new Point(164, 189);
+            txtDNI.Location = new Point(160, 241);
             txtDNI.MaxLength = 8;
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(212, 23);
@@ -264,7 +282,7 @@
             lblErrorApellido.AutoSize = true;
             lblErrorApellido.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorApellido.ForeColor = Color.Red;
-            lblErrorApellido.Location = new Point(127, 137);
+            lblErrorApellido.Location = new Point(123, 189);
             lblErrorApellido.Name = "lblErrorApellido";
             lblErrorApellido.Size = new Size(0, 13);
             lblErrorApellido.TabIndex = 20;
@@ -274,7 +292,7 @@
             lblErrorDni.AutoSize = true;
             lblErrorDni.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorDni.ForeColor = Color.Red;
-            lblErrorDni.Location = new Point(164, 212);
+            lblErrorDni.Location = new Point(160, 264);
             lblErrorDni.Name = "lblErrorDni";
             lblErrorDni.Size = new Size(0, 13);
             lblErrorDni.TabIndex = 19;
@@ -284,7 +302,7 @@
             lblErrorTel.AutoSize = true;
             lblErrorTel.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorTel.ForeColor = Color.Red;
-            lblErrorTel.Location = new Point(164, 268);
+            lblErrorTel.Location = new Point(160, 320);
             lblErrorTel.Name = "lblErrorTel";
             lblErrorTel.Size = new Size(0, 13);
             lblErrorTel.TabIndex = 18;
@@ -303,7 +321,7 @@
             // txtApellido
             // 
             txtApellido.ForeColor = Color.Black;
-            txtApellido.Location = new Point(164, 137);
+            txtApellido.Location = new Point(160, 189);
             txtApellido.MaxLength = 40;
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(212, 23);
@@ -312,7 +330,7 @@
             // txtTel
             // 
             txtTel.ForeColor = Color.Black;
-            txtTel.Location = new Point(164, 242);
+            txtTel.Location = new Point(160, 294);
             txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(212, 23);
@@ -323,7 +341,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(54, 144);
+            label7.Location = new Point(50, 196);
             label7.Name = "label7";
             label7.Size = new Size(53, 16);
             label7.TabIndex = 9;
@@ -334,7 +352,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(79, 196);
+            label6.Location = new Point(75, 248);
             label6.Name = "label6";
             label6.Size = new Size(28, 16);
             label6.TabIndex = 8;
@@ -345,7 +363,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(68, 249);
+            label5.Location = new Point(64, 301);
             label5.Name = "label5";
             label5.Size = new Size(54, 16);
             label5.TabIndex = 7;
@@ -356,7 +374,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(54, 94);
+            label2.Location = new Point(50, 146);
             label2.Name = "label2";
             label2.Size = new Size(52, 16);
             label2.TabIndex = 4;
@@ -365,7 +383,7 @@
             // txtNombre
             // 
             txtNombre.ForeColor = Color.Black;
-            txtNombre.Location = new Point(164, 87);
+            txtNombre.Location = new Point(160, 139);
             txtNombre.MaxLength = 35;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(212, 23);
@@ -387,9 +405,9 @@
             Name = "ModificarAdmi";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += ModificarAdmi_FormClosing;
+            Load += ModificarAdmi_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProviderPass).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             DatosPers.ResumeLayout(false);
@@ -401,7 +419,6 @@
 
         private GroupBox groupBox1;
         private Label label1;
-        private ErrorProvider errorProviderPass;
         private Button btnVolver;
         private GroupBox groupBox2;
         private CheckBox checkBoXMostrarContra;
@@ -428,5 +445,7 @@
         private TextBox txtNombre;
         private TextBox txtDNI;
         private TextBox txtConfiContra;
+        private Label label11;
+        private ComboBox cmboxAdm;
     }
 }

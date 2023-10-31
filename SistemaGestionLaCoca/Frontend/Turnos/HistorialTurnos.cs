@@ -65,16 +65,18 @@ namespace Frontend
         {
             ModificarTurno modTurno = new ModificarTurno();
 
-            object celda1Turno = this.dgvTurnos.SelectedCells[0].Value; // obtener el valor de la columna Id-Asignacion
-            int idTurno = (int)celda1Turno; // convertirlo en INT
-
-            // pasarle al metodo del form de modificacion el turno elegido en la grilla
-            modTurno.ModTurno(idTurno);
-            modTurno.Show();
-            this.Hide();
+            if (dgvTurnos.Rows.Count > 0)
+            {
+                modTurno.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No hay turnos registrados para realizar una modificacion.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             dgvTurnos.DataSource = null; // Eliminar el origen de datos actual
-            //dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            dgvTurnos.DataSource = principal.ListadoTurnos(); // Asignar la lista actualizada
             dgvTurnos.Refresh();
         }
 

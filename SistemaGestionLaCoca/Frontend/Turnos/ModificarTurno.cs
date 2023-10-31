@@ -21,18 +21,13 @@ namespace Frontend.Turnos
         }
 
         private Turno turnoQueEdito;
-        private int ID_Turno;
-        // mostar datos del cliente elegido en la grilla
-        public void ModTurno(int IdTurno)
-        {
-            turnoQueEdito = principal.BuscarTurnosPorID(IdTurno);
-            ID_Turno = IdTurno;
-
-        }
 
         Principal principal = new Principal();
         private void ModificarTurno_Load(object sender, EventArgs e)
         {
+            cmboxTurnos.Items.AddRange(principal.GetTurnos().ToArray());
+            cmboxTurnos.DisplayMember = "ID";
+
             cmboxCliente.Items.AddRange(principal.ObtenerListClientes().ToArray());
 
 
@@ -74,7 +69,7 @@ namespace Frontend.Turnos
 
                         if (respuesta == DialogResult.OK)
                         {
-                            principal.ModificarTurno(ID_Turno, clienteElegido, canchaElegida, fecha, horario);
+                            principal.ModificarTurno(turnoQueEdito, clienteElegido, canchaElegida, fecha, horario);
                             MessageBox.Show($"El turno fue modificado con exito!\nCancha: {canchaElegida.nombre} de: {canchaElegida.Deporte} el dia: {fecha} a las {horario} al cliente {clienteElegido}", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             HistorialTurnos historialTurnos = new HistorialTurnos();
@@ -98,20 +93,19 @@ namespace Frontend.Turnos
             // guardar el deporte elegido como string y pasarselo al metodo que muestra las canchas registradas con ese deporte.
             string deporteElegido = cmboxDeporte.SelectedItem.ToString();
 
-            cmboxCancha.Items.AddRange(principal.CanchasDeSoloUnDeporte(deporteElegido).ToArray());
+            cmboxCancha.DataSource = principal.CanchasDeSoloUnDeporte(deporteElegido);
 
-            cmboxCancha.DisplayMember = "Nombre";
 
             // si el deporte elegido es futbol, mostrar la lista harcodeadea de horarios para Futbol. 
             if (deporteElegido == "FUTBOL")
             {
-                cmboxHorarios.Items.AddRange(Principal.ListaHorariosFutbol().ToArray());
+                cmboxHorarios.DataSource = principal.ListaHorariosFutbol();
             }
 
             // lo mismo, si el deporte es basquet, mostrar la lista de horarios de basquet.
             if (deporteElegido == "BASQUET")
             {
-                cmboxHorarios.Items.AddRange(Principal.ListaHorariosBasquet().ToArray());
+                cmboxHorarios.DataSource = principal.ListaHorariosBasquet();
             }
         }
 
@@ -145,7 +139,7 @@ namespace Frontend.Turnos
         }
 
         private void ModificarTurno_FormClosing(object sender, FormClosingEventArgs e)
-        { 
+        {
             ApplicationDbContex context = new ApplicationDbContex();
 
             // Preguntar si desea cerrar el programa o no.
@@ -155,9 +149,9 @@ namespace Frontend.Turnos
                 var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rta == DialogResult.OK)
                 {
-                    
+
                     Application.Exit();
-                    
+
                     // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
                     admActual.Logueado = Administrador.SioNo.NO;
                     context.Administradores.Update(admActual);
@@ -168,6 +162,17 @@ namespace Frontend.Turnos
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void cmboxTurnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Turno turnoElegido = (Turno) cmboxTurnos.SelectedItem;
+
+            cmboxCliente.Text = turnoElegido.Cliente.ToString();
+            cmboxDeporte.Text  = turnoElegido.Cancha.Deporte.ToString();
+            cmboxCancha.Text = turnoElegido.Cancha.nombre.ToString();
+            FechaTurno.Text = turnoElegido.Fecha;
+            cmboxHorarios.Text = turnoElegido.Horario.ToString();
         }
     }
 }

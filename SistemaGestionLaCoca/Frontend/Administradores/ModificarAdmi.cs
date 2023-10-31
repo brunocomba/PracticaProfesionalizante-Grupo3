@@ -15,19 +15,8 @@ namespace Frontend
         Principal principal = new Principal();
         ListaAdmi ListaAdmi = new ListaAdmi();
 
-        //------------------------------------ MOSTRAR INFORMACION DEL OBJETO SELECCIONADO EN LA LISTA
         private Administrador adminQueEdito;
-        public void ModificarAdmin(Administrador admin)
-        {
-            adminQueEdito = admin;
-            txtNombre.Text = adminQueEdito.Nombre;
-            txtApellido.Text = adminQueEdito.Apellido;
-            txtDNI.Text = adminQueEdito.DNI.ToString();
-            txtTel.Text = adminQueEdito.Telefono.ToString();
-            txtUser.Text = adminQueEdito.Usuario.ToString();
-            txtContra.Text = adminQueEdito.Contrasenia.ToString();
 
-        }
         private void btnCrear_Click(object sender, EventArgs e)
         {
             try
@@ -118,6 +107,25 @@ namespace Frontend
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void ModificarAdmi_Load(object sender, EventArgs e)
+        {
+            cmboxAdm.Items.AddRange(principal.ObtenerListaAdmi().ToArray());
+
+        }
+
+        private void cmboxAdm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Administrador admiElegido = (Administrador)cmboxAdm.SelectedItem;
+
+            adminQueEdito = admiElegido;
+            txtNombre.Text = adminQueEdito.Nombre;
+            txtApellido.Text = adminQueEdito.Apellido;
+            txtDNI.Text = adminQueEdito.DNI.ToString();
+            txtTel.Text = adminQueEdito.Telefono.ToString();
+            txtUser.Text = adminQueEdito.Usuario.ToString();
+            txtContra.Text = adminQueEdito.Contrasenia.ToString();
         }
     }
 }

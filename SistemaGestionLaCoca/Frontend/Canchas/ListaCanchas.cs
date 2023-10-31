@@ -46,15 +46,21 @@ namespace Frontend
 
         private void btnModCancha_Click(object sender, EventArgs e)
         {
-            ModificarCancha modCancha = new ModificarCancha();
-            Cancha cancha_Elegida = (Cancha)dgvCanchas.CurrentRow.DataBoundItem;
 
-            modCancha.ModificacionCancha(cancha_Elegida);
-            modCancha.Show();
-            this.Hide();
+            ModificarCancha modCancha = new ModificarCancha();
+
+            if (dgvCanchas.Rows.Count > 0)
+            {
+                modCancha.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No hay clientes registrados para realizar una modificacion.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             dgvCanchas.DataSource = null; // Eliminar el origen de datos actual
-            //dgvCanchas.DataSource = Principal.ObtenerAdministradores(); // Asignar la lista actualizada
+            dgvCanchas.DataSource = principal.ObtenerListaCanchas(); // Asignar la lista actualizada
             dgvCanchas.Refresh();
         }
 

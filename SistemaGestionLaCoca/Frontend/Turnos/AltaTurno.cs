@@ -79,20 +79,20 @@ namespace Frontend
             // guardar el deporte elegido como string y pasarselo al metodo que muestra las canchas registradas con ese deporte.
             string deporteElegido = cmboxDeporte.SelectedItem.ToString();
 
-            cmboxCancha.Items.AddRange(principal.CanchasDeSoloUnDeporte(deporteElegido).ToArray());
+            cmboxCancha.DataSource =  principal.CanchasDeSoloUnDeporte(deporteElegido);
 
             cmboxCancha.DisplayMember = "Nombre";
 
             // si el deporte elegido es futbol, mostrar la lista harcodeadea de horarios para Futbol. 
             if (deporteElegido == "FUTBOL")
             {
-                cmboxHorarios.Items.AddRange(Principal.ListaHorariosFutbol().ToArray());
+                cmboxHorarios.DataSource = principal.ListaHorariosFutbol();
             }
 
             // lo mismo, si el deporte es basquet, mostrar la lista de horarios de basquet.
             if (deporteElegido == "BASQUET")
             {
-                cmboxHorarios.Items.AddRange(Principal.ListaHorariosBasquet().ToArray());
+                cmboxHorarios.DataSource = principal.ListaHorariosBasquet();
             }
         }
 

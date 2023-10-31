@@ -72,7 +72,7 @@ namespace Frontend
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(427, 36);
+            label1.Location = new Point(437, 40);
             label1.Name = "label1";
             label1.Size = new Size(432, 32);
             label1.TabIndex = 0;
@@ -244,11 +244,11 @@ namespace Frontend
             btnElementosDeCancha.FlatStyle = FlatStyle.Flat;
             btnElementosDeCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnElementosDeCancha.ForeColor = Color.White;
-            btnElementosDeCancha.Location = new Point(1095, 138);
+            btnElementosDeCancha.Location = new Point(1083, 138);
             btnElementosDeCancha.Name = "btnElementosDeCancha";
             btnElementosDeCancha.Size = new Size(132, 44);
             btnElementosDeCancha.TabIndex = 9;
-            btnElementosDeCancha.Text = "Elementos de cancha";
+            btnElementosDeCancha.Text = "ELEMENTOS DE CANCHA";
             btnElementosDeCancha.UseVisualStyleBackColor = true;
             btnElementosDeCancha.Click += btnElementosDeCancha_Click;
             // 

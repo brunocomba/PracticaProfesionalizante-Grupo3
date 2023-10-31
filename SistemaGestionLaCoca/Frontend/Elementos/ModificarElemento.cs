@@ -1,14 +1,6 @@
 ﻿using Logica;
 using Logica.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Frontend.Elementos
 {
@@ -19,13 +11,8 @@ namespace Frontend.Elementos
             InitializeComponent();
         }
 
+
         private Elemento elementoQueEdito;
-        public void ModificacionElemento(Elemento elemento)
-        {
-            elementoQueEdito = elemento;
-            txtNombre.Text = elementoQueEdito.Nombre;
-            txtStock.Text = elementoQueEdito.Stock.ToString();
-        }
 
         Principal principal = new Principal();
         private void btnModificar_Click(object sender, EventArgs e)
@@ -96,6 +83,16 @@ namespace Frontend.Elementos
 
         private void ModificarElemento_Load(object sender, EventArgs e)
         {
-
+            cmboxElementos.Items.AddRange(principal.ObtenerElementos().ToArray());
         }
-}   }
+
+        private void cmboxElementos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Elemento elementoElegido = (Elemento)cmboxElementos.SelectedItem;
+
+            elementoQueEdito = elementoElegido;
+            txtNombre.Text = elementoQueEdito.Nombre;
+            txtStock.Text = elementoQueEdito.Stock.ToString();
+        }
+    }
+}

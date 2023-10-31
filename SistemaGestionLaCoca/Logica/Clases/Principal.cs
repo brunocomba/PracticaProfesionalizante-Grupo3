@@ -482,14 +482,12 @@ namespace Logica.Clases
         // TURNOS.
         // -----------------
 
+
         // Lista horarios Futbol
-        public static List<string> HorariosFutbol;
-        public static List<string> ListaHorariosFutbol()
+        public  List<string> ListaHorariosFutbol()
         {
-            if (HorariosFutbol == null)
+            var horariosFutbol = new List<string>
             {
-                HorariosFutbol = new List<string>
-                {
                     "16:00",
                     "16:30",
                     "17:00",
@@ -502,22 +500,19 @@ namespace Logica.Clases
                     "20:30",
                     "21:00",
                     "21:30"
-                };
+            };
 
-            }
-            return HorariosFutbol;
+
+            return horariosFutbol;
         }
 
 
-        // Lista horarios Basquet
 
-        public static List<string> HorariosBasquet;
-        public static List<string> ListaHorariosBasquet()
+        // Lista horarios Basquet
+        public List<string> ListaHorariosBasquet()
         {
-            if (HorariosBasquet == null)
+            var horariosBasquet = new List<string>
             {
-                HorariosBasquet = new List<string>
-                {
                     "16:00",
                     "17:00",
                     "18:00",
@@ -525,10 +520,10 @@ namespace Logica.Clases
                     "20:00",
                     "21:00",
                     "22:00"
-                };
+            };
 
-            }
-            return HorariosBasquet;
+          
+            return horariosBasquet;
         }
     
         // Alta turno
@@ -566,28 +561,28 @@ namespace Logica.Clases
             return turnoEncontrado;
         }
 
-        public void ModificarTurno(int IdTurno, Cliente cliente, Cancha cancha, string fecha, string hora)
+        public void ModificarTurno(Turno turnoMod, Cliente cliente, Cancha cancha, string fecha, string hora)
         {
 
             var listaTurnos = context.Turnos.ToList();
             foreach (var turn in listaTurnos)
             {
-                if (turn.Horario.Contains(hora) && turn.Fecha.Contains(fecha) && turn.Cancha.Equals(cancha)) // verificar que el turno no este registrado
+                if (turn.Cliente.Equals(cliente) && turn.Horario.Contains(hora) && turn.Fecha.Contains(fecha) && turn.Cancha.Equals(cancha)) // verificar que el turno no este registrado
                 {
                     throw new Exception("El turno solicitado ya se encuentra registrado.");
                 }
             }
 
-            var turnoEncontrado = context.Turnos.Find(IdTurno);
-            if (turnoEncontrado != null) // si es distinto de null, quiere decir que encontro el turno
+            //var turnoEncontrado = context.Turnos.Find(IdTurno);
+            if (turnoMod != null) // si es distinto de null, quiere decir que encontro el turno
             {
-                turnoEncontrado.Cliente = cliente;
-                turnoEncontrado.Cancha = cancha;
-                turnoEncontrado.Fecha = fecha;
-                turnoEncontrado.Horario = hora;
+                turnoMod.Cliente = cliente;
+                turnoMod.Cancha = cancha;
+                turnoMod.Fecha = fecha;
+                turnoMod.Horario = hora;
 
 
-                context.Turnos.Update(turnoEncontrado);
+                context.Turnos.Update(turnoMod);
                 context.SaveChanges();
             }
             else
@@ -605,6 +600,13 @@ namespace Logica.Clases
                 context.Turnos.Remove(turnoEncontrado);
                 context.SaveChanges(); 
             }
+        }
+
+        public List<Turno> GetTurnos()
+        {
+            var listaTurnos = context.Turnos.ToList();
+
+            return listaTurnos;
         }
 
         

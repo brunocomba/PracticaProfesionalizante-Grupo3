@@ -22,17 +22,6 @@ namespace Frontend
 
         private Cliente clienteQueEdito;
 
-        // mostar datos del cliente elegido en la grilla
-        public void ModificaCliente(Cliente cliente)
-        {
-            clienteQueEdito = cliente;
-            txtNombre.Text = clienteQueEdito.Nombre;
-            txtApellido.Text = clienteQueEdito.Apellido;
-            txtDNI.Text = clienteQueEdito.DNI.ToString();
-            txtTEL.Text = clienteQueEdito.Telefono.ToString();
-
-        }
-
         Principal principal = new Principal();
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -43,6 +32,7 @@ namespace Frontend
                 , "Seguro desea realizar esta modificacion?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (SIoNO == DialogResult.OK)
                 {
+
                     principal.ModificarCliente(clienteQueEdito, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtTEL.Text);
 
                     MessageBox.Show($"El cliente ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,4 +97,21 @@ namespace Frontend
             }
         }
 
-}   }
+        private void ModificarCliente_Load(object sender, EventArgs e)
+        {
+            cmboxClientes.Items.AddRange(principal.ObtenerListClientes().ToArray());
+
+        }
+
+        private void cmboxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        { 
+            clienteQueEdito = (Cliente)cmboxClientes.SelectedItem;
+
+            // mostrar los datos del cliente seleccionado en el combo.
+            txtNombre.Text = clienteQueEdito.Nombre;
+            txtApellido.Text = clienteQueEdito.Apellido;
+            txtDNI.Text = clienteQueEdito.DNI.ToString();
+            txtTEL.Text = clienteQueEdito.Telefono.ToString();
+        }
+    }
+}

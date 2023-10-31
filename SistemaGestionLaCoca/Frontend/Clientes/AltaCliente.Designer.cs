@@ -130,7 +130,7 @@
             txtTel.Location = new Point(153, 254);
             txtTel.MaxLength = 10;
             txtTel.Name = "txtTel";
-            txtTel.Size = new Size(202, 23);
+            txtTel.Size = new Size(223, 23);
             txtTel.TabIndex = 30;
             // 
             // txtApellido
@@ -138,7 +138,7 @@
             txtApellido.Location = new Point(153, 145);
             txtApellido.MaxLength = 120;
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(202, 23);
+            txtApellido.Size = new Size(223, 23);
             txtApellido.TabIndex = 29;
             // 
             // txtDNI
@@ -146,7 +146,7 @@
             txtDNI.Location = new Point(153, 197);
             txtDNI.MaxLength = 8;
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(202, 23);
+            txtDNI.Size = new Size(223, 23);
             txtDNI.TabIndex = 28;
             // 
             // label6
@@ -165,7 +165,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(71, 153);
+            label5.Location = new Point(69, 152);
             label5.Name = "label5";
             label5.Size = new Size(53, 16);
             label5.TabIndex = 26;
@@ -176,7 +176,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(94, 205);
+            label4.Location = new Point(68, 204);
             label4.Name = "label4";
             label4.Size = new Size(28, 16);
             label4.TabIndex = 25;
@@ -187,7 +187,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(70, 98);
+            label3.Location = new Point(68, 97);
             label3.Name = "label3";
             label3.Size = new Size(52, 16);
             label3.TabIndex = 24;
@@ -198,7 +198,7 @@
             txtNombre.Location = new Point(153, 90);
             txtNombre.MaxLength = 120;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(202, 23);
+            txtNombre.Size = new Size(223, 23);
             txtNombre.TabIndex = 21;
             // 
             // label2

@@ -33,6 +33,8 @@
             label1 = new Label();
             btnVolver = new Button();
             groupBox3 = new GroupBox();
+            cmboxClientes = new ComboBox();
+            label3 = new Label();
             lblErrorDni = new Label();
             lblErrorTel = new Label();
             btnModificar = new Button();
@@ -87,6 +89,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(cmboxClientes);
+            groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(lblErrorDni);
             groupBox3.Controls.Add(lblErrorTel);
             groupBox3.Controls.Add(btnModificar);
@@ -105,12 +109,33 @@
             groupBox3.TabIndex = 33;
             groupBox3.TabStop = false;
             // 
+            // cmboxClientes
+            // 
+            cmboxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxClientes.FormattingEnabled = true;
+            cmboxClientes.Location = new Point(153, 87);
+            cmboxClientes.Name = "cmboxClientes";
+            cmboxClientes.Size = new Size(224, 23);
+            cmboxClientes.TabIndex = 34;
+            cmboxClientes.SelectedIndexChanged += cmboxClientes_SelectedIndexChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(68, 94);
+            label3.Name = "label3";
+            label3.Size = new Size(47, 16);
+            label3.TabIndex = 33;
+            label3.Text = "Cliente";
+            // 
             // lblErrorDni
             // 
             lblErrorDni.AutoSize = true;
             lblErrorDni.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorDni.ForeColor = Color.Red;
-            lblErrorDni.Location = new Point(153, 223);
+            lblErrorDni.Location = new Point(153, 262);
             lblErrorDni.Name = "lblErrorDni";
             lblErrorDni.Size = new Size(0, 14);
             lblErrorDni.TabIndex = 32;
@@ -120,7 +145,7 @@
             lblErrorTel.AutoSize = true;
             lblErrorTel.Font = new Font("Arial", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorTel.ForeColor = Color.Red;
-            lblErrorTel.Location = new Point(153, 280);
+            lblErrorTel.Location = new Point(153, 319);
             lblErrorTel.Name = "lblErrorTel";
             lblErrorTel.Size = new Size(0, 14);
             lblErrorTel.TabIndex = 31;
@@ -131,7 +156,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(167, 332);
+            btnModificar.Location = new Point(153, 352);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(129, 38);
             btnModificar.TabIndex = 23;
@@ -141,26 +166,26 @@
             // 
             // txtTEL
             // 
-            txtTEL.Location = new Point(153, 254);
+            txtTEL.Location = new Point(153, 293);
             txtTEL.MaxLength = 10;
             txtTEL.Name = "txtTEL";
-            txtTEL.Size = new Size(202, 23);
+            txtTEL.Size = new Size(224, 23);
             txtTEL.TabIndex = 30;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(153, 145);
+            txtApellido.Location = new Point(153, 184);
             txtApellido.MaxLength = 120;
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(202, 23);
+            txtApellido.Size = new Size(224, 23);
             txtApellido.TabIndex = 29;
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(153, 197);
+            txtDNI.Location = new Point(153, 236);
             txtDNI.MaxLength = 8;
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(202, 23);
+            txtDNI.Size = new Size(224, 23);
             txtDNI.TabIndex = 28;
             // 
             // label9
@@ -168,7 +193,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(68, 262);
+            label9.Location = new Point(68, 301);
             label9.Name = "label9";
             label9.Size = new Size(54, 16);
             label9.TabIndex = 27;
@@ -179,7 +204,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(71, 153);
+            label10.Location = new Point(68, 191);
             label10.Name = "label10";
             label10.Size = new Size(53, 16);
             label10.TabIndex = 26;
@@ -190,7 +215,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(94, 205);
+            label11.Location = new Point(68, 243);
             label11.Name = "label11";
             label11.Size = new Size(28, 16);
             label11.TabIndex = 25;
@@ -201,7 +226,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(70, 98);
+            label12.Location = new Point(68, 146);
             label12.Name = "label12";
             label12.Size = new Size(52, 16);
             label12.TabIndex = 24;
@@ -209,10 +234,10 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(153, 90);
+            txtNombre.Location = new Point(153, 139);
             txtNombre.MaxLength = 120;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(202, 23);
+            txtNombre.Size = new Size(224, 23);
             txtNombre.TabIndex = 21;
             // 
             // label2
@@ -220,7 +245,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(153, 33);
+            label2.Location = new Point(153, 28);
             label2.Name = "label2";
             label2.Size = new Size(177, 36);
             label2.TabIndex = 22;
@@ -241,6 +266,7 @@
             Name = "ModificarCliente";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += ModificarCliente_FormClosing;
+            Load += ModificarCliente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -266,5 +292,7 @@
         private Label label12;
         private TextBox txtNombre;
         private Label label2;
+        private ComboBox cmboxClientes;
+        private Label label3;
     }
 }

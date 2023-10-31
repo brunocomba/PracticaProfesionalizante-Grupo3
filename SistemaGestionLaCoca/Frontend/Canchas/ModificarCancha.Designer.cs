@@ -32,6 +32,8 @@
             groupBox2 = new GroupBox();
             label4 = new Label();
             groupBox1 = new GroupBox();
+            cmboxCanchas = new ComboBox();
+            label8 = new Label();
             label7 = new Label();
             label6 = new Label();
             txtPrecio = new TextBox();
@@ -71,6 +73,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmboxCanchas);
+            groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(txtPrecio);
@@ -88,6 +92,27 @@
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             // 
+            // cmboxCanchas
+            // 
+            cmboxCanchas.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxCanchas.FormattingEnabled = true;
+            cmboxCanchas.Location = new Point(125, 69);
+            cmboxCanchas.Name = "cmboxCanchas";
+            cmboxCanchas.Size = new Size(249, 23);
+            cmboxCanchas.TabIndex = 11;
+            cmboxCanchas.SelectedIndexChanged += cmboxCanchas_SelectedIndexChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(37, 69);
+            label8.Name = "label8";
+            label8.Size = new Size(63, 32);
+            label8.TabIndex = 10;
+            label8.Text = "Cancha a\r\nmodifacar";
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -104,7 +129,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(109, 232);
+            label6.Location = new Point(104, 285);
             label6.Name = "label6";
             label6.Size = new Size(16, 17);
             label6.TabIndex = 7;
@@ -112,7 +137,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(131, 226);
+            txtPrecio.Location = new Point(126, 279);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(248, 23);
             txtPrecio.TabIndex = 6;
@@ -122,7 +147,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(42, 233);
+            label5.Location = new Point(37, 286);
             label5.Name = "label5";
             label5.Size = new Size(44, 16);
             label5.TabIndex = 5;
@@ -132,7 +157,7 @@
             // 
             cmboxCantJugadores.FlatStyle = FlatStyle.Flat;
             cmboxCantJugadores.FormattingEnabled = true;
-            cmboxCantJugadores.Location = new Point(131, 174);
+            cmboxCantJugadores.Location = new Point(126, 227);
             cmboxCantJugadores.Name = "cmboxCantJugadores";
             cmboxCantJugadores.Size = new Size(248, 23);
             cmboxCantJugadores.TabIndex = 3;
@@ -142,7 +167,7 @@
             // 
             cmboxDeporte.FlatStyle = FlatStyle.Flat;
             cmboxDeporte.FormattingEnabled = true;
-            cmboxDeporte.Location = new Point(131, 121);
+            cmboxDeporte.Location = new Point(126, 174);
             cmboxDeporte.Name = "cmboxDeporte";
             cmboxDeporte.Size = new Size(248, 23);
             cmboxDeporte.TabIndex = 2;
@@ -150,7 +175,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(131, 65);
+            txtNombre.Location = new Point(126, 118);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(248, 23);
             txtNombre.TabIndex = 1;
@@ -160,7 +185,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(42, 72);
+            label3.Location = new Point(37, 125);
             label3.Name = "label3";
             label3.Size = new Size(52, 16);
             label3.TabIndex = 4;
@@ -171,7 +196,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(42, 165);
+            label2.Location = new Point(37, 218);
             label2.Name = "label2";
             label2.Size = new Size(63, 32);
             label2.TabIndex = 3;
@@ -182,7 +207,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(42, 128);
+            label1.Location = new Point(37, 181);
             label1.Name = "label1";
             label1.Size = new Size(52, 16);
             label1.TabIndex = 2;
@@ -194,7 +219,7 @@
             btnModificarCancha.FlatStyle = FlatStyle.Flat;
             btnModificarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarCancha.ForeColor = Color.White;
-            btnModificarCancha.Location = new Point(154, 294);
+            btnModificarCancha.Location = new Point(154, 338);
             btnModificarCancha.Name = "btnModificarCancha";
             btnModificarCancha.Size = new Size(133, 35);
             btnModificarCancha.TabIndex = 4;
@@ -256,5 +281,7 @@
         private Button button1;
         private Label label6;
         private Label label7;
+        private ComboBox cmboxCanchas;
+        private Label label8;
     }
 }

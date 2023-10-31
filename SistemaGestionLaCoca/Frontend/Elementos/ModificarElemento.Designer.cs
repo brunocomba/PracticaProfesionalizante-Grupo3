@@ -33,6 +33,8 @@
             label4 = new Label();
             btnVolver = new Button();
             groupBox1 = new GroupBox();
+            cmboxElementos = new ComboBox();
+            label2 = new Label();
             label7 = new Label();
             txtStock = new TextBox();
             txtNombre = new TextBox();
@@ -58,11 +60,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(335, 44);
+            label4.Location = new Point(291, 45);
             label4.Name = "label4";
-            label4.Size = new Size(285, 34);
+            label4.Size = new Size(344, 34);
             label4.TabIndex = 8;
-            label4.Text = "NUEVO ELEMENTO";
+            label4.Text = "MODIFICAR ELEMENTO";
             // 
             // btnVolver
             // 
@@ -81,6 +83,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cmboxElementos);
+            groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txtStock);
             groupBox1.Controls.Add(txtNombre);
@@ -92,6 +96,27 @@
             groupBox1.Size = new Size(436, 335);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
+            // 
+            // cmboxElementos
+            // 
+            cmboxElementos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxElementos.FormattingEnabled = true;
+            cmboxElementos.Location = new Point(125, 90);
+            cmboxElementos.Name = "cmboxElementos";
+            cmboxElementos.Size = new Size(254, 23);
+            cmboxElementos.TabIndex = 13;
+            cmboxElementos.SelectedIndexChanged += cmboxElementos_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(32, 81);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 32);
+            label2.TabIndex = 12;
+            label2.Text = "Elemento\r\na modificar";
             // 
             // label7
             // 
@@ -106,14 +131,14 @@
             // 
             // txtStock
             // 
-            txtStock.Location = new Point(126, 153);
+            txtStock.Location = new Point(125, 201);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(254, 23);
             txtStock.TabIndex = 6;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(126, 88);
+            txtNombre.Location = new Point(125, 147);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(254, 23);
             txtNombre.TabIndex = 1;
@@ -123,7 +148,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(51, 95);
+            label3.Location = new Point(32, 154);
             label3.Name = "label3";
             label3.Size = new Size(52, 16);
             label3.TabIndex = 4;
@@ -134,7 +159,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(51, 160);
+            label1.Location = new Point(32, 208);
             label1.Name = "label1";
             label1.Size = new Size(41, 16);
             label1.TabIndex = 2;
@@ -146,7 +171,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(156, 224);
+            btnModificar.Location = new Point(168, 266);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(129, 41);
             btnModificar.TabIndex = 4;
@@ -189,5 +214,7 @@
         private Label label3;
         private Label label1;
         private Button btnModificar;
+        private ComboBox cmboxElementos;
+        private Label label2;
     }
 }
