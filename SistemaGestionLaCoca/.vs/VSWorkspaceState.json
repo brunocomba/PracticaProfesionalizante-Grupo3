@@ -11,6 +11,6 @@
     "\\Logica\\Clases",
     "\\Logica\\Coneccion DB"
   ],
-  "SelectedNode": "\\Logica\\Clases\\Principal.cs",
+  "SelectedNode": "\\Logica\\Coneccion DB\\ApplicationDbContex.cs",
   "PreviewInSolutionExplorer": false
 }
