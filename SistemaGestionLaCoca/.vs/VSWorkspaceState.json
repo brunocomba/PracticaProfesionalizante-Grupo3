@@ -2,14 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\Frontend",
-    "\\Frontend\\Administradores",
     "\\Frontend\\Canchas",
     "\\Frontend\\Elementos",
     "\\Frontend\\Elementos Cancha",
     "\\Frontend\\Inicio",
     "\\Frontend\\Turnos",
     "\\Logica",
-    "\\Logica\\Clases"
+    "\\Logica\\Clases",
+    "\\Logica\\Coneccion DB"
   ],
   "SelectedNode": "\\Logica\\Clases\\Principal.cs",
   "PreviewInSolutionExplorer": false

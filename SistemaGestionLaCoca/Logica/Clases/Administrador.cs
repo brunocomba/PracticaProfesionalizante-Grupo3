@@ -18,6 +18,9 @@ namespace Logica.Clases
             SI = 1
         }
 
+        // Propiedad estatica para almacenar el Adm que este logueado actualmente
+        public static Administrador admLogueado { get; set; }
+
         public override string ToString()
         {
             return $"{Nombre} {Apellido}";

@@ -2,17 +2,7 @@
 using FrontEnd;
 using Logica;
 using Logica.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
+
 
 namespace Frontend
 {
@@ -125,7 +115,6 @@ namespace Frontend
             // Preguntar si desea cerrar el programa o no.
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                Administrador admActual = principal.BuscarAdmLogueado();
                 var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rta == DialogResult.OK)
                 {
@@ -133,8 +122,8 @@ namespace Frontend
                     Application.Exit();
 
                     // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
-                    admActual.Logueado = Administrador.SioNo.NO;
-                    context.Administradores.Update(admActual);
+                    Administrador.admLogueado.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(Administrador.admLogueado);
                     context.SaveChanges();
                 }
                 else

@@ -42,6 +42,7 @@
             btnTurnos = new Button();
             pictureBox1 = new PictureBox();
             groupBox2 = new GroupBox();
+            label3 = new Label();
             btnAdministrador = new Button();
             pictureBox2 = new PictureBox();
             dateTimePicker1 = new DateTimePicker();
@@ -49,7 +50,6 @@
             panelAdmiLogueado = new Panel();
             btnCerrarCesion = new Button();
             btnCambiarCuenta = new Button();
-            label3 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
@@ -193,6 +193,17 @@
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(986, 25);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 16);
+            label3.TabIndex = 11;
+            label3.Text = "Hoy es:";
+            // 
             // btnAdministrador
             // 
             btnAdministrador.FlatAppearance.BorderSize = 0;
@@ -277,6 +288,7 @@
             dgvTurnosDeHoy.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTurnosDeHoy.Size = new Size(887, 561);
             dgvTurnosDeHoy.TabIndex = 20;
+            dgvTurnosDeHoy.CellContentClick += dgvTurnosDeHoy_CellContentClick;
             // 
             // panelAdmiLogueado
             // 
@@ -320,17 +332,6 @@
             btnCambiarCuenta.Text = "Cambiar cuenta";
             btnCambiarCuenta.UseVisualStyleBackColor = true;
             btnCambiarCuenta.Click += btnCambiarCuenta_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(986, 25);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 16);
-            label3.TabIndex = 11;
-            label3.Text = "Hoy es:";
             // 
             // MenuInicio
             // 

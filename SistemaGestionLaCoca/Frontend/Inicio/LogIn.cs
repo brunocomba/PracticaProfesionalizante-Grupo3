@@ -46,6 +46,10 @@ namespace FrontEnd
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+            // guardar en la variable estatica de la clase principal el administrador que se logueo, a traves del metodo que busca si esta logueado o no lo esta.
+            Administrador.admLogueado = principal.BuscarAdmLogueado();
         }
 
 

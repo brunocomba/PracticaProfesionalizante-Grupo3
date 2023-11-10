@@ -89,7 +89,7 @@ namespace FrontEnd
             // Preguntar si desea cerrar el programa o no.
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                Administrador admActual = principal.BuscarAdmLogueado();
+
                 var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rta == DialogResult.OK)
                 {
@@ -97,8 +97,8 @@ namespace FrontEnd
                     Application.Exit();
 
                     // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
-                    admActual.Logueado = Administrador.SioNo.NO;
-                    context.Administradores.Update(admActual);
+                    Administrador.admLogueado.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(Administrador.admLogueado);
                     context.SaveChanges();
                 }
                 else

@@ -63,7 +63,7 @@ namespace Frontend.Elementos_Cancha
                 MessageBox.Show("No hay asignaciones de elementos registradas para eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+
 
             dgvElementosCancha.DataSource = null;
             dgvElementosCancha.DataSource = principal.ObtenerAsignacionDeElementos();
@@ -83,7 +83,7 @@ namespace Frontend.Elementos_Cancha
             // Preguntar si desea cerrar el programa o no.
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                Administrador admActual = principal.BuscarAdmLogueado();
+                
                 var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rta == DialogResult.OK)
                 {
@@ -91,8 +91,8 @@ namespace Frontend.Elementos_Cancha
                     Application.Exit();
 
                     // Cambiarle al administrador que esta logueado (actual) la propiedad Logueado a NO.
-                    admActual.Logueado = Administrador.SioNo.NO;
-                    context.Administradores.Update(admActual);
+                    Administrador.admLogueado.Logueado = Administrador.SioNo.NO;
+                    context.Administradores.Update(Administrador.admLogueado);
                     context.SaveChanges();
                 }
                 else
@@ -100,6 +100,11 @@ namespace Frontend.Elementos_Cancha
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void dgvElementosCancha_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

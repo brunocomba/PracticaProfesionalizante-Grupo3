@@ -93,6 +93,7 @@
             dgvElementosCancha.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvElementosCancha.Size = new Size(851, 579);
             dgvElementosCancha.TabIndex = 21;
+            dgvElementosCancha.CellContentClick += dgvElementosCancha_CellContentClick;
             // 
             // btnVolver
             // 

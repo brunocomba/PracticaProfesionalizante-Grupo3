@@ -167,6 +167,9 @@ namespace Logica.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<int>("AdministradorID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CanchaID")
                         .HasColumnType("int");
 
@@ -182,6 +185,8 @@ namespace Logica.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("AdministradorID");
 
                     b.HasIndex("CanchaID");
 
@@ -211,6 +216,12 @@ namespace Logica.Migrations
 
             modelBuilder.Entity("Logica.Clases.Turno", b =>
                 {
+                    b.HasOne("Logica.Clases.Administrador", "Administrador")
+                        .WithMany()
+                        .HasForeignKey("AdministradorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Logica.Clases.Cancha", "Cancha")
                         .WithMany()
                         .HasForeignKey("CanchaID")
@@ -222,6 +233,8 @@ namespace Logica.Migrations
                         .HasForeignKey("ClienteID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Administrador");
 
                     b.Navigation("Cancha");
 

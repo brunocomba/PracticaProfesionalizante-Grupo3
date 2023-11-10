@@ -169,6 +169,7 @@
             Name = "AltaElemento";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += AltaElemento_FormClosing;
+            Load += AltaElemento_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

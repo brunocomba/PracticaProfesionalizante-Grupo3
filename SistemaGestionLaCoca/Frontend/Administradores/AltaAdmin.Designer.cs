@@ -381,6 +381,7 @@
             Name = "AltaAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += AltaAdmin_FormClosing;
+            Load += AltaAdmin_Load;
             DatosPers.ResumeLayout(false);
             DatosPers.PerformLayout();
             groupBox2.ResumeLayout(false);

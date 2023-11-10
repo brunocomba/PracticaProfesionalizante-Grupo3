@@ -283,10 +283,13 @@ namespace Logica.Clases
 
 
 
+
+
+
         // ----------
         // CLIENTES. 
         // ----------
-        
+
         public void AltaCliente(string nombre, string apellido, string dni, string tel)
         {
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(tel))
@@ -525,7 +528,8 @@ namespace Logica.Clases
           
             return horariosBasquet;
         }
-    
+
+     
         // Alta turno
         public void AltaTurno(Cliente cliente, Cancha cancha, string fecha, string hora)
         {  
@@ -548,19 +552,6 @@ namespace Logica.Clases
             context.SaveChanges();
 
         }
-
-        public Turno BuscarTurnosPorID(int idTurno)
-        {
-            
-            var turnoEncontrado = context.Turnos.Find(idTurno);
-            if (turnoEncontrado == null)
-            {
-                throw new Exception("No se encontro el turno");
-            }
-
-            return turnoEncontrado;
-        }
-
         public void ModificarTurno(Turno turnoMod, Cliente cliente, Cancha cancha, string fecha, string hora)
         {
 
@@ -627,6 +618,7 @@ namespace Logica.Clases
                                cliente.Nombre,
                                cliente.Apellido,
                                cliente.Telefono,
+                               
 
                            };
 
@@ -645,8 +637,9 @@ namespace Logica.Clases
             dataTable.Columns.Add("Telefono", typeof(long));
 
 
+
             // asiganar los valores de la lista al datatable
-            
+
             foreach (var resultado in listaConsulta)
             {
                 dataTable.Rows.Add(resultado.ID, resultado.Fecha, resultado.Horario, resultado.Deporte, resultado.nombre, resultado.Nombre, resultado.Apellido, resultado.Telefono);
