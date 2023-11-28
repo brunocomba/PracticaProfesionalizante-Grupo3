@@ -49,6 +49,9 @@ namespace FrontEnd
         private void MenuInicio_Load(object sender, EventArgs e)
         {
             dgvTurnosDeHoy.DataSource = principal.turnosDelDia();
+
+            Administrador.admLogueado = Principal.BuscarAdmLogueado(Principal.GetContext());
+
             btnAdministrador.Text = $"{Administrador.admLogueado.Nombre} {Administrador.admLogueado.Apellido}";
         }
 
@@ -106,6 +109,12 @@ namespace FrontEnd
 
         private void btnCambiarCuenta_Click(object sender, EventArgs e)
         {
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            Administrador.admLogueado.Logueado = Administrador.SioNo.NO;
+            context.Administradores.Update(Administrador.admLogueado);
+            context.SaveChanges();
+
             LogIn logIn = new LogIn();
             logIn.Show();
             this.Hide();

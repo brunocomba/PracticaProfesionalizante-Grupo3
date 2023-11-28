@@ -17,7 +17,7 @@ namespace Logica
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=LAPTOP-64KVEN22;database=TurnosLaCoca;trusted_connection=true;Encrypt=False");
+            optionsBuilder.UseSqlServer("server = br-PC;database=TurnosLaCoca;trusted_connection=true;Encrypt=False");
         }
 
 

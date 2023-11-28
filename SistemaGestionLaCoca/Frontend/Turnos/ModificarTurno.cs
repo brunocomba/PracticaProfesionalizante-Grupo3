@@ -27,6 +27,7 @@ namespace Frontend.Turnos
         {
             cmboxTurnos.Items.AddRange(principal.GetTurnos().ToArray());
             cmboxTurnos.DisplayMember = "ID";
+            
 
             cmboxCliente.Items.AddRange(principal.ObtenerListClientes().ToArray());
 

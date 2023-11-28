@@ -18,7 +18,6 @@ namespace Frontend
         {
             cmboxCliente.Items.AddRange(principal.ObtenerListClientes().ToArray());
 
-
             cmboxDeporte.Items.AddRange(principal.DeportesSinRepetir().ToArray());
             cmboxDeporte.DisplayMember = "Deporte";   // Establecer la propiedad a mostrar en el ComboBox
 

@@ -272,10 +272,17 @@ namespace Logica.Clases
            
         }
 
-        // Buscar los administradores que esten actualmente logueados.
-        public Administrador BuscarAdmLogueado()
+        public static ApplicationDbContex GetContext()
         {
-            var admLogueado = context.Administradores.FirstOrDefault(adm => adm.Logueado == Administrador.SioNo.SI);
+            ApplicationDbContex context = new ApplicationDbContex();
+
+            return context;
+        }
+
+        // Buscar los administradores que esten actualmente logueados.
+        public static Administrador BuscarAdmLogueado(ApplicationDbContex context)
+        {
+            var admLogueado = context.Administradores.First(adm => adm.Logueado == Administrador.SioNo.SI);
 
             return admLogueado;
         }

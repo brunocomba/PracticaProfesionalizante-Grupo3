@@ -48,8 +48,9 @@ namespace FrontEnd
             }
 
 
+            
             // guardar en la variable estatica de la clase principal el administrador que se logueo, a traves del metodo que busca si esta logueado o no lo esta.
-            Administrador.admLogueado = principal.BuscarAdmLogueado();
+            //Administrador.admLogueado = principal.BuscarAdmLogueado(principal.GetContext());
         }
 
 

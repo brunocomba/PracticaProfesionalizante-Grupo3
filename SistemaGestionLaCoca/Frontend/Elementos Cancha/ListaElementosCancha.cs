@@ -102,9 +102,6 @@ namespace Frontend.Elementos_Cancha
             }
         }
 
-        private void dgvElementosCancha_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
     }
 }
