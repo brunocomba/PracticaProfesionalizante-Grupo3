@@ -255,12 +255,6 @@ namespace Logica.Clases
 
             foreach (var adm in listaAdm)
             {
-                if (adm.Usuario != user && adm.Contrasenia != pass)
-                {
-                    throw new Exception("El usuario y/o la contraseña son incorrectos.");
-
-                }
-
                 if (adm.Usuario == user && adm.Contrasenia == pass)
                 {
                     adm.Logueado = Administrador.SioNo.SI; // al entrar al sist, ponerle que SI a la propiedad Logueado.
@@ -269,10 +263,8 @@ namespace Logica.Clases
                     resultado = true;
                     break;
                 }
-                else
-                {
-                    resultado = false;
-                }
+               
+               
             }
             
             return resultado;

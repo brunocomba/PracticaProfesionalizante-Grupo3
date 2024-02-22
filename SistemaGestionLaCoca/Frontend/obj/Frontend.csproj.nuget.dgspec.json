@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj": {}
+    "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj": {
+    "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
+        "projectUniqueName": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
         "projectName": "Frontend",
-        "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
-        "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\obj\\",
+        "projectPath": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Frontend.csproj",
+        "packagesPath": "C:\\Users\\Pol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj": {
-                "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj"
+              "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj": {
+                "projectPath": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj"
               }
             }
           }
@@ -38,6 +42,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,6 +69,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -68,21 +95,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj": {
+    "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj",
-        "packagesPath": "C:\\Users\\brcom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brcom\\OneDrive\\Documentos\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\obj\\",
+        "projectPath": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Logica.csproj",
+        "packagesPath": "C:\\Users\\Pol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\brcom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,6 +133,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -134,12 +170,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

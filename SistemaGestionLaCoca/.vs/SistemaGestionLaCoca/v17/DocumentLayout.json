@@ -1,0 +1,566 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\inicio\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\inicio\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\administradores\\altaadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\administradores\\altaadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\administradores\\altaadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\administradores\\altaadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\inicio\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\inicio\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\elementocancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\elementocancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\stockelementos.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\stockelementos.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\stockelementos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\stockelementos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\stockelementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\stockelementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\modificarelemento.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\modificarelemento.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\modificarelemento.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\modificarelemento.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\modificarelemento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\modificarelemento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\altaelemento.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\altaelemento.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\altaelemento.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\altaelemento.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\altaelemento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\altaelemento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\agregarstock.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\agregarstock.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\agregarstock.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\agregarstock.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos\\agregarstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos\\agregarstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\coneccion db\\applicationdbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\coneccion db\\applicationdbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\turnos\\altaturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\turnos\\altaturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\turnos\\altaturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\turnos\\altaturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\turnos\\modificarturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\turnos\\modificarturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\elementos cancha\\listaelementoscancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\elementos cancha\\listaelementoscancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\inicio\\menuinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\inicio\\menuinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\inicio\\menuinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\inicio\\menuinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\cancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\cancha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\frontend\\turnos\\historialturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3CED447-315C-452F-B0F9-CD6ACB14F3DD}|Frontend\\Frontend.csproj|solutionrelative:frontend\\turnos\\historialturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\elemento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\elemento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|c:\\users\\pol\\documents\\github\\practicaprofesionalizante-grupo3\\sistemagestionlacoca\\logica\\clases\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DACEEAD-B4DD-484E-9985-FBC9F42C0328}|Logica\\Logica.csproj|solutionrelative:logica\\clases\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 148,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 389,
+          "SelectedChildIndex": 26,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AltaAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Administradores\\AltaAdmin.cs",
+              "RelativeDocumentMoniker": "Frontend\\Administradores\\AltaAdmin.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Administradores\\AltaAdmin.cs",
+              "RelativeToolTip": "Frontend\\Administradores\\AltaAdmin.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswCcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:18:39.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AltaAdmin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Administradores\\AltaAdmin.cs",
+              "RelativeDocumentMoniker": "Frontend\\Administradores\\AltaAdmin.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Administradores\\AltaAdmin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Administradores\\AltaAdmin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:18:37.503Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StockElementos.resx",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\StockElementos.resx",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\StockElementos.resx",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\StockElementos.resx",
+              "RelativeToolTip": "Frontend\\Elementos\\StockElementos.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-02-22T16:01:30.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StockElementos.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\StockElementos.Designer.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\StockElementos.Designer.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\StockElementos.Designer.cs",
+              "RelativeToolTip": "Frontend\\Elementos\\StockElementos.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:30.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ModificarElemento.resx",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\ModificarElemento.resx",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\ModificarElemento.resx",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\ModificarElemento.resx",
+              "RelativeToolTip": "Frontend\\Elementos\\ModificarElemento.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-02-22T16:01:30.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Principal.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\Principal.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Principal.cs",
+              "RelativeToolTip": "Logica\\Clases\\Principal.cs",
+              "ViewState": "AQIAAPQAAAAAAAAAAIAwwAEBAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogIn.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\LogIn.cs",
+              "RelativeDocumentMoniker": "Frontend\\Inicio\\LogIn.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\LogIn.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Inicio\\LogIn.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.724Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogIn.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\LogIn.cs",
+              "RelativeDocumentMoniker": "Frontend\\Inicio\\LogIn.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\LogIn.cs",
+              "RelativeToolTip": "Frontend\\Inicio\\LogIn.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAtwCEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ModificarElemento.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\ModificarElemento.Designer.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\ModificarElemento.Designer.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\ModificarElemento.Designer.cs",
+              "RelativeToolTip": "Frontend\\Elementos\\ModificarElemento.Designer.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:29.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ModificarElemento.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\ModificarElemento.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\ModificarElemento.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\ModificarElemento.cs [Design]",
+              "RelativeToolTip": "Frontend\\Elementos\\ModificarElemento.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:29.924Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AltaElemento.resx",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AltaElemento.resx",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\AltaElemento.resx",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AltaElemento.resx",
+              "RelativeToolTip": "Frontend\\Elementos\\AltaElemento.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-02-22T16:01:29.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StockElementos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\StockElementos.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\StockElementos.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\StockElementos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Elementos\\StockElementos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.734Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AltaElemento.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AltaElemento.Designer.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\AltaElemento.Designer.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AltaElemento.Designer.cs",
+              "RelativeToolTip": "Frontend\\Elementos\\AltaElemento.Designer.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:29.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AltaElemento.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AltaElemento.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\AltaElemento.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AltaElemento.cs [Design]",
+              "RelativeToolTip": "Frontend\\Elementos\\AltaElemento.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:29.721Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AgregarStock.resx",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AgregarStock.resx",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\AgregarStock.resx",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AgregarStock.resx",
+              "RelativeToolTip": "Frontend\\Elementos\\AgregarStock.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-02-22T16:01:28.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AgregarStock.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AgregarStock.Designer.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\AgregarStock.Designer.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AgregarStock.Designer.cs",
+              "RelativeToolTip": "Frontend\\Elementos\\AgregarStock.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:28.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AgregarStock.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AgregarStock.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos\\AgregarStock.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos\\AgregarStock.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Elementos\\AgregarStock.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T16:01:28.56Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MenuInicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\MenuInicio.cs",
+              "RelativeDocumentMoniker": "Frontend\\Inicio\\MenuInicio.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\MenuInicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Inicio\\MenuInicio.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.716Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "HistorialTurnos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\HistorialTurnos.cs",
+              "RelativeDocumentMoniker": "Frontend\\Turnos\\HistorialTurnos.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\HistorialTurnos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Turnos\\HistorialTurnos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.719Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AltaTurno.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\AltaTurno.cs",
+              "RelativeDocumentMoniker": "Frontend\\Turnos\\AltaTurno.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\AltaTurno.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\Turnos\\AltaTurno.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.727Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ApplicationDbContex.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Coneccion DB\\ApplicationDbContex.cs",
+              "RelativeDocumentMoniker": "Logica\\Coneccion DB\\ApplicationDbContex.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Coneccion DB\\ApplicationDbContex.cs",
+              "RelativeToolTip": "Logica\\Coneccion DB\\ApplicationDbContex.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvxMAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ModificarTurno.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\ModificarTurno.cs",
+              "RelativeDocumentMoniker": "Frontend\\Turnos\\ModificarTurno.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\ModificarTurno.cs",
+              "RelativeToolTip": "Frontend\\Turnos\\ModificarTurno.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MenuInicio.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\MenuInicio.cs",
+              "RelativeDocumentMoniker": "Frontend\\Inicio\\MenuInicio.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Inicio\\MenuInicio.cs",
+              "RelativeToolTip": "Frontend\\Inicio\\MenuInicio.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAA3wGwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Program.cs",
+              "RelativeDocumentMoniker": "Frontend\\Program.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Program.cs",
+              "RelativeToolTip": "Frontend\\Program.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAIA/wBIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ListaElementosCancha.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos Cancha\\ListaElementosCancha.cs",
+              "RelativeDocumentMoniker": "Frontend\\Elementos Cancha\\ListaElementosCancha.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Elementos Cancha\\ListaElementosCancha.cs",
+              "RelativeToolTip": "Frontend\\Elementos Cancha\\ListaElementosCancha.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAcwGgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AltaTurno.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\AltaTurno.cs",
+              "RelativeDocumentMoniker": "Frontend\\Turnos\\AltaTurno.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Frontend\\Turnos\\AltaTurno.cs",
+              "RelativeToolTip": "Frontend\\Turnos\\AltaTurno.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ElementoCancha.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\ElementoCancha.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\ElementoCancha.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\ElementoCancha.cs",
+              "RelativeToolTip": "Logica\\Clases\\ElementoCancha.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Turno.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\Turno.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Turno.cs",
+              "RelativeToolTip": "Logica\\Clases\\Turno.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Elemento.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Elemento.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\Elemento.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Elemento.cs",
+              "RelativeToolTip": "Logica\\Clases\\Elemento.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Administrador.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Administrador.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\Administrador.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Administrador.cs",
+              "RelativeToolTip": "Logica\\Clases\\Administrador.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Cancha.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Cancha.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\Cancha.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Cancha.cs",
+              "RelativeToolTip": "Logica\\Clases\\Cancha.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Cliente.cs",
+              "RelativeDocumentMoniker": "Logica\\Clases\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Pol\\Documents\\GitHub\\PracticaProfesionalizante-Grupo3\\SistemaGestionLaCoca\\Logica\\Clases\\Cliente.cs",
+              "RelativeToolTip": "Logica\\Clases\\Cliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:16:26.754Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 11,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

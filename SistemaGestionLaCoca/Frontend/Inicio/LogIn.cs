@@ -41,6 +41,11 @@ namespace FrontEnd
                     this.Hide();
 
                 }
+                else
+                {
+                    MessageBox.Show($"El usuario y / o la contraseña son incorrectos.", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
             catch (Exception ex)
             {

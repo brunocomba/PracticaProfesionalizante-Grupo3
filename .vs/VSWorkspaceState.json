@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SistemaGestionLaCoca",
+    "\\SistemaGestionLaCoca\\Logica",
+    "\\SistemaGestionLaCoca\\Logica\\Clases"
   ],
-  "SelectedNode": "\\SistemaGestionLaCoca.sln",
+  "SelectedNode": "\\SistemaGestionLaCoca\\Logica\\Clases\\Principal.cs",
   "PreviewInSolutionExplorer": false
 }

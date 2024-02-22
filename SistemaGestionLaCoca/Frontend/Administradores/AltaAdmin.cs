@@ -38,6 +38,8 @@ namespace FrontEnd
                     txtUser.Clear();
                     txtContra.Clear();
                     txtConfirContra.Clear();
+                    formularioPrevio.Show();
+                    this.Hide();
                 }
                 else
                 {
