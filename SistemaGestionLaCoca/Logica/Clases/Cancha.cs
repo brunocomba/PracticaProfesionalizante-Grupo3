@@ -6,8 +6,7 @@ namespace Logica.Clases
     {
 
         public int ID { get; set; }
-        public string Deporte { get; set; }
-        public int Cantidad_Jugadores { get; set; }
+        public Deporte Deporte { get; set; }
         public string nombre { get; set; }
         public decimal Precio { get; set; }
 

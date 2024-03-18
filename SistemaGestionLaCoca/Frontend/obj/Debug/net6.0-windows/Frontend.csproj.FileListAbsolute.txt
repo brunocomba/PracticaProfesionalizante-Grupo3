@@ -154,3 +154,5 @@ C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\Siste
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.csproj.CopyComplete
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.genruntimeconfig.cache
 C:\Users\tinch\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\ref\Frontend.dll
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Deportes.AltaDeporte.resources
+C:\Users\brcom\OneDrive\Documentos\GitHub\PracticaProfesionalizante-Grupo3\SistemaGestionLaCoca\Frontend\obj\Debug\net6.0-windows\Frontend.Deportes.ListaDeportes.resources

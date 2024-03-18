@@ -38,11 +38,9 @@
             label6 = new Label();
             txtPrecio = new TextBox();
             label5 = new Label();
-            cmboxCantJugadores = new ComboBox();
             cmboxDeporte = new ComboBox();
             txtNombre = new TextBox();
             label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
             btnModificarCancha = new Button();
             button1 = new Button();
@@ -65,7 +63,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(330, 32);
+            label4.Location = new Point(16, 33);
             label4.Name = "label4";
             label4.Size = new Size(291, 32);
             label4.TabIndex = 8;
@@ -79,11 +77,9 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(txtPrecio);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(cmboxCantJugadores);
             groupBox1.Controls.Add(cmboxDeporte);
             groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnModificarCancha);
             groupBox1.Location = new Point(253, 112);
@@ -129,7 +125,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(104, 285);
+            label6.Location = new Point(104, 242);
             label6.Name = "label6";
             label6.Size = new Size(16, 17);
             label6.TabIndex = 7;
@@ -137,7 +133,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(126, 279);
+            txtPrecio.Location = new Point(126, 236);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(248, 23);
             txtPrecio.TabIndex = 6;
@@ -147,21 +143,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(37, 286);
+            label5.Location = new Point(37, 243);
             label5.Name = "label5";
             label5.Size = new Size(44, 16);
             label5.TabIndex = 5;
             label5.Text = "Precio";
-            // 
-            // cmboxCantJugadores
-            // 
-            cmboxCantJugadores.FlatStyle = FlatStyle.Flat;
-            cmboxCantJugadores.FormattingEnabled = true;
-            cmboxCantJugadores.Location = new Point(126, 227);
-            cmboxCantJugadores.Name = "cmboxCantJugadores";
-            cmboxCantJugadores.Size = new Size(248, 23);
-            cmboxCantJugadores.TabIndex = 3;
-            cmboxCantJugadores.MouseClick += cmboxCantJugadores_MouseClick;
             // 
             // cmboxDeporte
             // 
@@ -191,17 +177,6 @@
             label3.TabIndex = 4;
             label3.Text = "Nombre";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(37, 218);
-            label2.Name = "label2";
-            label2.Size = new Size(63, 32);
-            label2.TabIndex = 3;
-            label2.Text = "Cantidad\r\njugadores";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -219,7 +194,7 @@
             btnModificarCancha.FlatStyle = FlatStyle.Flat;
             btnModificarCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnModificarCancha.ForeColor = Color.White;
-            btnModificarCancha.Location = new Point(154, 338);
+            btnModificarCancha.Location = new Point(154, 295);
             btnModificarCancha.Name = "btnModificarCancha";
             btnModificarCancha.Size = new Size(133, 35);
             btnModificarCancha.TabIndex = 4;
@@ -271,11 +246,9 @@
         private GroupBox groupBox1;
         private TextBox txtPrecio;
         private Label label5;
-        private ComboBox cmboxCantJugadores;
         private ComboBox cmboxDeporte;
         private TextBox txtNombre;
         private Label label3;
-        private Label label2;
         private Label label1;
         private Button btnModificarCancha;
         private Button button1;

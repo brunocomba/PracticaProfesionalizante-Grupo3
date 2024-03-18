@@ -73,7 +73,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(321, 40);
+            label4.Location = new Point(43, 38);
             label4.Name = "label4";
             label4.Size = new Size(379, 32);
             label4.TabIndex = 8;

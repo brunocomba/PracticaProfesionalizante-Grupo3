@@ -23,11 +23,11 @@ namespace Logica.Migrations
 
             modelBuilder.Entity("Logica.Clases.Administrador", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Apellido")
                         .IsRequired()
@@ -54,7 +54,7 @@ namespace Logica.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Administradores");
                 });
@@ -67,12 +67,8 @@ namespace Logica.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("Cantidad_Jugadores")
+                    b.Property<int>("DeporteID")
                         .HasColumnType("int");
-
-                    b.Property<string>("Deporte")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(18,2)");
@@ -82,6 +78,8 @@ namespace Logica.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("DeporteID");
 
                     b.ToTable("Canchas");
                 });
@@ -111,6 +109,27 @@ namespace Logica.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("Logica.Clases.Deporte", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Cant_Jugadores")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Deportes");
                 });
 
             modelBuilder.Entity("Logica.Clases.Elemento", b =>
@@ -188,6 +207,17 @@ namespace Logica.Migrations
                     b.HasIndex("ClienteID");
 
                     b.ToTable("Turnos");
+                });
+
+            modelBuilder.Entity("Logica.Clases.Cancha", b =>
+                {
+                    b.HasOne("Logica.Clases.Deporte", "Deporte")
+                        .WithMany()
+                        .HasForeignKey("DeporteID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Deporte");
                 });
 
             modelBuilder.Entity("Logica.Clases.ElementoCancha", b =>

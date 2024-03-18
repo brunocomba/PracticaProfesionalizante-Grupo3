@@ -1,4 +1,5 @@
 ﻿using Frontend;
+using Frontend.Deportes;
 using Logica;
 using Logica.Clases;
 using System;
@@ -33,20 +34,26 @@ namespace FrontEnd
 
         private void AltaCanchas_Load(object sender, EventArgs e)
         {
-            // Cargar combo de tipo de deporte
+            cmboxDeporte.Items.AddRange(principal.ObtenerListaDeportes().ToArray());
+            cmboxDeporte.DisplayMember = "Name";
+
+            /*
             cmboxDeporte.Items.Add("BASQUET");
             cmboxDeporte.Items.Add("FUTBOL");
+            */
 
-            // Cargar combo de cantidad de jugadores
-            cmboxCantJugadores.Items.Add("8");
-            cmboxCantJugadores.Items.Add("10");
+
+
+
         }
         private void btnAgregarCancha_Click(object sender, EventArgs e)
         {
+            Deporte deporteElegido = (Deporte)cmboxDeporte.SelectedItem;
+
 
             try
             {
-                if (cmboxDeporte.SelectedItem == null || cmboxCantJugadores.SelectedItem == null)
+                if (cmboxDeporte.SelectedItem == null)
                 {
                     throw new Exception("No se ha seleccionado ningún elemento en el ComboBox."); // si los combos estan incompletos tira esta excepcion  
                 }
@@ -60,15 +67,14 @@ namespace FrontEnd
             try
             {
                 var confirmacion = MessageBox.Show($"Seguro que desea agregar una cancha con los siguientes datos?\n" +
-                $" Nombre: {txtNombre.Text}\n Tipo: {cmboxDeporte.SelectedItem}\n Cantidad de Jugadores: {cmboxCantJugadores.SelectedItem}", "Atencion",
+                $" Nombre: {txtNombre.Text}\n Tipo: {deporteElegido.Name}\n Cantidad de Jugadores: {deporteElegido.Cant_Jugadores}", "Atencion",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (confirmacion == DialogResult.OK)
                 {
-                    principal.AltaCancha(txtNombre.Text, cmboxDeporte.Text, cmboxCantJugadores.Text, (txtPrecio.Text));
+                    principal.AltaCancha(txtNombre.Text, deporteElegido, (txtPrecio.Text));
                     MessageBox.Show($"La cancha {txtNombre.Text} fue agregado con exito!", "LISTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtNombre.Clear();
-                    cmboxCantJugadores.Text = "";
                     cmboxDeporte.Text = "";
                     txtPrecio.Clear();
 
@@ -80,7 +86,6 @@ namespace FrontEnd
                     if (confirmarCancelacion == DialogResult.OK)
                     {
                         txtNombre.Clear();
-                        cmboxCantJugadores.Text = "";
                         cmboxDeporte.Text = "";
                         txtPrecio.Clear();
                     }
@@ -124,6 +129,13 @@ namespace FrontEnd
                 }
             }
 
+        }
+
+        private void btnAddDeporte_Click(object sender, EventArgs e)
+        {
+            AltaDeporte altaDepor = new AltaDeporte(this);
+            altaDepor.Show();
+            this.Hide();
         }
     }
 }

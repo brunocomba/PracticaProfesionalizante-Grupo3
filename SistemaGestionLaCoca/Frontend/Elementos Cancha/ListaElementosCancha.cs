@@ -83,7 +83,7 @@ namespace Frontend.Elementos_Cancha
             // Preguntar si desea cerrar el programa o no.
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                
+
                 var rta = MessageBox.Show("¿Seguro que deseas salir?", "Confirmar salida ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rta == DialogResult.OK)
                 {
@@ -102,6 +102,6 @@ namespace Frontend.Elementos_Cancha
             }
         }
 
-       
+
     }
 }

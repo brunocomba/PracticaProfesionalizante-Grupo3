@@ -6,10 +6,10 @@ namespace Frontend
     public partial class AltaCliente : Form
     {
         private Form formPrevio;
-        public AltaCliente(Form formPrevio)
+        public AltaCliente(Form formulario)
         {
             InitializeComponent();
-            this.formPrevio = formPrevio;
+            this.formPrevio = formulario;
         }
 
         Principal principal = new Principal();

@@ -175,7 +175,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(239, 36);
+            label1.Location = new Point(24, 32);
             label1.Name = "label1";
             label1.Size = new Size(431, 32);
             label1.TabIndex = 6;

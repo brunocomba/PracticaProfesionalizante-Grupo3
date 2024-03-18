@@ -85,6 +85,8 @@ namespace Logica.Clases
         // Alta
         public void AltaAdmi(string nombre, string apellido, string dni, string tel, string user, string pass, string confirmPass)
         {
+            
+
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(dni) || string.IsNullOrWhiteSpace(tel)
                 || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass) || string.IsNullOrEmpty(confirmPass))
             {
@@ -129,6 +131,22 @@ namespace Logica.Clases
             newAdmin.Usuario = user;
             newAdmin.Contrasenia = pass;
             newAdmin.Logueado = Administrador.SioNo.NO;
+
+            var listaAdmisCreados = context.Administradores.ToList();
+
+            foreach (var admi in listaAdmisCreados)
+            {
+                if (admi.Nombre == newAdmin.Nombre && admi.Apellido == newAdmin.Apellido && admi.DNI == newAdmin.DNI && admi.Telefono == newAdmin.Telefono )
+                {
+                    throw new Exception("Ya exixste un usuario creado con EXACTAMENTE los mismos datos creados.");
+                }
+
+                if (admi.Usuario == newAdmin.Usuario)
+                {
+                    throw new Exception("El nombre de usuario ya existe.");
+
+                }
+            }
 
             context.Administradores.Add(newAdmin);  
             context.SaveChanges();
@@ -181,6 +199,22 @@ namespace Logica.Clases
                 admiMod.Usuario = user;
                 admiMod.Contrasenia = pass;
                 admiMod.Logueado = Administrador.SioNo.NO;
+
+                var listaAdmisCreados = context.Administradores.ToList();
+
+                foreach (var admi in listaAdmisCreados)
+                {
+                    if (admi.Nombre == admiMod.Nombre && admi.Apellido == admiMod.Apellido && admi.DNI == admiMod.DNI && admi.Telefono == admiMod.Telefono)
+                    {
+                        throw new Exception("Ya exixste un usuario creado con EXACTAMENTE los mismos datos creados.");
+                    }
+
+                    if (admi.Usuario == admiMod.Usuario)
+                    {
+                        throw new Exception("El nombre de usuario ya existe.");
+
+                    }
+                }
 
                 context.Administradores.Update(admiMod);
                 context.SaveChanges();
@@ -255,11 +289,6 @@ namespace Logica.Clases
 
             foreach (var adm in listaAdm)
             {
-                if (adm.Usuario != user && adm.Contrasenia != pass)
-                {
-                    throw new Exception("El usuario y/o la contraseña son incorrectos.");
-
-                }
 
                 if (adm.Usuario == user && adm.Contrasenia == pass)
                 {
@@ -267,11 +296,12 @@ namespace Logica.Clases
                     context.Administradores.Update(adm);
                     context.SaveChanges();
                     resultado = true;
-                    break;
+                    
                 }
                 else
                 {
                     resultado = false;
+                    
                 }
             }
             
@@ -399,54 +429,116 @@ namespace Logica.Clases
             return listaClientes;
         }
 
-   
         // -------------
-        // CANCHAS.
+        // DEPORTES
         // -------------
 
-        public void AltaCancha(string nombre, string deporte, string cantJugadores, string precio)
+
+
+        public List<Deporte> ObtenerListaDeportes()
         {
-            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(deporte) || string.IsNullOrWhiteSpace(cantJugadores) || string.IsNullOrWhiteSpace(precio))
+            var listaDeportes = context.Deportes.ToList();
+
+            return listaDeportes;
+        }
+
+
+        public void altaDeporte(string nombre, string cantJugadores)
+        {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(cantJugadores))
             {
                 throw new Exception("Por favor, complete todos los campos del formulario.");
             }
 
-            if (SoloNumeros(cantJugadores) || SoloNumeros(precio))
+            if (SoloNumeros(cantJugadores))
             {
-                throw new Exception("La cantidad de jugadores o el precio ingresado no puede contener letras.");
+                throw new Exception("La cantidad de jugadores ingresada no puede contener letras.");
             }
 
-            
+            if (SoloNumeros(nombre))
+            {
+                throw new Exception("El nombre ingresado no puede contener numeros.");
+
+            }
+
+            Deporte deporteNew = new Deporte();
+            deporteNew.Name = nombre;
+            deporteNew.Cant_Jugadores = cantJugadores;
+
+            context.Deportes.Add(deporteNew);   
+            context.SaveChanges();
+        }
+
+        public void removeDeporte(Deporte deporteABorrar)
+        {
+            if (deporteABorrar != null)
+            {
+                context.Deportes.Remove(deporteABorrar);
+                context.SaveChanges();
+
+            }
+            else
+            {
+                throw new Exception("No hay ningun deporte seleccionado.");
+
+            }
+        }
+
+        // -------------
+        // CANCHAS.
+        // -------------
+
+        public void AltaCancha(string nombre,Deporte deporte, string precio)
+        {
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(precio))
+            {
+                throw new Exception("Por favor, complete todos los campos del formulario.");
+            }
+
+            if (SoloNumeros(precio))
+            {
+                throw new Exception("El precio ingresado no puede contener letras.");
+            }
+
+            if (SoloNumeros(nombre))
+            {
+                throw new Exception("El nombre ingresado no puede contener numeros.");
+
+            }
+
 
             Cancha newCancha = new Cancha();
 
             newCancha.nombre = nombre;
-            newCancha.Deporte = deporte;
-            newCancha.Cantidad_Jugadores = int.Parse(cantJugadores);
+            newCancha.Deporte = deporte;;
             newCancha.Precio = decimal.Parse(precio);
 
             context.Canchas.Add(newCancha);
             context.SaveChanges();
         }
 
-        public void modificarCancha(Cancha canchaMod, string nombre, string deporte, string cantJug, string precio)
+        public void modificarCancha(Cancha canchaMod, string nombre, Deporte deporte, string precio)
         {
-            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(deporte) || string.IsNullOrWhiteSpace(cantJug) || string.IsNullOrWhiteSpace(precio))
+            if (string.IsNullOrWhiteSpace(nombre)  || string.IsNullOrWhiteSpace(precio))
             {
                 throw new Exception("Por favor, complete todos los campos del formulario.");
             }
 
-            if (SoloNumeros(cantJug) || SoloNumeros(precio))
+            if (SoloNumeros(precio))
             {
-                throw new Exception("La cantidad de jugadores o el precio ingresado no puede contener letras.");
+                throw new Exception("El precio ingresado no puede contener letras.");
             }
 
-            
+            if (SoloNumeros(nombre))
+            {
+                throw new Exception("El nombre ingresado no puede contener numeros.");
+
+            }
+
             if (canchaMod != null)
             {
                 canchaMod.nombre = nombre;
                 canchaMod.Deporte = deporte;
-                canchaMod.Cantidad_Jugadores = int.Parse(cantJug);
                 canchaMod.Precio = decimal.Parse(precio);
 
                 context.Canchas.Update(canchaMod);
@@ -478,9 +570,9 @@ namespace Logica.Clases
 
             foreach (var cancha in ObtenerListaCanchas())
             {
-                if (!listaDeportes.Contains(cancha.Deporte))  // no tiene ese deporte en la lista de deportes que hay
+                if (!listaDeportes.Contains(cancha.Deporte.Name))  // no tiene ese deporte en la lista de deportes que hay
                 {
-                    listaDeportes.Add(cancha.Deporte);
+                    listaDeportes.Add(cancha.Deporte.Name);
                 }
 
             }
@@ -490,10 +582,52 @@ namespace Logica.Clases
 
         public List<Cancha> CanchasDeSoloUnDeporte(string deporte)
         {
-            var canchasFiltraadas = ObtenerListaCanchas().Where(cancha => cancha.Deporte == deporte).ToList();
+            var canchasFiltraadas = ObtenerListaCanchas().Where(cancha => cancha.Deporte.Name == deporte).ToList();
 
             return canchasFiltraadas;
         }
+
+
+        // Obtener listado completo. Ya que tiene propiedades de tipo objeto la clase  Cancha
+        public DataTable ListadoCanchas()
+        {
+            var consulta = from cancha in context.Canchas
+                           join deporte in context.Deportes on cancha.Deporte.ID equals deporte.ID
+
+                           select new
+                           {
+                               cancha.ID,
+                               cancha.nombre,
+                               deporte.Name,
+                               deporte.Cant_Jugadores,
+                               cancha.Precio,
+
+                           };
+
+            // convertir en lista la consulta 
+            var listaConsulta = consulta.ToList();
+
+            // crear datatable
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID Cancha", typeof(int));
+            dataTable.Columns.Add("Nombre", typeof(string));
+            dataTable.Columns.Add("Deporte", typeof(string));
+            dataTable.Columns.Add("Jugadores", typeof(int));
+            dataTable.Columns.Add("Precio", typeof(int));
+            
+
+
+            // asiganar los valores de la lista al datatable
+
+            foreach (var resultado in listaConsulta)
+            {
+                dataTable.Rows.Add(resultado.ID, resultado.nombre, resultado.Name, resultado.Cant_Jugadores, resultado.Precio);
+            }
+
+            return dataTable;
+
+        }
+
 
         // -----------------
         // TURNOS.
@@ -501,7 +635,7 @@ namespace Logica.Clases
 
 
         // Lista horarios Futbol
-        public  List<string> ListaHorariosFutbol()
+        public List<string> ListaHorariosFutbol()
         {
             var horariosFutbol = new List<string>
             {

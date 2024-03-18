@@ -1,4 +1,5 @@
-﻿using Frontend.Elementos_Cancha;
+﻿using Frontend.Deportes;
+using Frontend.Elementos_Cancha;
 using FrontEnd;
 using Logica;
 using Logica.Clases;
@@ -18,7 +19,7 @@ namespace Frontend
         private void ListaCanchas_Load(object sender, EventArgs e)
         {
             dgvCanchas.DataSource = null;
-            dgvCanchas.DataSource = principal.ObtenerListaCanchas();
+            dgvCanchas.DataSource = principal.ListadoCanchas();
 
 
             toolTip1.SetToolTip(btnAgregarCancha, "Crear nueva cancha.");
@@ -131,6 +132,13 @@ namespace Frontend
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void btnDeportes_Click(object sender, EventArgs e)
+        {
+            ListaDeportes listaDeportes = new ListaDeportes();
+            listaDeportes.Show();
+            this.Hide();
         }
     }
 }

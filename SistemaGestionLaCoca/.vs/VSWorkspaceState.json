@@ -2,7 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Frontend",
-    "\\Frontend\\Canchas",
+    "\\Frontend\\Deportes",
     "\\Frontend\\Elementos",
     "\\Frontend\\Elementos Cancha",
     "\\Frontend\\Inicio",
@@ -11,6 +11,6 @@
     "\\Logica\\Clases",
     "\\Logica\\Coneccion DB"
   ],
-  "SelectedNode": "\\Frontend\\Inicio\\MenuInicio.cs",
+  "SelectedNode": "\\Frontend\\Deportes\\ListaDeportes.cs",
   "PreviewInSolutionExplorer": false
 }

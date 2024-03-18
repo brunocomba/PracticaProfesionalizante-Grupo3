@@ -13,11 +13,13 @@ namespace Logica
         public DbSet<Turno> Turnos { get; set; }
         public DbSet<Elemento> Elementos { get; set; }
         public DbSet<ElementoCancha> ElementoCancha { get; set; }
+        public DbSet<Deporte> Deportes { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = br-PC;database=TurnosLaCoca;trusted_connection=true;Encrypt=False");
+            optionsBuilder.UseSqlServer("server = br-PC;database=LACOCA;trusted_connection=true;Encrypt=False");
         }
 
 

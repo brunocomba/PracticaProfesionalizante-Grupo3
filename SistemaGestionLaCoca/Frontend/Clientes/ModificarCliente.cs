@@ -103,7 +103,7 @@ namespace Frontend
         }
 
         private void cmboxClientes_SelectedIndexChanged(object sender, EventArgs e)
-        { 
+        {
             clienteQueEdito = (Cliente)cmboxClientes.SelectedItem;
 
             // mostrar los datos del cliente seleccionado en el combo.

@@ -17,13 +17,17 @@ namespace Frontend
         private Cancha CanchaQueEdito;
         private void ModificarCancha_Load(object sender, EventArgs e)
         {
+            cmboxDeporte.Items.AddRange(principal.ObtenerListaDeportes().ToArray());
+            cmboxDeporte.DisplayMember = "Name";
+
+            /*
             cmboxDeporte.Items.Add("BASQUET");
             cmboxDeporte.Items.Add("FUTBOL");
 
 
             cmboxCantJugadores.Items.Add("8");
             cmboxCantJugadores.Items.Add("10");
-
+            */
 
             cmboxCanchas.Items.AddRange(principal.ObtenerListaCanchas().ToArray());
         }
@@ -31,11 +35,12 @@ namespace Frontend
 
         private void btnModificarCancha_Click_1(object sender, EventArgs e)
         {
+            Deporte deporteElegido = (Deporte)cmboxDeporte.SelectedItem;
 
             // verificar que los combos no esten incompletos
             try
             {
-                if (cmboxDeporte.SelectedItem == null || cmboxCantJugadores.SelectedItem == null)
+                if (cmboxDeporte.SelectedItem == null)
                 {
                     throw new Exception("No se ha seleccionado ningún elemento en el ComboBox.");
                 }
@@ -48,18 +53,16 @@ namespace Frontend
 
             try
             {
-                var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{CanchaQueEdito.nombre} por {txtNombre.Text}\n{CanchaQueEdito.Deporte} por {cmboxDeporte.Text}\n" +
-                $"{CanchaQueEdito.Cantidad_Jugadores} por {cmboxCantJugadores.Text}\n{CanchaQueEdito.Precio} por {txtPrecio.Text}\n\nPresione ACEPTAR para continuar.   ",
+                var SIoNO = MessageBox.Show($"Seguro desea realizar esta modificacion?\n\n{CanchaQueEdito.nombre} por {txtNombre.Text}\n{CanchaQueEdito.Deporte} por {cmboxDeporte.Text}\n{CanchaQueEdito.Precio} por {txtPrecio.Text}\n\nPresione ACEPTAR para continuar.   ",
                 "ATENCION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (SIoNO == DialogResult.OK)
                 {
-                    principal.modificarCancha(CanchaQueEdito, txtNombre.Text, cmboxDeporte.Text, cmboxCantJugadores.Text, txtPrecio.Text);
+                    principal.modificarCancha(CanchaQueEdito, txtNombre.Text, deporteElegido, txtPrecio.Text);
 
                     MessageBox.Show($"La cancha ha sido modificado con exito! ", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtNombre.Clear();
                     txtPrecio.Clear();
-                    cmboxCantJugadores.Text = "";
                     cmboxDeporte.Text = "";
 
                 }
@@ -70,7 +73,6 @@ namespace Frontend
                     {
                         txtNombre.Clear();
                         txtPrecio.Clear();
-                        cmboxCantJugadores.Text = "";
                         cmboxDeporte.Text = "";
 
                     }
@@ -102,7 +104,6 @@ namespace Frontend
 
         private void cmboxCantJugadores_MouseClick(object sender, MouseEventArgs e)
         {
-            cmboxCantJugadores.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
@@ -137,8 +138,7 @@ namespace Frontend
 
             CanchaQueEdito = canchaElegida;
             txtNombre.Text = CanchaQueEdito.nombre;
-            cmboxDeporte.Text = CanchaQueEdito.Deporte;
-            cmboxCantJugadores.Text = CanchaQueEdito.Cantidad_Jugadores.ToString();
+            cmboxDeporte.Text = canchaElegida.Deporte.Name;
             txtPrecio.Text = CanchaQueEdito.Precio.ToString();
 
         }

@@ -43,7 +43,6 @@ namespace FrontEnd
             btnAgregar = new Button();
             btnModificar = new Button();
             dgvAdministradores = new DataGridView();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             apellidoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dNIDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -73,7 +72,7 @@ namespace FrontEnd
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(360, 39);
+            label1.Location = new Point(35, 37);
             label1.Name = "label1";
             label1.Size = new Size(564, 32);
             label1.TabIndex = 0;
@@ -171,7 +170,7 @@ namespace FrontEnd
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvAdministradores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvAdministradores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvAdministradores.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, apellidoDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, usuarioDataGridViewTextBoxColumn, contraseniaDataGridViewTextBoxColumn });
+            dgvAdministradores.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, apellidoDataGridViewTextBoxColumn, dNIDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, usuarioDataGridViewTextBoxColumn, contraseniaDataGridViewTextBoxColumn });
             dgvAdministradores.DataSource = administradorBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
@@ -199,13 +198,6 @@ namespace FrontEnd
             dgvAdministradores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAdministradores.Size = new Size(872, 561);
             dgvAdministradores.TabIndex = 13;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 

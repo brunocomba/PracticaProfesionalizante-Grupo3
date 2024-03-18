@@ -35,12 +35,17 @@ namespace FrontEnd
 
                 if (resultado == true)
                 {
-                    
-                    MessageBox.Show($"Inicio de sesion exitoso.\n!Bienvenido, {user}!", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);                  
+
+                    MessageBox.Show($"Inicio de sesion exitoso.\n!Bienvenido, {user}!", "Inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     menuInicio.Show();
                     this.Hide();
 
                 }
+                else
+                {
+                    MessageBox.Show($"La contraseña y/o el usuario son incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {
@@ -48,7 +53,7 @@ namespace FrontEnd
             }
 
 
-            
+
             // guardar en la variable estatica de la clase principal el administrador que se logueo, a traves del metodo que busca si esta logueado o no lo esta.
             //Administrador.admLogueado = principal.BuscarAdmLogueado(principal.GetContext());
         }

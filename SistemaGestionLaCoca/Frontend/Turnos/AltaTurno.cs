@@ -51,8 +51,7 @@ namespace Frontend
 
 
                         var respuesta = MessageBox.Show($"DATOS DEL TURNO\nCliente: {clienteElegido.Nombre} {clienteElegido.Apellido}\n" +
-                        $"Fecha: {fecha}\nHora: {horario}\nCancha: {canchaElegida.nombre}\nDeporte: {canchaElegida.Deporte}\nPrecio del turno: ${canchaElegida.Precio}\n" +
-                        $"Precio por jugador ${canchaElegida.Precio / canchaElegida.Cantidad_Jugadores}", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        $"Fecha: {fecha}\nHora: {horario}\nCancha: {canchaElegida.nombre}\nDeporte: {canchaElegida.Deporte}\nPrecio del turno: ${canchaElegida.Precio}\n", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                         if (respuesta == DialogResult.OK)
                         {
@@ -78,7 +77,7 @@ namespace Frontend
             // guardar el deporte elegido como string y pasarselo al metodo que muestra las canchas registradas con ese deporte.
             string deporteElegido = cmboxDeporte.SelectedItem.ToString();
 
-            cmboxCancha.DataSource =  principal.CanchasDeSoloUnDeporte(deporteElegido);
+            cmboxCancha.DataSource = principal.CanchasDeSoloUnDeporte(deporteElegido);
 
             cmboxCancha.DisplayMember = "Nombre";
 

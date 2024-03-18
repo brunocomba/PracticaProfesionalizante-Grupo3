@@ -27,7 +27,7 @@ namespace Frontend.Turnos
         {
             cmboxTurnos.Items.AddRange(principal.GetTurnos().ToArray());
             cmboxTurnos.DisplayMember = "ID";
-            
+
 
             cmboxCliente.Items.AddRange(principal.ObtenerListClientes().ToArray());
 
@@ -65,8 +65,7 @@ namespace Frontend.Turnos
 
 
                         var respuesta = MessageBox.Show($"DATOS DE LA MODIFICAION\nCliente: {turnoQueEdito.Cliente} por {clienteElegido}\n" +
-                        $"Fecha: {turnoQueEdito.Fecha} por {fecha}\nHora: {turnoQueEdito.Horario} por {horario}\nCancha: {turnoQueEdito.Cancha} por {canchaElegida}\nDeporte: {turnoQueEdito.Cancha.Deporte} por {canchaElegida.Deporte}\nPrecio del turno: ${turnoQueEdito.Cancha.Precio} por {canchaElegida.Precio}\n" +
-                        $"Precio por jugador ${turnoQueEdito.Cancha.Precio / turnoQueEdito.Cancha.Cantidad_Jugadores} por {canchaElegida.Precio / canchaElegida.Cantidad_Jugadores}", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        $"Fecha: {turnoQueEdito.Fecha} por {fecha}\nHora: {turnoQueEdito.Horario} por {horario}\nCancha: {turnoQueEdito.Cancha} por {canchaElegida}\nDeporte: {turnoQueEdito.Cancha.Deporte} por {canchaElegida.Deporte}\nPrecio del turno: ${turnoQueEdito.Cancha.Precio} por {canchaElegida.Precio}", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                         if (respuesta == DialogResult.OK)
                         {
@@ -166,10 +165,10 @@ namespace Frontend.Turnos
 
         private void cmboxTurnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Turno turnoElegido = (Turno) cmboxTurnos.SelectedItem;
+            Turno turnoElegido = (Turno)cmboxTurnos.SelectedItem;
 
             cmboxCliente.Text = turnoElegido.Cliente.ToString();
-            cmboxDeporte.Text  = turnoElegido.Cancha.Deporte.ToString();
+            cmboxDeporte.Text = turnoElegido.Cancha.Deporte.ToString();
             cmboxCancha.Text = turnoElegido.Cancha.nombre.ToString();
             FechaTurno.Text = turnoElegido.Fecha;
             cmboxHorarios.Text = turnoElegido.Horario.ToString();

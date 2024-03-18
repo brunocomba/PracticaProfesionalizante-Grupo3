@@ -39,11 +39,6 @@ namespace Frontend
             label1 = new Label();
             btnVolver = new Button();
             dgvCanchas = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            deporteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cantidadJugadoresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            precioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             canchaBindingSource = new BindingSource(components);
             panel2 = new Panel();
             btnEliminarCancha = new Button();
@@ -51,6 +46,7 @@ namespace Frontend
             btnModCancha = new Button();
             btnElementosDeCancha = new Button();
             toolTip1 = new ToolTip(components);
+            btnDeportes = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCanchas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)canchaBindingSource).BeginInit();
@@ -72,7 +68,7 @@ namespace Frontend
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(437, 40);
+            label1.Location = new Point(36, 36);
             label1.Name = "label1";
             label1.Size = new Size(432, 32);
             label1.TabIndex = 0;
@@ -99,7 +95,6 @@ namespace Frontend
             dgvCanchas.AllowUserToResizeColumns = false;
             dgvCanchas.AllowUserToResizeRows = false;
             dgvCanchas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvCanchas.AutoGenerateColumns = false;
             dgvCanchas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCanchas.BackgroundColor = Color.FromArgb(26, 32, 40);
             dgvCanchas.BorderStyle = BorderStyle.None;
@@ -114,8 +109,6 @@ namespace Frontend
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvCanchas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCanchas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvCanchas.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, nombreDataGridViewTextBoxColumn, deporteDataGridViewTextBoxColumn, cantidadJugadoresDataGridViewTextBoxColumn, precioDataGridViewTextBoxColumn });
-            dgvCanchas.DataSource = canchaBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 32, 40);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -142,41 +135,6 @@ namespace Frontend
             dgvCanchas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCanchas.Size = new Size(831, 561);
             dgvCanchas.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            dataGridViewTextBoxColumn1.HeaderText = "ID";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // deporteDataGridViewTextBoxColumn
-            // 
-            deporteDataGridViewTextBoxColumn.DataPropertyName = "Deporte";
-            deporteDataGridViewTextBoxColumn.HeaderText = "Deporte";
-            deporteDataGridViewTextBoxColumn.Name = "deporteDataGridViewTextBoxColumn";
-            deporteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadJugadoresDataGridViewTextBoxColumn
-            // 
-            cantidadJugadoresDataGridViewTextBoxColumn.DataPropertyName = "Cantidad_Jugadores";
-            cantidadJugadoresDataGridViewTextBoxColumn.HeaderText = "Jugadores";
-            cantidadJugadoresDataGridViewTextBoxColumn.Name = "cantidadJugadoresDataGridViewTextBoxColumn";
-            cantidadJugadoresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // canchaBindingSource
             // 
@@ -244,7 +202,7 @@ namespace Frontend
             btnElementosDeCancha.FlatStyle = FlatStyle.Flat;
             btnElementosDeCancha.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnElementosDeCancha.ForeColor = Color.White;
-            btnElementosDeCancha.Location = new Point(1083, 138);
+            btnElementosDeCancha.Location = new Point(1083, 160);
             btnElementosDeCancha.Name = "btnElementosDeCancha";
             btnElementosDeCancha.Size = new Size(132, 44);
             btnElementosDeCancha.TabIndex = 9;
@@ -252,12 +210,27 @@ namespace Frontend
             btnElementosDeCancha.UseVisualStyleBackColor = true;
             btnElementosDeCancha.Click += btnElementosDeCancha_Click;
             // 
+            // btnDeportes
+            // 
+            btnDeportes.FlatAppearance.BorderSize = 2;
+            btnDeportes.FlatStyle = FlatStyle.Flat;
+            btnDeportes.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDeportes.ForeColor = Color.White;
+            btnDeportes.Location = new Point(1083, 263);
+            btnDeportes.Name = "btnDeportes";
+            btnDeportes.Size = new Size(132, 44);
+            btnDeportes.TabIndex = 14;
+            btnDeportes.Text = "DEPORTES ";
+            btnDeportes.UseVisualStyleBackColor = true;
+            btnDeportes.Click += btnDeportes_Click;
+            // 
             // ListaCanchas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1259, 748);
+            Controls.Add(btnDeportes);
             Controls.Add(btnElementosDeCancha);
             Controls.Add(dgvCanchas);
             Controls.Add(btnVolver);
@@ -288,15 +261,12 @@ namespace Frontend
         private DataGridViewTextBoxColumn cantJugadoresDataGridViewTextBoxColumn;
         private Panel panel2;
         private Button btnElementosDeCancha;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn deporteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cantidadJugadoresDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private BindingSource canchaBindingSource;
         private Button btnEliminarCancha;
         private Button btnAgregarCancha;
         private Button btnModCancha;
         private ToolTip toolTip1;
+        private Button btnDeportes;
     }
 }
